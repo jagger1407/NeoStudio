@@ -10,7 +10,7 @@ ui(new Ui::AboutWindow)
 	ui->graphicsView->setVerticalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
     QGraphicsScene* scene = new QGraphicsScene();
     scene->setSceneRect(ui->graphicsView->rect());
-    scene->addPixmap(QPixmap("../assets/AboutImage.png").scaled(ui->graphicsView->width(), ui->graphicsView->height(), Qt::KeepAspectRatio));
+    scene->addPixmap(QPixmap("./assets/AboutImage.png").scaled(ui->graphicsView->width(), ui->graphicsView->height(), Qt::KeepAspectRatio));
     ui->graphicsView->setScene(scene);
 }
 AboutWindow::~AboutWindow() = default;

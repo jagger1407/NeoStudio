@@ -8,7 +8,8 @@ NeoStudio::NeoStudio(QWidget* parent) :
     ui->setupUi(this);
     QGraphicsScene* scene = new QGraphicsScene();
     // Drip Code
-    scene->addPixmap((*new QPixmap("../assets/UnderConstruction.png")).scaled(ui->graphicsView_1->width(), ui->graphicsView_1->height()));
+    scene->addPixmap((*new QPixmap("./assets/UnderConstruction.png")).scaled(ui->graphicsView_1->width(), ui->graphicsView_1->height()));
+    this->setWindowIcon(QIcon(QPixmap("./assets/icon.ico")));
     ui->graphicsView_1->setScene(scene);
     ui->graphicsView_2->setScene(scene);
     ui->graphicsView_3->setScene(scene);

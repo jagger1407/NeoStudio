@@ -7,6 +7,7 @@ PakControls::PakControls(QString FilePath)
         Debug::ConsolePrint("Error! PakControls: not a pak file.");
         return;
     }
+    
     QByteArray pakData = FileParse::ReadWholeFile(FilePath);
 
     if((unsigned char)pakData.at(0) != PAK_FIRST_BYTE)
@@ -42,14 +43,6 @@ PakControls::PakControls(QString FilePath)
     paramData[MELEE] = QByteArray(pakData.mid(paramOffset[MELEE], paramSize[MELEE]));
     paramData[KI_BLAST] = QByteArray(pakData.mid(paramOffset[KI_BLAST], paramSize[KI_BLAST]));
     paramData[MOVEMENT] = QByteArray(pakData.mid(paramOffset[MOVEMENT], paramSize[MOVEMENT]));
-
-    Debug::ConsolePrint("LeftPak size " + QString::number(LeftPak.size()));
-    Debug::ConsolePrint("general size " + QString::number(paramData[GENERAL].size()));
-    Debug::ConsolePrint("melee size " + QString::number(paramData[MELEE].size()));
-    Debug::ConsolePrint("ki size " + QString::number(paramData[KI_BLAST].size()));
-    Debug::ConsolePrint("zonening size " + QString::number(paramData[MOVEMENT].size()));
-    Debug::ConsolePrint("RightPak size " + QString::number(RightPak.size()));
-    Debug::ConsolePrint("total size " + QString::number(GetPakData().size()));
 
     failed = false;
 }

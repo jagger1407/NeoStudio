@@ -1,7 +1,7 @@
 #ifndef ABOUTWINDOW_H
 #define ABOUTWINDOW_H
 
-#include "src/qt_includes.h"
+#include "src/external/qt_includes.h"
 
 namespace Ui
 {

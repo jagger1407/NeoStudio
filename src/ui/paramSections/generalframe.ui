@@ -73,7 +73,9 @@
     </font>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The technique performed when pressing Triangle after a Step-In.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>The technique performed when pressing Triangle after a Step-In.
+
+Note: Techniques marked with '(Short)' consist of only the Step-In animation + technique, while techniques marked with '(Long)' are the Step-In animation + the Sway animation (backwards-leaning motion granting additional invincibility-frames) + technique.</string>
    </property>
    <property name="text">
     <string>Step-In Technique</string>
@@ -99,7 +101,13 @@
     </font>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;This will be the technique you perform once a counter is triggered.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>This will be the technique you perform once a counter is triggered.
+
+No Counter = No Counter will be triggered
+Smash = Upon being hit, the character will smash the opponent away
+Vanish = Upon being hit, the character will teleport a few meters back
+Throw = Upon being hit, the character will initiate a throw
+Sway = No Counter Stance will be triggered, instead, the character will lean back, giving a short amount of invincibility frames.</string>
    </property>
    <property name="text">
     <string>Counters</string>
@@ -278,7 +286,12 @@
     </font>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The type of Z-Search your character will do when pressing L1.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>The type of Z-Search your character will do when pressing L1.
+
+Ki Search = Default Ki Search
+Fast Ki Search = Faster than the default Ki Search, used by canonically strong characters
+Scouter Search = Searches through solid objects
+Slow Ki Search = Slower than the default Ki Search, used by characters like Videl</string>
    </property>
    <property name="text">
     <string>Z-Search Type</string>
@@ -304,7 +317,9 @@
     </font>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:400;&quot;&gt;Rushing Techniques&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>This decides which Rushing Technique you will use.
+
+Pretty Self-explanatory. I have no idea why you're reading this.</string>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rushing Techniques&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -455,7 +470,8 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;The Character ID of the resulting Transformation.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Note: If the character ID is invalid, the game will not let you transform.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The Character ID of the resulting Transformation.
+Note: Any ID higher than 130 will disable the transformation.</string>
     </property>
     <property name="text">
      <string>ID</string>
@@ -533,7 +549,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;The Blast Stock Cost of each transformation.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The Blast Stock Cost of each transformation.</string>
     </property>
     <property name="text">
      <string>Cost</string>
@@ -603,32 +619,6 @@
     <char>
      <unicode>0</unicode>
     </char>
-   </property>
-  </widget>
-  <widget class="QLabel" name="CounterLbl_2">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>250</y>
-     <width>311</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="toolTip">
-    <string>Rushing Techniques</string>
-   </property>
-   <property name="text">
-    <string>Rush Counter     Step-In Counter     Cancel Counter</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
   <widget class="QGroupBox" name="FusionGroupBox">
@@ -750,7 +740,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;This will be the Character ID of the resulting Fusion.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Example: Vegito&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>This ID corresponds to the resulting character of the Fusion. Once the Fusion ends, this is the character that you will be playing.</string>
     </property>
     <property name="text">
      <string>ID</string>
@@ -818,7 +808,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;The Blast Stock Cost of each Fusion.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The Blast Stock Cost for each Fusion.</string>
     </property>
     <property name="text">
      <string>Cost</string>
@@ -883,7 +873,11 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;The type of Fusion&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;None: No Fusion&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Potara: Potara Cutscene&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Dance: Fusion Dance Cutscene&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The type of cutscene that will be used for this Fusion.
+
+None: No Fusion (This will disable the Fusion)
+Potara: Potara Cutscene
+Dance: Fusion Dance Cutscene</string>
     </property>
     <property name="text">
      <string>Type</string>
@@ -909,7 +903,9 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;This is the partner in the cutscene for the Fusion.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Note: If no variation of this character is in your team, there will be no character in the cutscene.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>This is the ID of the character that will be part of the Fusion cutscene.
+
+This ID has nothing to do with the actual character in your Team, it is only used for the cutscene.</string>
     </property>
     <property name="text">
      <string>Partner ID</string>
@@ -1208,7 +1204,8 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;These are the character IDs to check the team. If one of these characters are in your team, they will be removed after the fusion.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>These are the character IDs to check the team. 
+If one of these IDs is in your team, they corresponding character will be removed after the fusion.</string>
     </property>
     <property name="text">
      <string>Team Partner ID</string>
@@ -1297,7 +1294,7 @@
     </font>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Aura Color&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>The color of your regular Aura.</string>
    </property>
    <property name="text">
     <string>Aura Color</string>
@@ -1316,7 +1313,7 @@
     </rect>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The dimensions of a character's collision box.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>The dimensions of a character's collision box.</string>
    </property>
    <property name="title">
     <string>Collision</string>
@@ -1481,7 +1478,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The rate at which the character recharges their base Ki.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The speed at which the character recharges their base Ki.</string>
     </property>
     <property name="text">
      <string>Base Ki Regeneration Speed</string>
@@ -1490,7 +1487,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="KiChargeBox_2">
+   <widget class="QSpinBox" name="KiChargeWaterBox">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -1509,7 +1506,7 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QSpinBox" name="KiBlastBox_1">
+   <widget class="QSpinBox" name="KiBlastBox">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -1543,7 +1540,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The speed at which the character charges Ki.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The speed at which the character charges Ki.</string>
     </property>
     <property name="text">
      <string>Ki Charge Speed</string>
@@ -1552,7 +1549,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="KiChargeBox_1">
+   <widget class="QSpinBox" name="KiChargeBox">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -1586,7 +1583,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The maximum amount of Ki Blasts your character can shoot consecutively.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The maximum amount of regular Ki Blasts your character can shoot before entering a short cooldown.</string>
     </property>
     <property name="text">
      <string>Ki Blast Amount</string>
@@ -1610,7 +1607,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The rate at which the character charges Ki while being underwater.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The speed at which the character charges Ki while being underwater.</string>
     </property>
     <property name="text">
      <string>Ki Charge Speed (Underwater)</string>
@@ -1619,7 +1616,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="KiBlastBox_2">
+   <widget class="QSpinBox" name="KiBlastChargedBox">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -1638,7 +1635,7 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QLabel" name="KiBlastsLbl_2">
+   <widget class="QLabel" name="KiBlastsChargedLbl_2">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -1653,7 +1650,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The maximum amount of Charged Ki Blasts that can be on the map at once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The maximum amount of Charged Ki Blasts of this character that can be on stage at once.</string>
     </property>
     <property name="text">
      <string>Ki Blast Amount (Charged)</string>
@@ -1662,7 +1659,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="KiChargeBox_3">
+   <widget class="QSpinBox" name="BaseKiRegenBox">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -1681,7 +1678,7 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QSpinBox" name="KiChargeBox_4">
+   <widget class="QSpinBox" name="CounterKiBox">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -1715,7 +1712,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The amount of Ki that will be consumed by a successful counter.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The amount of Ki that will be consumed by a successful counter.</string>
     </property>
     <property name="text">
      <string>Counter Ki Consumption</string>
@@ -1752,7 +1749,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The maximum amount of Blast Stocks the character can build up.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The maximum amount of Blast Stocks the character can build up.</string>
     </property>
     <property name="text">
      <string>Blast Stock Amount</string>
@@ -1795,7 +1792,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The rate at which the Blast Gauge fills up.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The speed at which the Blast Gauge fills up.</string>
     </property>
     <property name="text">
      <string>Blast Gauge Speed</string>
@@ -1838,7 +1835,9 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The amount of Gravity the character is experiencing.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Note: Values above 1 make the character unable to jump.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The amount of Gravity that is forced upon the character.
+
+Note: Values above 1 make the character unable to jump.</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel { color : white; }</string>
@@ -1884,10 +1883,10 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The maximum amount of times Dragon Homing can be used after a single Full-Power Smash in Max Power Mode.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The maximum amount of times Dragon Homing can be used after a single Full-Power Smash in MAX Power Mode.</string>
     </property>
     <property name="text">
-     <string>Dragon Homing Amount (Max Power)</string>
+     <string>Dragon Homing Amount (MAX Power)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1908,7 +1907,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The amount of time the character can stay in MAX Power mode.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The speed at which blue Ki decreases while in MAX Power Mode.</string>
     </property>
     <property name="text">
      <string>MAX Power Duration</string>
@@ -1989,10 +1988,10 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The maximum amount of times Vanishing Attack can be used after a single Full-Power Smash in Max Power Mode.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>The maximum amount of times Vanishing Attack can be used after a single Full-Power Smash in MAX Power Mode.</string>
     </property>
     <property name="text">
-     <string>Vanishing Attack Amount (Max Power)</string>
+     <string>Vanishing Attack Amount (MAX Power)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2078,7 +2077,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Self-explanatory, really. Multiplies the damage, I guess.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>Self-explanatory, really. Multiplies the damage.</string>
     </property>
     <property name="text">
      <string>Damage Multiplier</string>
@@ -2187,7 +2186,7 @@
       </rect>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if you can absorb energy.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Checks if you can absorb Ki Blasts and Ki-Based Blast 2s/Ultimates</string>
      </property>
      <property name="text">
       <string>Absorb Energy</string>
@@ -2339,7 +2338,7 @@
       </rect>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if you can break objects by simply touching them.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Checks if you can break objects by simply touching them. Great Apes have this enabled.</string>
      </property>
      <property name="text">
       <string>Destructive Touch</string>
@@ -2355,7 +2354,10 @@
       </rect>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if the character is able to fly&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Unchecked = Able to Fly&lt;/p&gt;&lt;p&gt;Checked = Unable to Fly&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Checks if the character can Fly.
+
+Unchecked = Able to Fly
+Checked = Unable to Fly</string>
      </property>
      <property name="text">
       <string>Lack of Flight</string>
@@ -2397,7 +2399,8 @@
       </rect>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if the character makes a metallic landing noise when they land.&lt;/p&gt;&lt;p&gt;Example: Meta-Cooler&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Checks if the character makes a metallic landing noise when they land.
+Meta-Cooler has this enabled.</string>
      </property>
      <property name="text">
       <string>Metallic Landing</string>
@@ -2416,7 +2419,7 @@
     <property name="title">
      <string>Flagbyte 3</string>
     </property>
-    <widget class="QCheckBox" name="Flag_5_1">
+    <widget class="QCheckBox" name="Flag_3_1">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -2426,13 +2429,13 @@
       </rect>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if the character is able to Dragon Dash&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Checks if the character is able to Dragon Dash.</string>
      </property>
      <property name="text">
       <string>Dragon Dash</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="Flag_5_2">
+    <widget class="QCheckBox" name="Flag_3_2">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -2442,13 +2445,13 @@
       </rect>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if the character is able to Lift Strike.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Checks if the character is able to Lift Strike.</string>
      </property>
      <property name="text">
       <string>Lift Strike</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="Flag_5_3">
+    <widget class="QCheckBox" name="Flag_3_3">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -2458,13 +2461,13 @@
       </rect>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if the character is able to Ground Slash.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Checks if the character is able to Ground Slash.</string>
      </property>
      <property name="text">
       <string>Ground Slash</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="Flag_5_4">
+    <widget class="QCheckBox" name="Flag_3_4">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -2474,13 +2477,13 @@
       </rect>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if you can Sway.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Checks if you can Step-In.</string>
      </property>
      <property name="text">
-      <string>Sway</string>
+      <string>Step-In</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="Flag_5_5">
+    <widget class="QCheckBox" name="Flag_3_5">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -2496,7 +2499,7 @@
       <string>?</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="Flag_5_6">
+    <widget class="QCheckBox" name="Flag_3_6">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -2506,10 +2509,282 @@
       </rect>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if you can use a Step-In after finishing the 1st Rush String.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Checks if you can use a Step-In after finishing the 1st Rush String with regular melees only.
+
+This just means it checks if you can Step-In after pressing Square 5 times.</string>
      </property>
      <property name="text">
       <string>Step-In after 1. Rush</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_3_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>95</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_3_8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>250</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character can do the Dragon Smash (Hold Attack button while in a Homing Dragon Dash).</string>
+     </property>
+     <property name="text">
+      <string>Dragon Smash</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FlagByteGroup_4">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>40</y>
+      <width>171</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Flagbyte 4</string>
+    </property>
+    <widget class="QCheckBox" name="Flag_4_1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character is able to deflect Ki Blasts.</string>
+     </property>
+     <property name="text">
+      <string>Deflect Ki Blasts</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_4_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character can use High Speed Rush Movement (Teleport while attacking, also called Offensive Teleport).</string>
+     </property>
+     <property name="text">
+      <string>Rush Teleportation</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_4_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>161</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_4_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>161</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character can use dashing or jumping Ki Blasts.</string>
+     </property>
+     <property name="text">
+      <string>Dash/Jump Ki Blasts</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_4_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>95</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_4_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>190</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character can use the Dragon Tornado follow-up.</string>
+     </property>
+     <property name="text">
+      <string>Dragon Tornado</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_4_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character can use the Heavy Crush follow-up.</string>
+     </property>
+     <property name="text">
+      <string>Heavy Crush</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_4_8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>250</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character can use the Heavy Crush follow-up.</string>
+     </property>
+     <property name="text">
+      <string>Giant Throw</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FlagByteGroup_5">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>40</y>
+      <width>171</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Flagbyte 5</string>
+    </property>
+    <widget class="QCheckBox" name="Flag_5_1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character is able to use the Sonic Impact.</string>
+     </property>
+     <property name="text">
+      <string>Sonic Impact</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_5_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character is able to use the Rolling Hammer technique (Left/Right + Triangle).</string>
+     </property>
+     <property name="text">
+      <string>Rolling Hammer</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_5_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can use the Kiai Cannon Smash follow-up.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>Kiai Cannon Smash</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_5_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character is able to use the Illusion Slash technique (Ground Slash right after landing).</string>
+     </property>
+     <property name="text">
+      <string>Illusion Slash</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_5_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>95</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_5_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>190</y>
+       <width>95</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>?</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_5_7">
@@ -2530,99 +2805,6 @@
       <rect>
        <x>10</x>
        <y>250</y>
-       <width>141</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can do the Dragon Smash.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>Dragon Smash</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="FlagByteGroup_4">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>40</y>
-      <width>171</width>
-      <height>291</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Flagbyte 4</string>
-    </property>
-    <widget class="QCheckBox" name="Flag_6_1">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>40</y>
-       <width>141</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can deflect Ki Blasts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>Deflect Ki Blasts</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_6_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>70</y>
-       <width>151</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can use High Speed Rush Movement.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>Rush Teleportation</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_6_3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>100</y>
-       <width>161</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_6_4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>130</y>
-       <width>161</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can use dashing or jumping Ki Blasts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>Dash/Jump Ki Blasts</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_6_5">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>160</y>
        <width>95</width>
        <height>23</height>
       </rect>
@@ -2631,20 +2813,101 @@
       <string>?</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QGroupBox" name="FlagByteGroup_6">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>340</y>
+      <width>161</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Flagbyte 6</string>
+    </property>
+    <widget class="QCheckBox" name="Flag_6_1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>95</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_6_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>95</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_6_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>141</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character can use Hyper Speed Movement (Teleport anytime while pressing circle in MAX Power Mode).</string>
+     </property>
+     <property name="text">
+      <string>HSM</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_6_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>95</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="Flag_6_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>131</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Checks if your character is able to use the Dragon Heavy (Triangle while being in a Homing Dragon Dash).</string>
+     </property>
+     <property name="text">
+      <string>Dragon Heavy</string>
+     </property>
+    </widget>
     <widget class="QCheckBox" name="Flag_6_6">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>190</y>
-       <width>151</width>
+       <width>95</width>
        <height>23</height>
       </rect>
      </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can Dragon Tornado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="text">
-      <string>Dragon Tornado</string>
+      <string>?</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_6_7">
@@ -2652,15 +2915,12 @@
       <rect>
        <x>10</x>
        <y>220</y>
-       <width>141</width>
+       <width>95</width>
        <height>23</height>
       </rect>
      </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can Heavy Crush.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="text">
-      <string>Heavy Crush</string>
+      <string>?</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_6_8">
@@ -2668,44 +2928,38 @@
       <rect>
        <x>10</x>
        <y>250</y>
-       <width>141</width>
+       <width>95</width>
        <height>23</height>
       </rect>
      </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can Giant Throw.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="text">
-      <string>Giant Throw</string>
+      <string>?</string>
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="FlagByteGroup_5">
+   <widget class="QGroupBox" name="FlagByteGroup_7">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>40</y>
-      <width>171</width>
+      <x>270</x>
+      <y>340</y>
+      <width>161</width>
       <height>291</height>
      </rect>
     </property>
     <property name="title">
-     <string>Flagbyte 5</string>
+     <string>Flagbyte 7</string>
     </property>
     <widget class="QCheckBox" name="Flag_7_1">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>141</width>
+       <width>95</width>
        <height>23</height>
       </rect>
      </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can Sonic Impact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="text">
-      <string>Sonic Impact</string>
+      <string>?</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_7_2">
@@ -2713,15 +2967,12 @@
       <rect>
        <x>10</x>
        <y>70</y>
-       <width>151</width>
+       <width>95</width>
        <height>23</height>
       </rect>
      </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can Rolling Hammer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="text">
-      <string>Rolling Hammer</string>
+      <string>?</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_7_3">
@@ -2729,15 +2980,18 @@
       <rect>
        <x>10</x>
        <y>100</y>
-       <width>151</width>
+       <width>131</width>
        <height>23</height>
       </rect>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can Kiai Cannon Smash.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Checks if your character has the aura of a Super Saiyan 3.
+The question mark indicates that I am unsure if this is actually correct, don't take me by word here.
+
+NOTE: Flags here overwrite the input inside the Aura Color.</string>
      </property>
      <property name="text">
-      <string>Kiai Cannon Smash</string>
+      <string>SSJ3 Aura (?)</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_7_4">
@@ -2750,10 +3004,13 @@
       </rect>
      </property>
      <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can Illusion Slash.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Checks if your character has the aura of a Super Saiyan 2.
+The question mark indicates that I am unsure if this is actually correct, don't take me by word here.
+
+NOTE: Flags here overwrite the input inside the Aura Color.</string>
      </property>
      <property name="text">
-      <string>Illusion Slash</string>
+      <string>SSJ2 Aura (?)</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_7_5">
@@ -2787,12 +3044,17 @@
       <rect>
        <x>10</x>
        <y>220</y>
-       <width>95</width>
+       <width>131</width>
        <height>23</height>
       </rect>
      </property>
+     <property name="toolTip">
+      <string>Checks if your character has the aura of a Super Saiyan.
+
+NOTE: Flags here overwrite the input inside the Aura Color.</string>
+     </property>
      <property name="text">
-      <string>?</string>
+      <string>SSJ Aura</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_7_8">
@@ -2800,38 +3062,44 @@
       <rect>
        <x>10</x>
        <y>250</y>
-       <width>95</width>
+       <width>131</width>
        <height>23</height>
       </rect>
      </property>
+     <property name="toolTip">
+      <string>Checks if your character slowly gains Ki over time instead of charging it.</string>
+     </property>
      <property name="text">
-      <string>?</string>
+      <string>Android Mode</string>
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="FlagByteGroup_6">
+   <widget class="QGroupBox" name="FlagByteGroup_8">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>440</x>
       <y>340</y>
       <width>161</width>
       <height>291</height>
      </rect>
     </property>
     <property name="title">
-     <string>Flagbyte 6</string>
+     <string>Flagbyte 8</string>
     </property>
     <widget class="QCheckBox" name="Flag_8_1">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>95</width>
+       <width>151</width>
        <height>23</height>
       </rect>
      </property>
+     <property name="toolTip">
+      <string>Checks if your character has the same charging sound as Boo.</string>
+     </property>
      <property name="text">
-      <string>?</string>
+      <string>Boo Charge Sound</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_8_2">
@@ -2852,15 +3120,12 @@
       <rect>
        <x>10</x>
        <y>100</y>
-       <width>141</width>
+       <width>95</width>
        <height>23</height>
       </rect>
      </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can use Hyper Speed Movement.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="text">
-      <string>HSM</string>
+      <string>?</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_8_4">
@@ -2881,15 +3146,12 @@
       <rect>
        <x>10</x>
        <y>160</y>
-       <width>131</width>
+       <width>95</width>
        <height>23</height>
       </rect>
      </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character can Dragon Heavy.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="text">
-      <string>Dragon Heavy</string>
+      <string>?</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_8_6">
@@ -2932,19 +3194,19 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="FlagByteGroup_7">
+   <widget class="QGroupBox" name="FlagByteGroup_9">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>610</x>
       <y>340</y>
       <width>161</width>
       <height>291</height>
      </rect>
     </property>
     <property name="title">
-     <string>Flagbyte 7</string>
+     <string>Flagbyte 9</string>
     </property>
-    <widget class="QCheckBox" name="Flag_9_1">
+    <widget class="QCheckBox" name="Flag_9_9">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -2975,15 +3237,12 @@
       <rect>
        <x>10</x>
        <y>100</y>
-       <width>131</width>
+       <width>95</width>
        <height>23</height>
       </rect>
      </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character has the aura of a Super Saiyan 3.&lt;/p&gt;&lt;p&gt;The question mark indicates that I am unsure if this is actually correct, don't take me by word here.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;NOTE: Flags here overwrite the input inside the Aura Color.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="text">
-      <string>SSJ3 Aura (?)</string>
+      <string>?</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_9_4">
@@ -2991,15 +3250,12 @@
       <rect>
        <x>10</x>
        <y>130</y>
-       <width>141</width>
+       <width>95</width>
        <height>23</height>
       </rect>
      </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character has the aura of a Super Saiyan 2.&lt;/p&gt;&lt;p&gt;The question mark indicates that I am unsure if this is actually correct, don't take me by word here.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;NOTE: Flags here overwrite the input inside the Aura Color.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="text">
-      <string>SSJ2 Aura (?)</string>
+      <string>?</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_9_5">
@@ -3020,12 +3276,15 @@
       <rect>
        <x>10</x>
        <y>190</y>
-       <width>95</width>
+       <width>141</width>
        <height>23</height>
       </rect>
      </property>
+     <property name="toolTip">
+      <string>Checks if your character lands like a Great Ape (Screenshake, Smoke)</string>
+     </property>
      <property name="text">
-      <string>?</string>
+      <string>Oozaru Landing</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_9_7">
@@ -3033,261 +3292,15 @@
       <rect>
        <x>10</x>
        <y>220</y>
-       <width>131</width>
+       <width>95</width>
        <height>23</height>
       </rect>
      </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character has the aura of a Super Saiyan.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;NOTE: Flags here overwrite the input inside the Aura Color.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
      <property name="text">
-      <string>SSJ Aura</string>
+      <string>?</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_9_8">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>250</y>
-       <width>131</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character is an Android.&lt;/p&gt;&lt;p&gt;Android Mode means not being able to charge Ki, but slowly gaining Ki over time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>Android Mode</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="FlagByteGroup_8">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>340</y>
-      <width>161</width>
-      <height>291</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Flagbyte 8</string>
-    </property>
-    <widget class="QCheckBox" name="Flag_10_1">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>40</y>
-       <width>151</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character has the same charging sound as Boo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>Boo Charge Sound</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_10_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>70</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_10_3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>100</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_10_4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>130</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_10_5">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>160</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_10_6">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>190</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_10_7">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>220</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_10_8">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>250</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="FlagByteGroup_9">
-    <property name="geometry">
-     <rect>
-      <x>610</x>
-      <y>340</y>
-      <width>161</width>
-      <height>291</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Flagbyte 9</string>
-    </property>
-    <widget class="QCheckBox" name="Flag_15_1">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>40</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_15_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>70</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_15_3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>100</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_15_4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>130</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_15_5">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>160</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_15_6">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>190</y>
-       <width>141</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Checks if your character lands like a Great Ape (Screenshake, Smoke)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>Oozaru Landing</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_15_7">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>220</y>
-       <width>95</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>?</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="Flag_15_8">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -3302,6 +3315,54 @@
     </widget>
    </widget>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>250</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Rush/Step Counter</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>250</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Step-In Counter</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>250</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cancel Counter</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
@@ -3309,7 +3370,7 @@
    <sender>TransformIDBox_1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>157</x>
@@ -3325,7 +3386,7 @@
    <sender>TransformIDBox_2</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>157</x>
@@ -3341,7 +3402,7 @@
    <sender>TransformIDBox_3</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>157</x>
@@ -3357,7 +3418,7 @@
    <sender>TransformIDBox_4</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>157</x>
@@ -3373,7 +3434,7 @@
    <sender>TransformCostBox_1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>217</x>
@@ -3389,7 +3450,7 @@
    <sender>TransformCostBox_2</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>217</x>
@@ -3405,7 +3466,7 @@
    <sender>TransformCostBox_3</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>217</x>
@@ -3421,7 +3482,7 @@
    <sender>TransformCostBox_4</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>217</x>
@@ -3437,7 +3498,7 @@
    <sender>FusionIDBox_1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>347</x>
@@ -3453,7 +3514,7 @@
    <sender>FusionIDBox_2</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>347</x>
@@ -3469,7 +3530,7 @@
    <sender>FusionIDBox_3</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>347</x>
@@ -3485,7 +3546,7 @@
    <sender>FusionCostBox_1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>407</x>
@@ -3501,7 +3562,7 @@
    <sender>FusionCostBox_2</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>407</x>
@@ -3517,7 +3578,7 @@
    <sender>FusionCostBox_3</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>407</x>
@@ -3533,7 +3594,7 @@
    <sender>ZSearchBox</sender>
    <signal>currentIndexChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeZSearch(int)</slot>
+   <slot>ComboBox_IndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>72</x>
@@ -3549,7 +3610,7 @@
    <sender>CounterBtn_1</sender>
    <signal>clicked()</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeCounterTech()</slot>
+   <slot>Button_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>622</x>
@@ -3565,7 +3626,7 @@
    <sender>CounterBtn_2</sender>
    <signal>clicked()</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeCounterTech()</slot>
+   <slot>Button_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>732</x>
@@ -3581,7 +3642,7 @@
    <sender>CounterBtn_3</sender>
    <signal>clicked()</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeCounterTech()</slot>
+   <slot>Button_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>842</x>
@@ -3594,10 +3655,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>KiBlastBox_1</sender>
+   <sender>KiBlastBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>92</x>
@@ -3610,10 +3671,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>KiBlastBox_2</sender>
+   <sender>KiBlastChargedBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>92</x>
@@ -3629,7 +3690,7 @@
    <sender>RushTechBtn_1</sender>
    <signal>clicked()</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeRushTech()</slot>
+   <slot>Button_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>552</x>
@@ -3645,7 +3706,7 @@
    <sender>RushTechBtn_2</sender>
    <signal>clicked()</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeRushTech()</slot>
+   <slot>Button_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>652</x>
@@ -3661,7 +3722,7 @@
    <sender>RushTechBtn_3</sender>
    <signal>clicked()</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeRushTech()</slot>
+   <slot>Button_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>752</x>
@@ -3677,7 +3738,7 @@
    <sender>RushTechBtn_4</sender>
    <signal>clicked()</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeRushTech()</slot>
+   <slot>Button_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>852</x>
@@ -3693,7 +3754,7 @@
    <sender>StepInBox</sender>
    <signal>currentIndexChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeStepInTech(int)</slot>
+   <slot>ComboBox_IndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>237</x>
@@ -3709,7 +3770,7 @@
    <sender>PartnerTeamIDBox_1_1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>617</x>
@@ -3725,7 +3786,7 @@
    <sender>PartnerTeamIDBox_1_2</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>667</x>
@@ -3741,7 +3802,7 @@
    <sender>PartnerTeamIDBox_1_3</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>717</x>
@@ -3757,7 +3818,7 @@
    <sender>PartnerTeamIDBox_1_4</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>767</x>
@@ -3773,7 +3834,7 @@
    <sender>PartnerTeamIDBox_1_5</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>817</x>
@@ -3789,7 +3850,7 @@
    <sender>PartnerTeamIDBox_1_6</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>867</x>
@@ -3805,7 +3866,7 @@
    <sender>PartnerTeamIDBox_2_1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>617</x>
@@ -3821,7 +3882,7 @@
    <sender>PartnerTeamIDBox_2_2</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>667</x>
@@ -3837,7 +3898,7 @@
    <sender>PartnerTeamIDBox_2_3</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>717</x>
@@ -3853,7 +3914,7 @@
    <sender>PartnerTeamIDBox_2_4</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>767</x>
@@ -3869,7 +3930,7 @@
    <sender>PartnerTeamIDBox_2_5</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>817</x>
@@ -3885,7 +3946,7 @@
    <sender>PartnerTeamIDBox_2_6</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>867</x>
@@ -3901,7 +3962,7 @@
    <sender>PartnerTeamIDBox_3_1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>617</x>
@@ -3917,7 +3978,7 @@
    <sender>PartnerTeamIDBox_3_2</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>667</x>
@@ -3933,7 +3994,7 @@
    <sender>PartnerTeamIDBox_3_3</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>717</x>
@@ -3949,7 +4010,7 @@
    <sender>PartnerTeamIDBox_3_4</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>767</x>
@@ -3965,7 +4026,7 @@
    <sender>PartnerTeamIDBox_3_5</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>817</x>
@@ -3981,7 +4042,7 @@
    <sender>PartnerTeamIDBox_3_6</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeID(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>867</x>
@@ -3997,7 +4058,7 @@
    <sender>AuraColorBox</sender>
    <signal>currentIndexChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAuraColor(int)</slot>
+   <slot>ComboBox_IndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>430</x>
@@ -4013,7 +4074,7 @@
    <sender>FusionTypeBtn_1</sender>
    <signal>clicked()</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFusionType()</slot>
+   <slot>Button_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>470</x>
@@ -4029,7 +4090,7 @@
    <sender>FusionTypeBtn_3</sender>
    <signal>clicked()</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFusionType()</slot>
+   <slot>Button_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>470</x>
@@ -4045,7 +4106,7 @@
    <sender>FusionTypeBtn_2</sender>
    <signal>clicked()</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFusionType()</slot>
+   <slot>Button_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>470</x>
@@ -4061,7 +4122,7 @@
    <sender>VanishingAttackBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>400</x>
@@ -4077,7 +4138,7 @@
    <sender>CollisionSpinBox_1</sender>
    <signal>valueChanged(double)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeDoubleAmount(double)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>755</x>
@@ -4093,7 +4154,7 @@
    <sender>CollisionSpinBox_2</sender>
    <signal>valueChanged(double)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeDoubleAmount(double)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>755</x>
@@ -4109,7 +4170,7 @@
    <sender>CollisionSpinBox_3</sender>
    <signal>valueChanged(double)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeDoubleAmount(double)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>755</x>
@@ -4122,10 +4183,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>KiChargeBox_1</sender>
+   <sender>KiChargeBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeIntAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>120</x>
@@ -4138,10 +4199,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>KiChargeBox_2</sender>
+   <sender>KiChargeWaterBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeIntAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>120</x>
@@ -4154,10 +4215,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>KiChargeBox_3</sender>
+   <sender>BaseKiRegenBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeIntAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>120</x>
@@ -4170,10 +4231,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>KiChargeBox_4</sender>
+   <sender>CounterKiBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeIntAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>120</x>
@@ -4189,7 +4250,7 @@
    <sender>DragonHomingBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>400</x>
@@ -4205,7 +4266,7 @@
    <sender>BlastGaugeBox</sender>
    <signal>valueChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeIntAmount(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>400</x>
@@ -4221,7 +4282,7 @@
    <sender>MaxPowDurBox</sender>
    <signal>valueChanged(double)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeDoubleAmount(double)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>405</x>
@@ -4237,7 +4298,7 @@
    <sender>ChargeBarSpdBox</sender>
    <signal>valueChanged(double)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeDoubleAmount(double)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>405</x>
@@ -4253,7 +4314,7 @@
    <sender>GravityBox</sender>
    <signal>valueChanged(double)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeDoubleAmount(double)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>485</x>
@@ -4269,7 +4330,7 @@
    <sender>DmgMulBox</sender>
    <signal>valueChanged(double)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeDoubleAmount(double)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>405</x>
@@ -4285,7 +4346,7 @@
    <sender>TeamGaugeBox</sender>
    <signal>valueChanged(double)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeDoubleAmount(double)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>485</x>
@@ -4301,7 +4362,7 @@
    <sender>Flag_1_1</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -4317,7 +4378,7 @@
    <sender>Flag_1_2</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -4333,7 +4394,7 @@
    <sender>Flag_1_3</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -4349,7 +4410,7 @@
    <sender>Flag_1_4</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -4365,7 +4426,7 @@
    <sender>Flag_1_5</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -4381,7 +4442,7 @@
    <sender>Flag_1_6</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -4397,7 +4458,7 @@
    <sender>Flag_1_7</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -4413,7 +4474,7 @@
    <sender>Flag_1_8</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -4429,7 +4490,7 @@
    <sender>Flag_2_1</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>247</x>
@@ -4445,7 +4506,7 @@
    <sender>Flag_2_2</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>247</x>
@@ -4461,7 +4522,7 @@
    <sender>Flag_2_5</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>270</x>
@@ -4477,7 +4538,7 @@
    <sender>Flag_2_3</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>247</x>
@@ -4493,7 +4554,7 @@
    <sender>Flag_2_4</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>270</x>
@@ -4509,7 +4570,7 @@
    <sender>Flag_2_6</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>247</x>
@@ -4525,7 +4586,7 @@
    <sender>Flag_2_7</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>247</x>
@@ -4541,7 +4602,7 @@
    <sender>Flag_2_8</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>270</x>
@@ -4554,10 +4615,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_5_1</sender>
+   <sender>Flag_3_1</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>450</x>
@@ -4570,10 +4631,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_5_2</sender>
+   <sender>Flag_3_2</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>450</x>
@@ -4586,10 +4647,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_5_3</sender>
+   <sender>Flag_3_3</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>450</x>
@@ -4602,10 +4663,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_5_4</sender>
+   <sender>Flag_3_4</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>450</x>
@@ -4618,10 +4679,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_5_5</sender>
+   <sender>Flag_3_5</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>427</x>
@@ -4634,10 +4695,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_5_6</sender>
+   <sender>Flag_3_6</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>460</x>
@@ -4650,10 +4711,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_5_7</sender>
+   <sender>Flag_3_7</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>427</x>
@@ -4666,10 +4727,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_5_8</sender>
+   <sender>Flag_3_8</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>450</x>
@@ -4682,10 +4743,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_6_1</sender>
+   <sender>Flag_4_1</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>630</x>
@@ -4698,10 +4759,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_6_2</sender>
+   <sender>Flag_4_2</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>635</x>
@@ -4714,10 +4775,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_6_4</sender>
+   <sender>Flag_4_4</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>640</x>
@@ -4730,10 +4791,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_6_3</sender>
+   <sender>Flag_4_3</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>640</x>
@@ -4746,10 +4807,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_6_5</sender>
+   <sender>Flag_4_5</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>607</x>
@@ -4762,10 +4823,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_6_6</sender>
+   <sender>Flag_4_6</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>635</x>
@@ -4778,10 +4839,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_6_7</sender>
+   <sender>Flag_4_7</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>630</x>
@@ -4794,10 +4855,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_6_8</sender>
+   <sender>Flag_4_8</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>630</x>
@@ -4810,10 +4871,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_7_1</sender>
+   <sender>Flag_5_1</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>810</x>
@@ -4826,10 +4887,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_7_2</sender>
+   <sender>Flag_5_2</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>815</x>
@@ -4842,10 +4903,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_7_3</sender>
+   <sender>Flag_5_3</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>815</x>
@@ -4858,10 +4919,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_7_5</sender>
+   <sender>Flag_5_5</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>787</x>
@@ -4874,10 +4935,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_7_4</sender>
+   <sender>Flag_5_4</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>810</x>
@@ -4890,10 +4951,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_7_6</sender>
+   <sender>Flag_5_6</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>787</x>
@@ -4906,10 +4967,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_7_7</sender>
+   <sender>Flag_5_7</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>787</x>
@@ -4922,10 +4983,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_7_8</sender>
+   <sender>Flag_5_8</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>787</x>
@@ -4938,10 +4999,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_8_2</sender>
+   <sender>Flag_6_2</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>167</x>
@@ -4954,10 +5015,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_8_1</sender>
+   <sender>Flag_6_1</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>167</x>
@@ -4970,10 +5031,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_8_3</sender>
+   <sender>Flag_6_3</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>190</x>
@@ -4986,10 +5047,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_8_4</sender>
+   <sender>Flag_6_4</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>167</x>
@@ -5002,10 +5063,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_8_5</sender>
+   <sender>Flag_6_5</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>185</x>
@@ -5018,10 +5079,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_8_6</sender>
+   <sender>Flag_6_6</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>167</x>
@@ -5034,10 +5095,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_8_7</sender>
+   <sender>Flag_6_7</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>167</x>
@@ -5050,10 +5111,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_8_8</sender>
+   <sender>Flag_6_8</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>167</x>
@@ -5066,10 +5127,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_9_1</sender>
+   <sender>Flag_7_1</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>337</x>
@@ -5082,10 +5143,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_9_2</sender>
+   <sender>Flag_7_2</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>337</x>
@@ -5098,10 +5159,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_9_3</sender>
+   <sender>Flag_7_3</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>355</x>
@@ -5114,10 +5175,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_9_4</sender>
+   <sender>Flag_7_4</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>360</x>
@@ -5130,10 +5191,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_9_5</sender>
+   <sender>Flag_7_5</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>337</x>
@@ -5146,10 +5207,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_9_6</sender>
+   <sender>Flag_7_6</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>337</x>
@@ -5162,10 +5223,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_9_8</sender>
+   <sender>Flag_7_8</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>355</x>
@@ -5178,10 +5239,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_9_7</sender>
+   <sender>Flag_7_7</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>355</x>
@@ -5194,10 +5255,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_10_1</sender>
+   <sender>Flag_8_1</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>535</x>
@@ -5210,10 +5271,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_10_2</sender>
+   <sender>Flag_8_2</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>507</x>
@@ -5226,10 +5287,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_10_4</sender>
+   <sender>Flag_8_4</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>507</x>
@@ -5242,10 +5303,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_10_3</sender>
+   <sender>Flag_8_3</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>507</x>
@@ -5258,10 +5319,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_10_5</sender>
+   <sender>Flag_8_5</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>507</x>
@@ -5274,10 +5335,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_10_6</sender>
+   <sender>Flag_8_6</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>507</x>
@@ -5290,10 +5351,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_10_7</sender>
+   <sender>Flag_8_7</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>507</x>
@@ -5306,10 +5367,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_10_8</sender>
+   <sender>Flag_8_8</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>507</x>
@@ -5322,10 +5383,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_15_1</sender>
+   <sender>Flag_9_9</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>677</x>
@@ -5338,10 +5399,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_15_2</sender>
+   <sender>Flag_9_2</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>677</x>
@@ -5354,10 +5415,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_15_3</sender>
+   <sender>Flag_9_3</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>677</x>
@@ -5370,10 +5431,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_15_4</sender>
+   <sender>Flag_9_4</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>677</x>
@@ -5386,10 +5447,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_15_5</sender>
+   <sender>Flag_9_5</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>677</x>
@@ -5402,10 +5463,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_15_6</sender>
+   <sender>Flag_9_6</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>700</x>
@@ -5418,10 +5479,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_15_7</sender>
+   <sender>Flag_9_7</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>677</x>
@@ -5434,10 +5495,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>Flag_15_8</sender>
+   <sender>Flag_9_8</sender>
    <signal>stateChanged(int)</signal>
    <receiver>GeneralFrame</receiver>
-   <slot>ChangeFlagState(int)</slot>
+   <slot>Flag_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>677</x>
@@ -5451,16 +5512,10 @@
   </connection>
  </connections>
  <slots>
-  <slot>ChangeID(int)</slot>
-  <slot>ChangeAmount(int)</slot>
-  <slot>ChangeRushTech()</slot>
-  <slot>ChangeCounterTech()</slot>
-  <slot>ChangeZSearch(int)</slot>
-  <slot>ChangeStepInTech(int)</slot>
-  <slot>ChangeAuraColor(int)</slot>
-  <slot>ChangeFusionType()</slot>
-  <slot>ChangeDoubleAmount(double)</slot>
-  <slot>ChangeIntAmount(int)</slot>
-  <slot>ChangeFlagState(int)</slot>
+  <slot>QSpinBox_Changed(int)</slot>
+  <slot>QDoubleSpinBox_Changed(double)</slot>
+  <slot>Flag_Changed(int)</slot>
+  <slot>Button_Clicked()</slot>
+  <slot>ComboBox_IndexChanged(int)</slot>
  </slots>
 </ui>

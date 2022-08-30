@@ -13,18 +13,20 @@ NeoStudio::NeoStudio(QWidget* parent) :
     ui->graphicsView_1->setScene(scene);
     ui->graphicsView_2->setScene(scene);
     ui->graphicsView_3->setScene(scene);
+    Debug::Log("NeoStudio constructed.", Debug::INFO);
 }
 
 NeoStudio::~NeoStudio() = default;
 
 void NeoStudio::OpenFile()
 {
+    Debug::Log("OpenFile called.", Debug::INFO);
     file = QFileDialog::getOpenFileName(this, tr("Open File"),
                                                 "/home",
                                                 tr("Character Files (*.pak)(*.pak)"));//;;Parameter Files (*.dat)(*.dat)"));    This feature might be implemented at some point
     if(file == NULL)
     {
-        Debug::ConsolePrint("Warning! OpenFile: No file selected.");
+        Debug::Log("OpenFile: No file selected.", Debug::WARNING);
         return;
     }
     QString PakName = file.split('/')[(file.split('/').length()-1)];
@@ -35,39 +37,46 @@ void NeoStudio::OpenFile()
 
 void NeoStudio::SaveFile()
 {
+    Debug::Log("SaveFile called.", Debug::INFO);
     if(file == NULL)
     {
-        Debug::ConsolePrint("Error! SaveFile: No file open.");
+        Debug::Log("SaveFile: No file open.", Debug::ERROR);
         return;
     }
 
-    pak->UpdateParamData(GENERAL, generalWindow->paramData);
+    pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
     pak->SavePak(file);
 }
 
 void NeoStudio::SaveFileAs()
 {
+    Debug::Log("SaveFileAs called.", Debug::INFO);
     if(file == NULL)
     {
-        Debug::ConsolePrint("Error! SaveFileAs: No file open.");
+        Debug::Log("SaveFileAs: No file open.", Debug::ERROR);
         return;
     }
 
-    QString newFile = QFileDialog::getSaveFileName(this, tr("Open File"),
+    QString newFile = QFileDialog::getSaveFileName(this, tr("Save File"),
                                                 "/home",
                                                 tr("Character Files (*.pak)(*.pak)"));//;;Parameter Files (*.dat)(*.dat)"));    This feature might be implemented at some point
     if(newFile == NULL)
     {
-        Debug::ConsolePrint("Warning! SaveFileAs: No file selected.");
+        Debug::Log("SaveFileAs: No file selected.", Debug::WARNING);
         return;
     }
-
-    pak->UpdateParamData(GENERAL, generalWindow->paramData);
+    pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
     pak->SavePak(newFile);
 }
 
 void NeoStudio::CloseFile()
 {
+    if(file == NULL)
+    {
+        Debug::Log("CloseFile: No file open.", Debug::ERROR);
+        return;
+    }
+    Debug::Log("CloseFile called.", Debug::INFO);
     if(generalWindow == nullptr) return;
     generalWindow->close();
     file = "";
@@ -75,11 +84,13 @@ void NeoStudio::CloseFile()
 
 void NeoStudio::OpenAbout()
 {
+    Debug::Log("About page opened.", Debug::INFO);
     (new AboutWindow())->exec();
 }
 
 void NeoStudio::InitFile()
 {
+    Debug::Log("InitFile called.", Debug::INFO);
     pak = new PakControls(file);
     if(pak->HasFailed()) return;
     ui->ParameterTabs->setCurrentIndex(GENERAL);

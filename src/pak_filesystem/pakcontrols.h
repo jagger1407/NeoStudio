@@ -1,8 +1,8 @@
 #ifndef PAKCONTROLS_H
 #define PAKCONTROLS_H
 
-#include "fileparse.h"
-#include "neo_info.h"
+#include "src/external/fileparse.h"
+#include "src/neo_info.h"
 
 /**
  * Object to handle and parse .pak files
@@ -21,15 +21,21 @@ public:
     /**Returns whole pak file as a QByteArray.*/
     QByteArray GetPakData();
     /**Returns specific parameter section as a QByteArray.*/
-    QByteArray GetParamData(Parameter ParamType);
+    QByteArray GetParamData(ParameterType ParamType);
     /**Updates specific parameter array with Data.*/
-    void UpdateParamData(Parameter ParamType, QByteArray Data);
+    void UpdateParamData(ParameterType ParamType, QByteArray Data);
 private:
+    /**QByteArray containing everything that comes before the general parameters.*/
     QByteArray LeftPak;
+    /**QByteArray containing everything that comes after the last known parameter type (Movement).*/
     QByteArray RightPak;
+    /**QByteArray array containing the data for each respective parameter type.*/
     QByteArray paramData[4];
+    /**int array containing the offsets needed to get to each parameter data section.*/
     int paramOffset[5];
+    /**int array containing the size of each parameter section.*/
     int paramSize[4];
+    /**bool to check if the construction of the PakControls object failed.*/
     bool failed = true;
 };
 

@@ -13,19 +13,28 @@ find_package(Qt5Widgets CONFIG REQUIRED)
 
 set(neostudio_SRC
   # qt libraries
-  src/qt_includes.h
+  # These are necessary for the program to work with the Qt Framework
+  src/external/qt_includes.h
   # src
+  # This is where the main logic is
   src/main.cpp
-  src/fileparse.cpp
-  src/debug.cpp
-  src/flagbyte.h
-  src/pakcontrols.cpp
-  # ui
-  src/ui/neostudio.cpp
-  src/ui/generalframe.cpp
-  src/ui/aboutwindow.cpp
-  # game logic
   src/neo_info.h
+  # external
+  # These are the classes that are general purpose,
+  # or classes that write externally (i.e. files)
+  src/external/fileparse.cpp
+  src/external/debug.cpp
+  src/external/bitmanipulation.h
+  # fs
+  # These classes are for all the logic concerning the .pak file specifically
+  src/pak_filesystem/parameterfile.h
+  src/pak_filesystem/generalparameters.cpp
+  src/pak_filesystem/pakcontrols.cpp
+  # ui
+  # These classes are all the UI Dialogs/Windows that this program has
+  src/ui/neostudio.cpp
+  src/ui/aboutwindow.cpp
+  src/ui/paramSections/generalframe.cpp
 )
 
 # Tell CMake to create the executable

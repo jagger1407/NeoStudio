@@ -5,7 +5,14 @@ NeoStudio::NeoStudio(QWidget* parent) :
     QMainWindow(parent),
     ui(new Ui::NeoStudio)
 {
+    if(!FileParse::DoesFileExist(CONFIG_PATH))
+    {
+        OptionProcessing::SaveConfigFile(OptionProcessing::DEFAULT_LOGMODE, OptionProcessing::DEFAULT_TOOLTIPCOLOR, OptionProcessing::DEFAULT_UIMODE);
+    }
+
     ui->setupUi(this);
+    ResetUiMode();
+
     QGraphicsScene* scene = new QGraphicsScene();
     // Drip Code
     scene->addPixmap((*new QPixmap("./assets/UnderConstruction.png")).scaled(ui->graphicsView_1->width(), ui->graphicsView_1->height()));
@@ -14,13 +21,14 @@ NeoStudio::NeoStudio(QWidget* parent) :
     ui->graphicsView_2->setScene(scene);
     ui->graphicsView_3->setScene(scene);
     Debug::Log("NeoStudio constructed.", Debug::INFO);
+
 }
 
 NeoStudio::~NeoStudio() = default;
 
 void NeoStudio::OpenFile()
 {
-    Debug::Log("OpenFile called.", Debug::INFO);
+    Debug::Log("OpenFile slot triggered.", Debug::INFO);
     file = QFileDialog::getOpenFileName(this, tr("Open File"),
                                                 "/home",
                                                 tr("Character Files (*.pak)(*.pak)"));//;;Parameter Files (*.dat)(*.dat)"));    This feature might be implemented at some point
@@ -37,7 +45,7 @@ void NeoStudio::OpenFile()
 
 void NeoStudio::SaveFile()
 {
-    Debug::Log("SaveFile called.", Debug::INFO);
+    Debug::Log("SaveFile slot triggered.", Debug::INFO);
     if(file == NULL)
     {
         Debug::Log("SaveFile: No file open.", Debug::ERROR);
@@ -50,7 +58,7 @@ void NeoStudio::SaveFile()
 
 void NeoStudio::SaveFileAs()
 {
-    Debug::Log("SaveFileAs called.", Debug::INFO);
+    Debug::Log("SaveFileAs slot triggered.", Debug::INFO);
     if(file == NULL)
     {
         Debug::Log("SaveFileAs: No file open.", Debug::ERROR);
@@ -76,7 +84,7 @@ void NeoStudio::CloseFile()
         Debug::Log("CloseFile: No file open.", Debug::ERROR);
         return;
     }
-    Debug::Log("CloseFile called.", Debug::INFO);
+    Debug::Log("CloseFile slot triggered.", Debug::INFO);
     if(generalWindow == nullptr) return;
     generalWindow->close();
     file = "";
@@ -87,6 +95,14 @@ void NeoStudio::OpenAbout()
     Debug::Log("About page opened.", Debug::INFO);
     (new AboutWindow())->exec();
 }
+void NeoStudio::OpenOptions()
+{
+    Debug::Log("Option Dialog opened.", Debug::INFO);
+    (new OptionDialog())->exec();
+    ResetUiMode();
+    if(generalWindow != nullptr) generalWindow->ResetUiMode();
+}
+
 
 void NeoStudio::InitFile()
 {
@@ -97,3 +113,19 @@ void NeoStudio::InitFile()
     generalWindow = new GeneralFrame(pak);
     ui->GeneralScrollArea->setWidget(generalWindow);
 }
+
+void NeoStudio::ResetUiMode()
+{
+    unsigned char currentMode = OptionProcessing::GetOption("UiMode");
+    if(currentMode == OptionProcessing::LIGHT)
+    {
+        this->setStyleSheet("background:white; color: black");
+        ui->FileLbl->setStyleSheet("color:black");
+    }
+    else if(currentMode == OptionProcessing::DARK)
+    {
+        this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
+        ui->FileLbl->setStyleSheet("color:white");
+    }
+}
+

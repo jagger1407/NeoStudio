@@ -16,6 +16,12 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>953</width>
+    <height>731</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
     <width>953</width>
@@ -190,7 +196,7 @@
      <x>0</x>
      <y>0</y>
      <width>953</width>
-     <height>23</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="MenuFile">
@@ -207,6 +213,7 @@
      <string>Help</string>
     </property>
     <addaction name="ActionAbout"/>
+    <addaction name="ActionOptions"/>
    </widget>
    <addaction name="MenuFile"/>
    <addaction name="MenuHelp"/>
@@ -234,6 +241,11 @@
   <action name="ActionClose">
    <property name="text">
     <string>Close File</string>
+   </property>
+  </action>
+  <action name="ActionOptions">
+   <property name="text">
+    <string>Options</string>
    </property>
   </action>
  </widget>
@@ -319,6 +331,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>ActionOptions</sender>
+   <signal>triggered()</signal>
+   <receiver>NeoStudio</receiver>
+   <slot>OpenOptions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>476</x>
+     <y>365</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>OpenFile()</slot>
@@ -326,5 +354,6 @@
   <slot>OpenAbout()</slot>
   <slot>SaveFileAs()</slot>
   <slot>CloseFile()</slot>
+  <slot>OpenOptions()</slot>
  </slots>
 </ui>

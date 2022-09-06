@@ -48,10 +48,15 @@ QByteArray FileParse::ReadWholeFile(QString FilePath)
 void FileParse::WriteFile(QString FilePath, QByteArray* Data)
 {
     Debug::Log("WriteFile called.", Debug::INFO);
-    // Don't wanna corrupt the existing file, after all
-    if(QFile(FilePath).exists()) QFile(FilePath).remove();
-
     QFile newFile(FilePath);
+    // Check FilePath if it even has a value
+    if(FilePath == "")
+    {
+        Debug::Log("WriteFile: No path given.", Debug::WARNING);
+    }
+    // Don't wanna corrupt the existing file, after all
+    if(newFile.exists()) newFile.remove();
+
     newFile.open(QIODevice::ReadWrite);
     // Unlikely but you can't be too sure
     if(Data == nullptr)
@@ -63,3 +68,22 @@ void FileParse::WriteFile(QString FilePath, QByteArray* Data)
     newFile.write(*Data);
     newFile.close();
 }
+void FileParse::AppendLine(QString FilePath, QString line)
+{
+    Debug::Log("AppendLine called.", Debug::INFO);
+    QFile currentFile(FilePath);
+    // Check FilePath if it even has a value
+    if(FilePath == "")
+    {
+        Debug::Log("AppendLine: No path given.", Debug::WARNING);
+    }
+
+    currentFile.open(QIODevice::Append);
+    currentFile.write(line.toUtf8());
+    currentFile.close();
+}
+bool FileParse::DoesFileExist(QString FilePath)
+{
+    return QFile(FilePath).exists();
+}
+

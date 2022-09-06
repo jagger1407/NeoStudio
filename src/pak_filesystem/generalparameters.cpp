@@ -68,7 +68,7 @@ float GeneralParameters::GetFloatParameter(QString ObjectName)
     Debug::Log("GetFloatParameter called.", Debug::INFO);
     if(ObjectName == "MaxPowDurBox") return *(float*)(constData + maxPowerModeDuration);
     else if(ObjectName == "GravityBox") return *(float*)(constData + gravity);
-    else if(ObjectName == "CollisionSpinBox") return *(float*)(constData + collision[ObjectName.right(1).toInt() - 1]);
+    else if(ObjectName.contains("CollisionSpinBox")) return *(float*)(constData + collision[ObjectName.right(1).toUShort() - 1]);
     else if(ObjectName == "DmgMulBox") return *(float*)(constData + damageMultiplier);
     else if(ObjectName == "TeamGaugeBox") return *(float*)(constData + switchRegenSpeed);
     else if(ObjectName == "ChargeBarSpdBox") return *(float*)(constData + meleeChargeSpeed);
@@ -137,9 +137,10 @@ void GeneralParameters::SetIntParameter(QString ObjectName, int NewValue)
 void GeneralParameters::SetFloatParameter(QString ObjectName, float NewValue)
 {
     Debug::Log("SetFloatParameter called.", Debug::INFO);
+    QStringList objName = ObjectName.split('_');
     if(ObjectName == "MaxPowDurBox") ChangeData(maxPowerModeDuration, NewValue);
     else if(ObjectName == "GravityBox") ChangeData(gravity, NewValue);
-    else if(ObjectName == "CollisionSpinBox") ChangeData(collision[ObjectName.right(1).toInt() - 1], NewValue);
+    else if(ObjectName.contains("CollisionSpinBox")) ChangeData(collision[ObjectName.right(1).toUShort() - 1], NewValue);
     else if(ObjectName == "DmgMulBox") ChangeData(damageMultiplier, NewValue);
     else if(ObjectName == "TeamGaugeBox") ChangeData(switchRegenSpeed, NewValue);
     else if(ObjectName == "ChargeBarSpdBox") ChangeData(meleeChargeSpeed, NewValue);

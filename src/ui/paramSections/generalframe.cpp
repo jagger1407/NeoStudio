@@ -28,7 +28,8 @@ void GeneralFrame::InitializeUIElements()
 
     for(int i=0;i<labels.count();i++)
     {
-        if(!labels[i]->toolTip().isEmpty()) labels[i]->setToolTip("<font color=\"black\">" + labels[i]->toolTip() + "</font>");
+        if(labels[i]->toolTip().isEmpty()) continue;
+        labels[i]->setToolTip(TooltipStyles[OptionProcessing::GetOption("TooltipColor")] + labels[i]->toolTip() + "</font>");
     }
     for(int i=0;i<spinBoxes.count();i++)
     {
@@ -190,3 +191,26 @@ void GeneralFrame::ButtonValueGet(QPushButton* Button)
         }
     }
 }
+
+void GeneralFrame::ResetUiMode()
+{
+    unsigned char currentMode = OptionProcessing::GetOption("UiMode");
+    if(currentMode == OptionProcessing::LIGHT)
+    {
+        this->setStyleSheet("background:white; color: black");
+    }
+    else if(currentMode == OptionProcessing::DARK)
+    {
+        this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
+    }
+    QList<QLabel*> labels = this->findChildren<QLabel*>();
+    for(int i=0;i<labels.count();i++)
+    {
+        if(labels[i]->toolTip().isEmpty()) continue;
+        QString text = labels[i]->toolTip();
+        text = text.split(">")[1];
+        text.replace("</font>", "");
+        labels[i]->setToolTip(TooltipStyles[OptionProcessing::GetOption("TooltipColor")] + text + "</font>");
+    }
+}
+

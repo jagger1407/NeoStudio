@@ -11,6 +11,7 @@ class ParameterFile
 {
 
 public:
+#define param_offset const unsigned char
     void ChangeData(int Offset, unsigned char Value)
     {
         fileData.data()[Offset] = Value;

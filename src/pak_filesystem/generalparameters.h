@@ -5,8 +5,6 @@
 #include "src/external/bitmanipulation.h"
 #include "src/external/debug.h"
 
-#define param_offset const unsigned char
-
 /**
  * Object for the general parameter section of a .pak file.
  */

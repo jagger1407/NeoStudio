@@ -26,6 +26,8 @@ public:
     Ui_GeneralFrame* ui;
     /**Pointer used to access Parameters that this QFrame is editing.*/
     GeneralParameters* gp;
+    /**Checks the UI mode and sets the Stylesheet accordingly.*/
+    void ResetUiMode();
 private:
     /**Checks to see if the UI is initializing, used to supress slots while initializing.*/
     bool IsInitializing = false;
@@ -35,6 +37,12 @@ private:
     void ButtonChange(QPushButton* Button);
     /**Method to get the parameter value each button represents, created to keep InitializeUIElements clean.*/
     void ButtonValueGet(QPushButton* Button);
+    /**List of all Sytlesheets for every TooltipColor choice.*/
+    const QStringList TooltipStyles = { "<font color=\"white\">",
+                                        "<font color=\"black\">",
+                                        "<font color=\"blue\">",
+                                        "<font color=\"red\">"
+                                      };
 private slots:
     /**This slot gets triggered everytime the value of a QSpinBox changes.*/
     void QSpinBox_Changed(int NewValue);

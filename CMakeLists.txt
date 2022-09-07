@@ -25,6 +25,7 @@ set(neostudio_SRC
   src/external/fileparse.cpp
   src/external/debug.cpp
   src/external/bitmanipulation.h
+  src/external/optionprocessing.h
   # fs
   # These classes are for all the logic concerning the .pak file specifically
   src/pak_filesystem/parameterfile.h
@@ -33,7 +34,8 @@ set(neostudio_SRC
   # ui
   # These classes are all the UI Dialogs/Windows that this program has
   src/ui/neostudio.cpp
-  src/ui/aboutwindow.cpp
+  src/ui/menu/aboutwindow.cpp
+  src/ui/menu/optiondialog.cpp
   src/ui/paramSections/generalframe.cpp
 )
 

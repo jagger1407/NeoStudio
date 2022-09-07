@@ -99,7 +99,7 @@ public:
     {
         QFile* configFile = new QFile(CONFIG_PATH);
         if(configFile->exists()) configFile->remove();
-        configFile->open(QIODevice::Append);
+        configFile->open(QIODevice::ReadWrite);
 
         QString line = "LogMode = ";
         switch((LogMode)Log_Mode)

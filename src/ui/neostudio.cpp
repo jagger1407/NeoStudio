@@ -11,6 +11,7 @@ NeoStudio::NeoStudio(QWidget* parent) :
     }
 
     ui->setupUi(this);
+    this->setWindowTitle("Neo Studio v0.2");
     ResetUiMode();
 
     QGraphicsScene* scene = new QGraphicsScene();
@@ -122,11 +123,13 @@ void NeoStudio::ResetUiMode()
     {
         this->setStyleSheet("background:white; color: black");
         ui->FileLbl->setStyleSheet("color:black");
+        ui->GeneralTab->setStyleSheet("color:black;background:white;");
     }
     else if(currentMode == OptionProcessing::DARK)
     {
         this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
         ui->FileLbl->setStyleSheet("color:white");
+        ui->GeneralTab->setStyleSheet("color:black;background:rgb(50,54,60);");
     }
 }
 

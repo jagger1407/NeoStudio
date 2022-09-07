@@ -92,12 +92,12 @@ void GeneralParameters::SetUByteParameter(QString ObjectName, unsigned char NewV
     if(objName.count() > 1) objNum[0] = objName[1].toUShort();
     if(objName.count() > 2) objNum[1] = objName[2].toUShort();
     if(objName[0] == "TransformIDBox") ChangeData(transformation[objNum[0] - 1], NewValue);
-    else if(objName[0] == "TransformCostBox") ChangeData(transformationCost[objNum[0] - 1], NewValue);
-    else if(objName[0] == "FusionCostBox") ChangeData(fusionCost[objNum[0] - 1], NewValue);
-    else if(objName[0] == "FusionTypeBtn") ChangeData(fusionType[objNum[0] - 1], NewValue);
     else if(objName[0] == "FusionIDBox") ChangeData(fusionCharID[objNum[0] - 1], NewValue);
     else if(objName[0] == "PartnerIDBox") ChangeData(fusionPartnerID[objNum[0] - 1], NewValue);
     else if(objName[0] == "PartnerTeamIDBox") ChangeData(fusionTeamID[objNum[0] - 1][objNum[1] - 1], NewValue);
+    else if(objName[0] == "TransformCostBox") ChangeData(transformationCost[objNum[0] - 1], NewValue);
+    else if(objName[0] == "FusionCostBox") ChangeData(fusionCost[objNum[0] - 1], NewValue);
+    else if(objName[0] == "FusionTypeBtn") ChangeData(fusionType[objNum[0] - 1], NewValue);
     else if(objName[0] == "ZSearchBox") ChangeData(zSearchType, NewValue);
     else if(objName[0] == "AuraColorBox") ChangeData(auraColor, NewValue);
     else if(objName[0] == "RushTechBtn") ChangeData(rushingTechnique[objNum[0] - 1], NewValue);

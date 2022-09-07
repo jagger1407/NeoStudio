@@ -4,6 +4,8 @@ OptionDialog::OptionDialog()
     : ui(new Ui::OptionDialog)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Options");
+    this->setWindowIcon(QIcon("./assets/cog-wheel.png"));
     ui->LogModeBox->setCurrentIndex(OptionProcessing::GetOption("LogMode"));
     ui->TooltipBox->setCurrentIndex(OptionProcessing::GetOption("TooltipColor"));
     ui->UiModeBox->setCurrentIndex(OptionProcessing::GetOption("UiMode"));

@@ -63,7 +63,18 @@ void GeneralFrame::QSpinBox_Changed(int NewValue)
     Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO);
     QSpinBox* spinBox = (QSpinBox*)sender();
     if(spinBox->maximum() > 255) gp->SetIntParameter(spinBox->objectName(), NewValue);
-    else gp->SetUByteParameter(spinBox->objectName(), NewValue);
+    else
+    {
+        if(spinBox->objectName().contains("ID"))
+        {
+            if(NewValue > ROSTER_SIZE)
+            {
+                gp->SetUByteParameter(spinBox->objectName(), 255);
+                spinBox->setValue(255);
+            }
+            else gp->SetUByteParameter(spinBox->objectName(), NewValue);
+        }
+    }
 }
 void GeneralFrame::QDoubleSpinBox_Changed(double NewValue)
 {

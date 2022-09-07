@@ -88,6 +88,7 @@ void NeoStudio::CloseFile()
     if(generalWindow == nullptr) return;
     generalWindow->close();
     file = "";
+    ui->FileLbl->setText("Open A Character File...");
 }
 
 void NeoStudio::OpenAbout()

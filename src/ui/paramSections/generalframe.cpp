@@ -13,6 +13,7 @@ GeneralFrame::GeneralFrame(PakControls* Pak, QWidget* parent) : QFrame(parent)
     gp = new GeneralParameters(Pak->GetParamData(GENERAL));
 
     InitializeUIElements();
+    ResetUiMode();
 }
 void GeneralFrame::InitializeUIElements()
 {
@@ -155,6 +156,24 @@ void GeneralFrame::ButtonChange(QPushButton* Button)
             Button->setText("No Counter");
         }
     }
+    else if(Button->objectName().contains("FusionType"))
+    {
+        if(Button->text() == "None")
+        {
+            gp->SetUByteParameter(Button->objectName(), FUSION_DANCE);
+            Button->setText("Dance");
+        }
+        else if(Button->text() == "Dance")
+        {
+            gp->SetUByteParameter(Button->objectName(), POTARA);
+            Button->setText("Potara");
+        }
+        else if(Button->text() == "Potara")
+        {
+            gp->SetUByteParameter(Button->objectName(), NO_FUSION);
+            Button->setText("None");
+        }
+    }
 }
 void GeneralFrame::ButtonValueGet(QPushButton* Button)
 {
@@ -205,14 +224,43 @@ void GeneralFrame::ButtonValueGet(QPushButton* Button)
 
 void GeneralFrame::ResetUiMode()
 {
+    QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
+    QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();
+    QList<QComboBox*> comboBoxes = this->findChildren<QComboBox*>();
     unsigned char currentMode = OptionProcessing::GetOption("UiMode");
     if(currentMode == OptionProcessing::LIGHT)
     {
         this->setStyleSheet("background:white; color: black");
+
+        for(int i=0;i<spinBoxes.count();i++)
+        {
+            spinBoxes[i]->setStyleSheet("");
+        }
+        for(int i=0;i<dblSpinBoxes.count();i++)
+        {
+            dblSpinBoxes[i]->setStyleSheet("");
+        }
+        for(int i=0;i<comboBoxes.count();i++)
+        {
+            comboBoxes[i]->setStyleSheet("");
+        }
     }
     else if(currentMode == OptionProcessing::DARK)
     {
         this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
+
+        for(int i=0;i<spinBoxes.count();i++)
+        {
+            spinBoxes[i]->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
+        }
+        for(int i=0;i<dblSpinBoxes.count();i++)
+        {
+            dblSpinBoxes[i]->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
+        }
+        for(int i=0;i<comboBoxes.count();i++)
+        {
+            comboBoxes[i]->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
+        }
     }
     QList<QLabel*> labels = this->findChildren<QLabel*>();
     for(int i=0;i<labels.count();i++)

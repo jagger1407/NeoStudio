@@ -35,6 +35,9 @@
    <string notr="true">background:rgb(50, 54, 60) ; color: white</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <widget class="QTabWidget" name="ParameterTabs">
     <property name="geometry">
      <rect>
@@ -44,10 +47,16 @@
       <height>671</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="GeneralTab">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <attribute name="title">
       <string>General</string>
      </attribute>
@@ -59,6 +68,9 @@
         <width>941</width>
         <height>641</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -77,6 +89,9 @@
          <width>910</width>
          <height>637</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
        </property>
       </widget>
      </widget>
@@ -175,7 +190,6 @@
     <property name="font">
      <font>
       <pointsize>14</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -196,7 +210,7 @@
      <x>0</x>
      <y>0</y>
      <width>953</width>
-     <height>30</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="MenuFile">

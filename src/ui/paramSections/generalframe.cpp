@@ -228,6 +228,7 @@ void GeneralFrame::ResetUiMode()
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();
     QList<QComboBox*> comboBoxes = this->findChildren<QComboBox*>();
     unsigned char currentMode = OptionProcessing::GetOption("UiMode");
+    unsigned char currentTooltipColor = OptionProcessing::GetOption("TooltipColor");
     if(currentMode == OptionProcessing::LIGHT)
     {
         this->setStyleSheet("background:white; color: black");
@@ -269,7 +270,16 @@ void GeneralFrame::ResetUiMode()
         QString text = labels[i]->toolTip();
         text = text.split(">")[1];
         text.replace("</font>", "");
-        labels[i]->setToolTip(TooltipStyles[OptionProcessing::GetOption("TooltipColor")] + text + "</font>");
+        labels[i]->setToolTip(TooltipStyles[currentTooltipColor] + text + "</font>");
+    }
+    QList<QCheckBox*> flagBoxes = this->findChildren<QCheckBox*>();
+    for(int i=0;i<flagBoxes.count();i++)
+    {
+        if(flagBoxes[i]->toolTip().isEmpty()) continue;
+        QString text = flagBoxes[i]->toolTip();
+        text = text.split(">")[1];
+        text.replace("</font>", "");
+        flagBoxes[i]->setToolTip(TooltipStyles[currentTooltipColor] + text + "</font>");
     }
 }
 

@@ -2,6 +2,7 @@
 #define PARAMETERFILE_H
 
 #include "src/external/qt_includes.h"
+#include "src/external/bitmanipulation.h"
 #include "src/neo_info.h"
 
 /**
@@ -11,10 +12,14 @@ class ParameterFile
 {
 
 public:
-#define param_offset const unsigned char
+    typedef const unsigned char param_offset;
+    void ChangeData(int Offset, int bit, bool Value)
+    {
+        BitManipulation::SetBit(fileData.data() + Offset, bit, Value);
+    }
     void ChangeData(int Offset, unsigned char Value)
     {
-        fileData.data()[Offset] = Value;
+        *(fileData.data() + Offset) = Value;
     }
     void ChangeData(int Offset, unsigned short Value)
     {
@@ -34,25 +39,25 @@ public:
     }
     virtual ParameterType GetParameterType() { return (ParameterType)0; }
     /**Gets the Single-Byte parameter value of the parameter corresponding to the Object.*/
-    virtual unsigned char GetUByteParameter(QString ObjectName) { return 0; }
+    virtual unsigned char GetUByteParameter(QSpinBox* Object) { return 0; }
     /**Gets the 2-Byte parameter value of the parameter corresponding to the Object.*/
-    virtual unsigned short GetUShortParameter(QString ObjectName) { return 0; }
+    virtual unsigned short GetUShortParameter(QSpinBox* Object) { return 0; }
     /**Gets the 4-Byte parameter value of the parameter corresponding to the Object.*/
-    virtual int GetIntParameter(QString ObjectName) { return 0; }
+    virtual int GetIntParameter(QSpinBox* Object) { return 0; }
     /**Gets the Float parameter value of the parameter corresponding to the Object.*/
-    virtual float GetFloatParameter(QString ObjectName) { return 0; }
+    virtual float GetFloatParameter(QDoubleSpinBox* Object) { return 0; }
     /**Gets the 1-Bit parameter value of the parameter corresponding to the Object.*/
-    virtual bool GetFlagParameter(QString ObjectName) { return 0; }
+    virtual bool GetFlagParameter(QCheckBox* Object) { return 0; }
     /**Sets the Single-Byte parameter value of the parameter corresponding to the Object to NewValue.*/
-    virtual void SetUByteParameter(QString ObjectName, unsigned char NewValue) {}
+    virtual void SetUByteParameter(QSpinBox* Object, unsigned char NewValue) {}
     /**Sets the 2-Byte parameter value of the parameter corresponding to the Object to NewValue.*/
-    virtual void SetUShortParameter(QString ObjectName, unsigned short NewValue) {}
+    virtual void SetUShortParameter(QSpinBox* Object, unsigned short NewValue) {}
     /**Sets the 4-Byte parameter value of the parameter corresponding to the Object to NewValue.*/
-    virtual void SetIntParameter(QString ObjectName, int NewValue) {}
+    virtual void SetIntParameter(QSpinBox* Object, int NewValue) {}
     /**Sets the Float parameter value of the parameter corresponding to the Object to NewValue.*/
-    virtual void SetFloatParameter(QString ObjectName, float NewValue) {}
+    virtual void SetFloatParameter(QDoubleSpinBox* Object, float NewValue) {}
     /**Sets the 1-Bit parameter value of the parameter corresponding to the Object to NewValue.*/
-    virtual void SetFlagParameter(QString ObjectName, bool NewValue) {}
+    virtual void SetFlagParameter(QCheckBox* Object, bool NewValue) {}
     /**Checks to see if the given QByteArray representing the parameter file data is empty.*/
     bool IsEmpty()
     { return fileData.isEmpty(); }
@@ -63,6 +68,7 @@ public:
 protected:
     /**The QByteArray that includes the data of the entire parameter file.*/
     QByteArray fileData;
+    QList<QObject*>* uiElements = nullptr;
 };
 
 #endif // PARAMETERFILE_H

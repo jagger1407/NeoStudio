@@ -1,0 +1,3470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MeleeFrame</class>
+ <widget class="QFrame" name="MeleeFrame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>922</width>
+    <height>647</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Frame</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(50, 54, 60); color: white</string>
+  </property>
+  <widget class="QComboBox" name="AttackSelectionBox">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>70</y>
+     <width>321</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+   </property>
+   <property name="currentIndex">
+    <number>-1</number>
+   </property>
+   <item>
+    <property name="text">
+     <string>Strike 1 (Primary Combo Set)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Strike 2 (Primary Combo Set)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Strike 3 (Primary Combo Set)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Strike 4 (Primary Combo Set)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Strike 5 (Primary Combo Set)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Strike 1 (Secondary Combo Set)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Strike 2 (Secondary Combo Set)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Strike 3 (Secondary Combo Set)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Strike 4 (Secondary Combo Set)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Strike 5 (Secondary Combo Set)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Heavy Finisher (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Heavy Finisher (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Heavy Finisher (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Heavy Crush (1st Hit)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Heavy Crush (2nd Hit)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Heavy Crush (3rd Hit)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Flying Kicks (Part 1)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Left (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Right (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Up (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Down (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Neutral (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Left (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Right (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Up (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Down (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Neutral (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Left (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Right (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Up (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Down (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Smash Neutral (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dash Smash (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dash Smash (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dash Smash (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Jump Smash (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Jump Smash (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Jump Smash (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Kiai Cannon (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Kiai Cannon (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Kiai Cannon (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Dash Smash Left (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Dash Smash Right (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Dash Smash Up (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Dash Smash Down (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Dash Smash Neutral (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Dash Smash Left (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Dash Smash Right (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Homing Left</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Homing Right</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Homing Up</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Homing Down</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Homing Neutral</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Punishing Attack Left</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Punishing Attack Right</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Punishing Attack Up</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Punishing Attack Down</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Punishing Attack Neutral (?)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Lift Strike (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Lift Strike (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Lift Strike (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Ground Slash (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Ground Slash (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Ground Slash (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Air Combo Strike 1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Air Combo Strike 2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Air Combo Strike 3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Air Combo Strike 4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Air Combo Strike 5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Air Combo Heavy</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Lift Strike Heavy</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Throw</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x1D4C)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x1DB0)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Counter Attack</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Kiai Cannon Smash</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x1EDC)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Rolling Hammer Left (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Rolling Hammer Right (Low Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Rolling Hammer Left (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Rolling Hammer Right (Medium Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Rolling Hammer Left (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Rolling Hammer Right (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x2198)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x21FC)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x2260)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x22C4)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x2328)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Sonic Impact (1st Hit)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Sonic Impact (2nd Hit)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x2454)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Tornado Strike 1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Tornado Strike 2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Tornado Strike 3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x25E4)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x2648)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x26AC)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x2710)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x2774)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>? (0x27D8)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Heavy</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>MAX Power Combo Strike</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Flying Kicks (Part 2)</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="AttackSelectionLbl">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>40</y>
+     <width>321</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The currently selected Attack.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="text">
+    <string>Current Attack</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="StatGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>531</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Stats</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QLabel" name="DamageLbl">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>30</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The damage this attack does to a non-defending opponent.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Damage</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="DamageBox">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>60</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DamageGuardLbl">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>100</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The damage this attack does to a defending opponent.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Damage (Guarding)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="DamageBox_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>130</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="KiGainLbl">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>30</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The amount of Ki you gain if the attack hits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Ki Gain</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="KiGainBox">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>60</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="KiLossLbl">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>100</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The amount of Ki lost by the opponent if the attack hits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Ki Loss</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="KiLossBox">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>130</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="KnockbackLbl">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>30</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How far the opponent gets pushed back if your attack hits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Knockback</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="KnockbackBox">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>60</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ReachLbl">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>100</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How far you move forward while using the attack.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Reach</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="ReachBox">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>130</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+   </widget>
+   <zorder>KnockbackLbl</zorder>
+   <zorder>DamageLbl</zorder>
+   <zorder>DamageBox</zorder>
+   <zorder>DamageGuardLbl</zorder>
+   <zorder>DamageBox_2</zorder>
+   <zorder>KiGainLbl</zorder>
+   <zorder>KiGainBox</zorder>
+   <zorder>KiLossLbl</zorder>
+   <zorder>KiLossBox</zorder>
+   <zorder>KnockbackBox</zorder>
+   <zorder>ReachLbl</zorder>
+   <zorder>ReachBox</zorder>
+  </widget>
+  <widget class="QGroupBox" name="DesignGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>320</y>
+     <width>241</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Design Effects</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QComboBox" name="VFX_Box">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>100</y>
+      <width>161</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="maxVisibleItems">
+     <number>17</number>
+    </property>
+    <property name="maxCount">
+     <number>17</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>No Effect</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Regular Strike</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bigger Strike</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Heavy Finish Effect</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x04)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x05)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(?) Regular Strike</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(?) Bigger Strike</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Clash Effect</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x09)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x0A)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Kiai Cannon Effect</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x0C)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Lift Strike Effect</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x0E)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ground Slash Effect</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x10)</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="VFX_Lbl">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If the attack hits, a visual effect will play.&lt;/p&gt;&lt;p&gt;Note: Effects marked by a '?' are unknown or I haven't found a good name for them. &lt;/p&gt;&lt;p&gt;If you do find out their effect, or a better name, DM me on Discord jagger1407#0389 and tell me what you were editing + the hex number that is inside the parentheses.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Visual Effect</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="SFX_Box">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>200</y>
+      <width>201</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="maxVisibleItems">
+     <number>9</number>
+    </property>
+    <property name="maxCount">
+     <number>9</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>No Sound</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Regular Strike</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Heavy Finish Sound</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Throw Sound</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Lift Strike Sound</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Giant Throw Sound</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Great Ape Landing Sound</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x07)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x0C)</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="SFX_Lbl">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>160</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The sound effect that plays if the attack hits.&lt;/p&gt;&lt;p&gt;Note: Effects marked by a '?' are unknown or I haven't found a good name for them. &lt;/p&gt;&lt;p&gt;If you do find out their effect, or a better name, DM me on Discord jagger1407#0389 and tell me what you were editing + the hex number that is inside the parentheses.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Sound Effect</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="GameplayEffectGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>320</y>
+     <width>281</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Gameplay Effects</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QLabel" name="EOG_Lbl">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>30</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The effect that will occur if the attack hits a guarding opponent.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Effect on Guard</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="EOG_Box">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>60</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Regular Guard</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Guard Break</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Combo Breaker</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ignores Guard</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Counter Effect</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Attack Misses</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="EOC_Lbl">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>90</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The effect that will occur if the attack hits an opponent who is currently in the counter-stance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Effect on Counter</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="EOC_Box">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>120</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="maxVisibleItems">
+     <number>6</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>Counter acts like Guard</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Guard Break</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Combo Breaker</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ignores Counter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Regular Counter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Attack Misses</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="HitstunBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>180</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="maxVisibleItems">
+     <number>39</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>No Hitstun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Attack Misses</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>No Hitstun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Strike (Primary String)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Strike (Secondary String)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Smash Stun (Right)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Smash Stun (Left)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Smash Stun (Neutral)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Smash Stun (Down)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Kiai Cannon Stun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Lift Strike Stun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ground Slash Stun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Heavy Finisher</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Instant Knockdown (unused)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Knockdown with Knockback</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Combo Ender</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Smash Stun (Full Charge)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Smash Stun (Medium Charge)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(!) Throw Animation</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(?) No Hitstun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(!) Giant Throw Animation</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Paralyzation (Short)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Paralyzation (Medium)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Paralyzation (Long)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Knockdown Paralyzation (Short)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Knockdown Paralyzation (Medium)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Knockdown Paralyzation (Long)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(?)(!) Blast 2 Animation</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(?)(!) Blast 1 Animation</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Landing Animation (Soft)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Landing Animation (Medium)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Landing Animation (Hard)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(?)(!) Removes Radar, Crashes</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Rolling Hammer (Right)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Rolling Hammer (Left)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(?) Another Giant Throw?</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Death Beam Knockdown</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(?) Dragon Heavy Stun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(?) Unused</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>(?) Instant Knockdown (SFX)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="HitstunLbl">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>150</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Hitstun animation of the character getting hit.&lt;/p&gt;&lt;p&gt;Note: For Stuns marked by a '(?)', it is unknown where they come from and whether they are used at all. &lt;/p&gt;&lt;p&gt;Stuns marked by a '(!)' have unknown effects and may crash your game.&lt;/p&gt;&lt;p&gt;If you find out more information about them, DM me on Discord jagger1407#0389 and tell me your findings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Hitstun</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="GuardBehaviourFlag">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>131</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This decides whether, upon the opponent guarding the hit, they will have a regular blocking animation or a longer, heavier hit animation, most notably used by the attacks of Great Apes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Regular Guard</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="LockOnLossFlag">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>220</y>
+      <width>131</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This flag decides if the attack makes the opponent lose Lock-On.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Lock-On Loss</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="SecStringFlag">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>250</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This flag decides if you enter the secondary combo string after this attack hits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Enter Secondary String</string>
+    </property>
+   </widget>
+   <zorder>HitstunLbl</zorder>
+   <zorder>EOC_Lbl</zorder>
+   <zorder>EOG_Lbl</zorder>
+   <zorder>EOG_Box</zorder>
+   <zorder>EOC_Box</zorder>
+   <zorder>HitstunBox</zorder>
+   <zorder>GuardBehaviourFlag</zorder>
+   <zorder>LockOnLossFlag</zorder>
+   <zorder>SecStringFlag</zorder>
+  </widget>
+  <widget class="QGroupBox" name="UnknownGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>120</y>
+     <width>361</width>
+     <height>481</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Uncharted Territory</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QLabel" name="UnknownLbl_1">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>30</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x14.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x14-0x17</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_1">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>60</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_2">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>60</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_2">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>30</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x18.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x18-0x1B</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_3">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>60</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_3">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>30</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x1C.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x1C-0x1F</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x21.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x21</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_5">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>120</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_5">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>90</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x22.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x22</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_6">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>90</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x23.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x23</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_6">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>120</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_7">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>120</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_7">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>90</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x24.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x24</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_8">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>150</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x27.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x27</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_8">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>120</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_9">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>180</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_10">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>180</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_9">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>90</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x25.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x25</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_10">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>150</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x26.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x26</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_11">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>180</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_11">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>150</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x2A.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x2A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_12">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>180</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_12">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>150</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x2B.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x2B</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_1">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>240</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_13">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>210</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x38.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x38-0x3B</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_14">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>210</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x3C.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x3C-0x3F</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_15">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>270</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x40.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x40-0x43</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_16">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>270</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x44.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x44-0x47</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_17">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>270</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x48.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x48-0x4B</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_18">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x4C.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x4C-0x4F</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_19">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>330</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x50.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x50-0x53</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_20">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>330</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x54.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x54-0x57</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_21">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>390</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x58.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x58-0x5B</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_22">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>390</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x5C.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x5C-0x5F</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_13">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>420</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_23">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>390</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x63.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x63</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_2">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>240</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>300</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_4">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>300</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_5">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>300</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_7">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>360</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_8">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>360</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_9">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>420</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_10">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>420</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_14">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_24">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x00.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x00</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_25">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x30.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promply add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>0x30-0x33</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_11">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>240</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+   </widget>
+   <zorder>UnknownLbl_25</zorder>
+   <zorder>UnknownLbl_24</zorder>
+   <zorder>UnknownLbl_23</zorder>
+   <zorder>UnknownLbl_22</zorder>
+   <zorder>UnknownLbl_19</zorder>
+   <zorder>UnknownLbl_20</zorder>
+   <zorder>UnknownLbl_21</zorder>
+   <zorder>UnknownLbl_16</zorder>
+   <zorder>UnknownLbl_17</zorder>
+   <zorder>UnknownLbl_18</zorder>
+   <zorder>UnknownLbl_13</zorder>
+   <zorder>UnknownLbl_14</zorder>
+   <zorder>UnknownLbl_15</zorder>
+   <zorder>UnknownLbl_4</zorder>
+   <zorder>UnknownLbl_5</zorder>
+   <zorder>UnknownLbl_6</zorder>
+   <zorder>UnknownLbl_7</zorder>
+   <zorder>UnknownLbl_9</zorder>
+   <zorder>UnknownLbl_12</zorder>
+   <zorder>UnknownLbl_11</zorder>
+   <zorder>UnknownLbl_8</zorder>
+   <zorder>UnknownLbl_10</zorder>
+   <zorder>UnknownLbl_2</zorder>
+   <zorder>UnknownLbl_1</zorder>
+   <zorder>UnknownSpinBox_1</zorder>
+   <zorder>UnknownSpinBox_2</zorder>
+   <zorder>UnknownLbl_3</zorder>
+   <zorder>UnknownSpinBox_3</zorder>
+   <zorder>UnknownSpinBox_5</zorder>
+   <zorder>UnknownSpinBox_6</zorder>
+   <zorder>UnknownSpinBox_7</zorder>
+   <zorder>UnknownSpinBox_9</zorder>
+   <zorder>UnknownSpinBox_8</zorder>
+   <zorder>UnknownSpinBox_10</zorder>
+   <zorder>UnknownSpinBox_4</zorder>
+   <zorder>UnknownSpinBox_11</zorder>
+   <zorder>UnknownSpinBox_12</zorder>
+   <zorder>UnknownFloatBox_1</zorder>
+   <zorder>UnknownSpinBox_13</zorder>
+   <zorder>UnknownFloatBox_2</zorder>
+   <zorder>UnknownFloatBox_3</zorder>
+   <zorder>UnknownFloatBox_4</zorder>
+   <zorder>UnknownFloatBox_5</zorder>
+   <zorder>UnknownFloatBox_6</zorder>
+   <zorder>UnknownFloatBox_7</zorder>
+   <zorder>UnknownFloatBox_8</zorder>
+   <zorder>UnknownFloatBox_9</zorder>
+   <zorder>UnknownFloatBox_10</zorder>
+   <zorder>UnknownSpinBox_14</zorder>
+   <zorder>UnknownFloatBox_11</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>AttackSelectionBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CurrentAttack_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>470</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DamageBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DamageBox_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>EOC_Box</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>ComboBox_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>400</x>
+     <y>455</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>EOG_Box</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>ComboBox_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>400</x>
+     <y>395</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GuardBehaviourFlag</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>430</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>HitstunBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>ComboBox_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>400</x>
+     <y>525</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>KiGainBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>KiLossBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>KnockbackBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>420</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ReachBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>420</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownFloatBox_1</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>610</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownFloatBox_10</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>650</x>
+     <y>555</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownFloatBox_2</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>720</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownFloatBox_4</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>610</x>
+     <y>435</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownFloatBox_3</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>830</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownFloatBox_7</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>610</x>
+     <y>495</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownFloatBox_5</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>720</x>
+     <y>435</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownFloatBox_6</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>830</x>
+     <y>435</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownFloatBox_8</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>720</x>
+     <y>495</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownFloatBox_9</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>830</x>
+     <y>495</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>610</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>720</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_10</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>870</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_11</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>760</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_12</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>830</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_13</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>800</x>
+     <y>555</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>830</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>660</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_6</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>730</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_8</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>620</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_9</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>690</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_7</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>800</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_4</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>590</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SFX_Box</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>ComboBox_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>130</x>
+     <y>535</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>VFX_Box</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>ComboBox_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>130</x>
+     <y>435</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_14</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>590</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LockOnLossFlag</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>465</x>
+     <y>551</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SecStringFlag</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>395</x>
+     <y>581</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>QSpinBox_Changed(int)</slot>
+  <slot>QDoubleSpinBox_Changed(double)</slot>
+  <slot>ComboBox_IndexChanged(int)</slot>
+  <slot>CurrentAttack_IndexChanged(int)</slot>
+  <slot>CheckBox_StateChanged(int)</slot>
+ </slots>
+</ui>

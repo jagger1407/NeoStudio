@@ -4,156 +4,187 @@ GeneralParameters::GeneralParameters(QByteArray ParameterData)
 {
     fileData = ParameterData;
     constData = fileData.constData();
-    editableData = fileData.data();
-    if(fileData == nullptr || constData == nullptr || editableData == nullptr)
+    if(fileData == nullptr || constData == nullptr)
     {
         Debug::Log("Construction of GeneralParameter object failed!", Debug::ERROR);
         return;
     }
     Debug::Log("New GeneralParameter object constructed.", Debug::INFO);
 }
-unsigned char GeneralParameters::GetUByteParameter(QString ObjectName)
+bool GeneralParameters::GetFlagParameter(QCheckBox* Object)
+{
+    Debug::Log("GetFlagParameter called.", Debug::INFO);
+    QObject* byte = Object->parent();
+    int bit = Object->objectName().right(1).toUInt() - 1;
+    for(int i=FlagByte;i<FlagByte + 9;i++)
+    {
+        if((long)byte == (long)UiElements[i]) return BitManipulation::Bit(*(constData + offset[i]), bit);
+    }
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
+    return false;
+}
+unsigned char GeneralParameters::GetUByteParameter(QSpinBox* Object)
 {
     Debug::Log("GetUByteParameter called.", Debug::INFO);
-    QStringList objName = ObjectName.split('_');
-    unsigned char objNum[2];
-    if(objName.count() > 1) objNum[0] = objName[1].toUShort();
-    if(objName.count() > 2) objNum[1] = objName[2].toUShort();
-    if(objName[0] == "TransformIDBox") return *(constData + transformation[objNum[0] - 1]);
-    else if(objName[0] == "TransformCostBox") return *(constData + transformationCost[objNum[0] - 1]);
-    else if(objName[0] == "FusionCostBox") return *(constData + fusionCost[objNum[0] - 1]);
-    else if(objName[0] == "FusionTypeBtn") return *(constData + fusionType[objNum[0] - 1]);
-    else if(objName[0] == "FusionIDBox") return *(constData + fusionCharID[objNum[0] - 1]);
-    else if(objName[0] == "PartnerIDBox") return *(constData + fusionPartnerID[objNum[0] - 1]);
-    else if(objName[0] == "PartnerTeamIDBox") return *(constData + fusionTeamID[objNum[0] - 1][objNum[1] - 1]);
-    else if(objName[0] == "ZSearchBox") return *(constData + zSearchType);
-    else if(objName[0] == "AuraColorBox") return *(constData + auraColor);
-    else if(objName[0] == "RushTechBtn") return *(constData + rushingTechnique[objNum[0] - 1]);
-    else if(objName[0] == "CounterBtn") return *(constData + counter[objNum[0] - 1]);
-    else if(objName[0] == "KiBlastBox") return *(constData + kiBlastAmount);
-    else if(objName[0] == "BlastStockBox") return *(constData + blastStockAmount);
-    else if(objName[0] == "StepInBox") return *(constData + stepInMove);
-    else if(objName[0] == "KiBlastChargedBox") return *(constData + kiBlastAmountCharged);
-    else if(objName[0] == "DragonHomingBox") return *(constData + maxPowerDragonSmashes);
-    else if(objName[0] == "VanishingAttackBox") return *(constData + maxPowerVanishingAttacks);
-    else
+    for(int i=0;i<GeneralParameterCount;i++)
     {
-        Debug::Log("Object '" + ObjectName + "' not input field.", Debug::WARNING);
-        return -1;
+        if((long)Object == (long)UiElements[i]) return *(constData + offset[i]);
     }
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
+    return (unsigned char)-1;
 }
-unsigned short GeneralParameters::GetUShortParameter(QString ObjectName)
+unsigned char GeneralParameters::GetUByteParameter(QComboBox* Object)
+{
+    Debug::Log("GetUByteParameter called.", Debug::INFO);
+    if((long)Object == (long)UiElements[ZSearch]) return *(constData + offset[ZSearch]);
+    else if((long)Object == (long)UiElements[ZSearch]) return *(constData + offset[AuraColor]);
+    else if((long)Object == (long)UiElements[StepInMove]) return *(constData + offset[StepInMove]);
+    else if((long)Object == (long)UiElements[AuraColor]) return *(constData + offset[AuraColor]);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
+    return (unsigned char)-1;
+}
+unsigned char GeneralParameters::GetUByteParameter(QPushButton* Object)
+{
+    Debug::Log("GetUByteParameter called.", Debug::INFO);
+    unsigned long objectPointer;
+    QString objectName;
+    unsigned long elementPointer;
+    QString elementName;
+
+    for(int i=FusionType;i<=CounterMove+2;i++)
+    {
+        if((long)Object == (long)UiElements[i]) return *(constData + offset[i]);
+    }
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
+    return (unsigned char)-1;
+}
+unsigned short GeneralParameters::GetUShortParameter(QSpinBox* Object)
 {
     Debug::Log("GetUShortParameter called.", Debug::INFO);
     // There are no 2-Byte Parameters in this Parameter-section.
     Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
-    return 0;
+    return (unsigned short)-1;
 }
-int GeneralParameters::GetIntParameter(QString ObjectName)
+int GeneralParameters::GetIntParameter(QSpinBox* Object)
 {
     Debug::Log("GetIntParameter called.", Debug::INFO);
-    if(ObjectName == "KiChargeBox") return *(int*)(constData + kiChargeSpeed);
-    else if(ObjectName == "KiChargeWaterBox") return *(int*)(constData + kiChargeSpeedWater);
-    else if(ObjectName == "BaseKiRegenBox") return *(int*)(constData + baseKiRegen);
-    else if(ObjectName == "CounterKiBox") return *(int*)(constData + counterKiConsumption);
-    else if(ObjectName == "BlastGaugeBox") return *(int*)(constData + blastGaugeSpeed);
-    else
+    for(int i=KiChargeSpeed;i<=BlastGaugeSpeed;i++)
     {
-        Debug::Log("Object '" + ObjectName + "' not input field.", Debug::WARNING);
-        return -1;
+        if((long)Object == (long)UiElements[i]) return *(int*)(constData + offset[i]);
     }
+
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
+    return -1;
 }
-float GeneralParameters::GetFloatParameter(QString ObjectName)
+float GeneralParameters::GetFloatParameter(QDoubleSpinBox* Object)
 {
     Debug::Log("GetFloatParameter called.", Debug::INFO);
-    if(ObjectName == "MaxPowDurBox") return *(float*)(constData + maxPowerModeDuration);
-    else if(ObjectName == "GravityBox") return *(float*)(constData + gravity);
-    else if(ObjectName.contains("CollisionSpinBox")) return *(float*)(constData + collision[ObjectName.right(1).toUShort() - 1]);
-    else if(ObjectName == "DmgMulBox") return *(float*)(constData + damageMultiplier);
-    else if(ObjectName == "TeamGaugeBox") return *(float*)(constData + switchRegenSpeed);
-    else if(ObjectName == "ChargeBarSpdBox") return *(float*)(constData + meleeChargeSpeed);
-    else
+    for(int i=MaxPowerModeDuration;i<=MeleeChargeSpeed;i++)
     {
-        Debug::Log("Object '" + ObjectName + "' not input field.", Debug::WARNING);
-        return -1;
+        if((long)Object == (long)UiElements[i]) return *(float*)(constData + offset[i]);
     }
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
+    return -1;
 }
-bool GeneralParameters::GetFlagParameter(QString ObjectName)
+
+void GeneralParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
 {
-    Debug::Log("GetFlagParameter called.", Debug::INFO);
-    QStringList objName = ObjectName.split('_');
-    return BitManipulation::Bit(*(constData + flagByte[objName[1].toUShort() - 1]), objName[2].toUShort() - 1);
+    Debug::Log("SetFlagParameter called.", Debug::INFO);
+    QObject* byte = Object->parent();
+    int bit = Object->objectName().right(1).toUInt();
+    for(int i=0;i<9;i++)
+    {
+        if((long)byte == (long)UiElements[i])
+        {
+            ChangeData(offset[i], bit, NewValue);
+            return;
+        }
+    }
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
 }
-void GeneralParameters::SetUByteParameter(QString ObjectName, unsigned char NewValue)
+
+void GeneralParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewValue)
 {
     Debug::Log("SetUByteParameter called.", Debug::INFO);
-    QStringList objName = ObjectName.split('_');
-    unsigned char objNum[2];
-    if(objName.count() > 1) objNum[0] = objName[1].toUShort();
-    if(objName.count() > 2) objNum[1] = objName[2].toUShort();
-    if(objName[0] == "TransformIDBox") ChangeData(transformation[objNum[0] - 1], NewValue);
-    else if(objName[0] == "FusionIDBox") ChangeData(fusionCharID[objNum[0] - 1], NewValue);
-    else if(objName[0] == "PartnerIDBox") ChangeData(fusionPartnerID[objNum[0] - 1], NewValue);
-    else if(objName[0] == "PartnerTeamIDBox") ChangeData(fusionTeamID[objNum[0] - 1][objNum[1] - 1], NewValue);
-    else if(objName[0] == "TransformCostBox") ChangeData(transformationCost[objNum[0] - 1], NewValue);
-    else if(objName[0] == "FusionCostBox") ChangeData(fusionCost[objNum[0] - 1], NewValue);
-    else if(objName[0] == "FusionTypeBtn") ChangeData(fusionType[objNum[0] - 1], NewValue);
-    else if(objName[0] == "ZSearchBox") ChangeData(zSearchType, NewValue);
-    else if(objName[0] == "AuraColorBox") ChangeData(auraColor, NewValue);
-    else if(objName[0] == "RushTechBtn") ChangeData(rushingTechnique[objNum[0] - 1], NewValue);
-    else if(objName[0] == "CounterBtn") ChangeData(counter[objNum[0] - 1], NewValue);
-    else if(objName[0] == "KiBlastBox") ChangeData(kiBlastAmount, NewValue);
-    else if(objName[0] == "BlastStockBox") ChangeData(blastStockAmount, NewValue);
-    else if(objName[0] == "StepInBox") ChangeData(stepInMove, NewValue);
-    else if(objName[0] == "KiBlastChargedBox") ChangeData(kiBlastAmountCharged, NewValue);
-    else if(objName[0] == "DragonHomingBox") ChangeData(maxPowerDragonSmashes, NewValue);
-    else if(objName[0] == "VanishingAttackBox") ChangeData(maxPowerVanishingAttacks, NewValue);
-    else
+    for(int i=0;i<GeneralParameterCount;i++)
     {
-        Debug::Log("Object '" + ObjectName + "' not input field.", Debug::WARNING);
+        if((long)Object == (long)UiElements[i])
+        {
+            ChangeData(offset[i], NewValue);
+            return;
+        }
+    }
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
+}
+void GeneralParameters::SetUByteParameter(QComboBox* Object, unsigned char NewValue)
+{
+    Debug::Log("SetUByteParameter called.", Debug::INFO);
+    if((long)Object == (long)UiElements[ZSearch])
+    {
+        ChangeData(offset[ZSearch], NewValue);
         return;
     }
+    else if((long)Object == (long)UiElements[ZSearch])
+    {
+        ChangeData(offset[AuraColor], NewValue);
+        return;
+    }
+    else if((long)Object == (long)UiElements[StepInMove])
+    {
+        ChangeData(offset[StepInMove], NewValue);
+        return;
+    }
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
+    return;
 }
-void GeneralParameters::SetUShortParameter(QString ObjectName, unsigned short NewValue)
+void GeneralParameters::SetUByteParameter(QPushButton* Object, unsigned char NewValue)
+{
+    Debug::Log("SetUByteParameter called.", Debug::INFO);
+    for(int i=FusionType;i<=CounterMove+2;i++)
+    {
+        if((long)Object == (long)UiElements[i])
+        {
+            ChangeData(offset[i], NewValue);
+            return;
+        }
+    }
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
+    return;
+}
+void GeneralParameters::SetUShortParameter(QSpinBox* Object, unsigned short NewValue)
 {
     Debug::Log("SetUShortParameter called.", Debug::INFO);
     // There are no 2-Byte Parameters in this Parameter-section.
     Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
 }
-void GeneralParameters::SetIntParameter(QString ObjectName, int NewValue)
+void GeneralParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 {
     Debug::Log("SetIntParameter called.", Debug::INFO);
-    if(ObjectName == "KiChargeBox") ChangeData(kiChargeSpeed, NewValue);
-    else if(ObjectName == "KiChargeWaterBox") ChangeData(kiChargeSpeedWater, NewValue);
-    else if(ObjectName == "BaseKiRegenBox") ChangeData(baseKiRegen, NewValue);
-    else if(ObjectName == "CounterKiBox") ChangeData(counterKiConsumption, NewValue);
-    else if(ObjectName == "BlastGaugeBox") ChangeData(blastGaugeSpeed, NewValue);
-    else
+    for(int i=KiChargeSpeed;i<=BlastGaugeSpeed;i++)
     {
-        Debug::Log("Object '" + ObjectName + "' not input field.", Debug::WARNING);
-        return;
+        if((long)Object == (long)UiElements[i])
+        {
+            ChangeData(offset[i], NewValue);
+            return;
+        }
     }
+
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
+    return;
 }
-void GeneralParameters::SetFloatParameter(QString ObjectName, float NewValue)
+void GeneralParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
 {
     Debug::Log("SetFloatParameter called.", Debug::INFO);
-    QStringList objName = ObjectName.split('_');
-    if(ObjectName == "MaxPowDurBox") ChangeData(maxPowerModeDuration, NewValue);
-    else if(ObjectName == "GravityBox") ChangeData(gravity, NewValue);
-    else if(ObjectName.contains("CollisionSpinBox")) ChangeData(collision[ObjectName.right(1).toUShort() - 1], NewValue);
-    else if(ObjectName == "DmgMulBox") ChangeData(damageMultiplier, NewValue);
-    else if(ObjectName == "TeamGaugeBox") ChangeData(switchRegenSpeed, NewValue);
-    else if(ObjectName == "ChargeBarSpdBox") ChangeData(meleeChargeSpeed, NewValue);
-    else
+    for(int i=MaxPowerModeDuration;i<=MeleeChargeSpeed;i++)
     {
-        Debug::Log("Object '" + ObjectName + "' not input field.", Debug::WARNING);
-        return;
+        if((long)Object == (long)UiElements[i])
+        {
+            ChangeData(offset[i], NewValue);
+            return;
+        }
     }
-}
-void GeneralParameters::SetFlagParameter(QString ObjectName, bool NewValue)
-{
-    QStringList objName = ObjectName.split('_');
-    BitManipulation::SetBit(fileData.data() + flagByte[objName[1].toUShort()-1], objName[2].toUShort()-1, NewValue);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING);
+    return;
 }
 QByteArray GeneralParameters::GetFileData()
 {

@@ -1,7 +1,7 @@
 #include "neostudio.h"
 #include "ui_neostudio.h"
 
-NeoStudio::NeoStudio(QWidget* parent) :
+NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QMainWindow(parent),
     ui(new Ui::NeoStudio)
 {
@@ -10,19 +10,29 @@ NeoStudio::NeoStudio(QWidget* parent) :
         OptionProcessing::SaveConfigFile(OptionProcessing::DEFAULT_LOGMODE, OptionProcessing::DEFAULT_TOOLTIPCOLOR, OptionProcessing::DEFAULT_UIMODE);
     }
 
+    if(argc > 2) return;
+
     ui->setupUi(this);
-    this->setWindowTitle("Neo Studio v0.2");
+    this->setWindowTitle("Neo Studio v0.3");
+    ui->ParameterTabs->setCurrentIndex(GENERAL);
     ResetUiMode();
 
     QGraphicsScene* scene = new QGraphicsScene();
     // Drip Code
     scene->addPixmap((*new QPixmap("./assets/UnderConstruction.png")).scaled(ui->graphicsView_1->width(), ui->graphicsView_1->height()));
     this->setWindowIcon(QIcon(QPixmap("./assets/icon.ico")));
-    ui->graphicsView_1->setScene(scene);
     ui->graphicsView_2->setScene(scene);
     ui->graphicsView_3->setScene(scene);
-    Debug::Log("NeoStudio constructed.", Debug::INFO);
 
+    if(argc == 2)
+    {
+        file = argv[1];
+        QString PakName = file.split('/')[(file.split('/').length()-1)];
+        PakName.truncate(PakName.length()-4);
+        ui->FileLbl->setText("Current File: " + PakName);
+        InitFile();
+    }
+    Debug::Log("NeoStudio constructed.", Debug::INFO);
 }
 
 NeoStudio::~NeoStudio() = default;
@@ -54,6 +64,7 @@ void NeoStudio::SaveFile()
     }
 
     pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
+    pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
     pak->SavePak(file);
 }
 
@@ -75,6 +86,7 @@ void NeoStudio::SaveFileAs()
         return;
     }
     pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
+    pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
     pak->SavePak(newFile);
 }
 
@@ -103,6 +115,7 @@ void NeoStudio::OpenOptions()
     (new OptionDialog())->exec();
     ResetUiMode();
     if(generalWindow != nullptr) generalWindow->ResetUiMode();
+    if(meleeWindow != nullptr) meleeWindow->ResetUiMode();
 }
 
 
@@ -114,6 +127,8 @@ void NeoStudio::InitFile()
     ui->ParameterTabs->setCurrentIndex(GENERAL);
     generalWindow = new GeneralFrame(pak);
     ui->GeneralScrollArea->setWidget(generalWindow);
+    meleeWindow = new MeleeFrame(pak);
+    ui->MeleeScrollArea->setWidget(meleeWindow);
 }
 
 void NeoStudio::ResetUiMode()
@@ -124,12 +139,14 @@ void NeoStudio::ResetUiMode()
         this->setStyleSheet("background:white; color: black");
         ui->FileLbl->setStyleSheet("color:black");
         ui->GeneralTab->setStyleSheet("color:black;background:white;");
+        ui->MeleeTab->setStyleSheet("color:black;background:white;");
     }
     else if(currentMode == OptionProcessing::DARK)
     {
         this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
         ui->FileLbl->setStyleSheet("color:white");
         ui->GeneralTab->setStyleSheet("color:black;background:rgb(50,54,60);");
+        ui->MeleeTab->setStyleSheet("color:black;background:rgb(50,54,60);");
     }
 }
 

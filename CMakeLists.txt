@@ -30,6 +30,7 @@ set(neostudio_SRC
   # These classes are for all the logic concerning the .pak file specifically
   src/pak_filesystem/parameterfile.h
   src/pak_filesystem/generalparameters.cpp
+  src/pak_filesystem/meleeparameters.cpp
   src/pak_filesystem/pakcontrols.cpp
   # ui
   # These classes are all the UI Dialogs/Windows that this program has
@@ -37,6 +38,7 @@ set(neostudio_SRC
   src/ui/menu/aboutwindow.cpp
   src/ui/menu/optiondialog.cpp
   src/ui/paramSections/generalframe.cpp
+  src/ui/paramSections/meleeframe.cpp
 )
 
 # Tell CMake to create the executable

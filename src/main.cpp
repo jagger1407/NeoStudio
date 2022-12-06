@@ -4,8 +4,8 @@
 int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
-    NeoStudio w;
-    w.show();
+    NeoStudio* w = new NeoStudio(argc, argv);
+    w->show();
 
     return app.exec();
 }

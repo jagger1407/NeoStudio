@@ -2,13 +2,13 @@
 #define NEOSTUDIO_H
 
 #include "src/external/qt_includes.h"
+#include "src/external/fileparse.h"
 #include "src/external/debug.h"
 #include "menu/aboutwindow.h"
 #include "menu/optiondialog.h"
 // Parameter Tabs
 #include "src/ui/paramSections/generalframe.h"
-
-#include "src/external/fileparse.h"
+#include "src/ui/paramSections/meleeframe.h"
 
 namespace Ui {
 class NeoStudio;
@@ -23,7 +23,7 @@ class NeoStudio : public QMainWindow
 public:
 
     /**Constructor. Creates the main Neo Studio window.*/
-    explicit NeoStudio(QWidget* parent = nullptr);
+    explicit NeoStudio(int argc, char* argv[], QWidget* parent = nullptr);
     /**Destructor. Idk how to use this, it was automatically generated.*/
     ~NeoStudio() override;
 private:
@@ -31,6 +31,8 @@ private:
     QScopedPointer<Ui::NeoStudio> ui;
     /**The UI for the General Parameter editing tab.*/
     GeneralFrame* generalWindow = nullptr;
+    /**The UI for the Melee Parameter editing tab.*/
+    MeleeFrame* meleeWindow = nullptr;
     /**The path to the currently open Pak file.*/
     QString file;
     /**PakControls object to act as an interface between this program and the file itself.*/

@@ -25,10 +25,39 @@ public:
     /**Pointer used to access UI elements of this window.*/
     Ui_GeneralFrame* ui;
     /**Pointer used to access Parameters that this QFrame is editing.*/
-    GeneralParameters* gp;
+    GeneralParameters* gp = nullptr;
     /**Checks the UI mode and sets the Stylesheet accordingly.*/
     void ResetUiMode();
 private:
+    /**A temporary solution to a problem I will fix in a later version of Neo Studio.*/
+    QString TooltipStyles[4] =
+    {
+            "<font color=\"white\">",
+            "<font color=\"black\">",
+            "<font color=\"blue\">",
+            "<font color=\"red\">",
+    };
+    QString rushStr[4] = {
+                "Heavy Finish",
+                "Kiai Cannon",
+                "Flying Kicks",
+                "None"
+    };
+    QString counterStr[5] = {
+                "No Counter",
+                "Smash",
+                "Vanish",
+                "Throw",
+                "Sway"
+    };
+    QString fusionStr[3] = {
+                "None",
+                "Dance",
+                "Potara"
+    };
+    int rush[4] = { 0, 0, 0, 0 };
+    int counter[3] = { 0, 0, 0 };
+    int fusion[3] = { 0, 0, 0 };
     /**Checks to see if the UI is initializing, used to supress slots while initializing.*/
     bool IsInitializing = false;
     /**Method to initialize all the UI Elements with their parameter values from the Pak File.*/
@@ -37,12 +66,6 @@ private:
     void ButtonChange(QPushButton* Button);
     /**Method to get the parameter value each button represents, created to keep InitializeUIElements clean.*/
     void ButtonValueGet(QPushButton* Button);
-    /**List of all Sytlesheets for every TooltipColor choice.*/
-    const QStringList TooltipStyles = { "<font color=\"white\">",
-                                        "<font color=\"black\">",
-                                        "<font color=\"blue\">",
-                                        "<font color=\"red\">"
-                                      };
 private slots:
     /**This slot gets triggered everytime the value of a QSpinBox changes.*/
     void QSpinBox_Changed(int NewValue);

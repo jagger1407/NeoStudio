@@ -32,7 +32,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey; border-radius: 10px;</string>
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>None</string>
@@ -53,7 +53,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey; border-radius: 10px;</string>
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>None</string>
@@ -67,9 +67,9 @@
   <widget class="QLabel" name="StepInLbl">
    <property name="geometry">
     <rect>
-     <x>680</x>
+     <x>660</x>
      <y>480</y>
-     <width>151</width>
+     <width>181</width>
      <height>41</height>
     </rect>
    </property>
@@ -102,6 +102,7 @@ Note: Techniques marked with '(Short)' consist of only the Step-In animation + t
    <property name="font">
     <font>
      <pointsize>12</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -124,14 +125,14 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
   <widget class="QComboBox" name="StepInBox">
    <property name="geometry">
     <rect>
-     <x>680</x>
+     <x>660</x>
      <y>520</y>
-     <width>151</width>
+     <width>181</width>
      <height>32</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey;</string>
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
    </property>
    <property name="currentIndex">
     <number>0</number>
@@ -188,7 +189,7 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey;</string>
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
    </property>
    <property name="currentIndex">
     <number>0</number>
@@ -238,14 +239,14 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
   <widget class="QPushButton" name="CounterBtn_3">
    <property name="geometry">
     <rect>
-     <x>740</x>
+     <x>750</x>
      <y>270</y>
      <width>101</width>
      <height>34</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey; border-radius: 10px;</string>
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>No Counter</string>
@@ -259,14 +260,14 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
   <widget class="QPushButton" name="CounterBtn_1">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>510</x>
      <y>270</y>
      <width>101</width>
      <height>34</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey; border-radius: 10px;</string>
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>No Counter</string>
@@ -282,7 +283,7 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey; border-radius: 10px;</string>
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>None</string>
@@ -297,7 +298,7 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
      <x>690</x>
      <y>690</y>
      <width>121</width>
-     <height>41</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -332,6 +333,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
    <property name="font">
     <font>
      <pointsize>12</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -360,7 +362,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
     <string>Transformations</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    <set>Qt::AlignCenter</set>
    </property>
    <property name="flat">
     <bool>false</bool>
@@ -373,7 +375,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      <rect>
       <x>10</x>
       <y>60</y>
-      <width>109</width>
+      <width>161</width>
       <height>18</height>
      </rect>
     </property>
@@ -386,7 +388,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      <rect>
       <x>10</x>
       <y>100</y>
-      <width>109</width>
+      <width>141</width>
       <height>18</height>
      </rect>
     </property>
@@ -399,7 +401,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      <rect>
       <x>10</x>
       <y>140</y>
-      <width>109</width>
+      <width>141</width>
       <height>18</height>
      </rect>
     </property>
@@ -412,7 +414,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      <rect>
       <x>10</x>
       <y>180</y>
-      <width>113</width>
+      <width>121</width>
       <height>18</height>
      </rect>
     </property>
@@ -430,7 +432,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -446,7 +448,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -462,7 +464,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -478,7 +480,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -496,6 +498,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -520,7 +523,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -536,7 +539,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -552,7 +555,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -568,7 +571,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -586,6 +589,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -612,6 +616,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
    <property name="font">
     <font>
      <pointsize>10</pointsize>
+     <weight>50</weight>
      <bold>false</bold>
     </font>
    </property>
@@ -635,7 +640,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey; border-radius: 10px;</string>
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>No Counter</string>
@@ -656,7 +661,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey; border-radius: 10px;</string>
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
    </property>
    <property name="text">
     <string>None</string>
@@ -680,7 +685,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     <string>Fusions</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    <set>Qt::AlignCenter</set>
    </property>
    <property name="flat">
     <bool>false</bool>
@@ -693,7 +698,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      <rect>
       <x>10</x>
       <y>70</y>
-      <width>61</width>
+      <width>81</width>
       <height>18</height>
      </rect>
     </property>
@@ -706,7 +711,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      <rect>
       <x>10</x>
       <y>110</y>
-      <width>61</width>
+      <width>71</width>
       <height>18</height>
      </rect>
     </property>
@@ -719,7 +724,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      <rect>
       <x>10</x>
       <y>150</y>
-      <width>61</width>
+      <width>71</width>
       <height>18</height>
      </rect>
     </property>
@@ -740,7 +745,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      <string/>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -756,7 +761,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -772,7 +777,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -790,6 +795,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -813,7 +819,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -829,7 +835,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -845,7 +851,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -863,6 +869,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -886,7 +893,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey; border-radius: 10px;</string>
+     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
     </property>
     <property name="text">
      <string>None</string>
@@ -902,7 +909,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey; border-radius: 10px;</string>
+     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
     </property>
     <property name="text">
      <string>None</string>
@@ -918,7 +925,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey; border-radius: 10px;</string>
+     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
     </property>
     <property name="text">
      <string>None</string>
@@ -936,6 +943,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -965,6 +973,7 @@ Dance: Fusion Dance Cutscene</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -990,7 +999,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1006,7 +1015,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1022,7 +1031,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1038,7 +1047,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1054,7 +1063,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1070,7 +1079,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1086,7 +1095,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1102,7 +1111,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1118,7 +1127,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1134,7 +1143,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1150,7 +1159,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1166,7 +1175,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1182,7 +1191,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1198,7 +1207,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1214,7 +1223,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1230,7 +1239,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1246,7 +1255,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1262,7 +1271,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1278,7 +1287,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1294,7 +1303,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1310,7 +1319,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1328,6 +1337,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -1353,7 +1363,7 @@ If one of these IDs is in your team, they corresponding character will be remove
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 2 solid grey;</string>
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
    </property>
    <property name="currentIndex">
     <number>0</number>
@@ -1416,7 +1426,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      <x>680</x>
      <y>580</y>
      <width>141</width>
-     <height>41</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -1437,22 +1447,28 @@ If one of these IDs is in your team, they corresponding character will be remove
   <widget class="QGroupBox" name="CollisionGroupBox">
    <property name="geometry">
     <rect>
-     <x>590</x>
-     <y>310</y>
-     <width>321</width>
+     <x>620</x>
+     <y>320</y>
+     <width>271</width>
      <height>151</height>
     </rect>
    </property>
    <property name="toolTip">
     <string>The dimensions of a character's collision box.</string>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <property name="title">
     <string>Collision</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
    <widget class="QLabel" name="CollisionLbl_1">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>40</x>
       <y>40</y>
       <width>91</width>
       <height>21</height>
@@ -1476,7 +1492,7 @@ If one of these IDs is in your team, they corresponding character will be remove
    <widget class="QLabel" name="CollisionLbl_2">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>40</x>
       <y>80</y>
       <width>91</width>
       <height>21</height>
@@ -1500,7 +1516,7 @@ If one of these IDs is in your team, they corresponding character will be remove
    <widget class="QLabel" name="CollisionLbl_3">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>40</x>
       <y>120</y>
       <width>91</width>
       <height>21</height>
@@ -1524,11 +1540,17 @@ If one of these IDs is in your team, they corresponding character will be remove
    <widget class="QDoubleSpinBox" name="CollisionSpinBox_1">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>140</x>
       <y>30</y>
       <width>91</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -1543,11 +1565,23 @@ If one of these IDs is in your team, they corresponding character will be remove
    <widget class="QDoubleSpinBox" name="CollisionSpinBox_2">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>140</x>
       <y>70</y>
       <width>91</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="accelerated">
+     <bool>false</bool>
+    </property>
+    <property name="showGroupSeparator" stdset="0">
+     <bool>false</bool>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -1562,11 +1596,17 @@ If one of these IDs is in your team, they corresponding character will be remove
    <widget class="QDoubleSpinBox" name="CollisionSpinBox_3">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>140</x>
       <y>110</y>
       <width>91</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -1590,6 +1630,9 @@ If one of these IDs is in your team, they corresponding character will be remove
    </property>
    <property name="title">
     <string>Ki Related Stats</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
    <property name="flat">
     <bool>false</bool>
@@ -1628,7 +1671,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1650,7 +1693,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1696,7 +1739,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1766,7 +1809,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1812,7 +1855,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1834,7 +1877,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1874,7 +1917,7 @@ If one of these IDs is in your team, they corresponding character will be remove
   <widget class="QGroupBox" name="MiscGroupBox">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>270</x>
      <y>310</y>
      <width>331</width>
      <height>471</height>
@@ -1882,6 +1925,9 @@ If one of these IDs is in your team, they corresponding character will be remove
    </property>
    <property name="title">
     <string>Miscellaneous</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
    <widget class="QLabel" name="BlastStockLbl">
     <property name="geometry">
@@ -1917,7 +1963,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1963,7 +2009,10 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -2014,7 +2063,7 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2084,7 +2133,7 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2106,7 +2155,7 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2128,7 +2177,10 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -2174,7 +2226,10 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -2223,7 +2278,10 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -2296,7 +2354,10 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid lightgrey;</string>
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -2321,8 +2382,14 @@ Note: Values above 1 make the character unable to jump.</string>
      <height>651</height>
     </rect>
    </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
    <property name="title">
     <string>Flags</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
    <widget class="QGroupBox" name="FlagByteGroup_1">
     <property name="geometry">
@@ -2335,6 +2402,9 @@ Note: Values above 1 make the character unable to jump.</string>
     </property>
     <property name="title">
      <string>Flagbyte 1</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
     <widget class="QCheckBox" name="Flag_1_1">
      <property name="geometry">
@@ -2458,6 +2528,9 @@ Note: Values above 1 make the character unable to jump.</string>
     </property>
     <property name="title">
      <string>Flagbyte 2</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
     <widget class="QCheckBox" name="Flag_2_1">
      <property name="geometry">
@@ -2594,6 +2667,9 @@ Meta-Cooler has this enabled.</string>
     </property>
     <property name="title">
      <string>Flagbyte 3</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
     <widget class="QCheckBox" name="Flag_3_1">
      <property name="geometry">
@@ -2735,6 +2811,9 @@ This just means it checks if you can Step-In after pressing Square 5 times.</str
     <property name="title">
      <string>Flagbyte 4</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
     <widget class="QCheckBox" name="Flag_4_1">
      <property name="geometry">
       <rect>
@@ -2873,6 +2952,9 @@ This just means it checks if you can Step-In after pressing Square 5 times.</str
     <property name="title">
      <string>Flagbyte 5</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
     <widget class="QCheckBox" name="Flag_5_1">
      <property name="geometry">
       <rect>
@@ -3002,6 +3084,9 @@ This just means it checks if you can Step-In after pressing Square 5 times.</str
     <property name="title">
      <string>Flagbyte 6</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
     <widget class="QCheckBox" name="Flag_6_1">
      <property name="geometry">
       <rect>
@@ -3125,6 +3210,9 @@ This just means it checks if you can Step-In after pressing Square 5 times.</str
     <property name="title">
      <string>Flagbyte 7</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
     <widget class="QCheckBox" name="Flag_7_1">
      <property name="geometry">
       <rect>
@@ -3147,8 +3235,17 @@ This just means it checks if you can Step-In after pressing Square 5 times.</str
        <height>23</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="text">
       <string>?</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="tristate">
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="QCheckBox" name="Flag_7_3">
@@ -3261,6 +3358,9 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
     </property>
     <property name="title">
      <string>Flagbyte 8</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
     <widget class="QCheckBox" name="Flag_8_1">
      <property name="geometry">
@@ -3382,6 +3482,9 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
     <property name="title">
      <string>Flagbyte 9</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
     <widget class="QCheckBox" name="Flag_9_9">
      <property name="geometry">
       <rect>
@@ -3404,6 +3507,9 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
        <height>23</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="text">
       <string>?</string>
      </property>
@@ -3416,6 +3522,9 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
        <width>95</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>?</string>
@@ -3494,9 +3603,9 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>490</x>
      <y>250</y>
-     <width>121</width>
+     <width>131</width>
      <height>20</height>
     </rect>
    </property>
@@ -3510,9 +3619,9 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>630</x>
+     <x>620</x>
      <y>250</y>
-     <width>101</width>
+     <width>121</width>
      <height>20</height>
     </rect>
    </property>
@@ -3526,7 +3635,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>740</x>
+     <x>750</x>
      <y>250</y>
      <width>101</width>
      <height>20</height>
@@ -3551,6 +3660,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
    <property name="font">
     <font>
      <pointsize>10</pointsize>
+     <weight>50</weight>
      <bold>false</bold>
     </font>
    </property>
@@ -3576,6 +3686,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
    <property name="font">
     <font>
      <pointsize>10</pointsize>
+     <weight>50</weight>
      <bold>false</bold>
     </font>
    </property>
@@ -3601,6 +3712,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
    <property name="font">
     <font>
      <pointsize>10</pointsize>
+     <weight>50</weight>
      <bold>false</bold>
     </font>
    </property>

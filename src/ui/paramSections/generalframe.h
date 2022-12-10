@@ -2,6 +2,7 @@
 #define GENERALFRAME_H
 
 #include "ui_generalframe.h"
+#include "src/options.h"
 #include "src/external/qt_includes.h"
 #include "src/external/debug.h"
 #include "src/pak_filesystem/generalparameters.h"
@@ -21,7 +22,7 @@ class GeneralFrame : public QFrame
     Q_OBJECT
 public:
     /**Constructor. Creates PakControls object and initializes UI with .pak values.*/
-    explicit GeneralFrame(PakControls* Pak, QWidget* parent = nullptr);
+    explicit GeneralFrame(PakControls* Pak, Options* options, QWidget* parent = nullptr);
     /**Pointer used to access UI elements of this window.*/
     Ui_GeneralFrame* ui;
     /**Pointer used to access Parameters that this QFrame is editing.*/
@@ -30,13 +31,7 @@ public:
     void ResetUiMode();
 private:
     /**A temporary solution to a problem I will fix in a later version of Neo Studio.*/
-    QString TooltipStyles[4] =
-    {
-            "<font color=\"white\">",
-            "<font color=\"black\">",
-            "<font color=\"blue\">",
-            "<font color=\"red\">",
-    };
+
     QString rushStr[4] = {
                 "Heavy Finish",
                 "Kiai Cannon",
@@ -58,6 +53,8 @@ private:
     int rush[4] = { 0, 0, 0, 0 };
     int counter[3] = { 0, 0, 0 };
     int fusion[3] = { 0, 0, 0 };
+
+    Options* options = nullptr;
     /**Checks to see if the UI is initializing, used to supress slots while initializing.*/
     bool IsInitializing = false;
     /**Method to initialize all the UI Elements with their parameter values from the Pak File.*/

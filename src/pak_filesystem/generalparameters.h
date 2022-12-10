@@ -48,7 +48,7 @@ public:
     /**
      * Constructs new General Parameter Object.
      */
-    GeneralParameters(QByteArray ParameterData);
+    GeneralParameters(QByteArray ParameterData, Options* options);
     /**Gets the single Byte parameter value of the parameter corresponding to the Object.*/
     unsigned char GetUByteParameter(QSpinBox* Object);
     unsigned char GetUByteParameter(QComboBox* Object);
@@ -74,6 +74,7 @@ public:
     QByteArray GetFileData();
     void SetFileData(QByteArray NewData);
     QObject* UiElements[GeneralParameterCount];
+    Options* options = nullptr;
 private:
     const char* constData = nullptr;
     /**

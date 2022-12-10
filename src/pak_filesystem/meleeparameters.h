@@ -55,7 +55,7 @@ public:
         MeleeParameterCount
     } MeleeParameter;
 
-    MeleeParameters(QByteArray ParameterData);
+    MeleeParameters(QByteArray ParameterData, Options* options);
     /**Gets the single Byte parameter value of the parameter corresponding to the Object.*/
     unsigned char GetUByteParameter(QSpinBox* Object);
     /**Gets the single Byte parameter value of the parameter corresponding to the Object.*/
@@ -82,6 +82,7 @@ public:
     QByteArray GetFileData();
     void SetFileData(QByteArray NewData);
     QObject* UiElements[MeleeParameterCount];
+    Options* options = nullptr;
 private:
     const char* rawData = nullptr;
     unsigned short attackOffset;

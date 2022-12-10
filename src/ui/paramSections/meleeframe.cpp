@@ -1,11 +1,14 @@
 #include "meleeframe.h"
 
-MeleeFrame::MeleeFrame(PakControls* Pak, QWidget* parent) : QFrame(parent)
+MeleeFrame::MeleeFrame(PakControls* Pak, Options* options, QWidget* parent) : QFrame(parent)
 {
     ui = new Ui_MeleeFrame();
     ui->setupUi(this);
 
-    mp = new MeleeParameters(Pak->GetParamData(MELEE));
+    this->options = options;
+
+    mp = new MeleeParameters(Pak->GetParamData(MELEE), options);
+
     #if 1 // Passing the mp object the UI Elements
     mp->UiElements[MeleeParameters::Header] = ui->UnknownSpinBox_14;
     mp->UiElements[MeleeParameters::SecondaryString] = ui->SecStringFlag;
@@ -53,15 +56,15 @@ MeleeFrame::MeleeFrame(PakControls* Pak, QWidget* parent) : QFrame(parent)
 
 void MeleeFrame::InitializeUIElements()
 {
-    Debug::Log("InitializeUIElements called.", Debug::INFO);
+    Debug::Log("InitializeUIElements called.", Debug::INFO, options);
 
     IsInitializing = true;
 
     QList<QLabel*> labels = this->findChildren<QLabel*>();
-    for(int i=0;i<labels.count();i++)
+    for(QLabel* lbl : labels)
     {
-        if(labels[i]->toolTip().isEmpty()) continue;
-        labels[i]->setToolTip(TooltipStyles[OptionProcessing::GetOption("TooltipColor")] + labels[i]->toolTip() + "</font>");
+        if(lbl->toolTip().isEmpty()) continue;
+        lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
     }
 
     QList<QWidget*> elements = this->findChildren<QWidget*>();
@@ -105,7 +108,7 @@ void MeleeFrame::InitializeUIElements()
 void MeleeFrame::QSpinBox_Changed(int NewValue)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO);
+    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO, options);
     QSpinBox* box = (QSpinBox*)sender();
     if((unsigned int)box->maximum() < 256)
     {
@@ -119,40 +122,38 @@ void MeleeFrame::QSpinBox_Changed(int NewValue)
 void MeleeFrame::QDoubleSpinBox_Changed(double NewValue)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO);
+    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO, options);
     QDoubleSpinBox* box = (QDoubleSpinBox*)sender();
     mp->SetFloatParameter(box, NewValue);
 }
 void MeleeFrame::CurrentAttack_IndexChanged(int NewIndex)
 {
     if(mp == nullptr) return;
-    Debug::Log("CurrentAttack_IndexChanged slot triggered.", Debug::INFO);
+    Debug::Log("CurrentAttack_IndexChanged slot triggered.", Debug::INFO, options);
     mp->setCurrentAttack(NewIndex);
     InitializeUIElements();
 }
 void MeleeFrame::ComboBox_IndexChanged(int NewIndex)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("ComboBox_IndexChanged slot triggered.", Debug::INFO);
+    Debug::Log("ComboBox_IndexChanged slot triggered.", Debug::INFO, options);
     QComboBox* box = (QComboBox*)sender();
     mp->SetUByteParameter(box, NewIndex);
 }
 void MeleeFrame::CheckBox_StateChanged(int NewState)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("CheckBox_StateChanged slot triggered.", Debug::INFO);
+    Debug::Log("CheckBox_StateChanged slot triggered.", Debug::INFO, options);
     QCheckBox* flag = (QCheckBox*)sender();
     mp->SetFlagParameter(flag, NewState);
 }
 void MeleeFrame::ResetUiMode()
 {
-    Debug::Log("ResetUiMode called.", Debug::INFO);
+    Debug::Log("ResetUiMode called.", Debug::INFO, options);
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();
     QList<QComboBox*> comboBoxes = this->findChildren<QComboBox*>();
-    unsigned char currentMode = OptionProcessing::GetOption("UiMode");
-    unsigned char currentTooltipColor = OptionProcessing::GetOption("TooltipColor");
-    if(currentMode == OptionProcessing::LIGHT)
+    if(options->GetUiMode() == Options::LIGHT)
     {
         this->setStyleSheet("background:white; color: black");
 
@@ -169,7 +170,7 @@ void MeleeFrame::ResetUiMode()
             comboBoxes[i]->setStyleSheet("");
         }
     }
-    else if(currentMode == OptionProcessing::DARK)
+    else if(options->GetUiMode() == Options::DARK)
     {
         this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
 
@@ -193,7 +194,7 @@ void MeleeFrame::ResetUiMode()
         QString text = labels[i]->toolTip();
         text = text.split(">")[1];
         text.replace("</font>", "");
-        labels[i]->setToolTip(TooltipStyles[currentTooltipColor] + text + "</font>");
+        labels[i]->setToolTip(options->GetStyledTooltip(labels[i]->toolTip()));
     }
     QList<QCheckBox*> flagBoxes = this->findChildren<QCheckBox*>();
     for(int i=0;i<flagBoxes.count();i++)
@@ -202,6 +203,6 @@ void MeleeFrame::ResetUiMode()
         QString text = flagBoxes[i]->toolTip();
         text = text.split(">")[1];
         text.replace("</font>", "");
-        flagBoxes[i]->setToolTip(TooltipStyles[currentTooltipColor] + text + "</font>");
+        flagBoxes[i]->setToolTip(options->GetStyledTooltip(flagBoxes[i]->toolTip()));
     }
 }

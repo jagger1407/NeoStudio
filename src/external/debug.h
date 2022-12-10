@@ -2,8 +2,9 @@
 #define DEBUG_H
 
 #include "qt_includes.h"
-#include "optionprocessing.h"
-#include "fileparse.h"
+#include "src/options.h"
+
+
 /**
  * Class to handle debug output
  */
@@ -17,7 +18,7 @@ public:
         ERROR
     } LogLevel;
     /**Generic Logging Function*/
-    static void Log(const QString Message, LogLevel Severity);
+    static void Log(const QString Message, LogLevel Severity, Options* options);
     /**Prints message to console. Should not be used, use Debug::Log instead.*/
     static void ConsolePrint(const QString Message, LogLevel Severity);
     /**Prints message to log file. Should not be used, use Debug::Log instead.*/

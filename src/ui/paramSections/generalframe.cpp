@@ -1,11 +1,13 @@
 #include "generalframe.h"
 
-GeneralFrame::GeneralFrame(PakControls* Pak, QWidget* parent) : QFrame(parent)
+GeneralFrame::GeneralFrame(PakControls* Pak, Options* options, QWidget* parent) : QFrame(parent)
 {
     ui = new Ui_GeneralFrame();
     ui->setupUi(this);
 
-    gp = new GeneralParameters(Pak->GetParamData(GENERAL));
+    this->options = options;
+
+    gp = new GeneralParameters(Pak->GetParamData(GENERAL), options);
 
     #if 1 // Passing the gp Object all UI Elements
     gp->UiElements[GeneralParameters::Transform] = ui->TransformIDBox_1;
@@ -88,7 +90,7 @@ GeneralFrame::GeneralFrame(PakControls* Pak, QWidget* parent) : QFrame(parent)
 
     if(Pak->HasFailed())
     {
-        Debug::Log("GeneralFrame couldn't initialize pak file.", Debug::ERROR);
+        Debug::Log("GeneralFrame couldn't initialize pak file.", Debug::ERROR, options);
         return;
     }
 
@@ -98,7 +100,7 @@ GeneralFrame::GeneralFrame(PakControls* Pak, QWidget* parent) : QFrame(parent)
 }
 void GeneralFrame::InitializeUIElements()
 {
-    Debug::Log("InitializeUIElements called.", Debug::INFO);
+    Debug::Log("InitializeUIElements called.", Debug::INFO, options);
     IsInitializing = true;
 
     QList<QLabel*> labels = this->findChildren<QLabel*>();
@@ -111,7 +113,7 @@ void GeneralFrame::InitializeUIElements()
     for(QLabel* lbl : labels)
     {
         if(lbl->toolTip().isEmpty()) continue;
-        lbl->setToolTip(TooltipStyles[OptionProcessing::GetOption("TooltipColor")] + lbl->toolTip() + "</font>");
+        lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
     }
     for(QSpinBox* sBox : spinBoxes)
     {
@@ -124,7 +126,7 @@ void GeneralFrame::InitializeUIElements()
     }
     for(QCheckBox* flag : flagBoxes)
     {
-        if(!flag->toolTip().isEmpty()) flag->setToolTip("<font color=\"black\">" + flag->toolTip() + "</font>");
+        if(!flag->toolTip().isEmpty()) flag->setToolTip(options->GetStyledTooltip(flag->toolTip()));
         flag->setCheckState((Qt::CheckState)(gp->GetFlagParameter(flag) << 1));
     }
     for(QPushButton* btn : buttons)
@@ -143,7 +145,7 @@ void GeneralFrame::InitializeUIElements()
 void GeneralFrame::QSpinBox_Changed(int NewValue)
 {
     if(IsInitializing || gp == nullptr) return;
-    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO);
+    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO, options);
     QSpinBox* spinBox = (QSpinBox*)sender();
     if(spinBox->maximum() > 255) gp->SetIntParameter(spinBox, NewValue);
     else
@@ -162,27 +164,27 @@ void GeneralFrame::QSpinBox_Changed(int NewValue)
 void GeneralFrame::QDoubleSpinBox_Changed(double NewValue)
 {
     if(IsInitializing || gp == nullptr) return;
-    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO);
+    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO, options);
     QDoubleSpinBox* dblSpinBox = (QDoubleSpinBox*)sender();
     gp->SetFloatParameter(dblSpinBox, (float)NewValue);
 }
 void GeneralFrame::Button_Clicked()
 {
     if(IsInitializing || gp == nullptr) return;
-    Debug::Log("Button_Clicked slot triggered.", Debug::INFO);
+    Debug::Log("Button_Clicked slot triggered.", Debug::INFO, options);
     QPushButton* button = (QPushButton*)sender();
     ButtonChange(button);
 }
 void GeneralFrame::ComboBox_IndexChanged(int NewValue)
 {
     if(IsInitializing || gp == nullptr) return;
-    Debug::Log("ComboBox_IndexChanged slot triggered.", Debug::INFO);
+    Debug::Log("ComboBox_IndexChanged slot triggered.", Debug::INFO, options);
     gp->SetUByteParameter((QComboBox*)sender(), NewValue);
 }
 void GeneralFrame::Flag_Changed(int NewValue)
 {
     if(IsInitializing || gp == nullptr) return;
-    Debug::Log("Flag_Changed slot triggered.", Debug::INFO);
+    Debug::Log("Flag_Changed slot triggered.", Debug::INFO, options);
     gp->SetFlagParameter((QCheckBox*)sender(), NewValue);
 }
 void GeneralFrame::ButtonChange(QPushButton* Button)
@@ -265,13 +267,12 @@ void GeneralFrame::ButtonValueGet(QPushButton* Button)
 
 void GeneralFrame::ResetUiMode()
 {
-    Debug::Log("ResetUiMode called.", Debug::INFO);
+    Debug::Log("ResetUiMode called.", Debug::INFO, options);
+
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();
     QList<QComboBox*> comboBoxes = this->findChildren<QComboBox*>();
-    unsigned char currentMode = OptionProcessing::GetOption("UiMode");
-    unsigned char currentTooltipColor = OptionProcessing::GetOption("TooltipColor");
-    if(currentMode == OptionProcessing::LIGHT)
+    if(options->GetUiMode() == Options::LIGHT)
     {
         this->setStyleSheet("background:white; color: black");
 
@@ -288,7 +289,7 @@ void GeneralFrame::ResetUiMode()
             cbBox->setStyleSheet("");
         }
     }
-    else if(currentMode == OptionProcessing::DARK)
+    else if(options->GetUiMode() == Options::DARK)
     {
         this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
 
@@ -312,7 +313,7 @@ void GeneralFrame::ResetUiMode()
         QString text = lbl->toolTip();
         text = text.split(">")[1];
         text.replace("</font>", "");
-        lbl->setToolTip(TooltipStyles[currentTooltipColor] + text + "</font>");
+        lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
     }
     QList<QCheckBox*> flagBoxes = this->findChildren<QCheckBox*>();
     for(QCheckBox* flag : flagBoxes)
@@ -321,7 +322,7 @@ void GeneralFrame::ResetUiMode()
         QString text = flag->toolTip();
         text = text.split(">")[1];
         text.replace("</font>", "");
-        flag->setToolTip(TooltipStyles[currentTooltipColor] + text + "</font>");
+        flag->setToolTip(options->GetStyledTooltip(flag->toolTip()));
     }
 }
 

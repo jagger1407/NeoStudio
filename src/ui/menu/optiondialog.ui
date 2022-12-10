@@ -185,6 +185,12 @@
      <height>32</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <property name="currentIndex">
     <number>1</number>
    </property>
@@ -399,6 +405,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>UiModeBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>OptionDialog</receiver>
+   <slot>UiModeBox_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>179</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>DebugEnableCheckState_Changed(int)</slot>
@@ -406,5 +428,6 @@
   <slot>TooltipColor_IndexChanged(int)</slot>
   <slot>SaveBtn_Clicked()</slot>
   <slot>CancelBtn_Clicked()</slot>
+  <slot>UiModeBox_IndexChanged(int)</slot>
  </slots>
 </ui>

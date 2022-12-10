@@ -5,10 +5,7 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QMainWindow(parent),
     ui(new Ui::NeoStudio)
 {
-    if(!FileParse::DoesFileExist(CONFIG_PATH))
-    {
-        OptionProcessing::SaveConfigFile(OptionProcessing::DEFAULT_LOGMODE, OptionProcessing::DEFAULT_TOOLTIPCOLOR, OptionProcessing::DEFAULT_UIMODE);
-    }
+    options = new Options();
 
     if(argc > 2) return;
 
@@ -32,20 +29,20 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
         ui->FileLbl->setText("Current File: " + PakName);
         InitFile();
     }
-    Debug::Log("NeoStudio constructed.", Debug::INFO);
+    Debug::Log("NeoStudio constructed.", Debug::INFO, options);
 }
 
 NeoStudio::~NeoStudio() = default;
 
 void NeoStudio::OpenFile()
 {
-    Debug::Log("OpenFile slot triggered.", Debug::INFO);
+    Debug::Log("OpenFile slot triggered.", Debug::INFO, options);
     file = QFileDialog::getOpenFileName(this, tr("Open File"),
                                                 "/home",
                                                 tr("Character Files (*.pak)(*.pak)"));//;;Parameter Files (*.dat)(*.dat)"));    This feature might be implemented at some point
     if(file == NULL)
     {
-        Debug::Log("OpenFile: No file selected.", Debug::WARNING);
+        Debug::Log("OpenFile: No file selected.", Debug::WARNING, options);
         return;
     }
     QString PakName = file.split('/')[(file.split('/').length()-1)];
@@ -56,10 +53,10 @@ void NeoStudio::OpenFile()
 
 void NeoStudio::SaveFile()
 {
-    Debug::Log("SaveFile slot triggered.", Debug::INFO);
+    Debug::Log("SaveFile slot triggered.", Debug::INFO, options);
     if(file == NULL)
     {
-        Debug::Log("SaveFile: No file open.", Debug::ERROR);
+        Debug::Log("SaveFile: No file open.", Debug::ERROR, options);
         return;
     }
 
@@ -70,10 +67,10 @@ void NeoStudio::SaveFile()
 
 void NeoStudio::SaveFileAs()
 {
-    Debug::Log("SaveFileAs slot triggered.", Debug::INFO);
+    Debug::Log("SaveFileAs slot triggered.", Debug::INFO, options);
     if(file == NULL)
     {
-        Debug::Log("SaveFileAs: No file open.", Debug::ERROR);
+        Debug::Log("SaveFileAs: No file open.", Debug::ERROR, options);
         return;
     }
 
@@ -82,7 +79,7 @@ void NeoStudio::SaveFileAs()
                                                 tr("Character Files (*.pak)(*.pak)"));//;;Parameter Files (*.dat)(*.dat)"));    This feature might be implemented at some point
     if(newFile == NULL)
     {
-        Debug::Log("SaveFileAs: No file selected.", Debug::WARNING);
+        Debug::Log("SaveFileAs: No file selected.", Debug::WARNING, options);
         return;
     }
     pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
@@ -94,10 +91,10 @@ void NeoStudio::CloseFile()
 {
     if(file == NULL)
     {
-        Debug::Log("CloseFile: No file open.", Debug::ERROR);
+        Debug::Log("CloseFile: No file open.", Debug::ERROR, options);
         return;
     }
-    Debug::Log("CloseFile slot triggered.", Debug::INFO);
+    Debug::Log("CloseFile slot triggered.", Debug::INFO, options);
     if(generalWindow == nullptr) return;
     generalWindow->close();
     file = "";
@@ -106,13 +103,13 @@ void NeoStudio::CloseFile()
 
 void NeoStudio::OpenAbout()
 {
-    Debug::Log("About page opened.", Debug::INFO);
-    (new AboutWindow())->exec();
+    Debug::Log("About page opened.", Debug::INFO, options);
+    AboutWindow(options).exec();
 }
 void NeoStudio::OpenOptions()
 {
-    Debug::Log("Option Dialog opened.", Debug::INFO);
-    (new OptionDialog())->exec();
+    Debug::Log("Option Dialog opened.", Debug::INFO, options);
+    OptionDialog(options).exec();
     ResetUiMode();
     if(generalWindow != nullptr) generalWindow->ResetUiMode();
     if(meleeWindow != nullptr) meleeWindow->ResetUiMode();
@@ -121,27 +118,26 @@ void NeoStudio::OpenOptions()
 
 void NeoStudio::InitFile()
 {
-    Debug::Log("InitFile called.", Debug::INFO);
-    pak = new PakControls(file);
+    Debug::Log("InitFile called.", Debug::INFO, options);
+    pak = new PakControls(file, options);
     if(pak->HasFailed()) return;
     ui->ParameterTabs->setCurrentIndex(GENERAL);
-    generalWindow = new GeneralFrame(pak);
+    generalWindow = new GeneralFrame(pak, options);
     ui->GeneralScrollArea->setWidget(generalWindow);
-    meleeWindow = new MeleeFrame(pak);
+    meleeWindow = new MeleeFrame(pak, options);
     ui->MeleeScrollArea->setWidget(meleeWindow);
 }
 
 void NeoStudio::ResetUiMode()
 {
-    unsigned char currentMode = OptionProcessing::GetOption("UiMode");
-    if(currentMode == OptionProcessing::LIGHT)
+    if(options->GetUiMode() == Options::LIGHT)
     {
         this->setStyleSheet("background:white; color: black");
         ui->FileLbl->setStyleSheet("color:black");
         ui->GeneralTab->setStyleSheet("color:black;background:white;");
         ui->MeleeTab->setStyleSheet("color:black;background:white;");
     }
-    else if(currentMode == OptionProcessing::DARK)
+    else if(options->GetUiMode() == Options::DARK)
     {
         this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
         ui->FileLbl->setStyleSheet("color:white");

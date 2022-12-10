@@ -2,6 +2,7 @@
 #define PAKCONTROLS_H
 
 #include "src/external/fileparse.h"
+#include "src/external/debug.h"
 #include "src/neo_info.h"
 
 /**
@@ -13,7 +14,7 @@ public:
     /**
      * Constructs a new PakControls object and connects it to given .pak file.
      */
-    PakControls(QString FilePath);
+    PakControls(QString FilePath, Options* options);
     /**Checks if the PakControls object is connected to a .pak file.*/
     bool HasFailed();
     /**Updates .pak Data with current parameters and saves data to Path.*/
@@ -37,6 +38,8 @@ private:
     int paramSize[4];
     /**bool to check if the construction of the PakControls object failed.*/
     bool failed = true;
+
+    Options* options = nullptr;
 };
 
 #endif // PAKCONTROLS_H

@@ -1,10 +1,9 @@
 #include "aboutwindow.h"
 
-AboutWindow::AboutWindow()
+AboutWindow::AboutWindow(Options* options)
     : ui(new Ui::AboutWindow)
 {
     ui->setupUi(this);
-    unsigned char currentMode = OptionProcessing::GetOption("UiMode");
 
     ui->graphicsView->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
 	ui->graphicsView->setVerticalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
@@ -12,11 +11,11 @@ AboutWindow::AboutWindow()
     scene->setSceneRect(ui->graphicsView->rect());
     scene->addPixmap(QPixmap("./assets/AboutImage.png").scaled(ui->graphicsView->width(), ui->graphicsView->height(), Qt::KeepAspectRatio));
     ui->graphicsView->setScene(scene);
-    if(currentMode == OptionProcessing::LIGHT)
+    if(options->GetUiMode() == Options::LIGHT)
     {
         setStyleSheet("background:white; color: black");
     }
-    else if(currentMode == OptionProcessing::DARK)
+    else if(options->GetUiMode() == Options::DARK)
     {
         setStyleSheet("background:rgb(50, 54, 60) ; color: white");
     }

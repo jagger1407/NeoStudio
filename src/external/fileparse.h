@@ -2,7 +2,6 @@
 #define FILEPARSE_H
 
 #include "qt_includes.h"
-#include "debug.h"
 /**
  * Parse data from/to an external file.
  */

@@ -19,13 +19,13 @@ set(neostudio_SRC
   # This is where the main logic is
   src/main.cpp
   src/neo_info.h
+  src/options.cpp
   # external
   # These are the classes that are general purpose,
   # or classes that write externally (i.e. files)
   src/external/fileparse.cpp
   src/external/debug.cpp
   src/external/bitmanipulation.h
-  src/external/optionprocessing.h
   # fs
   # These classes are for all the logic concerning the .pak file specifically
   src/pak_filesystem/parameterfile.h

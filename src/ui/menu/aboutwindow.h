@@ -3,7 +3,7 @@
 
 #include "src/external/qt_includes.h"
 #include "ui_aboutwindow.h"
-#include "src/external/optionprocessing.h"
+#include "src/options.h"
 
 namespace Ui
 {
@@ -21,7 +21,7 @@ public:
     /**
      * Default constructor
      */
-    AboutWindow();
+    AboutWindow(Options* options);
 private:
     QScopedPointer<Ui::AboutWindow> ui;
 };

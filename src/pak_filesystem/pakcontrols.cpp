@@ -1,10 +1,11 @@
 #include "pakcontrols.h"
 
-PakControls::PakControls(QString FilePath)
+PakControls::PakControls(QString FilePath, Options* options)
 {
+    this->options = options;
     if(!FilePath.endsWith("pak", Qt::CaseInsensitive))
     {
-        Debug::Log("PakControls: not a pak file.", Debug::ERROR);
+        Debug::Log("PakControls: not a pak file.", Debug::ERROR, options);
         return;
     }
     
@@ -12,7 +13,7 @@ PakControls::PakControls(QString FilePath)
 
     if((unsigned char)pakData.at(0) != PAK_FIRST_BYTE)
     {
-        Debug::Log("PakControls: bad pak file", Debug::ERROR);
+        Debug::Log("PakControls: bad pak file", Debug::ERROR, options);
         return;
     }
 
@@ -45,11 +46,11 @@ PakControls::PakControls(QString FilePath)
     paramData[MOVEMENT] = QByteArray(pakData.mid(paramOffset[MOVEMENT], paramSize[MOVEMENT]));
 
     failed = false;
-    Debug::Log("PakControls object constructed.", Debug::INFO);
+    Debug::Log("PakControls object constructed.", Debug::INFO, options);
 }
 QByteArray PakControls::GetPakData()
 {
-    Debug::Log("GetPakData called.", Debug::INFO);
+    Debug::Log("GetPakData called.", Debug::INFO, options);
     QByteArray output(LeftPak);
     output.append(paramData[GENERAL]);
     output.append(paramData[MELEE]);
@@ -60,27 +61,27 @@ QByteArray PakControls::GetPakData()
 }
 QByteArray PakControls::GetParamData(ParameterType ParamType)
 {
-    Debug::Log("GetParamData called.", Debug::INFO);
+    Debug::Log("GetParamData called.", Debug::INFO, options);
     return paramData[ParamType];
 }
 void PakControls::UpdateParamData(ParameterType ParamType, QByteArray Data)
 {
-    Debug::Log("UpdateParamData called.", Debug::INFO);
+    Debug::Log("UpdateParamData called.", Debug::INFO, options);
     if(Data.size() != paramData[ParamType].size())
     {
-        Debug::Log("UpdateParamData: QByteArray doesn't match Parameter data size.\nData = " + QString::number(Data.size()) + " Bytes\nparamData = " + QString::number(paramData[ParamType].size()) + " Bytes", Debug::ERROR);
+        Debug::Log("UpdateParamData: QByteArray doesn't match Parameter data size.\nData = " + QString::number(Data.size()) + " Bytes\nparamData = " + QString::number(paramData[ParamType].size()) + " Bytes", Debug::ERROR, options);
         return;
     }
     paramData[ParamType].replace(0, paramData[ParamType].size(), Data);
 }
 void PakControls::SavePak(QString Path)
 {
-    Debug::Log("SavePak called.", Debug::INFO);
+    Debug::Log("SavePak called.", Debug::INFO, options);
     QByteArray* fullData = new QByteArray(GetPakData());
     FileParse::WriteFile(Path, fullData);
 }
 bool PakControls::HasFailed()
 {
-    Debug::Log("HasFailed called.", Debug::INFO);
+    Debug::Log("HasFailed called.", Debug::INFO, options);
     return failed;
 }

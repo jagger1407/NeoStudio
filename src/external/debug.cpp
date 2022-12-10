@@ -1,29 +1,31 @@
 #include "debug.h"
 
-void Debug::Log(const QString Message, LogLevel Severity)
+void Debug::Log(const QString Message, LogLevel Severity, Options* options)
 {
-    OptionProcessing::LogMode Log_Mode = (OptionProcessing::LogMode)OptionProcessing::GetOption("LogMode");
-    switch(Log_Mode)
+    switch(options->GetLogMode())
     {
-        case OptionProcessing::RELEASE:
+        case Options::RELEASE:
             if(Severity == INFO) return;
             ConsolePrint(Message, Severity);
             LogFilePrint(Message, Severity);
             if(Severity == ERROR) ShowError(Message);
             break;
-        case OptionProcessing::RELEASE_NOFILE:
+        case Options::RELEASE_NOFILE:
             if(Severity == INFO) return;
             ConsolePrint(Message, Severity);
             if(Severity == ERROR) ShowError(Message);
             break;
-        case OptionProcessing::DEV:
+        case Options::DEV:
             ConsolePrint(Message, Severity);
             LogFilePrint(Message, Severity);
             if(Severity == ERROR) ShowError(Message);
             break;
-        case OptionProcessing::DEV_NOFILE:
+        case Options::DEV_NOFILE:
             ConsolePrint(Message, Severity);
             if(Severity == ERROR) ShowError(Message);
+            break;
+        case Options::LOGMODE_COUNT:
+        default:
             break;
     }
 }

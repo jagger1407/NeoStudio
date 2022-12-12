@@ -12,28 +12,47 @@ set(CMAKE_AUTOUIC ON)
 find_package(Qt5Widgets CONFIG REQUIRED)
 
 set(neostudio_SRC
-  # qt libraries
-  # These are necessary for the program to work with the Qt Framework
+
+  # src/
+  # this is where the main logic is,
+  # including main, game-related data and option processing.
+  
+  # external/
+  # All the handling (reading/writing) of external files is put here.
+  
+  # pak_filesystem/
+  # The classes in here all relate to the parsing and
+  # modification of data that stems from .pak character files.
+  
+  # ui/
+  # This contains all the logic handling the UI Windows and Dialogs.
+
+  # ::header files::
   src/external/qt_includes.h
-  # src
-  # This is where the main logic is
-  src/main.cpp
   src/neo_info.h
+  src/neo_info.h
+  src/options.h
+  src/external/fileparse.h
+  src/external/debug.h
+  src/external/bitmanipulation.h
+  src/pak_filesystem/parameterfile.h
+  src/pak_filesystem/generalparameters.h
+  src/pak_filesystem/meleeparameters.h
+  src/pak_filesystem/pakcontrols.h
+  src/ui/neostudio.h
+  src/ui/menu/aboutwindow.h
+  src/ui/menu/optiondialog.h
+  src/ui/paramSections/generalframe.h
+  src/ui/paramSections/meleeframe.h
+  
+  # ::source files::
+  src/main.cpp
   src/options.cpp
-  # external
-  # These are the classes that are general purpose,
-  # or classes that write externally (i.e. files)
   src/external/fileparse.cpp
   src/external/debug.cpp
-  src/external/bitmanipulation.h
-  # fs
-  # These classes are for all the logic concerning the .pak file specifically
-  src/pak_filesystem/parameterfile.h
   src/pak_filesystem/generalparameters.cpp
   src/pak_filesystem/meleeparameters.cpp
   src/pak_filesystem/pakcontrols.cpp
-  # ui
-  # These classes are all the UI Dialogs/Windows that this program has
   src/ui/neostudio.cpp
   src/ui/menu/aboutwindow.cpp
   src/ui/menu/optiondialog.cpp

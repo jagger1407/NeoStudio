@@ -16,8 +16,7 @@ public:
     /**Sets wanted bit out of generic byte.*/
     static void SetBit(char *byte, unsigned char bit, bool newValue)
     {
-        if (newValue == true) *byte = *byte | (0x01 << bit);
-        else *byte = *byte & ~(0x01 << bit);
+        *byte = (*byte & ~(0x1 << bit)) + (newValue << bit);
     }
 };
 

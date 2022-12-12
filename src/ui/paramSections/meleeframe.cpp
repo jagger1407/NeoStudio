@@ -150,59 +150,65 @@ void MeleeFrame::CheckBox_StateChanged(int NewState)
 void MeleeFrame::ResetUiMode()
 {
     Debug::Log("ResetUiMode called.", Debug::INFO, options);
+    
+    // Getting all the UI Elements and categorizing them by type
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();
     QList<QComboBox*> comboBoxes = this->findChildren<QComboBox*>();
+    QList<QLabel*> labels = this->findChildren<QLabel*>();
+    QList<QCheckBox*> flagBoxes = this->findChildren<QCheckBox*>();
+    
+    // Change the StyleSheet of Window + each Element
     if(options->GetUiMode() == Options::LIGHT)
     {
         this->setStyleSheet("background:white; color: black");
 
-        for(int i=0;i<spinBoxes.count();i++)
+        for(QSpinBox* spinBox : spinBoxes)
         {
-            spinBoxes[i]->setStyleSheet("");
+            spinBox->setStyleSheet("");
         }
-        for(int i=0;i<dblSpinBoxes.count();i++)
+        for(QDoubleSpinBox* dblSpinBox : dblSpinBoxes)
         {
-            dblSpinBoxes[i]->setStyleSheet("");
+            dblSpinBox->setStyleSheet("");
         }
-        for(int i=0;i<comboBoxes.count();i++)
+        for(QComboBox* comboBox : comboBoxes)
         {
-            comboBoxes[i]->setStyleSheet("");
+            comboBox->setStyleSheet("");
         }
     }
     else if(options->GetUiMode() == Options::DARK)
     {
         this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
 
-        for(int i=0;i<spinBoxes.count();i++)
+        for(QSpinBox* spinBox : spinBoxes)
         {
-            spinBoxes[i]->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
+            spinBox->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
         }
-        for(int i=0;i<dblSpinBoxes.count();i++)
+        for(QDoubleSpinBox* dblSpinBox : dblSpinBoxes)
         {
-            dblSpinBoxes[i]->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
+            dblSpinBox->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
         }
-        for(int i=0;i<comboBoxes.count();i++)
+        for(QComboBox* comboBox : comboBoxes)
         {
-            comboBoxes[i]->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
+            comboBox->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
         }
     }
-    QList<QLabel*> labels = this->findChildren<QLabel*>();
-    for(int i=0;i<labels.count();i++)
+    
+    // Change the StyleSheet for the tooltips as well, can't leave them out now, can we?
+    for(QLabel* lbl : labels)
     {
-        if(labels[i]->toolTip().isEmpty()) continue;
-        QString text = labels[i]->toolTip();
+        if(lbl->toolTip().isEmpty()) continue;
+        QString text = lbl->toolTip();
         text = text.split(">")[1];
         text.replace("</font>", "");
-        labels[i]->setToolTip(options->GetStyledTooltip(labels[i]->toolTip()));
+        lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
     }
-    QList<QCheckBox*> flagBoxes = this->findChildren<QCheckBox*>();
-    for(int i=0;i<flagBoxes.count();i++)
+    for(QCheckBox* flag : flagBoxes)
     {
-        if(flagBoxes[i]->toolTip().isEmpty()) continue;
-        QString text = flagBoxes[i]->toolTip();
+        if(flag->toolTip().isEmpty()) continue;
+        QString text = flag->toolTip();
         text = text.split(">")[1];
         text.replace("</font>", "");
-        flagBoxes[i]->setToolTip(options->GetStyledTooltip(flagBoxes[i]->toolTip()));
+        flagBoxes[i]->setToolTip(options->GetStyledTooltip(flag->toolTip()));
     }
 }

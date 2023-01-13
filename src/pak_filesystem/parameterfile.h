@@ -12,32 +12,75 @@ class ParameterFile
 {
 
 public:
-    typedef const unsigned char param_offset;
+
+    /** This represents a parameter in the program.
+     *
+     *  offset = the offset used to access the parameter
+     *  UiElement = the UI Element that edits this parameter
+     */
+    typedef struct
+    {
+        unsigned short offset;
+        QObject* UiElement;
+    } Param_Offset;
+
+    /**Changes one specific flag within the parameter section.
+     *
+     * @param Offset The offset used to locate the parameter
+     * @param bit The bit that this flag uses
+     * @param Value The value you want this bit to have
+     */
     void ChangeData(int Offset, int bit, bool Value)
     {
         BitManipulation::SetBit(fileData.data() + Offset, bit, Value);
     }
+    /**Changes one specific byte within the parameter section.
+     *
+     * @param Offset The offset used to locate the parameter
+     * @param Value The value you want this byte to have
+     */
     void ChangeData(int Offset, unsigned char Value)
     {
         *(fileData.data() + Offset) = Value;
     }
+    /**Changes one specific short (2 Bytes) within the parameter section.
+     *
+     * @param Offset The offset used to locate the parameter
+     * @param Value The value you want this short to have
+     */
     void ChangeData(int Offset, unsigned short Value)
     {
         *(unsigned short*)(fileData.data() + Offset) = Value;
     }
+    /**Changes one specific int (2/4 Bytes) within the parameter section.
+     *
+     * @param Offset The offset used to locate the parameter
+     * @param Value The value you want this int to have
+     */
     void ChangeData(int Offset, int Value)
     {
         *(int*)(fileData.data() + Offset) = Value;
     }
+    /**Changes one specific float (4 Bytes) within the parameter section.
+     *
+     * @param Offset The offset used to locate the parameter
+     * @param Value The value you want this float to have
+     */
     void ChangeData(int Offset, float Value)
     {
         *(float*)(fileData.data() + Offset) = Value;
     }
+    /**Changes one specific long (4 Bytes) within the parameter section.
+     *
+     * @param Offset The offset used to locate the parameter
+     * @param Value The value you want this long to have
+     */
     void ChangeData(int Offset, unsigned long Value)
     {
         *(unsigned long*)(fileData.data() + Offset) = Value;
     }
-    virtual ParameterType GetParameterType() { return (ParameterType)0; }
+    /**Returns the parameter type of this object.*/
+    virtual ParameterType GetParameterType() { return PARAM_TYPE_INVALID; }
     /**Gets the Single-Byte parameter value of the parameter corresponding to the Object.*/
     virtual unsigned char GetUByteParameter(QSpinBox* Object) { return 0; }
     /**Gets the 2-Byte parameter value of the parameter corresponding to the Object.*/
@@ -68,7 +111,6 @@ public:
 protected:
     /**The QByteArray that includes the data of the entire parameter file.*/
     QByteArray fileData;
-    QList<QObject*>* uiElements = nullptr;
 };
 
 #endif // PARAMETERFILE_H

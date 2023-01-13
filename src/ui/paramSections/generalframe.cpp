@@ -1,91 +1,89 @@
 #include "generalframe.h"
 
-GeneralFrame::GeneralFrame(PakControls* Pak, Options* options, QWidget* parent) : QFrame(parent)
+GeneralFrame::GeneralFrame(PakControls* Pak, Options* options, QWidget* parent) : QFrame(parent), options(options)
 {
     ui = new Ui_GeneralFrame();
     ui->setupUi(this);
 
-    this->options = options;
-
     gp = new GeneralParameters(Pak->GetParamData(GENERAL), options);
 
     #if 1 // Passing the gp Object all UI Elements
-    gp->UiElements[GeneralParameters::Transform] = ui->TransformIDBox_1;
-    gp->UiElements[GeneralParameters::Transform+1] = ui->TransformIDBox_2;
-    gp->UiElements[GeneralParameters::Transform+2] = ui->TransformIDBox_3;
-    gp->UiElements[GeneralParameters::Transform+3] = ui->TransformIDBox_4;
-    gp->UiElements[GeneralParameters::TransformCost] = ui->TransformCostBox_1;
-    gp->UiElements[GeneralParameters::TransformCost+1] = ui->TransformCostBox_2;
-    gp->UiElements[GeneralParameters::TransformCost+2] = ui->TransformCostBox_3;
-    gp->UiElements[GeneralParameters::TransformCost+3] = ui->TransformCostBox_4;
-    gp->UiElements[GeneralParameters::FusionCost] = ui->FusionCostBox_1;
-    gp->UiElements[GeneralParameters::FusionCost+1] = ui->FusionCostBox_2;
-    gp->UiElements[GeneralParameters::FusionCost+2] = ui->FusionCostBox_3;
-    gp->UiElements[GeneralParameters::FusionType] = ui->FusionTypeBtn_1;
-    gp->UiElements[GeneralParameters::FusionType+1] = ui->FusionTypeBtn_2;
-    gp->UiElements[GeneralParameters::FusionType+2] = ui->FusionTypeBtn_3;
-    gp->UiElements[GeneralParameters::FusionCharID] = ui->FusionIDBox_1;
-    gp->UiElements[GeneralParameters::FusionCharID+1] = ui->FusionIDBox_2;
-    gp->UiElements[GeneralParameters::FusionCharID+2] = ui->FusionIDBox_3;
-    gp->UiElements[GeneralParameters::FusionPartnerID] = ui->PartnerIDBox_1;
-    gp->UiElements[GeneralParameters::FusionPartnerID+1] = ui->PartnerIDBox_2;
-    gp->UiElements[GeneralParameters::FusionPartnerID+2] = ui->PartnerIDBox_3;
-    gp->UiElements[GeneralParameters::FusionTeamID] = ui->PartnerTeamIDBox_1_1;
-    gp->UiElements[GeneralParameters::FusionTeamID+1] = ui->PartnerTeamIDBox_1_2;
-    gp->UiElements[GeneralParameters::FusionTeamID+2] = ui->PartnerTeamIDBox_1_3;
-    gp->UiElements[GeneralParameters::FusionTeamID+3] = ui->PartnerTeamIDBox_1_4;
-    gp->UiElements[GeneralParameters::FusionTeamID+4] = ui->PartnerTeamIDBox_1_5;
-    gp->UiElements[GeneralParameters::FusionTeamID+5] = ui->PartnerTeamIDBox_1_6;
-    gp->UiElements[GeneralParameters::FusionTeamID+6] = ui->PartnerTeamIDBox_2_1;
-    gp->UiElements[GeneralParameters::FusionTeamID+7] = ui->PartnerTeamIDBox_2_2;
-    gp->UiElements[GeneralParameters::FusionTeamID+8] = ui->PartnerTeamIDBox_2_3;
-    gp->UiElements[GeneralParameters::FusionTeamID+9] = ui->PartnerTeamIDBox_2_4;
-    gp->UiElements[GeneralParameters::FusionTeamID+10] = ui->PartnerTeamIDBox_2_5;
-    gp->UiElements[GeneralParameters::FusionTeamID+11] = ui->PartnerTeamIDBox_2_6;
-    gp->UiElements[GeneralParameters::FusionTeamID+12] = ui->PartnerTeamIDBox_3_1;
-    gp->UiElements[GeneralParameters::FusionTeamID+13] = ui->PartnerTeamIDBox_3_2;
-    gp->UiElements[GeneralParameters::FusionTeamID+14] = ui->PartnerTeamIDBox_3_3;
-    gp->UiElements[GeneralParameters::FusionTeamID+15] = ui->PartnerTeamIDBox_3_4;
-    gp->UiElements[GeneralParameters::FusionTeamID+16] = ui->PartnerTeamIDBox_3_5;
-    gp->UiElements[GeneralParameters::FusionTeamID+17] = ui->PartnerTeamIDBox_3_6;
-    gp->UiElements[GeneralParameters::ZSearch] = ui->ZSearchBox;
-    gp->UiElements[GeneralParameters::FlagByte] = ui->FlagByteGroup_1;
-    gp->UiElements[GeneralParameters::FlagByte+1] = ui->FlagByteGroup_2;
-    gp->UiElements[GeneralParameters::FlagByte+2] = ui->FlagByteGroup_3;
-    gp->UiElements[GeneralParameters::FlagByte+3] = ui->FlagByteGroup_4;
-    gp->UiElements[GeneralParameters::FlagByte+4] = ui->FlagByteGroup_5;
-    gp->UiElements[GeneralParameters::FlagByte+5] = ui->FlagByteGroup_6;
-    gp->UiElements[GeneralParameters::FlagByte+6] = ui->FlagByteGroup_7;
-    gp->UiElements[GeneralParameters::FlagByte+7] = ui->FlagByteGroup_8;
-    gp->UiElements[GeneralParameters::FlagByte+8] = ui->FlagByteGroup_9;
-    gp->UiElements[GeneralParameters::AuraColor] = ui->AuraColorBox;
-    gp->UiElements[GeneralParameters::Collision] = ui->CollisionSpinBox_1;
-    gp->UiElements[GeneralParameters::Collision+1] = ui->CollisionSpinBox_2;
-    gp->UiElements[GeneralParameters::Collision+2] = ui->CollisionSpinBox_3;
-    gp->UiElements[GeneralParameters::KiBlastAmount] = ui->KiBlastBox;
-    gp->UiElements[GeneralParameters::RushingTechnique] = ui->RushTechBtn_1;
-    gp->UiElements[GeneralParameters::RushingTechnique+1] = ui->RushTechBtn_2;
-    gp->UiElements[GeneralParameters::RushingTechnique+2] = ui->RushTechBtn_3;
-    gp->UiElements[GeneralParameters::RushingTechnique+3] = ui->RushTechBtn_4;
-    gp->UiElements[GeneralParameters::CounterMove] = ui->CounterBtn_1;
-    gp->UiElements[GeneralParameters::CounterMove+1] = ui->CounterBtn_2;
-    gp->UiElements[GeneralParameters::CounterMove+2] = ui->CounterBtn_3;
-    gp->UiElements[GeneralParameters::StepInMove] = ui->StepInBox;
-    gp->UiElements[GeneralParameters::ChargedBlastAmount] = ui->KiBlastChargedBox;
-    gp->UiElements[GeneralParameters::BlastStockAmount] = ui->BlastStockBox;
-    gp->UiElements[GeneralParameters::KiChargeSpeed] = ui->KiChargeBox;
-    gp->UiElements[GeneralParameters::KiChargeSpeedWater] = ui->KiChargeWaterBox;
-    gp->UiElements[GeneralParameters::BaseKiRegen] = ui->BaseKiRegenBox;
-    gp->UiElements[GeneralParameters::CounterKi] = ui->CounterKiBox;
-    gp->UiElements[GeneralParameters::BlastGaugeSpeed] = ui->BlastGaugeBox;
-    //gp->UiElements[GeneralParameters::MaxKiChargeSpeed] = ui->
-    gp->UiElements[GeneralParameters::MaxPowerModeDuration] = ui->MaxPowDurBox;
-    gp->UiElements[GeneralParameters::Gravity] = ui->GravityBox;
-    gp->UiElements[GeneralParameters::MaxDragonSmashes] = ui->DragonHomingBox;
-    gp->UiElements[GeneralParameters::MaxVanishingAttacks] = ui->VanishingAttackBox;
-    gp->UiElements[GeneralParameters::MeleeChargeSpeed] = ui->ChargeBarSpdBox;
-    gp->UiElements[GeneralParameters::DamageMultiplier] = ui->DmgMulBox;
-    gp->UiElements[GeneralParameters::SwitchRegenSpeed] = ui->TeamGaugeBox;
+    gp->parameter[GeneralParameters::Transform].UiElement = ui->TransformIDBox_1;
+    gp->parameter[GeneralParameters::Transform+1].UiElement = ui->TransformIDBox_2;
+    gp->parameter[GeneralParameters::Transform+2].UiElement = ui->TransformIDBox_3;
+    gp->parameter[GeneralParameters::Transform+3].UiElement = ui->TransformIDBox_4;
+    gp->parameter[GeneralParameters::TransformCost].UiElement = ui->TransformCostBox_1;
+    gp->parameter[GeneralParameters::TransformCost+1].UiElement = ui->TransformCostBox_2;
+    gp->parameter[GeneralParameters::TransformCost+2].UiElement = ui->TransformCostBox_3;
+    gp->parameter[GeneralParameters::TransformCost+3].UiElement = ui->TransformCostBox_4;
+    gp->parameter[GeneralParameters::FusionCost].UiElement = ui->FusionCostBox_1;
+    gp->parameter[GeneralParameters::FusionCost+1].UiElement = ui->FusionCostBox_2;
+    gp->parameter[GeneralParameters::FusionCost+2].UiElement = ui->FusionCostBox_3;
+    gp->parameter[GeneralParameters::FusionType].UiElement = ui->FusionTypeBtn_1;
+    gp->parameter[GeneralParameters::FusionType+1].UiElement = ui->FusionTypeBtn_2;
+    gp->parameter[GeneralParameters::FusionType+2].UiElement = ui->FusionTypeBtn_3;
+    gp->parameter[GeneralParameters::FusionCharID].UiElement = ui->FusionIDBox_1;
+    gp->parameter[GeneralParameters::FusionCharID+1].UiElement = ui->FusionIDBox_2;
+    gp->parameter[GeneralParameters::FusionCharID+2].UiElement = ui->FusionIDBox_3;
+    gp->parameter[GeneralParameters::FusionPartnerID].UiElement = ui->PartnerIDBox_1;
+    gp->parameter[GeneralParameters::FusionPartnerID+1].UiElement = ui->PartnerIDBox_2;
+    gp->parameter[GeneralParameters::FusionPartnerID+2].UiElement = ui->PartnerIDBox_3;
+    gp->parameter[GeneralParameters::FusionTeamID].UiElement = ui->PartnerTeamIDBox_1_1;
+    gp->parameter[GeneralParameters::FusionTeamID+1].UiElement = ui->PartnerTeamIDBox_1_2;
+    gp->parameter[GeneralParameters::FusionTeamID+2].UiElement = ui->PartnerTeamIDBox_1_3;
+    gp->parameter[GeneralParameters::FusionTeamID+3].UiElement = ui->PartnerTeamIDBox_1_4;
+    gp->parameter[GeneralParameters::FusionTeamID+4].UiElement = ui->PartnerTeamIDBox_1_5;
+    gp->parameter[GeneralParameters::FusionTeamID+5].UiElement = ui->PartnerTeamIDBox_1_6;
+    gp->parameter[GeneralParameters::FusionTeamID+6].UiElement = ui->PartnerTeamIDBox_2_1;
+    gp->parameter[GeneralParameters::FusionTeamID+7].UiElement = ui->PartnerTeamIDBox_2_2;
+    gp->parameter[GeneralParameters::FusionTeamID+8].UiElement = ui->PartnerTeamIDBox_2_3;
+    gp->parameter[GeneralParameters::FusionTeamID+9].UiElement = ui->PartnerTeamIDBox_2_4;
+    gp->parameter[GeneralParameters::FusionTeamID+10].UiElement = ui->PartnerTeamIDBox_2_5;
+    gp->parameter[GeneralParameters::FusionTeamID+11].UiElement = ui->PartnerTeamIDBox_2_6;
+    gp->parameter[GeneralParameters::FusionTeamID+12].UiElement = ui->PartnerTeamIDBox_3_1;
+    gp->parameter[GeneralParameters::FusionTeamID+13].UiElement = ui->PartnerTeamIDBox_3_2;
+    gp->parameter[GeneralParameters::FusionTeamID+14].UiElement = ui->PartnerTeamIDBox_3_3;
+    gp->parameter[GeneralParameters::FusionTeamID+15].UiElement = ui->PartnerTeamIDBox_3_4;
+    gp->parameter[GeneralParameters::FusionTeamID+16].UiElement = ui->PartnerTeamIDBox_3_5;
+    gp->parameter[GeneralParameters::FusionTeamID+17].UiElement = ui->PartnerTeamIDBox_3_6;
+    gp->parameter[GeneralParameters::ZSearch].UiElement = ui->ZSearchBox;
+    gp->parameter[GeneralParameters::FlagByte].UiElement = ui->FlagByteGroup_1;
+    gp->parameter[GeneralParameters::FlagByte+1].UiElement = ui->FlagByteGroup_2;
+    gp->parameter[GeneralParameters::FlagByte+2].UiElement = ui->FlagByteGroup_3;
+    gp->parameter[GeneralParameters::FlagByte+3].UiElement = ui->FlagByteGroup_4;
+    gp->parameter[GeneralParameters::FlagByte+4].UiElement = ui->FlagByteGroup_5;
+    gp->parameter[GeneralParameters::FlagByte+5].UiElement = ui->FlagByteGroup_6;
+    gp->parameter[GeneralParameters::FlagByte+6].UiElement = ui->FlagByteGroup_7;
+    gp->parameter[GeneralParameters::FlagByte+7].UiElement = ui->FlagByteGroup_8;
+    gp->parameter[GeneralParameters::FlagByte+8].UiElement = ui->FlagByteGroup_9;
+    gp->parameter[GeneralParameters::AuraColor].UiElement = ui->AuraColorBox;
+    gp->parameter[GeneralParameters::Collision].UiElement = ui->CollisionSpinBox_1;
+    gp->parameter[GeneralParameters::Collision+1].UiElement = ui->CollisionSpinBox_2;
+    gp->parameter[GeneralParameters::Collision+2].UiElement = ui->CollisionSpinBox_3;
+    gp->parameter[GeneralParameters::KiBlastAmount].UiElement = ui->KiBlastBox;
+    gp->parameter[GeneralParameters::RushingTechnique].UiElement = ui->RushTechBtn_1;
+    gp->parameter[GeneralParameters::RushingTechnique+1].UiElement = ui->RushTechBtn_2;
+    gp->parameter[GeneralParameters::RushingTechnique+2].UiElement = ui->RushTechBtn_3;
+    gp->parameter[GeneralParameters::RushingTechnique+3].UiElement = ui->RushTechBtn_4;
+    gp->parameter[GeneralParameters::CounterMove].UiElement = ui->CounterBtn_1;
+    gp->parameter[GeneralParameters::CounterMove+1].UiElement = ui->CounterBtn_2;
+    gp->parameter[GeneralParameters::CounterMove+2].UiElement = ui->CounterBtn_3;
+    gp->parameter[GeneralParameters::StepInMove].UiElement = ui->StepInBox;
+    gp->parameter[GeneralParameters::ChargedBlastAmount].UiElement = ui->KiBlastChargedBox;
+    gp->parameter[GeneralParameters::BlastStockAmount].UiElement = ui->BlastStockBox;
+    gp->parameter[GeneralParameters::KiChargeSpeed].UiElement = ui->KiChargeBox;
+    gp->parameter[GeneralParameters::KiChargeSpeedWater].UiElement = ui->KiChargeWaterBox;
+    gp->parameter[GeneralParameters::BaseKiRegen].UiElement = ui->BaseKiRegenBox;
+    gp->parameter[GeneralParameters::CounterKi].UiElement = ui->CounterKiBox;
+    gp->parameter[GeneralParameters::BlastGaugeSpeed].UiElement = ui->BlastGaugeBox;
+    //gp->parameter[GeneralParameters::MaxKiChargeSpeed].UiElement = ui->
+    gp->parameter[GeneralParameters::MaxPowerModeDuration].UiElement = ui->MaxPowDurBox;
+    gp->parameter[GeneralParameters::Gravity].UiElement = ui->GravityBox;
+    gp->parameter[GeneralParameters::MaxDragonSmashes].UiElement = ui->DragonHomingBox;
+    gp->parameter[GeneralParameters::MaxVanishingAttacks].UiElement = ui->VanishingAttackBox;
+    gp->parameter[GeneralParameters::MeleeChargeSpeed].UiElement = ui->ChargeBarSpdBox;
+    gp->parameter[GeneralParameters::DamageMultiplier].UiElement = ui->DmgMulBox;
+    gp->parameter[GeneralParameters::SwitchRegenSpeed].UiElement = ui->TeamGaugeBox;
     #endif
 
     if(Pak->HasFailed())
@@ -231,8 +229,7 @@ void GeneralFrame::ButtonValueGet(QPushButton* Button)
 {
     int curBtn = -1;
     if(Button == ui->RushTechBtn_1) curBtn = 0;
-    else if(Button == ui->RushTechBtn_2)
-            curBtn = 1;
+    else if(Button == ui->RushTechBtn_2) curBtn = 1;
     else if(Button == ui->RushTechBtn_3) curBtn = 2;
     else if(Button == ui->RushTechBtn_4) curBtn = 3;
     else if(Button == ui->CounterBtn_1) curBtn = 4;
@@ -310,19 +307,12 @@ void GeneralFrame::ResetUiMode()
     for(QLabel* lbl : labels)
     {
         if(lbl->toolTip().isEmpty()) continue;
-        QString text = lbl->toolTip();
-        text = text.split(">")[1];
-        text.replace("</font>", "");
         lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
     }
     QList<QCheckBox*> flagBoxes = this->findChildren<QCheckBox*>();
     for(QCheckBox* flag : flagBoxes)
     {
         if(flag->toolTip().isEmpty()) continue;
-        QString text = flag->toolTip();
-        text = text.split(">")[1];
-        text.replace("</font>", "");
         flag->setToolTip(options->GetStyledTooltip(flag->toolTip()));
     }
 }
-

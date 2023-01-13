@@ -1,14 +1,13 @@
 #include "pakcontrols.h"
 
-PakControls::PakControls(QString FilePath, Options* options)
+PakControls::PakControls(QString FilePath, Options* options) : options(options)
 {
-    this->options = options;
     if(!FilePath.endsWith("pak", Qt::CaseInsensitive))
     {
         Debug::Log("PakControls: not a pak file.", Debug::ERROR, options);
         return;
     }
-    
+
     QByteArray pakData = FileParse::ReadWholeFile(FilePath);
 
     if((unsigned char)pakData.at(0) != PAK_FIRST_BYTE)

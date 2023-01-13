@@ -1,8 +1,7 @@
 #include "generalparameters.h"
 
-GeneralParameters::GeneralParameters(QByteArray ParameterData, Options* options)
+GeneralParameters::GeneralParameters(QByteArray ParameterData, Options* options) : options(options)
 {
-    this->options = options;
     fileData = ParameterData;
     constData = fileData.constData();
     if(fileData == nullptr || constData == nullptr)
@@ -10,6 +9,53 @@ GeneralParameters::GeneralParameters(QByteArray ParameterData, Options* options)
         Debug::Log("Construction of GeneralParameter object failed!", Debug::ERROR, options);
         return;
     }
+
+#if 1 // Defining all known parameter offsets
+    for(int i=0;i<4;i++)
+    {
+        parameter[Transform+i].offset = 0x00 + i;
+        parameter[TransformCost+i].offset = 0x04 + i;
+        parameter[RushingTechnique+i].offset = 0x4D + i;
+    }
+    for(int i=0;i<3;i++)
+    {
+        parameter[FusionCost+i].offset = 0x0A + i;
+        parameter[FusionType+i].offset = 0x0D + i;
+        parameter[FusionCharID+i].offset = 0x10 + i;
+        parameter[FusionPartnerID+i].offset = 0x13 + i;
+        parameter[Collision+i].offset = 0x40 + (4 * i);
+        parameter[CounterMove+i].offset = 0x51 + i;
+    }
+    for(int i=0;i<18;i++) parameter[FusionTeamID+i].offset = 0x16 + i;
+    parameter[ZSearch].offset = 0x29;
+    parameter[FlagByte].offset = 0x30;
+    parameter[FlagByte+1].offset = 0x31;
+    parameter[FlagByte+2].offset = 0x34;
+    parameter[FlagByte+3].offset = 0x35;
+    parameter[FlagByte+4].offset = 0x36;
+    parameter[FlagByte+5].offset = 0x37;
+    parameter[FlagByte+6].offset = 0x38;
+    parameter[FlagByte+7].offset = 0x39;
+    parameter[FlagByte+8].offset = 0x3E;
+    parameter[AuraColor].offset = 0x3F;
+    parameter[StepInMove].offset = 0x54;
+    parameter[ChargedBlastAmount].offset = 0x57;
+    parameter[BlastStockAmount].offset = 0x6C;
+    parameter[KiChargeSpeed].offset = 0x70;
+    parameter[KiChargeSpeedWater].offset = 0x74;
+    parameter[BaseKiRegen].offset = 0x78;
+    parameter[CounterKi].offset = 0x7C;
+    parameter[BlastGaugeSpeed].offset = 0x8C;
+    parameter[MaxKiChargeSpeed].offset = 0x90;
+    parameter[MaxPowerModeDuration].offset = 0x94;
+    parameter[Gravity].offset = 0x98;
+    parameter[MaxDragonSmashes].offset = 0xA8;
+    parameter[MaxVanishingAttacks].offset = 0xA9;
+    parameter[MeleeChargeSpeed].offset = 0xAC;
+    parameter[DamageMultiplier].offset = 0xB4;
+    parameter[SwitchRegenSpeed].offset = 0xB8;
+#endif
+
     Debug::Log("New GeneralParameter object constructed.", Debug::INFO, options);
 }
 bool GeneralParameters::GetFlagParameter(QCheckBox* Object)
@@ -19,9 +65,9 @@ bool GeneralParameters::GetFlagParameter(QCheckBox* Object)
     int bit = Object->objectName().right(1).toUInt() - 1;
     for(int i=FlagByte;i<FlagByte + 9;i++)
     {
-        if((long)byte == (long)UiElements[i]) return BitManipulation::Bit(*(constData + offset[i]), bit);
+        if((long)byte == (long)parameter[i].UiElement) return BitManipulation::Bit(*(constData + parameter[i].offset), bit);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return false;
 }
 unsigned char GeneralParameters::GetUByteParameter(QSpinBox* Object)
@@ -29,19 +75,19 @@ unsigned char GeneralParameters::GetUByteParameter(QSpinBox* Object)
     Debug::Log("GetUByteParameter called.", Debug::INFO, options);
     for(int i=0;i<GeneralParameterCount;i++)
     {
-        if((long)Object == (long)UiElements[i]) return *(constData + offset[i]);
+        if((long)Object == (long)parameter[i].UiElement) return *(constData + parameter[i].offset);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return (unsigned char)-1;
 }
 unsigned char GeneralParameters::GetUByteParameter(QComboBox* Object)
 {
     Debug::Log("GetUByteParameter called.", Debug::INFO, options);
-    if((long)Object == (long)UiElements[ZSearch]) return *(constData + offset[ZSearch]);
-    else if((long)Object == (long)UiElements[ZSearch]) return *(constData + offset[AuraColor]);
-    else if((long)Object == (long)UiElements[StepInMove]) return *(constData + offset[StepInMove]);
-    else if((long)Object == (long)UiElements[AuraColor]) return *(constData + offset[AuraColor]);
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    if((long)Object == (long)parameter[ZSearch].UiElement) return *(constData + parameter[ZSearch].offset);
+    else if((long)Object == (long)parameter[ZSearch].UiElement) return *(constData + parameter[AuraColor].offset);
+    else if((long)Object == (long)parameter[StepInMove].UiElement) return *(constData + parameter[StepInMove].offset);
+    else if((long)Object == (long)parameter[AuraColor].UiElement) return *(constData + parameter[AuraColor].offset);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return (unsigned char)-1;
 }
 unsigned char GeneralParameters::GetUByteParameter(QPushButton* Object)
@@ -49,9 +95,9 @@ unsigned char GeneralParameters::GetUByteParameter(QPushButton* Object)
     Debug::Log("GetUByteParameter called.", Debug::INFO, options);
     for(int i=FusionType;i<=CounterMove+2;i++)
     {
-        if((long)Object == (long)UiElements[i]) return *(constData + offset[i]);
+        if((long)Object == (long)parameter[i].UiElement) return *(constData + parameter[i].offset);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return (unsigned char)-1;
 }
 unsigned short GeneralParameters::GetUShortParameter(QSpinBox* Object)
@@ -66,10 +112,10 @@ int GeneralParameters::GetIntParameter(QSpinBox* Object)
     Debug::Log("GetIntParameter called.", Debug::INFO, options);
     for(int i=KiChargeSpeed;i<=BlastGaugeSpeed;i++)
     {
-        if((long)Object == (long)UiElements[i]) return *(int*)(constData + offset[i]);
+        if((long)Object == (long)parameter[i].UiElement) return *(int*)(constData + parameter[i].offset);
     }
 
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return -1;
 }
 float GeneralParameters::GetFloatParameter(QDoubleSpinBox* Object)
@@ -77,9 +123,9 @@ float GeneralParameters::GetFloatParameter(QDoubleSpinBox* Object)
     Debug::Log("GetFloatParameter called.", Debug::INFO, options);
     for(int i=MaxPowerModeDuration;i<=MeleeChargeSpeed;i++)
     {
-        if((long)Object == (long)UiElements[i]) return *(float*)(constData + offset[i]);
+        if((long)Object == (long)parameter[i].UiElement) return *(float*)(constData + parameter[i].offset);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return -1;
 }
 
@@ -90,13 +136,13 @@ void GeneralParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
     int bit = Object->objectName().right(1).toUInt();
     for(int i=0;i<9;i++)
     {
-        if((long)byte == (long)UiElements[i])
+        if((long)byte == (long)parameter[i].UiElement)
         {
-            ChangeData(offset[i], bit, NewValue);
+            ChangeData(parameter[i].offset, bit, NewValue);
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
 }
 
 void GeneralParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewValue)
@@ -104,33 +150,33 @@ void GeneralParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewVal
     Debug::Log("SetUByteParameter called.", Debug::INFO, options);
     for(int i=0;i<GeneralParameterCount;i++)
     {
-        if((long)Object == (long)UiElements[i])
+        if((long)Object == (long)parameter[i].UiElement)
         {
-            ChangeData(offset[i], NewValue);
+            ChangeData(parameter[i].offset, NewValue);
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
 }
 void GeneralParameters::SetUByteParameter(QComboBox* Object, unsigned char NewValue)
 {
     Debug::Log("SetUByteParameter called.", Debug::INFO, options);
-    if((long)Object == (long)UiElements[ZSearch])
+    if((long)Object == (long)parameter[ZSearch].UiElement)
     {
-        ChangeData(offset[ZSearch], NewValue);
+        ChangeData(parameter[ZSearch].offset, NewValue);
         return;
     }
-    else if((long)Object == (long)UiElements[ZSearch])
+    else if((long)Object == (long)parameter[ZSearch].UiElement)
     {
-        ChangeData(offset[AuraColor], NewValue);
+        ChangeData(parameter[AuraColor].offset, NewValue);
         return;
     }
-    else if((long)Object == (long)UiElements[StepInMove])
+    else if((long)Object == (long)parameter[StepInMove].UiElement)
     {
-        ChangeData(offset[StepInMove], NewValue);
+        ChangeData(parameter[StepInMove].offset, NewValue);
         return;
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return;
 }
 void GeneralParameters::SetUByteParameter(QPushButton* Object, unsigned char NewValue)
@@ -138,13 +184,13 @@ void GeneralParameters::SetUByteParameter(QPushButton* Object, unsigned char New
     Debug::Log("SetUByteParameter called.", Debug::INFO, options);
     for(int i=FusionType;i<=CounterMove+2;i++)
     {
-        if((long)Object == (long)UiElements[i])
+        if((long)Object == (long)parameter[i].UiElement)
         {
-            ChangeData(offset[i], NewValue);
+            ChangeData(parameter[i].offset, NewValue);
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return;
 }
 void GeneralParameters::SetUShortParameter(QSpinBox* Object, unsigned short NewValue)
@@ -158,14 +204,14 @@ void GeneralParameters::SetIntParameter(QSpinBox* Object, int NewValue)
     Debug::Log("SetIntParameter called.", Debug::INFO, options);
     for(int i=KiChargeSpeed;i<=BlastGaugeSpeed;i++)
     {
-        if((long)Object == (long)UiElements[i])
+        if((long)Object == (long)parameter[i].UiElement)
         {
-            ChangeData(offset[i], NewValue);
+            ChangeData(parameter[i].offset, NewValue);
             return;
         }
     }
 
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return;
 }
 void GeneralParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
@@ -173,13 +219,13 @@ void GeneralParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue
     Debug::Log("SetFloatParameter called.", Debug::INFO, options);
     for(int i=MaxPowerModeDuration;i<=MeleeChargeSpeed;i++)
     {
-        if((long)Object == (long)UiElements[i])
+        if((long)Object == (long)parameter[i].UiElement)
         {
-            ChangeData(offset[i], NewValue);
+            ChangeData(parameter[i].offset, NewValue);
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements.", Debug::WARNING, options);
+    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return;
 }
 QByteArray GeneralParameters::GetFileData()

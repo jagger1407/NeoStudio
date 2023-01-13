@@ -1,6 +1,10 @@
 #include "neostudio.h"
 #include "ui_neostudio.h"
 
+
+#define VERSION_STRING "Neo Studio v0.3"
+
+
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QMainWindow(parent),
     ui(new Ui::NeoStudio)
@@ -10,7 +14,7 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     if(argc > 2) return;
 
     ui->setupUi(this);
-    this->setWindowTitle("Neo Studio v0.3");
+    this->setWindowTitle(VERSION_STRING);
     ui->ParameterTabs->setCurrentIndex(GENERAL);
     ResetUiMode();
 
@@ -109,10 +113,12 @@ void NeoStudio::OpenAbout()
 void NeoStudio::OpenOptions()
 {
     Debug::Log("Option Dialog opened.", Debug::INFO, options);
-    OptionDialog(options).exec();
+    OptionDialog* optionWindow = new OptionDialog(options);
+    optionWindow->exec();
     ResetUiMode();
     if(generalWindow != nullptr) generalWindow->ResetUiMode();
     if(meleeWindow != nullptr) meleeWindow->ResetUiMode();
+    delete optionWindow;
 }
 
 
@@ -145,4 +151,3 @@ void NeoStudio::ResetUiMode()
         ui->MeleeTab->setStyleSheet("color:black;background:rgb(50,54,60);");
     }
 }
-

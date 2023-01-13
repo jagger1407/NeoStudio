@@ -1,54 +1,52 @@
 #include "meleeframe.h"
 
-MeleeFrame::MeleeFrame(PakControls* Pak, Options* options, QWidget* parent) : QFrame(parent)
+MeleeFrame::MeleeFrame(PakControls* Pak, Options* options, QWidget* parent) : QFrame(parent), options(options)
 {
     ui = new Ui_MeleeFrame();
     ui->setupUi(this);
 
-    this->options = options;
-
     mp = new MeleeParameters(Pak->GetParamData(MELEE), options);
 
-    #if 1 // Passing the mp object the UI Elements
-    mp->UiElements[MeleeParameters::Header] = ui->UnknownSpinBox_14;
-    mp->UiElements[MeleeParameters::SecondaryString] = ui->SecStringFlag;
-    mp->UiElements[MeleeParameters::LockOnLoss] = ui->LockOnLossFlag;
-    mp->UiElements[MeleeParameters::Damage] = ui->DamageBox;
-    mp->UiElements[MeleeParameters::DamageGuarding] = ui->DamageBox_2;
-    mp->UiElements[MeleeParameters::KiGain] = ui->KiGainBox;
-    mp->UiElements[MeleeParameters::KiLoss] = ui->KiLossBox;
-    mp->UiElements[MeleeParameters::Unk14] = ui->UnknownSpinBox_1;
-    mp->UiElements[MeleeParameters::Unk18] = ui->UnknownSpinBox_2;
-    mp->UiElements[MeleeParameters::Unk1C] = ui->UnknownSpinBox_3;
-    mp->UiElements[MeleeParameters::Hitstun] = ui->HitstunBox;
-    mp->UiElements[MeleeParameters::Unk21] = ui->UnknownSpinBox_4;
-    mp->UiElements[MeleeParameters::Unk22] = ui->UnknownSpinBox_5;
-    mp->UiElements[MeleeParameters::Unk23] = ui->UnknownSpinBox_6;
-    mp->UiElements[MeleeParameters::Unk24] = ui->UnknownSpinBox_7;
-    mp->UiElements[MeleeParameters::Unk25] = ui->UnknownSpinBox_8;
-    mp->UiElements[MeleeParameters::Unk26] = ui->UnknownSpinBox_9;
-    mp->UiElements[MeleeParameters::Unk27] = ui->UnknownSpinBox_10;
-    mp->UiElements[MeleeParameters::VFX] = ui->VFX_Box;
-    mp->UiElements[MeleeParameters::SFX] = ui->SFX_Box;
-    mp->UiElements[MeleeParameters::Unk2A] = ui->UnknownSpinBox_11;
-    mp->UiElements[MeleeParameters::Unk2B] = ui->UnknownSpinBox_12;
-    mp->UiElements[MeleeParameters::Knockback] = ui->KnockbackBox;
-    mp->UiElements[MeleeParameters::Unk30] = ui->UnknownFloatBox_11;
-    mp->UiElements[MeleeParameters::Reach] = ui->ReachBox;
-    mp->UiElements[MeleeParameters::Unk38] = ui->UnknownFloatBox_1;
-    mp->UiElements[MeleeParameters::Unk3C] = ui->UnknownFloatBox_2;
-    mp->UiElements[MeleeParameters::Unk40] = ui->UnknownFloatBox_3;
-    mp->UiElements[MeleeParameters::Unk44] = ui->UnknownFloatBox_4;
-    mp->UiElements[MeleeParameters::Unk48] = ui->UnknownFloatBox_5;
-    mp->UiElements[MeleeParameters::Unk4C] = ui->UnknownFloatBox_6;
-    mp->UiElements[MeleeParameters::Unk50] = ui->UnknownFloatBox_7;
-    mp->UiElements[MeleeParameters::Unk54] = ui->UnknownFloatBox_8;
-    mp->UiElements[MeleeParameters::Unk58] = ui->UnknownFloatBox_9;
-    mp->UiElements[MeleeParameters::Unk5C] = ui->UnknownFloatBox_10;
-    mp->UiElements[MeleeParameters::EffectGuard] = ui->EOG_Box;
-    mp->UiElements[MeleeParameters::EffectCounter] = ui->EOC_Box;
-    mp->UiElements[MeleeParameters::GuardType] = ui->GuardBehaviourFlag;
-    mp->UiElements[MeleeParameters::Unk63] = ui->UnknownSpinBox_13;
+    #if 1 // Passing the pointers to the UI elements to mp
+    mp->parameter[MeleeParameters::Header].UiElement = ui->UnknownSpinBox_14;
+    mp->parameter[MeleeParameters::SecondaryString].UiElement = ui->SecStringFlag;
+    mp->parameter[MeleeParameters::LockOnLoss].UiElement = ui->LockOnLossFlag;
+    mp->parameter[MeleeParameters::Damage].UiElement = ui->DamageBox;
+    mp->parameter[MeleeParameters::DamageGuarding].UiElement = ui->DamageBox_2;
+    mp->parameter[MeleeParameters::KiGain].UiElement = ui->KiGainBox;
+    mp->parameter[MeleeParameters::KiLoss].UiElement = ui->KiLossBox;
+    mp->parameter[MeleeParameters::Unk14].UiElement = ui->UnknownSpinBox_1;
+    mp->parameter[MeleeParameters::Unk18].UiElement = ui->UnknownSpinBox_2;
+    mp->parameter[MeleeParameters::Unk1C].UiElement = ui->UnknownSpinBox_3;
+    mp->parameter[MeleeParameters::Hitstun].UiElement = ui->HitstunBox;
+    mp->parameter[MeleeParameters::Unk21].UiElement = ui->UnknownSpinBox_4;
+    mp->parameter[MeleeParameters::Unk22].UiElement = ui->UnknownSpinBox_5;
+    mp->parameter[MeleeParameters::Unk23].UiElement = ui->UnknownSpinBox_6;
+    mp->parameter[MeleeParameters::Unk24].UiElement = ui->UnknownSpinBox_7;
+    mp->parameter[MeleeParameters::Unk25].UiElement = ui->UnknownSpinBox_8;
+    mp->parameter[MeleeParameters::Unk26].UiElement = ui->UnknownSpinBox_9;
+    mp->parameter[MeleeParameters::Unk27].UiElement = ui->UnknownSpinBox_10;
+    mp->parameter[MeleeParameters::VFX].UiElement = ui->VFX_Box;
+    mp->parameter[MeleeParameters::SFX].UiElement = ui->SFX_Box;
+    mp->parameter[MeleeParameters::Unk2A].UiElement = ui->UnknownSpinBox_11;
+    mp->parameter[MeleeParameters::Unk2B].UiElement = ui->UnknownSpinBox_12;
+    mp->parameter[MeleeParameters::Knockback].UiElement = ui->KnockbackBox;
+    mp->parameter[MeleeParameters::Unk30].UiElement = ui->UnknownFloatBox_11;
+    mp->parameter[MeleeParameters::Reach].UiElement = ui->ReachBox;
+    mp->parameter[MeleeParameters::Unk38].UiElement = ui->UnknownFloatBox_1;
+    mp->parameter[MeleeParameters::Unk3C].UiElement = ui->UnknownFloatBox_2;
+    mp->parameter[MeleeParameters::Unk40].UiElement = ui->UnknownFloatBox_3;
+    mp->parameter[MeleeParameters::Unk44].UiElement = ui->UnknownFloatBox_4;
+    mp->parameter[MeleeParameters::Unk48].UiElement = ui->UnknownFloatBox_5;
+    mp->parameter[MeleeParameters::Unk4C].UiElement = ui->UnknownFloatBox_6;
+    mp->parameter[MeleeParameters::Unk50].UiElement = ui->UnknownFloatBox_7;
+    mp->parameter[MeleeParameters::Unk54].UiElement = ui->UnknownFloatBox_8;
+    mp->parameter[MeleeParameters::Unk58].UiElement = ui->UnknownFloatBox_9;
+    mp->parameter[MeleeParameters::Unk5C].UiElement = ui->UnknownFloatBox_10;
+    mp->parameter[MeleeParameters::EffectGuard].UiElement = ui->EOG_Box;
+    mp->parameter[MeleeParameters::EffectCounter].UiElement = ui->EOC_Box;
+    mp->parameter[MeleeParameters::GuardType].UiElement = ui->GuardBehaviourFlag;
+    mp->parameter[MeleeParameters::Unk63].UiElement = ui->UnknownSpinBox_13;
     #endif
 
     InitializeUIElements();
@@ -150,14 +148,14 @@ void MeleeFrame::CheckBox_StateChanged(int NewState)
 void MeleeFrame::ResetUiMode()
 {
     Debug::Log("ResetUiMode called.", Debug::INFO, options);
-    
+
     // Getting all the UI Elements and categorizing them by type
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();
     QList<QComboBox*> comboBoxes = this->findChildren<QComboBox*>();
     QList<QLabel*> labels = this->findChildren<QLabel*>();
     QList<QCheckBox*> flagBoxes = this->findChildren<QCheckBox*>();
-    
+
     // Change the StyleSheet of Window + each Element
     if(options->GetUiMode() == Options::LIGHT)
     {
@@ -193,22 +191,16 @@ void MeleeFrame::ResetUiMode()
             comboBox->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
         }
     }
-    
+
     // Change the StyleSheet for the tooltips as well, can't leave them out now, can we?
     for(QLabel* lbl : labels)
     {
         if(lbl->toolTip().isEmpty()) continue;
-        QString text = lbl->toolTip();
-        text = text.split(">")[1];
-        text.replace("</font>", "");
         lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
     }
     for(QCheckBox* flag : flagBoxes)
     {
         if(flag->toolTip().isEmpty()) continue;
-        QString text = flag->toolTip();
-        text = text.split(">")[1];
-        text.replace("</font>", "");
-        flagBoxes[i]->setToolTip(options->GetStyledTooltip(flag->toolTip()));
+        flag->setToolTip(options->GetStyledTooltip(flag->toolTip()));
     }
 }

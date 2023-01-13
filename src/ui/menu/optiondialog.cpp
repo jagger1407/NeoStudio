@@ -1,14 +1,17 @@
 #include "optiondialog.h"
 
 OptionDialog::OptionDialog(Options* options)
-    : ui(new Ui::OptionDialog)
+    : ui(new Ui::OptionDialog), options(options)
 {
-    this->options = options;
-    if(this->options->GetUiMode() == Options::LIGHT)
+    int logMode = this->options->GetLogMode();
+    int uiMode = this->options->GetUiMode();
+    int tool = this->options->GetTooltipColor();
+    bool advanced = this->options->GetAdvancedOptions();
+    if(uiMode == Options::LIGHT)
     {
         this->setStyleSheet("background:white; color: black");
     }
-    else if(this->options->GetUiMode() == Options::DARK)
+    else if(uiMode == Options::DARK)
     {
         this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
     }
@@ -16,12 +19,12 @@ OptionDialog::OptionDialog(Options* options)
     this->setWindowTitle("Options");
     this->setWindowIcon(QIcon("./assets/cog-wheel.png"));
 
-    ui->LogModeBox->setCurrentIndex((int)this->options->GetLogMode());
-    ui->TooltipBox->setCurrentIndex((int)this->options->GetTooltipColor());
-    ui->UiModeBox->setCurrentIndex((int)this->options->GetUiMode());
-    ui->DebugEnableCheckBox->setCheckState((Qt::CheckState)(this->options->GetAdvancedOptions() << 1));
+    ui->LogModeBox->setCurrentIndex(logMode);
+    ui->TooltipBox->setCurrentIndex(tool);
+    ui->UiModeBox->setCurrentIndex((int)uiMode);
+    ui->DebugEnableCheckBox->setCheckState((Qt::CheckState)(advanced << 1));
 
-    if(!this->options->GetAdvancedOptions())
+    if(!advanced)
     {
         ui->LogModeBox->setStyleSheet("color:grey");
         ui->LogModeLbl->setStyleSheet("color:grey");
@@ -90,4 +93,3 @@ void OptionDialog::CancelBtn_Clicked()
     Debug::Log("CancelBtn_Clicked slot triggered.", Debug::INFO, options);
     this->close();
 }
-

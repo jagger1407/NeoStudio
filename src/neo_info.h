@@ -116,6 +116,7 @@ typedef enum
 /**Every currently known Parameter Type.*/
 typedef enum
 {
+    PARAM_TYPE_INVALID = -1,
     GENERAL,
     MELEE,
     KI_BLAST,

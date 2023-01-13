@@ -88,7 +88,19 @@ void Options::SetTooltipColor(Options::TooltipColor newColor)
 
 QString Options::GetStyledTooltip(QString tooltip)
 {
-    return tooltipStyles[this->tooltipColor] + tooltip + "</font>";
+    if(tooltip.isEmpty()) return tooltip;
+    if(!tooltip.contains("<")) return tooltipStyles[this->tooltipColor] + tooltip + "</font>";
+    QStringList text = tooltip.split(">");
+    QString line = "";
+    for(QString el : text)
+    {
+        if(!el.startsWith("<"))
+        {
+            line = el.split("<")[0];
+            break;
+        }
+    }
+    return tooltipStyles[this->tooltipColor] + line + "</font>";
 }
 
 Options::LogMode Options::GetLogMode()

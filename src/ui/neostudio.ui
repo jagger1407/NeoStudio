@@ -66,11 +66,11 @@
         <x>0</x>
         <y>0</y>
         <width>941</width>
-        <height>641</height>
+        <height>631</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">color:white</string>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -85,7 +85,7 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
+         <y>-8</y>
          <width>910</width>
          <height>637</height>
         </rect>
@@ -140,11 +140,11 @@
         <x>0</x>
         <y>0</y>
         <width>941</width>
-        <height>641</height>
+        <height>631</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">color:white</string>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOn</enum>

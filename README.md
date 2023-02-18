@@ -38,6 +38,6 @@ after this is finished, you should have a Neo Studio executable.
 
 ## Credits
 
-- HiroTex for supplying the AFL files and knowledge of the .pak file structure
-- ViveTheModder for giving feedback and pointing out mistakes
+- [HiroTex](https://github.com/hirotex) for supplying the AFL files and knowledge of the .pak file structure
+- [ViveTheModder](https://github.com/ViveTheModder) for giving feedback and pointing out mistakes
 

@@ -145,6 +145,7 @@ void MeleeFrame::CheckBox_StateChanged(int NewState)
     QCheckBox* flag = (QCheckBox*)sender();
     mp->SetFlagParameter(flag, NewState);
 }
+
 void MeleeFrame::ResetUiMode()
 {
     Debug::Log("ResetUiMode called.", Debug::INFO, options);

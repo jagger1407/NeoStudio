@@ -27,8 +27,10 @@ set(neostudio_SRC
   # ui/
   # This contains all the logic handling the UI Windows and Dialogs.
 
-  # ::header files::
+  # ::Qt files::
   src/external/qt_includes.h
+
+  # ::header files::
   src/neo_info.h
   src/neo_info.h
   src/options.h

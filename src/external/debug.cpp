@@ -32,7 +32,7 @@ void Debug::Log(const QString Message, LogLevel Severity, Options* options)
 void Debug::ConsolePrint(const QString Message, LogLevel Severity)
 {
     QString logLevels[3] = { "Info: ", "Warning: ", "ERROR! " };
-    qDebug().noquote() << QDateTime::currentDateTime().toString() << " - " + logLevels[Severity] << Message;
+    qInfo().noquote() << QDateTime::currentDateTime().toString() << " - " + logLevels[Severity] << Message;
 }
 void Debug::ShowError(const QString Message)
 {

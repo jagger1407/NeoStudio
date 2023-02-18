@@ -75,7 +75,7 @@ unsigned char GeneralParameters::GetUByteParameter(QSpinBox* Object)
     Debug::Log("GetUByteParameter called.", Debug::INFO, options);
     for(int i=0;i<GeneralParameterCount;i++)
     {
-        if((long)Object == (long)parameter[i].UiElement) return *(constData + parameter[i].offset);
+        if(Object == (void*)parameter[i].UiElement) return *(constData + parameter[i].offset);
     }
     Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return (unsigned char)-1;
@@ -83,10 +83,10 @@ unsigned char GeneralParameters::GetUByteParameter(QSpinBox* Object)
 unsigned char GeneralParameters::GetUByteParameter(QComboBox* Object)
 {
     Debug::Log("GetUByteParameter called.", Debug::INFO, options);
-    if((long)Object == (long)parameter[ZSearch].UiElement) return *(constData + parameter[ZSearch].offset);
-    else if((long)Object == (long)parameter[ZSearch].UiElement) return *(constData + parameter[AuraColor].offset);
-    else if((long)Object == (long)parameter[StepInMove].UiElement) return *(constData + parameter[StepInMove].offset);
-    else if((long)Object == (long)parameter[AuraColor].UiElement) return *(constData + parameter[AuraColor].offset);
+    if(Object == (void*)parameter[ZSearch].UiElement) return *(constData + parameter[ZSearch].offset);
+    else if(Object == (void*)parameter[ZSearch].UiElement) return *(constData + parameter[AuraColor].offset);
+    else if(Object == (void*)parameter[StepInMove].UiElement) return *(constData + parameter[StepInMove].offset);
+    else if(Object == (void*)parameter[AuraColor].UiElement) return *(constData + parameter[AuraColor].offset);
     Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return (unsigned char)-1;
 }
@@ -95,7 +95,7 @@ unsigned char GeneralParameters::GetUByteParameter(QPushButton* Object)
     Debug::Log("GetUByteParameter called.", Debug::INFO, options);
     for(int i=FusionType;i<=CounterMove+2;i++)
     {
-        if((long)Object == (long)parameter[i].UiElement) return *(constData + parameter[i].offset);
+        if(Object == (void*)parameter[i].UiElement) return *(constData + parameter[i].offset);
     }
     Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return (unsigned char)-1;
@@ -112,7 +112,7 @@ int GeneralParameters::GetIntParameter(QSpinBox* Object)
     Debug::Log("GetIntParameter called.", Debug::INFO, options);
     for(int i=KiChargeSpeed;i<=BlastGaugeSpeed;i++)
     {
-        if((long)Object == (long)parameter[i].UiElement) return *(int*)(constData + parameter[i].offset);
+        if(Object == (void*)parameter[i].UiElement) return *(int*)(constData + parameter[i].offset);
     }
 
     Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
@@ -121,9 +121,9 @@ int GeneralParameters::GetIntParameter(QSpinBox* Object)
 float GeneralParameters::GetFloatParameter(QDoubleSpinBox* Object)
 {
     Debug::Log("GetFloatParameter called.", Debug::INFO, options);
-    for(int i=MaxPowerModeDuration;i<=MeleeChargeSpeed;i++)
+    for(int i=0;i<=GeneralParameterCount;i++)
     {
-        if((long)Object == (long)parameter[i].UiElement) return *(float*)(constData + parameter[i].offset);
+        if(Object == (void*)parameter[i].UiElement) return *(float*)(constData + parameter[i].offset);
     }
     Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return -1;
@@ -150,7 +150,7 @@ void GeneralParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewVal
     Debug::Log("SetUByteParameter called.", Debug::INFO, options);
     for(int i=0;i<GeneralParameterCount;i++)
     {
-        if((long)Object == (long)parameter[i].UiElement)
+        if(Object == (void*)parameter[i].UiElement)
         {
             ChangeData(parameter[i].offset, NewValue);
             return;
@@ -161,17 +161,17 @@ void GeneralParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewVal
 void GeneralParameters::SetUByteParameter(QComboBox* Object, unsigned char NewValue)
 {
     Debug::Log("SetUByteParameter called.", Debug::INFO, options);
-    if((long)Object == (long)parameter[ZSearch].UiElement)
+    if(Object == (void*)parameter[ZSearch].UiElement)
     {
         ChangeData(parameter[ZSearch].offset, NewValue);
         return;
     }
-    else if((long)Object == (long)parameter[ZSearch].UiElement)
+    else if(Object == (void*)parameter[ZSearch].UiElement)
     {
         ChangeData(parameter[AuraColor].offset, NewValue);
         return;
     }
-    else if((long)Object == (long)parameter[StepInMove].UiElement)
+    else if(Object == (void*)parameter[StepInMove].UiElement)
     {
         ChangeData(parameter[StepInMove].offset, NewValue);
         return;
@@ -184,7 +184,7 @@ void GeneralParameters::SetUByteParameter(QPushButton* Object, unsigned char New
     Debug::Log("SetUByteParameter called.", Debug::INFO, options);
     for(int i=FusionType;i<=CounterMove+2;i++)
     {
-        if((long)Object == (long)parameter[i].UiElement)
+        if(Object == (void*)parameter[i].UiElement)
         {
             ChangeData(parameter[i].offset, NewValue);
             return;
@@ -204,7 +204,7 @@ void GeneralParameters::SetIntParameter(QSpinBox* Object, int NewValue)
     Debug::Log("SetIntParameter called.", Debug::INFO, options);
     for(int i=KiChargeSpeed;i<=BlastGaugeSpeed;i++)
     {
-        if((long)Object == (long)parameter[i].UiElement)
+        if(Object == (void*)parameter[i].UiElement)
         {
             ChangeData(parameter[i].offset, NewValue);
             return;
@@ -217,9 +217,9 @@ void GeneralParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 void GeneralParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
 {
     Debug::Log("SetFloatParameter called.", Debug::INFO, options);
-    for(int i=MaxPowerModeDuration;i<=MeleeChargeSpeed;i++)
+    for(int i=0;i<=GeneralParameterCount;i++)
     {
-        if((long)Object == (long)parameter[i].UiElement)
+        if(Object == (void*)parameter[i].UiElement)
         {
             ChangeData(parameter[i].offset, NewValue);
             return;

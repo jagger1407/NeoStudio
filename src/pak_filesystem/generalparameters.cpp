@@ -38,6 +38,7 @@ GeneralParameters::GeneralParameters(QByteArray ParameterData, Options* options)
     parameter[FlagByte+7].offset = 0x39;
     parameter[FlagByte+8].offset = 0x3E;
     parameter[AuraColor].offset = 0x3F;
+    parameter[KiBlastAmount].offset = 0x4C;
     parameter[StepInMove].offset = 0x54;
     parameter[ChargedBlastAmount].offset = 0x57;
     parameter[BlastStockAmount].offset = 0x6C;

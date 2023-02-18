@@ -21,7 +21,7 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QGraphicsScene* scene = new QGraphicsScene();
     // Drip Code
     scene->addPixmap((*new QPixmap("./assets/UnderConstruction.png")).scaled(ui->graphicsView_1->width(), ui->graphicsView_1->height()));
-    this->setWindowIcon(QIcon(QPixmap("./assets/icon.ico")));
+    this->setWindowIcon(QIcon("./assets/icon.png"));
     ui->graphicsView_2->setScene(scene);
     ui->graphicsView_3->setScene(scene);
 
@@ -101,6 +101,8 @@ void NeoStudio::CloseFile()
     Debug::Log("CloseFile slot triggered.", Debug::INFO, options);
     if(generalWindow == nullptr) return;
     generalWindow->close();
+    if(meleeWindow == nullptr) return;
+    meleeWindow->close();
     file = "";
     ui->FileLbl->setText("Open A Character File...");
 }
@@ -127,11 +129,17 @@ void NeoStudio::InitFile()
     Debug::Log("InitFile called.", Debug::INFO, options);
     pak = new PakControls(file, options);
     if(pak->HasFailed()) return;
-    ui->ParameterTabs->setCurrentIndex(GENERAL);
+
+    if(generalWindow != nullptr) delete generalWindow;
+    if(meleeWindow != nullptr) delete meleeWindow;
+
     generalWindow = new GeneralFrame(pak, options);
-    ui->GeneralScrollArea->setWidget(generalWindow);
     meleeWindow = new MeleeFrame(pak, options);
+
+    ui->GeneralScrollArea->setWidget(generalWindow);
     ui->MeleeScrollArea->setWidget(meleeWindow);
+
+    ui->ParameterTabs->setCurrentIndex(GENERAL);
 }
 
 void NeoStudio::ResetUiMode()
@@ -139,6 +147,8 @@ void NeoStudio::ResetUiMode()
     if(options->GetUiMode() == Options::LIGHT)
     {
         this->setStyleSheet("background:white; color: black");
+        ui->GeneralScrollArea->setStyleSheet("color:black");
+        ui->MeleeScrollArea->setStyleSheet("color:black");
         ui->FileLbl->setStyleSheet("color:black");
         ui->GeneralTab->setStyleSheet("color:black;background:white;");
         ui->MeleeTab->setStyleSheet("color:black;background:white;");
@@ -146,6 +156,8 @@ void NeoStudio::ResetUiMode()
     else if(options->GetUiMode() == Options::DARK)
     {
         this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
+        ui->GeneralScrollArea->setStyleSheet("color:white");
+        ui->MeleeScrollArea->setStyleSheet("color:white");
         ui->FileLbl->setStyleSheet("color:white");
         ui->GeneralTab->setStyleSheet("color:black;background:rgb(50,54,60);");
         ui->MeleeTab->setStyleSheet("color:black;background:rgb(50,54,60);");

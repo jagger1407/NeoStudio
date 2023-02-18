@@ -102,7 +102,6 @@ Note: Techniques marked with '(Short)' consist of only the Step-In animation + t
    <property name="font">
     <font>
      <pointsize>12</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -333,7 +332,6 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
    <property name="font">
     <font>
      <pointsize>12</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -498,7 +496,6 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -589,7 +586,6 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -616,7 +612,6 @@ Note: Any ID higher than 130 will disable the transformation.</string>
    <property name="font">
     <font>
      <pointsize>10</pointsize>
-     <weight>50</weight>
      <bold>false</bold>
     </font>
    </property>
@@ -795,7 +790,6 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -869,7 +863,6 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -943,7 +936,6 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -973,7 +965,6 @@ Dance: Fusion Dance Cutscene</string>
     <property name="font">
      <font>
       <pointsize>11</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -1337,7 +1328,6 @@ This ID has nothing to do with the actual character in your Team, it is only use
     <property name="font">
      <font>
       <pointsize>11</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -1555,6 +1545,9 @@ If one of these IDs is in your team, they corresponding character will be remove
     <property name="decimals">
      <number>3</number>
     </property>
+    <property name="minimum">
+     <double>-100000.000000000000000</double>
+    </property>
     <property name="maximum">
      <double>100000.000000000000000</double>
     </property>
@@ -1586,6 +1579,9 @@ If one of these IDs is in your team, they corresponding character will be remove
     <property name="decimals">
      <number>3</number>
     </property>
+    <property name="minimum">
+     <double>-100000.000000000000000</double>
+    </property>
     <property name="maximum">
      <double>100000.000000000000000</double>
     </property>
@@ -1610,6 +1606,9 @@ If one of these IDs is in your team, they corresponding character will be remove
     </property>
     <property name="decimals">
      <number>3</number>
+    </property>
+    <property name="minimum">
+     <double>-100000.000000000000000</double>
     </property>
     <property name="maximum">
      <double>100000.000000000000000</double>
@@ -3660,7 +3659,6 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
    <property name="font">
     <font>
      <pointsize>10</pointsize>
-     <weight>50</weight>
      <bold>false</bold>
     </font>
    </property>
@@ -3686,7 +3684,6 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
    <property name="font">
     <font>
      <pointsize>10</pointsize>
-     <weight>50</weight>
      <bold>false</bold>
     </font>
    </property>
@@ -3712,7 +3709,6 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
    <property name="font">
     <font>
      <pointsize>10</pointsize>
-     <weight>50</weight>
      <bold>false</bold>
     </font>
    </property>

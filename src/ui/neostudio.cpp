@@ -2,7 +2,7 @@
 #include "ui_neostudio.h"
 
 
-#define VERSION_STRING "Neo Studio v0.3"
+#define VERSION_STRING "Neo Studio v0.4"
 
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
@@ -22,7 +22,7 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     // Drip Code
     scene->addPixmap((*new QPixmap("./assets/UnderConstruction.png")).scaled(ui->graphicsView_1->width(), ui->graphicsView_1->height()));
     this->setWindowIcon(QIcon("./assets/icon.png"));
-    ui->graphicsView_2->setScene(scene);
+    //ui->graphicsView_2->setScene(scene);
     ui->graphicsView_3->setScene(scene);
 
     if(argc == 2)
@@ -66,6 +66,7 @@ void NeoStudio::SaveFile()
 
     pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
     pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
+    pak->UpdateParamData(KI_BLAST, kiWindow->kp->GetFileData());
     pak->SavePak(file);
 }
 
@@ -88,6 +89,7 @@ void NeoStudio::SaveFileAs()
     }
     pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
     pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
+    pak->UpdateParamData(KI_BLAST, kiWindow->kp->GetFileData());
     pak->SavePak(newFile);
 }
 
@@ -103,6 +105,8 @@ void NeoStudio::CloseFile()
     generalWindow->close();
     if(meleeWindow == nullptr) return;
     meleeWindow->close();
+    if(kiWindow == nullptr) return;
+    kiWindow->close();
     file = "";
     ui->FileLbl->setText("Open A Character File...");
 }
@@ -120,6 +124,7 @@ void NeoStudio::OpenOptions()
     ResetUiMode();
     if(generalWindow != nullptr) generalWindow->ResetUiMode();
     if(meleeWindow != nullptr) meleeWindow->ResetUiMode();
+    if(kiWindow != nullptr) kiWindow->ResetUiMode();
     delete optionWindow;
 }
 
@@ -132,12 +137,15 @@ void NeoStudio::InitFile()
 
     if(generalWindow != nullptr) delete generalWindow;
     if(meleeWindow != nullptr) delete meleeWindow;
+    if(kiWindow != nullptr) delete kiWindow;
 
     generalWindow = new GeneralFrame(pak, options);
     meleeWindow = new MeleeFrame(pak, options);
+    kiWindow = new KiFrame(pak, options);
 
     ui->GeneralScrollArea->setWidget(generalWindow);
     ui->MeleeScrollArea->setWidget(meleeWindow);
+    ui->KiBlastScrollArea->setWidget(kiWindow);
 
     ui->ParameterTabs->setCurrentIndex(GENERAL);
 }

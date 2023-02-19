@@ -9,6 +9,7 @@
 // Parameter Tabs
 #include "src/ui/paramSections/generalframe.h"
 #include "src/ui/paramSections/meleeframe.h"
+#include "src/ui/paramSections/kiframe.h"
 
 namespace Ui {
 class NeoStudio;
@@ -33,6 +34,8 @@ private:
     GeneralFrame* generalWindow = nullptr;
     /**The UI for the Melee Parameter editing tab.*/
     MeleeFrame* meleeWindow = nullptr;
+    /**The UI for the Ki Blast Parameter editing tab.*/
+    KiFrame* kiWindow = nullptr;
     /**The path to the currently open Pak file.*/
     QString file;
     /**PakControls object to act as an interface between this program and the file itself.*/

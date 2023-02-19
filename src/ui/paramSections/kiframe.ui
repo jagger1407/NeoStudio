@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>KiFrame</class>
+ <widget class="QFrame" name="KiFrame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>922</width>
+    <height>545</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Frame</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(50, 54, 60); color: white</string>
+  </property>
+  <widget class="QGroupBox" name="StatGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>171</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Stats</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QLabel" name="DamageLbl">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The damage this attack does to a non-defending opponent.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Damage</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="DamageBox">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="DamageGuardBox">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>130</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DamageGuardLbl">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The damage this attack does to a defending opponent.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Damage (Guarding)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="KiCostBox">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>200</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="KiCostLbl">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>170</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The amount of Ki each Ki Blast of this type will cost to fire.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Ki Cost</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QComboBox" name="KiBlastSelectionBox">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>70</y>
+     <width>321</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+   </property>
+   <property name="currentIndex">
+    <number>-1</number>
+   </property>
+   <item>
+    <property name="text">
+     <string>Regular Ki Blasts</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Regular Charged Ki Blasts (Low)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Regular Charged Ki Blasts (Medium)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Regular Charged Ki Blasts (Full)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dashing Ki Blasts</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dashing Charged Ki Blasts (Low)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dashing Charged Ki Blasts (Medium)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dashing Charged Ki Blasts (Full)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Jumping Ki Blasts</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Jumping Charged Ki Blasts (Low)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Jumping Charged Ki Blasts (Medium)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Jumping Charged Ki Blasts (Full)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="KiBlastSelectionLabel">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>40</y>
+     <width>321</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Current Ki Blast</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="PropGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>120</y>
+     <width>721</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Properties</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QDoubleSpinBox" name="SpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed at which each Ki Blast travels.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="SpreadBox">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>90</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpreadLbl">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>60</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This decides how far the Ki Blasts can spread. &lt;/p&gt;&lt;p&gt;The higher the number, the more they home in on the opponent.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Spread</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="RangeBox">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>90</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="RangeLbl">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>60</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This decides how long each Ki Blasts will stay on stage for. &lt;/p&gt;&lt;p&gt;The higher the number, the longer the Ki Blast stays on screen, thus, the farther it reaches.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Range</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="KnockbackLbl">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>60</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This decides how far this pushes the opponent back upon getting hit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Knockback</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="KnockbackBox">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>90</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="HitstunLbl">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>231</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed at which each Ki Blast travels.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Hitstun</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="HitstunBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="currentIndex">
+     <number>-1</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>No Hitstun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>No Hitstun (?)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Superarmor</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Primary Stun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Secondary Stun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Neutral Smash Stun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Neutral Smash Stun (?)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Neutral Smash Stun (?)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Neutral Smash Stun (?)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Kiai Cannon Stun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Lift Strike Stun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ground Slash Stun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Heavy Finish Stun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Instant Knockdown</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Knockdown + Knockback</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Combo Ender</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Full Neutral Smash</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Medium Neutral Smash</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Throw Animation (?)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>No Hitstun (?)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Giant Throw Animation (?)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Short Paralysis</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Medium Paralysis</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Long Paralysis</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Short Paralysis Knockdown</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Medium Paralysis Knockdown</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Long Paralysis Knockdown</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Instant Knockdown (?)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Knockdown + Bounce (?)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Knockdown + Big Bounce (?)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Rolling Hammer Right</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Rolling Hammer Left</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Death Beam Knockdown</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Heavy Finish (?)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Big Knockback</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Instant Knockdown (?)</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QDoubleSpinBox" name="SizeBox">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>90</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SizeLbl">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>60</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This decides how far this pushes the opponent back upon getting hit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Size</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TrailLbl">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>150</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This decides how long the trail for each Ki Blasts will be. &lt;/p&gt;&lt;p&gt;The higher the number, the longer the trail of the Ki Blast.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Trail</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="TrailBox">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>180</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="ColorBox">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>180</y>
+      <width>79</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="currentIndex">
+     <number>-1</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>Blue</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Purple</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Yellow</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Red</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Green</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Light Blue</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Pink</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Invisible</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="ColorLbl">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>150</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The color for each Ki Blast.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Color</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="AmountLbl">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>150</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The amount of Ki Blast one can shoot conseuctively.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Amount</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="AmountBox">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>180</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="TrajectoryBox">
+    <property name="geometry">
+     <rect>
+      <x>578</x>
+      <y>180</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="currentIndex">
+     <number>4</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>Spread</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Straight</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Up Curve</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Left/right Curve</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Left Curve</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Right Curve</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Right/Left Curve</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="TrajectoryLbl">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>150</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The trajectory that the Ki Blasts will be firing on.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Trajectory</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="UnknownGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>380</y>
+     <width>901</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Uncharted Territory</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QLabel" name="Unk20Lbl">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>50</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x20.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x20)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk20Box">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>80</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="Unk26Box">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>80</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk26Lbl">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>50</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A 1-Byte parameter located at offset 0x26.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x26)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="Unk27Box">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>80</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk27Lbl">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>50</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A 1-Byte parameter located at offset 0x27.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x27)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="HeaderBox">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>80</y>
+      <width>111</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="HeaderLbl">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>50</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;4 Bytes at the beginning of each parameter section.&lt;/p&gt;&lt;p&gt;What these influence is currently unknown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Header? (0x00)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="FooterBox">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>80</y>
+      <width>111</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FooterLbl">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>50</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;4 Bytes at the end of each parameter section.&lt;/p&gt;&lt;p&gt;What these influence is currently unknown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Footer? (0x34)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="Unk30Box">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>80</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk30Lbl">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>50</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A 1-Byte parameter located at offset 0x27.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x30)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="Unk25Box">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>80</y>
+      <width>61</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk25Lbl">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>50</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A 1-Byte parameter located at offset 0x26.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x25)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>AmountBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>720</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ColorBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>ComboBox_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>629</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DamageBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DamageGuardBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FooterBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>745</x>
+     <y>475</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>HeaderBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>475</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>KiBlastSelectionBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CurrentBlast_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>450</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>KiCostBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>KnockbackBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>680</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RangeBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>540</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SizeBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>820</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpreadBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>400</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TrailBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>520</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk20Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>475</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TrajectoryBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>ComboBox_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>833</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk26Box</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>460</x>
+     <y>475</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk27Box</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>590</x>
+     <y>475</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>HitstunBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>ComboBox_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk30Box</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>670</x>
+     <y>475</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk25Box</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>400</x>
+     <y>475</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>QSpinBox_Changed(int)</slot>
+  <slot>QDoubleSpinBox_Changed(double)</slot>
+  <slot>ComboBox_IndexChanged(int)</slot>
+  <slot>CurrentBlast_IndexChanged(int)</slot>
+ </slots>
+</ui>

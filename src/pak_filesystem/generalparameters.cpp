@@ -59,6 +59,20 @@ GeneralParameters::GeneralParameters(QByteArray ParameterData, Options* options)
 
     Debug::Log("New GeneralParameter object constructed.", Debug::INFO, options);
 }
+
+/**Gets file data of this parameter file as a whole QByteArray.*/
+QByteArray GeneralParameters::GetFileData()
+{
+    Debug::Log("GetFileData called.", Debug::INFO, options);
+    return QByteArray(fileData);
+}
+/**Sets the entire parameter file data array at once to NewData, this should normally not be used.*/
+void GeneralParameters::SetFileData(QByteArray NewData)
+{
+    Debug::Log("SetFileData called.", Debug::INFO, options);
+    fileData.replace(0, fileData.size(), NewData);
+}
+
 bool GeneralParameters::GetFlagParameter(QCheckBox* Object)
 {
     Debug::Log("GetFlagParameter called.", Debug::INFO, options);
@@ -228,12 +242,4 @@ void GeneralParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue
     }
     Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return;
-}
-QByteArray GeneralParameters::GetFileData()
-{
-    return QByteArray(fileData);
-}
-void GeneralParameters::SetFileData(QByteArray NewData)
-{
-    fileData.replace(0, fileData.size(), NewData);
 }

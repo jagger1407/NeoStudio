@@ -70,13 +70,13 @@ public:
     void SetIntParameter(QSpinBox* Object, int NewValue);
     void SetFloatParameter(QDoubleSpinBox* Object, float NewValue);
     void SetFlagParameter(QCheckBox* Object, bool NewValue);
+    QByteArray GetFileData();
+    void SetFileData(QByteArray NewData);
     /**
      * Gets the parameter type of this parameter object.
      */
     ParameterType GetParameterType()
     { return GENERAL; };
-    QByteArray GetFileData();
-    void SetFileData(QByteArray NewData);
     Options* options = nullptr;
 private:
     const char* constData = nullptr;

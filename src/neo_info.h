@@ -132,5 +132,7 @@ typedef enum
 #define PAK_FIRST_BYTE 0xFA
 /**The size of the data chunk for each melee attack*/
 #define MELEE_ATTACK_SIZE 0x64
+/**The size of the data chunk for each ki blast*/
+#define KI_BLAST_ATTACK_SIZE 0x38
 
 #endif

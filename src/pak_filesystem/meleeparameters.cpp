@@ -57,6 +57,7 @@ void MeleeParameters::SetFileData(QByteArray NewData)
 }
 void MeleeParameters::setCurrentAttack(int AttackID)
 {
+    Debug::Log("setCurrentAttack called.", Debug::INFO, options);
     attackOffset = AttackID * MELEE_ATTACK_SIZE;
 }
 

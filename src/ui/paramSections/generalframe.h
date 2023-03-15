@@ -22,7 +22,7 @@ class GeneralFrame : public QFrame
     Q_OBJECT
 public:
     /**Constructor. Creates PakControls object and initializes UI with .pak values.*/
-    explicit GeneralFrame(PakControls* Pak, Options* options, QWidget* parent = nullptr);
+    explicit GeneralFrame(QByteArray Data, Options* options, QWidget* parent = nullptr);
     /**Pointer used to access UI elements of this window.*/
     Ui_GeneralFrame* ui;
     /**Pointer used to access Parameters that this QFrame is editing.*/
@@ -30,8 +30,6 @@ public:
     /**Checks the UI mode and sets the Stylesheet accordingly.*/
     void ResetUiMode();
 private:
-    /**A temporary solution to a problem I will fix in a later version of Neo Studio.*/
-
     QString rushStr[4] = {
                 "Heavy Finish",
                 "Kiai Cannon",

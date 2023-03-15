@@ -1,11 +1,11 @@
 #include "kiframe.h"
 
-KiFrame::KiFrame(PakControls* Pak, Options* options, QWidget* parent) : QFrame(parent), options(options)
+KiFrame::KiFrame(QByteArray Data, Options* options, QWidget* parent) : QFrame(parent), options(options)
 {
     ui = new Ui_KiFrame();
     ui->setupUi(this);
 
-    kp = new KiParameters(Pak->GetParamData(KI_BLAST), options);
+    kp = new KiParameters(Data, options);
 
     #if 1 // Passing the pointers to the UI elements to kp
     kp->parameter[KiParameters::Header].UiElement = ui->HeaderBox;

@@ -21,7 +21,7 @@ class MeleeFrame : public QFrame
     Q_OBJECT
 public:
     /**Constructor. Creates PakControls object and initializes UI with .pak values.*/
-    explicit MeleeFrame(PakControls* Pak, Options* options, QWidget* parent = nullptr);
+    explicit MeleeFrame(QByteArray Data, Options* options, QWidget* parent = nullptr);
     /**Pointer used to access UI elements of this window.*/
     Ui_MeleeFrame* ui;
     /**Pointer used to access Parameters that this QFrame is editing.*/

@@ -42,9 +42,13 @@ private:
     PakControls* pak = nullptr;
     Options* options = nullptr;
     /**Initializes the program using the current Pak filepath.*/
-    void InitFile();
+    void InitPakFile();
+    /**Initializes one specific section using the current Dat filepath.*/
+    void InitDatFile();
     /**Checks the UI mode and sets the Stylesheet accordingly.*/
     void ResetUiMode();
+    /**If .dat file was opened, this shows which parameter type the file is.*/
+    ParameterType datIndex = PARAM_TYPE_INVALID;
 private slots:
     /**This slot gets triggered once the 'Open File' menu option is clicked.*/
     void OpenFile();

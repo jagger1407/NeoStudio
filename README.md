@@ -2,15 +2,17 @@
 
 This program aims to be a modding tool for Dragon Ball Z: Budokai Tenkaichi 2.
 
-As of yet, Neo Studio can only edit general character parameters. The ground work is set however, and once I'm able to resume my work on this program, adding melee, ki blast and movement parameters will be very easy.
+As of yet, Neo Studio can only edit general, melee and ki blast related character parameters.
 
+This program is **not** a replacement for Sparking Studio, but rather meant to be an Open-Source alternative to it, which focusses on the second entry of this series specifically. I do not have plans of making this program support Tenkaichi 3, nor is it meant to compete with Sparking Studio in any way.
 
 ## Usage
 
-Neo Studio uses character files in the .pak format.
+Neo Studio uses either character files in the .pak, or singular parameter sections via the .dat format.
 
 If you don't own these files, there are AFL files in the **"AFLs"** folder. Use these with AFS Explorer and their respective AFS file to extract the .pak files.
 
+As for .dat files, those require the character .pak to have been unpacked via [HiroTex's](https://github.com/hirotex) SpikeSoft tool.
 
 ## Download Requirements
 

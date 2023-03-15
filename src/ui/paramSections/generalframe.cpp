@@ -1,11 +1,11 @@
 #include "generalframe.h"
 
-GeneralFrame::GeneralFrame(PakControls* Pak, Options* options, QWidget* parent) : QFrame(parent), options(options)
+GeneralFrame::GeneralFrame(QByteArray Data, Options* options, QWidget* parent) : QFrame(parent), options(options)
 {
     ui = new Ui_GeneralFrame();
     ui->setupUi(this);
 
-    gp = new GeneralParameters(Pak->GetParamData(GENERAL), options);
+    gp = new GeneralParameters(Data, options);
 
     #if 1 // Passing the gp Object all UI Elements
     gp->parameter[GeneralParameters::Transform].UiElement = ui->TransformIDBox_1;
@@ -76,7 +76,7 @@ GeneralFrame::GeneralFrame(PakControls* Pak, Options* options, QWidget* parent) 
     gp->parameter[GeneralParameters::BaseKiRegen].UiElement = ui->BaseKiRegenBox;
     gp->parameter[GeneralParameters::CounterKi].UiElement = ui->CounterKiBox;
     gp->parameter[GeneralParameters::BlastGaugeSpeed].UiElement = ui->BlastGaugeBox;
-    //gp->parameter[GeneralParameters::MaxKiChargeSpeed].UiElement = ui->
+    //gp->parameter[GeneralParameters::MaxKiChargeSpeed].UiElement = ui->KiChargeBox;
     gp->parameter[GeneralParameters::MaxPowerModeDuration].UiElement = ui->MaxPowDurBox;
     gp->parameter[GeneralParameters::Gravity].UiElement = ui->GravityBox;
     gp->parameter[GeneralParameters::MaxDragonSmashes].UiElement = ui->DragonHomingBox;
@@ -85,13 +85,6 @@ GeneralFrame::GeneralFrame(PakControls* Pak, Options* options, QWidget* parent) 
     gp->parameter[GeneralParameters::DamageMultiplier].UiElement = ui->DmgMulBox;
     gp->parameter[GeneralParameters::SwitchRegenSpeed].UiElement = ui->TeamGaugeBox;
     #endif
-
-    if(Pak->HasFailed())
-    {
-        Debug::Log("GeneralFrame couldn't initialize pak file.", Debug::ERROR, options);
-        return;
-    }
-
 
     InitializeUIElements();
     ResetUiMode();

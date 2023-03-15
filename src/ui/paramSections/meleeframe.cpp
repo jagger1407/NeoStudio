@@ -1,11 +1,11 @@
 #include "meleeframe.h"
 
-MeleeFrame::MeleeFrame(PakControls* Pak, Options* options, QWidget* parent) : QFrame(parent), options(options)
+MeleeFrame::MeleeFrame(QByteArray Data, Options* options, QWidget* parent) : QFrame(parent), options(options)
 {
     ui = new Ui_MeleeFrame();
     ui->setupUi(this);
 
-    mp = new MeleeParameters(Pak->GetParamData(MELEE), options);
+    mp = new MeleeParameters(Data, options);
 
     #if 1 // Passing the pointers to the UI elements to mp
     mp->parameter[MeleeParameters::Header].UiElement = ui->UnknownSpinBox_14;

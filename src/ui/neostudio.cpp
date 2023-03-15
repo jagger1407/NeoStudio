@@ -2,16 +2,15 @@
 #include "ui_neostudio.h"
 
 
-#define VERSION_STRING "Neo Studio v0.4"
+#define VERSION_STRING "Neo Studio v0.5"
 
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
-    QMainWindow(parent),
-    ui(new Ui::NeoStudio)
+    QMainWindow(parent), ui(new Ui::NeoStudio)
 {
-    options = new Options();
-
     if(argc > 2) return;
+
+    options = new Options();
 
     ui->setupUi(this);
     this->setWindowTitle(VERSION_STRING);
@@ -31,7 +30,7 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
         QString PakName = file.split('/')[(file.split('/').length()-1)];
         PakName.truncate(PakName.length()-4);
         ui->FileLbl->setText("Current File: " + PakName);
-        InitFile();
+        InitPakFile();
     }
     Debug::Log("NeoStudio constructed.", Debug::INFO, options);
 }
@@ -41,18 +40,29 @@ NeoStudio::~NeoStudio() = default;
 void NeoStudio::OpenFile()
 {
     Debug::Log("OpenFile slot triggered.", Debug::INFO, options);
-    file = QFileDialog::getOpenFileName(this, tr("Open File"),
-                                                "/home",
-                                                tr("Character Files (*.pak)(*.pak)"));//;;Parameter Files (*.dat)(*.dat)"));    This feature might be implemented at some point
+    file = QFileDialog::getOpenFileName(this,
+                                        "Open File", "/home", "Character Files (*.pak)(*.pak);;Parameter Files (*.dat)(*.dat)");
     if(file == NULL)
     {
         Debug::Log("OpenFile: No file selected.", Debug::WARNING, options);
         return;
     }
-    QString PakName = file.split('/')[(file.split('/').length()-1)];
-    PakName.truncate(PakName.length()-4);
-    ui->FileLbl->setText("Current File: " + PakName);
-    InitFile();
+
+    for(int i=0;i<ui->ParameterTabs->count();i++) ui->ParameterTabs->setTabEnabled(i, true);
+
+    QString fileName = file.split('/')[(file.split('/').length()-1)];
+        fileName.truncate(fileName.length()-4);
+        ui->FileLbl->setText("Current File: " + fileName);
+    if(file.toLower().endsWith(".pak"))
+    {
+        InitPakFile();
+    }
+    else
+    {
+        InitDatFile();
+    }
+
+
 }
 
 void NeoStudio::SaveFile()
@@ -63,11 +73,35 @@ void NeoStudio::SaveFile()
         Debug::Log("SaveFile: No file open.", Debug::ERROR, options);
         return;
     }
+    if(file.toLower().endsWith(".pak"))
+    {
+        pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
+        pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
+        pak->UpdateParamData(KI_BLAST, kiWindow->kp->GetFileData());
+        pak->SavePak(file);
+    }
+    else if(file.toLower().endsWith(".dat"))
+    {
+        QByteArray* datPtr;
+        switch(datIndex)
+        {
+            case GENERAL:
+                datPtr = new QByteArray(generalWindow->gp->GetFileData());
+                FileParse::WriteFile(file, datPtr);
+                break;
+            case MELEE:
+                datPtr = new QByteArray(meleeWindow->mp->GetFileData());
+                FileParse::WriteFile(file, datPtr);
+                break;
+            case KI_BLAST:
+                datPtr = new QByteArray(kiWindow->kp->GetFileData());
+                FileParse::WriteFile(file, datPtr);
+                break;
+            default:
+                Debug::Log("Invalid .dat file.", Debug::ERROR, options);
+        }
+    }
 
-    pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
-    pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
-    pak->UpdateParamData(KI_BLAST, kiWindow->kp->GetFileData());
-    pak->SavePak(file);
 }
 
 void NeoStudio::SaveFileAs()
@@ -79,18 +113,42 @@ void NeoStudio::SaveFileAs()
         return;
     }
 
-    QString newFile = QFileDialog::getSaveFileName(this, tr("Save File"),
-                                                "/home",
-                                                tr("Character Files (*.pak)(*.pak)"));//;;Parameter Files (*.dat)(*.dat)"));    This feature might be implemented at some point
+    QString newFile = QFileDialog::getSaveFileName(this,
+                                                   "Save File", "/home", "Character Files (*.pak)(*.pak);;Parameter Files (*.dat)(*.dat)");
     if(newFile == NULL)
     {
         Debug::Log("SaveFileAs: No file selected.", Debug::WARNING, options);
         return;
     }
-    pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
-    pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
-    pak->UpdateParamData(KI_BLAST, kiWindow->kp->GetFileData());
-    pak->SavePak(newFile);
+
+    if(newFile.toLower().endsWith(".pak"))
+    {
+        pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
+        pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
+        pak->UpdateParamData(KI_BLAST, kiWindow->kp->GetFileData());
+        pak->SavePak(file);
+    }
+    else if(newFile.toLower().endsWith(".dat"))
+    {
+        QByteArray* datPtr;
+        switch(datIndex)
+        {
+            case GENERAL:
+                datPtr = new QByteArray(generalWindow->gp->GetFileData());
+                FileParse::WriteFile(newFile, datPtr);
+                break;
+            case MELEE:
+                datPtr = new QByteArray(meleeWindow->mp->GetFileData());
+                FileParse::WriteFile(newFile, datPtr);
+                break;
+            case KI_BLAST:
+                datPtr = new QByteArray(kiWindow->kp->GetFileData());
+                FileParse::WriteFile(newFile, datPtr);
+                break;
+            default:
+                Debug::Log("Invalid .dat file.", Debug::ERROR, options);
+        }
+    }
 }
 
 void NeoStudio::CloseFile()
@@ -101,14 +159,16 @@ void NeoStudio::CloseFile()
         return;
     }
     Debug::Log("CloseFile slot triggered.", Debug::INFO, options);
-    if(generalWindow == nullptr) return;
-    generalWindow->close();
-    if(meleeWindow == nullptr) return;
-    meleeWindow->close();
-    if(kiWindow == nullptr) return;
-    kiWindow->close();
+    if(generalWindow != nullptr)
+        generalWindow->close();
+    if(meleeWindow != nullptr)
+        meleeWindow->close();
+    if(kiWindow != nullptr)
+        kiWindow->close();
     file = "";
     ui->FileLbl->setText("Open A Character File...");
+
+    for(int i=0;i<ui->ParameterTabs->count();i++) ui->ParameterTabs->setTabEnabled(i, true);
 }
 
 void NeoStudio::OpenAbout()
@@ -129,9 +189,9 @@ void NeoStudio::OpenOptions()
 }
 
 
-void NeoStudio::InitFile()
+void NeoStudio::InitPakFile()
 {
-    Debug::Log("InitFile called.", Debug::INFO, options);
+    Debug::Log("InitPakFile called.", Debug::INFO, options);
     pak = new PakControls(file, options);
     if(pak->HasFailed()) return;
 
@@ -139,9 +199,9 @@ void NeoStudio::InitFile()
     if(meleeWindow != nullptr) delete meleeWindow;
     if(kiWindow != nullptr) delete kiWindow;
 
-    generalWindow = new GeneralFrame(pak, options);
-    meleeWindow = new MeleeFrame(pak, options);
-    kiWindow = new KiFrame(pak, options);
+    generalWindow = new GeneralFrame(pak->GetParamData(GENERAL), options);
+    meleeWindow = new MeleeFrame(pak->GetParamData(MELEE), options);
+    kiWindow = new KiFrame(pak->GetParamData(KI_BLAST), options);
 
     ui->GeneralScrollArea->setWidget(generalWindow);
     ui->MeleeScrollArea->setWidget(meleeWindow);
@@ -149,6 +209,49 @@ void NeoStudio::InitFile()
 
     ui->ParameterTabs->setCurrentIndex(GENERAL);
 }
+
+void NeoStudio::InitDatFile()
+{
+    Debug::Log("InitDatFile called.", Debug::INFO, options);
+
+    datIndex = (ParameterType)(file.split('/')[(file.split('/').length()-1)].split("_")[0].toInt() - 17);
+
+    if(datIndex == PARAM_TYPE_INVALID)
+    {
+        Debug::Log("Invalid .dat file.", Debug::ERROR, options);
+        return;
+    }
+
+    int tabCount = ui->ParameterTabs->count();
+
+    for(int i=0;i<tabCount;i++)
+    {
+        ui->ParameterTabs->setTabEnabled(i, false);
+    }
+
+    ui->ParameterTabs->setTabEnabled(datIndex, true);
+
+    switch(datIndex)
+    {
+        case GENERAL:
+            generalWindow = new GeneralFrame(FileParse::ReadWholeFile(file), options);
+            ui->GeneralScrollArea->setWidget(generalWindow);
+            break;
+        case MELEE:
+            meleeWindow = new MeleeFrame(FileParse::ReadWholeFile(file), options);
+            ui->MeleeScrollArea->setWidget(meleeWindow);
+            break;
+        case KI_BLAST:
+            kiWindow = new KiFrame(FileParse::ReadWholeFile(file), options);
+            ui->KiBlastScrollArea->setWidget(kiWindow);
+            break;
+        default:
+            Debug::Log("Invalid .dat file.", Debug::ERROR, options);
+            return;
+    }
+    ui->ParameterTabs->setCurrentIndex(datIndex);
+}
+
 
 void NeoStudio::ResetUiMode()
 {

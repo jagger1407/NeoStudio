@@ -47,6 +47,7 @@ void KiParameters::SetFileData(QByteArray NewData)
 
 void KiParameters::setCurrentBlast(int BlastID)
 {
+    Debug::Log("setCurrentBlast called.", Debug::INFO, options);
     blastOffset = BlastID * KI_BLAST_ATTACK_SIZE;
 }
 

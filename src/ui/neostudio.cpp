@@ -27,10 +27,13 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     if(argc == 2)
     {
         file = argv[1];
-        QString PakName = file.split('/')[(file.split('/').length()-1)];
-        PakName.truncate(PakName.length()-4);
-        ui->FileLbl->setText("Current File: " + PakName);
-        InitPakFile();
+        QString fileName = file.split('/')[(file.split('/').length()-1)];
+        fileName.truncate(fileName.length()-4);
+        ui->FileLbl->setText("Current File: " + fileName);
+        if(file.endsWith(".pak"))
+            InitPakFile();
+        else if(file.endsWith(".dat"))
+            InitDatFile();
     }
     Debug::Log("NeoStudio constructed.", Debug::INFO, options);
 }

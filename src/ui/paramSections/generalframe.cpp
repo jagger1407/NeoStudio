@@ -88,6 +88,7 @@ GeneralFrame::GeneralFrame(QByteArray Data, Options* options, QWidget* parent) :
 
     InitializeUIElements();
     ResetUiMode();
+    Debug::Log("New GeneralFrame constructed.", Debug::INFO, options);
 }
 void GeneralFrame::InitializeUIElements()
 {

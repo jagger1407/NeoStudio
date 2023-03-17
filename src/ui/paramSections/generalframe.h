@@ -29,6 +29,8 @@ public:
     GeneralParameters* gp = nullptr;
     /**Checks the UI mode and sets the Stylesheet accordingly.*/
     void ResetUiMode();
+    /**Method to initialize all the UI Elements with their parameter values from the Pak File.*/
+    void InitializeUIElements();
 private:
     QString rushStr[4] = {
                 "Heavy Finish",
@@ -55,8 +57,6 @@ private:
     Options* options = nullptr;
     /**Checks to see if the UI is initializing, used to supress slots while initializing.*/
     bool IsInitializing = false;
-    /**Method to initialize all the UI Elements with their parameter values from the Pak File.*/
-    void InitializeUIElements();
     /**Method to Change the parameter value when clicking a button, created to keep the slots clean.*/
     void ButtonChange(QPushButton* Button);
     /**Method to get the parameter value each button represents, created to keep InitializeUIElements clean.*/

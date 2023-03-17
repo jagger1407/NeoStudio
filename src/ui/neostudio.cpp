@@ -40,19 +40,20 @@ NeoStudio::~NeoStudio() = default;
 void NeoStudio::OpenFile()
 {
     Debug::Log("OpenFile slot triggered.", Debug::INFO, options);
+
     file = QFileDialog::getOpenFileName(this,
                                         "Open File", "/home", "Character Files (*.pak)(*.pak);;Parameter Files (*.dat)(*.dat)");
-    if(file == NULL)
+    if(file.isEmpty())
     {
         Debug::Log("OpenFile: No file selected.", Debug::WARNING, options);
         return;
     }
+    QString fileName = file.split('/')[(file.split('/').length()-1)];
+    fileName.truncate(fileName.length()-4);
+    ui->FileLbl->setText("Current File: " + fileName);
 
     for(int i=0;i<ui->ParameterTabs->count();i++) ui->ParameterTabs->setTabEnabled(i, true);
 
-    QString fileName = file.split('/')[(file.split('/').length()-1)];
-        fileName.truncate(fileName.length()-4);
-        ui->FileLbl->setText("Current File: " + fileName);
     if(file.toLower().endsWith(".pak"))
     {
         InitPakFile();
@@ -61,8 +62,6 @@ void NeoStudio::OpenFile()
     {
         InitDatFile();
     }
-
-
 }
 
 void NeoStudio::SaveFile()
@@ -199,9 +198,9 @@ void NeoStudio::InitPakFile()
     if(meleeWindow != nullptr) delete meleeWindow;
     if(kiWindow != nullptr) delete kiWindow;
 
-    generalWindow = new GeneralFrame(pak->GetParamData(GENERAL), options);
-    meleeWindow = new MeleeFrame(pak->GetParamData(MELEE), options);
-    kiWindow = new KiFrame(pak->GetParamData(KI_BLAST), options);
+    generalWindow = new GeneralFrame(pak->GetParamData(GENERAL), options, this);
+    meleeWindow = new MeleeFrame(pak->GetParamData(MELEE), options, this);
+    kiWindow = new KiFrame(pak->GetParamData(KI_BLAST), options, this);
 
     ui->GeneralScrollArea->setWidget(generalWindow);
     ui->MeleeScrollArea->setWidget(meleeWindow);
@@ -250,6 +249,44 @@ void NeoStudio::InitDatFile()
             return;
     }
     ui->ParameterTabs->setCurrentIndex(datIndex);
+}
+
+void NeoStudio::ExportDat()
+{
+    Debug::Log("ExportDat called.", Debug::INFO, options);
+
+    if(file.isEmpty())
+    {
+        Debug::Log("No file opened.", Debug::ERROR, options);
+        return;
+    }
+
+    int type = ui->ParameterTabs->currentIndex();
+
+    QString saveDir = QFileDialog::getExistingDirectory(this, "Export .dat file to...", file);
+
+    if(saveDir.isEmpty())
+    {
+        Debug::Log("No directory selected.", Debug::ERROR, options);
+        return;
+    }
+
+    switch(type)
+    {
+        case GENERAL:
+            FileParse::WriteFile(saveDir + filenameDat[GENERAL], new QByteArray(generalWindow->gp->GetFileData()));
+            break;
+        case MELEE:
+            FileParse::WriteFile(saveDir + filenameDat[MELEE], new QByteArray(meleeWindow->mp->GetFileData()));
+            break;
+        case KI_BLAST:
+            FileParse::WriteFile(saveDir + filenameDat[KI_BLAST], new QByteArray(kiWindow->kp->GetFileData()));
+            break;
+        case MOVEMENT:
+            break;
+        default:
+            break;
+    }
 }
 
 

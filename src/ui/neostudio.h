@@ -28,6 +28,13 @@ public:
     /**Destructor. Idk how to use this, it was automatically generated.*/
     ~NeoStudio() override;
 private:
+    QString filenameDat[NEXT] = {
+        "/017_character_param.dat",
+        "/018_character_melee_param.dat",
+        "/019_character_ki_blast_param.dat",
+        "/020_character_movement_param.dat"
+    };
+
     /**QScopedPointer to access UI Elements.*/
     QScopedPointer<Ui::NeoStudio> ui;
     /**The UI for the General Parameter editing tab.*/
@@ -62,6 +69,8 @@ private slots:
     void OpenAbout();
      /**This slot gets triggered once the 'Options' menu option is clicked.*/
     void OpenOptions();
+    /**Exports the specified parameter type as a .dat file.*/
+    void ExportDat();
 };
 
 #endif // NEOSTUDIO_H

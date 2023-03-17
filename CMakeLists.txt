@@ -64,6 +64,14 @@ set(neostudio_SRC
   src/ui/paramSections/generalframe.cpp
   src/ui/paramSections/meleeframe.cpp
   src/ui/paramSections/kiframe.cpp
+
+  # ::designer files::
+  src/ui/neostudio.ui
+  src/ui/paramSections/generalframe.ui
+  src/ui/paramSections/meleeframe.ui
+  src/ui/paramSections/kiframe.ui
+  src/ui/menu/aboutwindow.ui
+  src/ui/menu/optiondialog.ui
 )
 
 # Tell CMake to create the executable

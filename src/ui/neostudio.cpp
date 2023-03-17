@@ -295,9 +295,15 @@ void NeoStudio::ExportDat()
 
 void NeoStudio::ResetUiMode()
 {
+#ifdef __WIN32__
+    ui->ParameterTabs->setStyleSheet("color:black");
+#elif __unix
+    ui->ParameterTabs->setStyleSheet("color:white");
+#endif
     if(options->GetUiMode() == Options::LIGHT)
     {
         this->setStyleSheet("background:white; color: black");
+        ui->MenuBar->setStyleSheet("background:white");
         ui->GeneralScrollArea->setStyleSheet("color:black");
         ui->MeleeScrollArea->setStyleSheet("color:black");
         ui->FileLbl->setStyleSheet("color:black");
@@ -307,6 +313,7 @@ void NeoStudio::ResetUiMode()
     else if(options->GetUiMode() == Options::DARK)
     {
         this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
+        ui->MenuBar->setStyleSheet("background-color:rgb(75, 81, 90)");
         ui->GeneralScrollArea->setStyleSheet("color:white");
         ui->MeleeScrollArea->setStyleSheet("color:white");
         ui->FileLbl->setStyleSheet("color:white");

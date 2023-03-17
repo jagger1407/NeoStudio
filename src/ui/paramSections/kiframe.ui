@@ -523,7 +523,7 @@
      <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
     </property>
     <property name="currentIndex">
-     <number>-1</number>
+     <number>0</number>
     </property>
     <item>
      <property name="text">
@@ -572,7 +572,7 @@
     </item>
     <item>
      <property name="text">
-      <string>Kiai Cannon Stun</string>
+      <string>Long Stun + Enter Secondary</string>
      </property>
     </item>
     <item>

@@ -275,6 +275,7 @@
     <addaction name="ActionSave"/>
     <addaction name="ActionSave_As"/>
     <addaction name="ActionClose"/>
+    <addaction name="ActionExport"/>
    </widget>
    <widget class="QMenu" name="MenuHelp">
     <property name="title">
@@ -314,6 +315,11 @@
   <action name="ActionOptions">
    <property name="text">
     <string>Options</string>
+   </property>
+  </action>
+  <action name="ActionExport">
+   <property name="text">
+    <string>Export as .dat</string>
    </property>
   </action>
  </widget>
@@ -415,6 +421,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>ActionExport</sender>
+   <signal>triggered()</signal>
+   <receiver>NeoStudio</receiver>
+   <slot>ExportDat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>476</x>
+     <y>365</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>OpenFile()</slot>
@@ -423,5 +445,6 @@
   <slot>SaveFileAs()</slot>
   <slot>CloseFile()</slot>
   <slot>OpenOptions()</slot>
+  <slot>ExportDat()</slot>
  </slots>
 </ui>

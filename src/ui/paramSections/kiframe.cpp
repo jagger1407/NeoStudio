@@ -30,7 +30,13 @@ KiFrame::KiFrame(QByteArray Data, Options* options, QWidget* parent) : QFrame(pa
     kp->parameter[KiParameters::Footer].UiElement = ui->FooterBox;
     #endif
 
-    InitializeUIElements();
+    QList<QWidget*> elements = this->findChildren<QWidget*>();
+    QList<QLabel*> labels = this->findChildren<QLabel*>();
+    for(QWidget* el : elements) el->setEnabled(false);
+    for(QLabel* lbl : labels) lbl->setEnabled(true);
+    ui->KiBlastSelectionBox->setEnabled(true);
+
+    Debug::Log("New KiFrame constructed.", Debug::INFO, options);
 }
 
 void KiFrame::InitializeUIElements()
@@ -47,16 +53,7 @@ void KiFrame::InitializeUIElements()
     }
 
     QList<QWidget*> elements = this->findChildren<QWidget*>();
-    if(ui->KiBlastSelectionBox->currentIndex() < 0)
-    {
-
-        for(QWidget* el : elements) el->setEnabled(false);
-        for(QLabel* lbl : labels) lbl->setEnabled(true);
-        ui->KiBlastSelectionBox->setEnabled(true);
-        IsInitializing = false;
-        return;
-    }
-    else for(QWidget* el : elements) el->setEnabled(true);
+    for(QWidget* el : elements) el->setEnabled(true);
 
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();

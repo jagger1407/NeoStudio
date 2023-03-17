@@ -71,6 +71,8 @@ private slots:
     void OpenOptions();
     /**Exports the specified parameter type as a .dat file.*/
     void ExportDat();
+    /**Imports a .dat file as a parameter section within a .pak file.*/
+    void ImportDat();
 };
 
 #endif // NEOSTUDIO_H

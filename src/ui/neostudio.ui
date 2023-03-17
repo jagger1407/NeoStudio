@@ -48,10 +48,10 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:black</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="GeneralTab">
      <property name="styleSheet">
@@ -85,7 +85,7 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-8</y>
+         <y>0</y>
          <width>910</width>
          <height>637</height>
         </rect>
@@ -264,7 +264,7 @@
      <x>0</x>
      <y>0</y>
      <width>953</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -281,7 +281,9 @@
     <addaction name="ActionSave"/>
     <addaction name="ActionSave_As"/>
     <addaction name="ActionClose"/>
+    <addaction name="separator"/>
     <addaction name="ActionExport"/>
+    <addaction name="ActionImport"/>
    </widget>
    <widget class="QMenu" name="MenuHelp">
     <property name="styleSheet">
@@ -329,6 +331,11 @@
   <action name="ActionExport">
    <property name="text">
     <string>Export as .dat</string>
+   </property>
+  </action>
+  <action name="ActionImport">
+   <property name="text">
+    <string>Import .dat</string>
    </property>
   </action>
  </widget>
@@ -446,6 +453,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>ActionImport</sender>
+   <signal>triggered()</signal>
+   <receiver>NeoStudio</receiver>
+   <slot>ImportDat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>476</x>
+     <y>365</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>OpenFile()</slot>
@@ -455,5 +478,6 @@
   <slot>CloseFile()</slot>
   <slot>OpenOptions()</slot>
   <slot>ExportDat()</slot>
+  <slot>ImportDat()</slot>
  </slots>
 </ui>

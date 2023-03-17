@@ -44,13 +44,15 @@ void NeoStudio::OpenFile()
 {
     Debug::Log("OpenFile slot triggered.", Debug::INFO, options);
 
-    file = QFileDialog::getOpenFileName(this,
+    QString filePath = QFileDialog::getOpenFileName(this,
                                         "Open File", "/home", "Character Files (*.pak)(*.pak);;Parameter Files (*.dat)(*.dat)");
-    if(file.isEmpty())
+    if(filePath.isEmpty())
     {
         Debug::Log("OpenFile: No file selected.", Debug::WARNING, options);
         return;
     }
+    file = filePath;
+
     QString fileName = file.split('/')[(file.split('/').length()-1)];
     fileName.truncate(fileName.length()-4);
     ui->FileLbl->setText("Current File: " + fileName);
@@ -286,20 +288,57 @@ void NeoStudio::ExportDat()
             FileParse::WriteFile(saveDir + filenameDat[KI_BLAST], new QByteArray(kiWindow->kp->GetFileData()));
             break;
         case MOVEMENT:
-            break;
         default:
+            Debug::Log("This parameter section isn't supported yet.", Debug::ERROR, options);
+    }
+}
+
+void NeoStudio::ImportDat()
+{
+    Debug::Log("ImportDat called.", Debug::INFO, options);
+
+    if(file.isEmpty())
+    {
+        Debug::Log("No file opened.", Debug::ERROR, options);
+        return;
+    }
+    else if(!file.toLower().endsWith(".pak"))
+    {
+        Debug::Log("Opened file isn't a .pak file.", Debug::ERROR, options);
+        return;
+    }
+
+    QString datPath = QFileDialog::getOpenFileName(this, "Open .dat file", file, "Parameter Files (*.dat)(*.dat)");
+    QByteArray datData = FileParse::ReadWholeFile(datPath);
+
+    datPath = datPath.split("/")[datPath.split("/").count()-1];
+    int datIndex = datPath.split("_")[0].toInt();
+
+    switch(++datIndex - GENERAL_OFFSET)
+    {
+        case GENERAL:
+            generalWindow->gp->SetFileData(datData);
+            generalWindow->InitializeUIElements();
             break;
+        case MELEE:
+            meleeWindow->mp->SetFileData(datData);
+            meleeWindow->ui->AttackSelectionBox->setCurrentIndex(0);
+            meleeWindow->InitializeUIElements();
+            break;
+        case KI_BLAST:
+            kiWindow->kp->SetFileData(datData);
+            kiWindow->ui->KiBlastSelectionBox->setCurrentIndex(0);
+            kiWindow->InitializeUIElements();
+            break;
+        case MOVEMENT:
+        default:
+            Debug::Log("This parameter section isn't supported yet.", Debug::ERROR, options);
     }
 }
 
 
 void NeoStudio::ResetUiMode()
 {
-#ifdef __WIN32__
-    ui->ParameterTabs->setStyleSheet("color:black");
-#elif __unix
-    ui->ParameterTabs->setStyleSheet("color:white");
-#endif
     if(options->GetUiMode() == Options::LIGHT)
     {
         this->setStyleSheet("background:white; color: black");

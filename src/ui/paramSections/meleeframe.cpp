@@ -49,7 +49,13 @@ MeleeFrame::MeleeFrame(QByteArray Data, Options* options, QWidget* parent) : QFr
     mp->parameter[MeleeParameters::Unk63].UiElement = ui->UnknownSpinBox_13;
     #endif
 
-    InitializeUIElements();
+    QList<QWidget*> elements = this->findChildren<QWidget*>();
+    QList<QLabel*> labels = this->findChildren<QLabel*>();
+    for(QWidget* el : elements) el->setEnabled(false);
+    for(QLabel* lbl : labels) lbl->setEnabled(true);
+    ui->AttackSelectionBox->setEnabled(true);
+
+    Debug::Log("New MeleeFrame constructed.", Debug::INFO, options);
 }
 
 void MeleeFrame::InitializeUIElements()
@@ -66,16 +72,7 @@ void MeleeFrame::InitializeUIElements()
     }
 
     QList<QWidget*> elements = this->findChildren<QWidget*>();
-    if(ui->AttackSelectionBox->currentIndex() < 0)
-    {
-
-        for(QWidget* el : elements) el->setEnabled(false);
-        for(QLabel* lbl : labels) lbl->setEnabled(true);
-        ui->AttackSelectionBox->setEnabled(true);
-        IsInitializing = false;
-        return;
-    }
-    else for(QWidget* el : elements) el->setEnabled(true);
+    for(QWidget* el : elements) el->setEnabled(true);
 
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();

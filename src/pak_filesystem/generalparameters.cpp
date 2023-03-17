@@ -70,7 +70,7 @@ QByteArray GeneralParameters::GetFileData()
 void GeneralParameters::SetFileData(QByteArray NewData)
 {
     Debug::Log("SetFileData called.", Debug::INFO, options);
-    fileData.replace(0, fileData.size(), NewData);
+    fileData = QByteArray(NewData);
 }
 
 bool GeneralParameters::GetFlagParameter(QCheckBox* Object)

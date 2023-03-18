@@ -47,7 +47,7 @@ GeneralParameters::GeneralParameters(QByteArray ParameterData, Options* options)
     parameter[BaseKiRegen].offset = 0x78;
     parameter[CounterKi].offset = 0x7C;
     parameter[BlastGaugeSpeed].offset = 0x8C;
-    parameter[MaxKiChargeSpeed].offset = 0x90;
+    parameter[BlueKiChargeSpeed].offset = 0x90;
     parameter[MaxPowerModeDuration].offset = 0x94;
     parameter[Gravity].offset = 0x98;
     parameter[MaxDragonSmashes].offset = 0xA8;
@@ -64,7 +64,7 @@ GeneralParameters::GeneralParameters(QByteArray ParameterData, Options* options)
 QByteArray GeneralParameters::GetFileData()
 {
     Debug::Log("GetFileData called.", Debug::INFO, options);
-    return QByteArray(fileData);
+    return fileData;
 }
 /**Sets the entire parameter file data array at once to NewData, this should normally not be used.*/
 void GeneralParameters::SetFileData(QByteArray NewData)

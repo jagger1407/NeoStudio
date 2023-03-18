@@ -29,7 +29,7 @@
     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
    </property>
    <property name="currentIndex">
-    <number>-1</number>
+    <number>0</number>
    </property>
    <item>
     <property name="text">
@@ -269,6 +269,21 @@
    <item>
     <property name="text">
      <string>Dragon Dash Smash Right (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Dash Smash Up (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Dash Smash Down (Full Charge)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dragon Dash Smash Neutral (Full Charge)</string>
     </property>
    </item>
    <item>
@@ -1031,10 +1046,10 @@
      <number>0</number>
     </property>
     <property name="maxVisibleItems">
-     <number>9</number>
+     <number>15</number>
     </property>
     <property name="maxCount">
-     <number>9</number>
+     <number>15</number>
     </property>
     <item>
      <property name="text">
@@ -1068,12 +1083,32 @@
     </item>
     <item>
      <property name="text">
-      <string>Great Ape Landing Sound</string>
+      <string>Great Ape Throw (?)</string>
      </property>
     </item>
     <item>
      <property name="text">
       <string>? (0x07)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x08)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x09)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x0A)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>? (0x0B)</string>
      </property>
     </item>
     <item>

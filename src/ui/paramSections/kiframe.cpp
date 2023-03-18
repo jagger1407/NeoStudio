@@ -77,7 +77,7 @@ void KiFrame::InitializeUIElements()
 }
 void KiFrame::CurrentBlast_IndexChanged(int NewIndex)
 {
-    if(IsInitializing || kp == nullptr) return;
+    if(kp == nullptr) return;
     Debug::Log("CurrentBlast_IndexChanged slot triggered.", Debug::INFO, options);
     kp->setCurrentBlast(NewIndex);
     InitializeUIElements();

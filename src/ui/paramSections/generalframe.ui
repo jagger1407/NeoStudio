@@ -2027,7 +2027,7 @@ If one of these IDs is in your team, they corresponding character will be remove
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>310</y>
+      <y>240</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -2170,7 +2170,7 @@ Note: Values above 1 make the character unable to jump.</string>
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>340</y>
+      <y>270</y>
       <width>91</width>
       <height>32</height>
      </rect>
@@ -2270,7 +2270,7 @@ Note: Values above 1 make the character unable to jump.</string>
    <widget class="QDoubleSpinBox" name="DmgMulBox">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>40</x>
       <y>270</y>
       <width>91</width>
       <height>32</height>
@@ -2295,7 +2295,7 @@ Note: Values above 1 make the character unable to jump.</string>
    <widget class="QLabel" name="DmgMulLbl">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>0</x>
       <y>240</y>
       <width>171</width>
       <height>21</height>
@@ -2369,6 +2369,61 @@ Note: Values above 1 make the character unable to jump.</string>
     </property>
     <property name="value">
      <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="BlueKiChargeLbl">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>310</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed at which your character charges blue ki. Note that the smaller the value, the faster the charging.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Blue Ki Charge Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="BlueKiChargeBox">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>340</y>
+      <width>91</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="minimum">
+     <double>0.030000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>30000000000000000.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
     </property>
    </widget>
   </widget>

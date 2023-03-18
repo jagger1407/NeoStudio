@@ -76,7 +76,7 @@ GeneralFrame::GeneralFrame(QByteArray Data, Options* options, QWidget* parent) :
     gp->parameter[GeneralParameters::BaseKiRegen].UiElement = ui->BaseKiRegenBox;
     gp->parameter[GeneralParameters::CounterKi].UiElement = ui->CounterKiBox;
     gp->parameter[GeneralParameters::BlastGaugeSpeed].UiElement = ui->BlastGaugeBox;
-    //gp->parameter[GeneralParameters::MaxKiChargeSpeed].UiElement = ui->KiChargeBox;
+    gp->parameter[GeneralParameters::BlueKiChargeSpeed].UiElement = ui->BlueKiChargeBox;
     gp->parameter[GeneralParameters::MaxPowerModeDuration].UiElement = ui->MaxPowDurBox;
     gp->parameter[GeneralParameters::Gravity].UiElement = ui->GravityBox;
     gp->parameter[GeneralParameters::MaxDragonSmashes].UiElement = ui->DragonHomingBox;

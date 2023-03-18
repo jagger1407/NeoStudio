@@ -2,7 +2,7 @@
 #include "ui_neostudio.h"
 
 
-#define VERSION_STRING "Neo Studio v0.5"
+#define VERSION_STRING "Neo Studio v1.0"
 
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
@@ -21,8 +21,6 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     // Drip Code
     scene->addPixmap((*new QPixmap("./assets/UnderConstruction.png")).scaled(ui->graphicsView_1->width(), ui->graphicsView_1->height()));
     this->setWindowIcon(QIcon("./assets/icon.png"));
-    //ui->graphicsView_2->setScene(scene);
-    ui->graphicsView_3->setScene(scene);
 
     if(argc == 2)
     {
@@ -45,7 +43,7 @@ void NeoStudio::OpenFile()
     Debug::Log("OpenFile slot triggered.", Debug::INFO, options);
 
     QString filePath = QFileDialog::getOpenFileName(this,
-                                        "Open File", "/home", "Character Files (*.pak)(*.pak);;Parameter Files (*.dat)(*.dat)");
+                                        "Open File", "/home", "Character Files (*.pak);;Parameter Files (*.dat)");
     if(filePath.isEmpty())
     {
         Debug::Log("OpenFile: No file selected.", Debug::WARNING, options);
@@ -82,6 +80,7 @@ void NeoStudio::SaveFile()
         pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
         pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
         pak->UpdateParamData(KI_BLAST, kiWindow->kp->GetFileData());
+        pak->UpdateParamData(MOVEMENT, moveWindow->mp->GetFileData());
         pak->SavePak(file);
     }
     else if(file.toLower().endsWith(".dat"))
@@ -91,21 +90,22 @@ void NeoStudio::SaveFile()
         {
             case GENERAL:
                 datPtr = new QByteArray(generalWindow->gp->GetFileData());
-                FileParse::WriteFile(file, datPtr);
                 break;
             case MELEE:
                 datPtr = new QByteArray(meleeWindow->mp->GetFileData());
-                FileParse::WriteFile(file, datPtr);
                 break;
             case KI_BLAST:
                 datPtr = new QByteArray(kiWindow->kp->GetFileData());
-                FileParse::WriteFile(file, datPtr);
+                break;
+            case MOVEMENT:
+                datPtr = new QByteArray(moveWindow->mp->GetFileData());
                 break;
             default:
                 Debug::Log("Invalid .dat file.", Debug::ERROR, options);
+                return;
         }
+        FileParse::WriteFile(file, datPtr);
     }
-
 }
 
 void NeoStudio::SaveFileAs()
@@ -117,8 +117,11 @@ void NeoStudio::SaveFileAs()
         return;
     }
 
-    QString newFile = QFileDialog::getSaveFileName(this,
-                                                   "Save File", "/home", "Character Files (*.pak)(*.pak);;Parameter Files (*.dat)(*.dat)");
+    QString newFile;
+    if(file.toLower().endsWith(".pak"))
+        newFile = QFileDialog::getSaveFileName(this, "Save File", "/home", "Character Files (*.pak)");
+    else if(file.toLower().endsWith(".dat"))
+        newFile = QFileDialog::getSaveFileName(this, "Save File", "/home", "Parameter Files (*.dat)");
     if(newFile == NULL)
     {
         Debug::Log("SaveFileAs: No file selected.", Debug::WARNING, options);
@@ -130,7 +133,8 @@ void NeoStudio::SaveFileAs()
         pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
         pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
         pak->UpdateParamData(KI_BLAST, kiWindow->kp->GetFileData());
-        pak->SavePak(file);
+        pak->UpdateParamData(MOVEMENT, moveWindow->mp->GetFileData());
+        pak->SavePak(newFile);
     }
     else if(newFile.toLower().endsWith(".dat"))
     {
@@ -139,19 +143,21 @@ void NeoStudio::SaveFileAs()
         {
             case GENERAL:
                 datPtr = new QByteArray(generalWindow->gp->GetFileData());
-                FileParse::WriteFile(newFile, datPtr);
                 break;
             case MELEE:
                 datPtr = new QByteArray(meleeWindow->mp->GetFileData());
-                FileParse::WriteFile(newFile, datPtr);
                 break;
             case KI_BLAST:
                 datPtr = new QByteArray(kiWindow->kp->GetFileData());
-                FileParse::WriteFile(newFile, datPtr);
+                break;
+            case MOVEMENT:
+                datPtr = new QByteArray(moveWindow->mp->GetFileData());
                 break;
             default:
                 Debug::Log("Invalid .dat file.", Debug::ERROR, options);
+                return;
         }
+        FileParse::WriteFile(newFile, datPtr);
     }
 }
 
@@ -169,6 +175,8 @@ void NeoStudio::CloseFile()
         meleeWindow->close();
     if(kiWindow != nullptr)
         kiWindow->close();
+    if(moveWindow != nullptr)
+        moveWindow->close();
     file = "";
     ui->FileLbl->setText("Open A Character File...");
 
@@ -189,6 +197,7 @@ void NeoStudio::OpenOptions()
     if(generalWindow != nullptr) generalWindow->ResetUiMode();
     if(meleeWindow != nullptr) meleeWindow->ResetUiMode();
     if(kiWindow != nullptr) kiWindow->ResetUiMode();
+    if(moveWindow != nullptr) moveWindow->ResetUiMode();
     delete optionWindow;
 }
 
@@ -202,14 +211,17 @@ void NeoStudio::InitPakFile()
     if(generalWindow != nullptr) delete generalWindow;
     if(meleeWindow != nullptr) delete meleeWindow;
     if(kiWindow != nullptr) delete kiWindow;
+    if(moveWindow != nullptr) delete moveWindow;
 
     generalWindow = new GeneralFrame(pak->GetParamData(GENERAL), options, this);
     meleeWindow = new MeleeFrame(pak->GetParamData(MELEE), options, this);
     kiWindow = new KiFrame(pak->GetParamData(KI_BLAST), options, this);
+    moveWindow = new MovementFrame(pak->GetParamData(MOVEMENT), options, this);
 
     ui->GeneralScrollArea->setWidget(generalWindow);
     ui->MeleeScrollArea->setWidget(meleeWindow);
     ui->KiBlastScrollArea->setWidget(kiWindow);
+    ui->MovementScrollArea->setWidget(moveWindow);
 
     ui->ParameterTabs->setCurrentIndex(GENERAL);
 }
@@ -249,6 +261,10 @@ void NeoStudio::InitDatFile()
             kiWindow = new KiFrame(FileParse::ReadWholeFile(file), options);
             ui->KiBlastScrollArea->setWidget(kiWindow);
             break;
+        case MOVEMENT:
+            moveWindow = new MovementFrame(FileParse::ReadWholeFile(file), options);
+            ui->MovementScrollArea->setWidget(moveWindow);
+            break;
         default:
             Debug::Log("Invalid .dat file.", Debug::ERROR, options);
             return;
@@ -265,6 +281,11 @@ void NeoStudio::ExportDat()
         Debug::Log("No file opened.", Debug::ERROR, options);
         return;
     }
+    if(file.toLower().endsWith(".dat"))
+    {
+        Debug::Log("Export isn't supported for .dat files. Use 'Save'/'Save As' instead.", Debug::ERROR, options);
+        return;
+    }
 
     int type = ui->ParameterTabs->currentIndex();
 
@@ -276,21 +297,61 @@ void NeoStudio::ExportDat()
         return;
     }
 
+    // For some reason, the switch below will not work without turning it into a variable first.
+    QByteArray* pakData = new QByteArray(pak->GetParamData((ParameterType)type));
+
+    QByteArray* paramData;
     switch(type)
     {
         case GENERAL:
-            FileParse::WriteFile(saveDir + filenameDat[GENERAL], new QByteArray(generalWindow->gp->GetFileData()));
+            if(pakData->compare(generalWindow->gp->GetFileData()))
+            {
+                if(DatSelectionDialog::SelectDat(options))
+                    paramData = new QByteArray(generalWindow->gp->GetFileData());
+                else
+                    paramData = pakData;
+            }
+            else
+                paramData = pakData;
             break;
         case MELEE:
-            FileParse::WriteFile(saveDir + filenameDat[MELEE], new QByteArray(meleeWindow->mp->GetFileData()));
+            if(pakData->compare(meleeWindow->mp->GetFileData()))
+            {
+                if(DatSelectionDialog::SelectDat(options))
+                    paramData = new QByteArray(meleeWindow->mp->GetFileData());
+                else
+                    paramData = pakData;
+            }
+            else
+                paramData = pakData;
             break;
         case KI_BLAST:
-            FileParse::WriteFile(saveDir + filenameDat[KI_BLAST], new QByteArray(kiWindow->kp->GetFileData()));
+            if(pakData->compare(kiWindow->kp->GetFileData()))
+            {
+                if(DatSelectionDialog::SelectDat(options))
+                    paramData = new QByteArray(kiWindow->kp->GetFileData());
+                else
+                    paramData = pakData;
+            }
+            else
+                paramData = pakData;
             break;
         case MOVEMENT:
+            if(pakData->compare(moveWindow->mp->GetFileData()))
+            {
+                if(DatSelectionDialog::SelectDat(options))
+                    paramData = new QByteArray(moveWindow->mp->GetFileData());
+                else
+                    paramData = pakData;
+            }
+            else
+                paramData = pakData;
+            break;
         default:
             Debug::Log("This parameter section isn't supported yet.", Debug::ERROR, options);
+            return;
     }
+    FileParse::WriteFile(saveDir + filenameDat[type], paramData);
 }
 
 void NeoStudio::ImportDat()
@@ -308,7 +369,12 @@ void NeoStudio::ImportDat()
         return;
     }
 
-    QString datPath = QFileDialog::getOpenFileName(this, "Open .dat file", file, "Parameter Files (*.dat)(*.dat)");
+    QString datPath = QFileDialog::getOpenFileName(this, "Open .dat file", file, "Parameter Files (*.dat)");
+    if(datPath.isEmpty())
+    {
+        Debug::Log("No path selected.", Debug::ERROR, options);
+        return;
+    }
     QByteArray datData = FileParse::ReadWholeFile(datPath);
 
     datPath = datPath.split("/")[datPath.split("/").count()-1];
@@ -331,6 +397,9 @@ void NeoStudio::ImportDat()
             kiWindow->InitializeUIElements();
             break;
         case MOVEMENT:
+            moveWindow->mp->SetFileData(datData);
+            moveWindow->InitializeUIElements();
+            break;
         default:
             Debug::Log("This parameter section isn't supported yet.", Debug::ERROR, options);
     }
@@ -345,9 +414,13 @@ void NeoStudio::ResetUiMode()
         ui->MenuBar->setStyleSheet("background:white");
         ui->GeneralScrollArea->setStyleSheet("color:black");
         ui->MeleeScrollArea->setStyleSheet("color:black");
+        ui->KiBlastScrollArea->setStyleSheet("color:black");
+        ui->MovementScrollArea->setStyleSheet("color:black");
         ui->FileLbl->setStyleSheet("color:black");
         ui->GeneralTab->setStyleSheet("color:black;background:white;");
         ui->MeleeTab->setStyleSheet("color:black;background:white;");
+        ui->KiBlastTab->setStyleSheet("color:black;background:white;");
+        ui->MovementTab->setStyleSheet("color:black;background:white;");
     }
     else if(options->GetUiMode() == Options::DARK)
     {
@@ -355,8 +428,12 @@ void NeoStudio::ResetUiMode()
         ui->MenuBar->setStyleSheet("background-color:rgb(75, 81, 90)");
         ui->GeneralScrollArea->setStyleSheet("color:white");
         ui->MeleeScrollArea->setStyleSheet("color:white");
+        ui->KiBlastScrollArea->setStyleSheet("color:white");
+        ui->MovementScrollArea->setStyleSheet("color:white");
         ui->FileLbl->setStyleSheet("color:white");
         ui->GeneralTab->setStyleSheet("color:black;background:rgb(50,54,60);");
         ui->MeleeTab->setStyleSheet("color:black;background:rgb(50,54,60);");
+        ui->KiBlastTab->setStyleSheet("color:black;background:rgb(50,54,60);");
+        ui->MovementTab->setStyleSheet("color:black;background:rgb(50,54,60);");
     }
 }

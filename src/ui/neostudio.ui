@@ -51,7 +51,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="GeneralTab">
      <property name="styleSheet">
@@ -214,21 +214,40 @@
      <attribute name="title">
       <string>Movement</string>
      </attribute>
-     <widget class="QGraphicsView" name="graphicsView_3">
+     <widget class="QScrollArea" name="MovementScrollArea">
       <property name="geometry">
        <rect>
-        <x>187</x>
-        <y>130</y>
-        <width>571</width>
-        <height>361</height>
+        <x>0</x>
+        <y>0</y>
+        <width>941</width>
+        <height>631</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color:white</string>
+      </property>
       <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
+       <enum>Qt::ScrollBarAlwaysOn</enum>
       </property>
       <property name="horizontalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
+      <property name="widgetResizable">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>910</width>
+         <height>637</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
      </widget>
     </widget>
    </widget>

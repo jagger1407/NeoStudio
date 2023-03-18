@@ -35,7 +35,7 @@ public:
         BaseKiRegen,
         CounterKi,
         BlastGaugeSpeed,
-        MaxKiChargeSpeed,
+        BlueKiChargeSpeed,
         MaxPowerModeDuration,
         Gravity,
         MaxDragonSmashes,

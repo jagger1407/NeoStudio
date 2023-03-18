@@ -1,0 +1,2773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MovementFrame</class>
+ <widget class="QFrame" name="MovementFrame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>1127</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Frame</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(50, 54, 60); color: white</string>
+  </property>
+  <widget class="QGroupBox" name="DashingGroup">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>230</y>
+     <width>541</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Dashing</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QLabel" name="SpeedLbl_7">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed of the Dragon Dash which chases the opponent, done with L2+X.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Dragon Dash Speed (Chase)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_5">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>50</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed of your Dash.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Dashing Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="DDFSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>160</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="DashSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>80</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_8">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>130</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed of a Free Dragon Dash, done with L2+Direction+X.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Dragon Dash Speed (Free)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_6">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>50</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed of your Dash underwater.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Dashing Speed (Water)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="DDCSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>160</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="WDashSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>80</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="DADDSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>250</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_9">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>241</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Speed of your Dragon Ascend (L2+R1) and Dragon Descend (L2+R2).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Dragon Ascend/Descend Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="DDRFSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>250</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_10">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>220</y>
+      <width>261</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed at which you can change your height while being in a Free Dragon Dash.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Dragon Dash Rising/Falling Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="StepsGroup">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>10</y>
+     <width>311</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Steps</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QLabel" name="SpeedLbl_11">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>40</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed of your Step-In. Note that the speed also decides how far you travel while doing it, meaning the higher the value here, the faster, and further, you move forward.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Step-In Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="StepInBox">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>70</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_12">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed of your Backstep and Ascending/Descending Backsteps. Note that the speed also decides how far you travel while doing it, meaning the higher the value here, the faster, and further, you move backward.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Backstep Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="BackstepBox">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>160</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_13">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>130</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed of your Sidestep. Note that the speed also decides how far you travel while doing it, meaning the higher the value here, the faster, and further, you move.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Sidestep Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="SidestepBox">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>160</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="UnkGroup">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>910</y>
+     <width>881</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Uncharted Territory</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QLabel" name="Unk54Lbl">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x54.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x54)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk54Box">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk5CLbl">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x5C.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x5C)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk5CBox">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>70</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk60Lbl">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>40</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x60.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x60)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk60Box">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>70</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk64Lbl">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>40</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x64.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x64)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk64Box">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>70</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk7CLbl">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>40</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x7C.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x7C)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk7CBox">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>70</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk84Lbl">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>40</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x84.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x84)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk84Box">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>70</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk88Lbl">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>40</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x84.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x88)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk88Box">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>70</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk8CLbl">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>110</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x8C.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x8C)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk8CBox">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>140</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk90Lbl">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>110</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x90.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x90)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk90Box">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>140</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk94Lbl">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>110</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x94.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x94)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk94Box">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>140</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk9CLbl">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>110</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0x9C.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x9C)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Unk9CBox">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>140</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnkA0Lbl">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>110</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A floating-point parameter located at offset 0xA0.&lt;/p&gt;&lt;p&gt;It is currently unknown what this parameter does.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0xA0)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnkA0Box">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>140</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="BasicMovementGroup">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>561</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Basic Movement</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QDoubleSpinBox" name="CRMovSpeedWaterBox">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>160</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>50</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed at which you move around. This refers to the regular movement you do with the Analog Stick.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Movement Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="MovSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>80</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>50</y>
+      <width>231</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed at which you move around within the Step-In Barrier. This refers to the regular movement you do with the Analog Stick.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Close-Range Movement Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed at which you move around underwater. This refers to the regular movement you do with the Analog Stick.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Movement Speed (Water)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="MovSpeedWaterBox">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>160</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_4">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>130</y>
+      <width>281</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed at which you move around within the Step-In Barrier underwater. This refers to the regular movement you do with the Analog Stick.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Close-Range Movement Speed (Water)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="CRMovSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>80</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="KiConsumptionGroup">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>550</y>
+     <width>411</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Ki Consumption</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QLabel" name="KiConLbl">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>40</y>
+      <width>271</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Ki Consumption of a Dragon Dash which chases the opponent, done with L2+X.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Dragon Dash Ki Consumption (Chase)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="DDCKiConBox">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>70</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="DDFKiConBox">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>290</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="KiConLbl_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>260</y>
+      <width>261</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Ki Consumption of a Free Dragon Dash, done with L2+Direction+X.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Dragon Dash Ki Consumption (Free)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="DADDKiConBox">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>180</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="KiConLbl_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>150</y>
+      <width>261</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Ki Consumption of a Free Dragon Ascend/Descend.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Dragon Asc./Desc. Ki Consumption</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="VerticalGroup">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>230</y>
+     <width>331</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Vertical Movement</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QDoubleSpinBox" name="JumpSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_14">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed you can build while being in a jump. This refers to regular movement speed within the jump, not the jump itself.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Jumping Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_15">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>40</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed you can build while being in a jump that occurred while dashing. This refers to regular movement speed within the jump, not the jump itself.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Jumping Speed (Dash)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="DJumpSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>70</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_16">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed at which you ascend.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Ascending Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="AscSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>250</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="DescSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>250</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_17">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>220</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed at which you descend.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Descending Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="AscAccelBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>330</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_18">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>300</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The rate at which your ascending speed accelerates.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Asc. Acceleration</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="DescAccelBox">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>330</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_19">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>300</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The rate at which your descending speed accelerates.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Desc. Acceleration</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="DJumpHeightBox">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>160</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_20">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed of your Jump. The faster you move, the further you go, therefore this parameter directly influences the height of your jump.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Jump Height</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_21">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>130</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed of your Jump that occurred while dashing. The faster you move, the further you go, therefore this parameter directly influences the height of your jump.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Jump Height (Dash)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="JumpHeightBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>160</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="MiscGroup">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>610</y>
+     <width>461</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Miscellaneous</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QLabel" name="SpeedLbl_22">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>211</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed of the jump you can do after a Lift Strike.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Lift Strike Follow-Up Speed</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="LiftStrikeBox">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>60</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_23">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The speed of your Rapid Movement (Circle while attacking) and your Hyper Speed Movement (Circle while in MAX Power).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rapid Movement /&lt;br/&gt;Hyper Speed Movement Speed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="RMHSMSpeedBox">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>150</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_24">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>30</y>
+      <width>211</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This parameter might influence the the speed in which you can move horizontally while being in a Dragon Dash that chases the opponent.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Hor. DD Turning Speed (?)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="HDDTS_Box">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>60</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_25">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>110</y>
+      <width>211</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This parameter might influence the the speed in which you can move vertically while being in a Dragon Dash that chases the opponent.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Ver. DD Turning Speed (?)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="VDDTS_Box">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>150</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SpeedLbl_26">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>200</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This parameter decides how long a dash is, in seconds.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Dash Length</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="DashLengthBox">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>230</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>AscSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>640</x>
+     <y>495</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BackstepBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>670</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CRMovSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CRMovSpeedWaterBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DADDSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>495</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DADDKiConBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>745</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DDCKiConBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>635</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DDCSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>405</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DDFKiConBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>855</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DDFSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>405</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DJumpHeightBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>800</x>
+     <y>405</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DJumpSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>800</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DashLengthBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>660</x>
+     <y>855</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DescSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>800</x>
+     <y>495</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DashSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DescAccelBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>800</x>
+     <y>575</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>HDDTS_Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>780</x>
+     <y>685</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>JumpHeightBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>640</x>
+     <y>405</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>JumpSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>640</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LiftStrikeBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>550</x>
+     <y>685</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MovSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MovSpeedWaterBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RMHSMSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>550</x>
+     <y>775</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SidestepBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>810</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>StepInBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>730</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk54Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>995</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk60Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>330</x>
+     <y>995</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AscAccelBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>640</x>
+     <y>575</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk64Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>450</x>
+     <y>995</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk8CBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>1065</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DDRFSpeedBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>495</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>VDDTS_Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>780</x>
+     <y>775</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk88Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>810</x>
+     <y>995</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk90Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>300</x>
+     <y>1065</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk5CBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>995</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk7CBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>570</x>
+     <y>995</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk84Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>690</x>
+     <y>995</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk94Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>450</x>
+     <y>1065</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Unk9CBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>600</x>
+     <y>1065</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnkA0Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MovementFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>750</x>
+     <y>1065</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>QDoubleSpinBox_Changed(double)</slot>
+  <slot>QSpinBox_Changed(int)</slot>
+ </slots>
+</ui>

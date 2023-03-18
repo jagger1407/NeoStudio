@@ -42,7 +42,7 @@ QByteArray KiParameters::GetFileData()
 void KiParameters::SetFileData(QByteArray NewData)
 {
     Debug::Log("SetFileData called.", Debug::INFO, options);
-    fileData.replace(0, fileData.size(), NewData);
+    fileData = NewData;
 }
 
 void KiParameters::setCurrentBlast(int BlastID)

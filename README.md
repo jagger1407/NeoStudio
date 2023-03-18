@@ -12,7 +12,7 @@ Neo Studio uses either character files in the .pak, or singular parameter sectio
 
 If you don't own these files, there are AFL files in the **"AFLs"** folder. Use these with AFS Explorer and their respective AFS file to extract the .pak files.
 
-As for .dat files, those require the character .pak to have been unpacked via [HiroTex's](https://github.com/hirotex) SpikeSoft tool.
+As for .dat files, those require the character .pak to have been unpacked via [HiroTex's SpikeSoft tool](https://github.com/hirotex/SpikeSoft).
 
 ## Download Requirements
 

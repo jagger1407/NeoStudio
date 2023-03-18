@@ -41,13 +41,16 @@ set(neostudio_SRC
   src/pak_filesystem/generalparameters.h
   src/pak_filesystem/meleeparameters.h
   src/pak_filesystem/kiparameters.h
+  src/pak_filesystem/movementparameters.h
   src/pak_filesystem/pakcontrols.h
   src/ui/neostudio.h
   src/ui/menu/aboutwindow.h
   src/ui/menu/optiondialog.h
+  src/ui/menu/datselectiondialog.h
   src/ui/paramSections/generalframe.h
   src/ui/paramSections/meleeframe.h
   src/ui/paramSections/kiframe.h
+  src/ui/paramSections/movementframe.h
   
   # ::source files::
   src/main.cpp
@@ -57,21 +60,26 @@ set(neostudio_SRC
   src/pak_filesystem/generalparameters.cpp
   src/pak_filesystem/meleeparameters.cpp
   src/pak_filesystem/kiparameters.cpp
+  src/pak_filesystem/movementparameters.cpp
   src/pak_filesystem/pakcontrols.cpp
   src/ui/neostudio.cpp
   src/ui/menu/aboutwindow.cpp
   src/ui/menu/optiondialog.cpp
+  src/ui/menu/datselectiondialog.cpp
   src/ui/paramSections/generalframe.cpp
   src/ui/paramSections/meleeframe.cpp
   src/ui/paramSections/kiframe.cpp
+  src/ui/paramSections/movementframe.cpp
 
   # ::designer files::
   src/ui/neostudio.ui
   src/ui/paramSections/generalframe.ui
   src/ui/paramSections/meleeframe.ui
   src/ui/paramSections/kiframe.ui
+  src/ui/paramSections/movementframe.ui
   src/ui/menu/aboutwindow.ui
   src/ui/menu/optiondialog.ui
+  src/ui/menu/datselectiondialog.ui
 )
 
 # Tell CMake to create the executable

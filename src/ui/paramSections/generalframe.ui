@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>922</width>
-    <height>1454</height>
+    <height>1455</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -2987,7 +2987,7 @@ This just means it checks if you can Step-In after pressing Square 5 times.</str
       </rect>
      </property>
      <property name="toolTip">
-      <string>Checks if your character can use the Heavy Crush follow-up.</string>
+      <string>Checks if your character can use the Giant Throw.</string>
      </property>
      <property name="text">
       <string>Giant Throw</string>

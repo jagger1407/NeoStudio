@@ -78,9 +78,9 @@ bool GeneralParameters::GetFlagParameter(QCheckBox* Object)
     Debug::Log("GetFlagParameter called.", Debug::INFO, options);
     QObject* byte = Object->parent();
     int bit = Object->objectName().right(1).toUInt() - 1;
-    for(int i=FlagByte;i<FlagByte + 9;i++)
+    for(int i=0;i<9;i++)
     {
-        if((void*)byte == (void*)parameter[i].UiElement) return BitManipulation::Bit(*(constData + parameter[i].offset), bit);
+        if((void*)byte == (void*)parameter[FlagByte + i].UiElement) return BitManipulation::Bit(*(constData + parameter[i].offset), bit);
     }
     Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING, options);
     return false;
@@ -151,7 +151,7 @@ void GeneralParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
     int bit = Object->objectName().right(1).toUInt() - 1;
     for(int i=0;i<9;i++)
     {
-        if(byte == (void*)parameter[i].UiElement)
+        if(byte == (void*)parameter[FlagByte + i].UiElement)
         {
             ChangeData(parameter[i].offset, bit, NewValue);
             return;

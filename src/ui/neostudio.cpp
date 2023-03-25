@@ -2,7 +2,7 @@
 #include "ui_neostudio.h"
 
 
-#define VERSION_STRING "Neo Studio v1.0"
+#define VERSION_STRING "Neo Studio v1.0.1"
 
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :

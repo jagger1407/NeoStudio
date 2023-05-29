@@ -35,6 +35,7 @@ set(neostudio_SRC
   src/neo_info.h
   src/options.h
   src/external/fileparse.h
+  src/external/cfgparser.h
   src/external/debug.h
   src/external/bitmanipulation.h
   src/pak_filesystem/parameterfile.h
@@ -56,6 +57,7 @@ set(neostudio_SRC
   src/main.cpp
   src/options.cpp
   src/external/fileparse.cpp
+  src/external/cfgparser.cpp
   src/external/debug.cpp
   src/pak_filesystem/generalparameters.cpp
   src/pak_filesystem/meleeparameters.cpp

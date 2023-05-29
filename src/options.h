@@ -2,7 +2,7 @@
 #define OPTIONS_H
 
 #include "src/external/qt_includes.h"
-#include "src/external/fileparse.h"
+#include "src/external/cfgparser.h"
 
 /**
  * @todo write docs
@@ -89,6 +89,8 @@ private:
             "<font color=\"blue\">",
             "<font color=\"red\">",
     };
+
+    CfgParser* cfg;
 
     LogMode logMode;
     TooltipColor tooltipColor;

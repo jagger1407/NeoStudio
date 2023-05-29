@@ -224,7 +224,8 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:white</string>
+       <string notr="true">color:white
+QLabel { color:red }</string>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -267,7 +268,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: white</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Open A Character File...</string>

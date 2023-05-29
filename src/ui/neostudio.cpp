@@ -2,7 +2,7 @@
 #include "ui_neostudio.h"
 
 
-#define VERSION_STRING "Neo Studio v1.0.1"
+#define VERSION_STRING "Neo Studio v1.0.2"
 
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
@@ -19,7 +19,6 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
 
     QGraphicsScene* scene = new QGraphicsScene();
     // Drip Code
-    scene->addPixmap((*new QPixmap("./assets/UnderConstruction.png")).scaled(ui->graphicsView_1->width(), ui->graphicsView_1->height()));
     this->setWindowIcon(QIcon("./assets/icon.png"));
 
     if(argc == 2)
@@ -158,6 +157,7 @@ void NeoStudio::SaveFileAs()
                 return;
         }
         FileParse::WriteFile(newFile, datPtr);
+        delete datPtr;
     }
 }
 

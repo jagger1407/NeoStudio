@@ -5,9 +5,9 @@ QStringList FileParse::ReadLines(QString FilePath)
     // Check FilePath if it even has a value
     if(FilePath == "")
     {
-        return *new QStringList;
+        return QStringList();
     }
-    // Open file for reading, or prints error if it fails
+    // Open file for reading, returns if it fails
     QFile file(FilePath);
     if(!file.open(QIODevice::ReadOnly))
     {

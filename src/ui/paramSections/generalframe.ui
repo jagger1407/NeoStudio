@@ -20,7 +20,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:rgb(50, 54, 60); color: white</string>
+   <string notr="true"/>
   </property>
   <widget class="QPushButton" name="RushTechBtn_3">
    <property name="geometry">
@@ -32,7 +32,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>None</string>
@@ -53,7 +53,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>None</string>
@@ -131,7 +131,7 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    <string notr="true"/>
    </property>
    <property name="currentIndex">
     <number>0</number>
@@ -188,7 +188,7 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    <string notr="true"/>
    </property>
    <property name="currentIndex">
     <number>0</number>
@@ -245,7 +245,7 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>No Counter</string>
@@ -266,7 +266,7 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>No Counter</string>
@@ -282,7 +282,7 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>None</string>
@@ -430,7 +430,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -446,7 +446,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -462,7 +462,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -478,7 +478,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -520,7 +520,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -536,7 +536,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -552,7 +552,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -568,7 +568,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -635,7 +635,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>No Counter</string>
@@ -656,7 +656,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>None</string>
@@ -740,7 +740,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      <string/>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -756,7 +756,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -772,7 +772,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -813,7 +813,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -829,7 +829,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -845,7 +845,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -886,7 +886,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>None</string>
@@ -902,7 +902,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>None</string>
@@ -918,7 +918,7 @@ Note: Any ID higher than 130 will disable the transformation.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey; border-radius: 10px;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>None</string>
@@ -990,7 +990,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1006,7 +1006,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1022,7 +1022,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1038,7 +1038,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1054,7 +1054,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1070,7 +1070,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1086,7 +1086,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1102,7 +1102,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1118,7 +1118,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1134,7 +1134,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1150,7 +1150,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1166,7 +1166,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1182,7 +1182,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1198,7 +1198,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1214,7 +1214,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1230,7 +1230,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1246,7 +1246,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1262,7 +1262,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1278,7 +1278,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1294,7 +1294,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1310,7 +1310,7 @@ This ID has nothing to do with the actual character in your Team, it is only use
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1353,7 +1353,7 @@ If one of these IDs is in your team, they corresponding character will be remove
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    <string notr="true"/>
    </property>
    <property name="currentIndex">
     <number>0</number>
@@ -1537,7 +1537,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1565,7 +1565,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1599,7 +1599,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1670,7 +1670,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1692,7 +1692,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1738,7 +1738,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1808,7 +1808,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1854,7 +1854,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1876,7 +1876,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1962,7 +1962,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2008,7 +2008,7 @@ If one of these IDs is in your team, they corresponding character will be remove
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2062,7 +2062,7 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2132,7 +2132,7 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2154,7 +2154,7 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2176,7 +2176,7 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2225,7 +2225,7 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2277,7 +2277,7 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2353,7 +2353,7 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2408,7 +2408,7 @@ Note: Values above 1 make the character unable to jump.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>

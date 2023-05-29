@@ -8,7 +8,7 @@ Options::Options()
 }
 
 #if 1 // unused
-Options::Options(LogMode logMode,TooltipColor tooltipColor, UiMode uiMode)
+Options::Options(LogMode logMode,TooltipColor tooltipColor, QString uiMode)
 {
     this->logMode = logMode;
     this->tooltipColor = tooltipColor;
@@ -26,10 +26,10 @@ void Options::LoadDefaults(bool saveFile)
     uiMode = DEFAULT_UIMODE;
     advancedOptions = DEFAULT_ADVANCED_OPTIONS;
 
-    cfg->add(OptionStr[LOGMODE], LogmodeStr[DEFAULT_LOGMODE]);
-    cfg->add(OptionStr[TOOLTIPCOLOR], TooltipStr[DEFAULT_TOOLTIPCOLOR]);
-    cfg->add(OptionStr[UI_MODE], UimodeStr[DEFAULT_UIMODE]);
-    cfg->add(OptionStr[ADVANCED_OPTIONS], QString::number(DEFAULT_ADVANCED_OPTIONS));
+    cfg->Add(OptionStr[LOGMODE], LogmodeStr[DEFAULT_LOGMODE]);
+    cfg->Add(OptionStr[TOOLTIPCOLOR], TooltipStr[DEFAULT_TOOLTIPCOLOR]);
+    cfg->Add(OptionStr[UI_MODE], DEFAULT_UIMODE);
+    cfg->Add(OptionStr[ADVANCED_OPTIONS], QString::number(DEFAULT_ADVANCED_OPTIONS));
 
     if(saveFile) cfg->WriteConfig(CONFIG_PATH);
 }
@@ -39,19 +39,17 @@ bool Options::LoadConfig()
     if(!FileParse::DoesFileExist(CONFIG_PATH)) return false;
     cfg = new CfgParser(CONFIG_PATH);
 
-    QString option = cfg->getParameter(OptionStr[LOGMODE]);
+    QString option = cfg->GetParameter(OptionStr[LOGMODE]);
     for(int i=0;i<LOGMODE_COUNT;i++)
         if(option == LogmodeStr[i]) logMode = (LogMode)i;
 
-    option = cfg->getParameter(OptionStr[TOOLTIPCOLOR]);
+    option = cfg->GetParameter(OptionStr[TOOLTIPCOLOR]);
     for(int i=0;i<TOOLTIPCOLOR_COUNT;i++)
         if(option == TooltipStr[i]) tooltipColor = (TooltipColor)i;
 
-    option = cfg->getParameter(OptionStr[UI_MODE]);
-    for(int i=0;i<UIMODE_COUNT;i++)
-        if(option == UimodeStr[i]) uiMode = (UiMode)i;
+    uiMode = cfg->GetParameter(OptionStr[UI_MODE]);
 
-    option = cfg->getParameter(OptionStr[ADVANCED_OPTIONS]);
+    option = cfg->GetParameter(OptionStr[ADVANCED_OPTIONS]);
     advancedOptions = option.toUInt();
 
     return true;
@@ -62,10 +60,10 @@ void Options::SaveConfig()
 {
     if(cfg == nullptr) return;
 
-    cfg->change(OptionStr[LOGMODE], LogmodeStr[logMode]);
-    cfg->change(OptionStr[TOOLTIPCOLOR], TooltipStr[tooltipColor]);
-    cfg->change(OptionStr[UI_MODE], UimodeStr[uiMode]);
-    cfg->change(OptionStr[ADVANCED_OPTIONS], QString::number(advancedOptions));
+    cfg->Change(OptionStr[LOGMODE], LogmodeStr[logMode]);
+    cfg->Change(OptionStr[TOOLTIPCOLOR], TooltipStr[tooltipColor]);
+    cfg->Change(OptionStr[UI_MODE], uiMode);
+    cfg->Change(OptionStr[ADVANCED_OPTIONS], QString::number(advancedOptions));
 
     cfg->WriteConfig(CONFIG_PATH);
 }
@@ -109,14 +107,13 @@ void Options::SetLogMode(Options::LogMode newMode)
     this->logMode = newMode;
 }
 
-Options::UiMode Options::GetUiMode()
+QString Options::GetUiMode()
 {
     return uiMode;
 }
 
-void Options::SetUiMode(Options::UiMode newMode)
+void Options::SetUiMode(QString newMode)
 {
-    if(newMode == UIMODE_COUNT) return;
     uiMode = newMode;
 }
 

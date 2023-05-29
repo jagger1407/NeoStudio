@@ -251,7 +251,7 @@ void GeneralFrame::ButtonValueGet(QPushButton* Button)
     else
     {
         curBtn -= 7;
-        counter[curBtn] = btnValue;
+        fusion[curBtn] = btnValue;
         Button->setText(fusionStr[btnValue]);
     }
 }
@@ -263,40 +263,9 @@ void GeneralFrame::ResetUiMode()
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();
     QList<QComboBox*> comboBoxes = this->findChildren<QComboBox*>();
-    if(options->GetUiMode() == Options::LIGHT)
-    {
-        this->setStyleSheet("background:white; color: black");
-
-        for(QSpinBox* sBox : spinBoxes)
-        {
-            sBox->setStyleSheet("");
-        }
-        for(QDoubleSpinBox* dsBox : dblSpinBoxes)
-        {
-            dsBox->setStyleSheet("");
-        }
-        for(QComboBox* cbBox : comboBoxes)
-        {
-            cbBox->setStyleSheet("");
-        }
-    }
-    else if(options->GetUiMode() == Options::DARK)
-    {
-        this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
-
-        for(QSpinBox* sBox : spinBoxes)
-        {
-            sBox->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
-        }
-        for(QDoubleSpinBox* dsBox : dblSpinBoxes)
-        {
-            dsBox->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
-        }
-        for(QComboBox* cbBox : comboBoxes)
-        {
-            cbBox->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
-        }
-    }
+    // Change the StyleSheet of Window + each Element
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
+    // Change the StyleSheet for the tooltips as well, can't leave them out now, can we?
     QList<QLabel*> labels = this->findChildren<QLabel*>();
     for(QLabel* lbl : labels)
     {

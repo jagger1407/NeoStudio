@@ -3,25 +3,20 @@
 OptionDialog::OptionDialog(Options* options)
     : ui(new Ui::OptionDialog), options(options)
 {
+    initializing = true;
     int logMode = this->options->GetLogMode();
-    int uiMode = this->options->GetUiMode();
+    QString uiMode = this->options->GetUiMode();
     int tool = this->options->GetTooltipColor();
     bool advanced = this->options->GetAdvancedOptions();
-    if(uiMode == Options::LIGHT)
-    {
-        this->setStyleSheet("background:white; color: black");
-    }
-    else if(uiMode == Options::DARK)
-    {
-        this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
-    }
     ui->setupUi(this);
+    ReloadUIsBtn_Clicked();
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
     this->setWindowTitle("Options");
     this->setWindowIcon(QIcon("./assets/cog-wheel.png"));
 
     ui->LogModeBox->setCurrentIndex(logMode);
     ui->TooltipBox->setCurrentIndex(tool);
-    ui->UiModeBox->setCurrentIndex((int)uiMode);
+    ui->UiModeBox->setCurrentText(uiMode);
     ui->DebugEnableCheckBox->setCheckState((Qt::CheckState)(advanced << 1));
 
     if(!advanced)
@@ -30,7 +25,7 @@ OptionDialog::OptionDialog(Options* options)
         ui->LogModeLbl->setStyleSheet("color:grey");
     }
 
-
+    initializing = false;
     Debug::Log("OptionDialog constructed.", Debug::INFO, this->options);
 }
 
@@ -61,26 +56,35 @@ void OptionDialog::LoggingMode_IndexChanged(int NewIndex)
 void OptionDialog::TooltipColor_IndexChanged(int NewIndex)
 {
     Debug::Log("TooltipColor_IndexChanged slot triggered.", Debug::INFO, options);
+    this->options->SetTooltipColor((Options::TooltipColor)NewIndex);
 }
 void OptionDialog::UiModeBox_IndexChanged(int NewIndex)
 {
+    if(initializing) return;
     Debug::Log("UiModeBox_IndexChanged slot triggered.", Debug::INFO, options);
-    QString style;
-    if(NewIndex == Options::LIGHT)
+    QString style = ui->UiModeBox->currentText();
+    this->options->SetUiMode(style);
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + style +".qss"));
+}
+void OptionDialog::ReloadUIsBtn_Clicked()
+{
+    initializing = true;
+    QDir uiDir("./assets/ui");
+    ui->UiModeBox->clear();
+    for(QString style : uiDir.entryList())
     {
-        style = "background:white; color: black";
+        if(!style.contains(".qss")) continue;
+        style.replace(".qss", "");
+        ui->UiModeBox->addItem(style);
     }
-    else if(NewIndex == Options::DARK)
-    {
-        style = "background:rgb(50, 54, 60) ; color: white";
-    }
-    this->setStyleSheet(style);
+    ui->UiModeBox->setCurrentText(options->GetUiMode());
+    initializing = false;
 }
 void OptionDialog::SaveBtn_Clicked()
 {
     Debug::Log("SaveBtn_Clicked slot triggered.", Debug::INFO, options);
 
-    this->options->SetUiMode((Options::UiMode)ui->UiModeBox->currentIndex());
+    this->options->SetUiMode(ui->UiModeBox->currentText());
     this->options->SetTooltipColor((Options::TooltipColor)ui->TooltipBox->currentIndex());
     this->options->SetLogMode((Options::LogMode)ui->LogModeBox->currentIndex());
     this->options->SetAdvancedOptions((bool)(ui->DebugEnableCheckBox->checkState() >> 1));

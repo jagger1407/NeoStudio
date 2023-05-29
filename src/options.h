@@ -48,22 +48,13 @@ public:
     } TooltipColor;
     QString TooltipStr[4] = { "White", "Black", "Blue", "Red" };
 
-
-    /**A selection of background color choices for the entire program.*/
-    typedef enum {
-        LIGHT,
-        DARK,
-        UIMODE_COUNT
-    } UiMode;
-    QString UimodeStr[2] = { "Light", "Dark" };
-
 #define DEFAULT_LOGMODE RELEASE_NOFILE
 #define DEFAULT_TOOLTIPCOLOR BLACK
-#define DEFAULT_UIMODE DARK
+#define DEFAULT_UIMODE "Dark"
 #define DEFAULT_ADVANCED_OPTIONS false
 
     Options();
-    Options(LogMode log, TooltipColor tooltipCol, UiMode uiMode);
+    Options(LogMode log, TooltipColor tooltipCol, QString uiMode);
     void LoadDefaults(bool saveFile = false);
     bool LoadConfig();
     void SaveConfig();
@@ -75,8 +66,8 @@ public:
     TooltipColor GetTooltipColor();
     void SetTooltipColor(TooltipColor newColor);
 
-    UiMode GetUiMode();
-    void SetUiMode(UiMode newMode);
+    QString GetUiMode();
+    void SetUiMode(QString newMode);
 
     bool GetAdvancedOptions();
     void SetAdvancedOptions(bool value);
@@ -94,7 +85,7 @@ private:
 
     LogMode logMode;
     TooltipColor tooltipColor;
-    UiMode uiMode;
+    QString uiMode;
     bool advancedOptions;
 };
 

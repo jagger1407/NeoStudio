@@ -13,9 +13,9 @@ class CfgParser
 public:
     CfgParser(QString cfgPath);
     CfgParser();
-    bool add(QString parameter, QString value);
-    bool change(QString parameter, QString newValue);
-    QString getParameter(QString parameter);
+    bool Add(QString parameter, QString value);
+    bool Change(QString parameter, QString newValue);
+    QString GetParameter(QString parameter);
     //bool remove(QString parameter);
     bool WriteConfig(QString cfgPath);
 

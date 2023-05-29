@@ -8,21 +8,21 @@ void Debug::Log(const QString Message, LogLevel Severity, Options* options)
             if(Severity == INFO) return;
             ConsolePrint(Message, Severity);
             LogFilePrint(Message, Severity);
-            if(Severity == ERROR) ShowError(Message);
+            if(Severity == ERROR) ShowError(Message, options);
             break;
         case Options::RELEASE_NOFILE:
             if(Severity == INFO) return;
             ConsolePrint(Message, Severity);
-            if(Severity == ERROR) ShowError(Message);
+            if(Severity == ERROR) ShowError(Message, options);
             break;
         case Options::DEV:
             ConsolePrint(Message, Severity);
             LogFilePrint(Message, Severity);
-            if(Severity == ERROR) ShowError(Message);
+            if(Severity == ERROR) ShowError(Message, options);
             break;
         case Options::DEV_NOFILE:
             ConsolePrint(Message, Severity);
-            if(Severity == ERROR) ShowError(Message);
+            if(Severity == ERROR) ShowError(Message, options);
             break;
         case Options::LOGMODE_COUNT:
         default:
@@ -34,9 +34,10 @@ void Debug::ConsolePrint(const QString Message, LogLevel Severity)
     QString logLevels[3] = { "Info: ", "Warning: ", "ERROR! " };
     qInfo().noquote() << QDateTime::currentDateTime().toString() << " - " + logLevels[Severity] << Message;
 }
-void Debug::ShowError(const QString Message)
+void Debug::ShowError(const QString Message, Options* options)
 {
     QMessageBox ErrorWindow;
+    ErrorWindow.setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
     ErrorWindow.setWindowTitle("Error!");
     ErrorWindow.setText(Message);
     ErrorWindow.exec();

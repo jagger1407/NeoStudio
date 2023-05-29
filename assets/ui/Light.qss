@@ -1,0 +1,104 @@
+QMainWindow, QMessageBox, QDialog, QFrame {
+	background-color: white;
+	color: black;
+}
+
+QMenuBar {
+	background-color: rgb(200, 200, 200);
+	color: black;
+}
+
+QMenuBar::item:selected {
+    background-color: rgb(180, 180, 180);
+}
+
+QMenu {
+	background-color:white;
+	color:black;
+	border: 1px solid grey
+}
+
+QMenu::item {
+	background-color: white;
+	color:black;
+}
+
+QMenu::item:selected {
+	background-color: rgb(114, 205, 255);
+	color:black;
+}
+
+QGraphicsView#graphicsView_AboutImage {
+	background: transparent;
+}
+
+QScrollArea {
+background-color:white;
+	color: black;
+}
+
+QTabBar {
+	background-color: white;
+	color: black;
+}
+
+QTabBar::tab:selected {
+	background-color: rgb(180, 180, 180);
+	color: black;
+}
+
+QLabel {
+	background-color:white;
+	color: black;
+}
+
+QGroupBox {
+	background-color: white;
+	color: black;
+}
+
+QPushButton {
+	background-color: rgb(200, 200, 200);
+	color: black;
+	border: 2px solid rgb(210, 210, 210);
+	border-radius: 5px;
+}
+
+QPushButton:hover {
+	background-color: rgb(200, 200, 200);
+	color: black;
+	border: 2px solid black;
+	border-radius: 3px;
+}
+
+QComboBox {
+	background-color: rgb(200, 200, 200);
+	color: black;
+	border: 2px solid rgb(210, 210, 210);
+	border-radius: 1px;
+}
+
+QSpinBox, QDoubleSpinBox {
+	background-color: rgb(200, 200, 200);
+	color: black;
+	border: 2px solid grey;
+	border-radius: 2px;
+}
+
+QComboBox:down-arrow {
+	color:black;
+}
+
+QCheckBox::indicator {
+	background-color: white;
+	border: 2px solid grey;
+	border-radius: 2px
+	margin: 2px;
+}
+
+QCheckBox::indicator:checked {
+	background-color: black;
+	border: 2px solid grey;
+	border-radius: 2px
+	margin: 2px;
+}

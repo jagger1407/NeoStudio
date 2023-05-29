@@ -32,7 +32,7 @@
    <string>Neo Studio</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:rgb(50, 54, 60) ; color: white</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="styleSheet">
@@ -51,7 +51,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="GeneralTab">
      <property name="styleSheet">
@@ -70,7 +70,7 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:white;</string>
+       <string notr="true"/>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -144,7 +144,7 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:white</string>
+       <string notr="true"/>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -184,7 +184,7 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:white</string>
+       <string notr="true"/>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -224,8 +224,7 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:white
-QLabel { color:red }</string>
+       <string notr="true"/>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -288,11 +287,11 @@ QLabel { color:red }</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(75, 81, 90); border-color: rgb(40, 40, 40);</string>
+    <string notr="true"/>
    </property>
    <widget class="QMenu" name="MenuFile">
     <property name="styleSheet">
-     <string notr="true">border-color: rgb(40, 40, 40);</string>
+     <string notr="true"/>
     </property>
     <property name="title">
      <string>File</string>
@@ -307,7 +306,7 @@ QLabel { color:red }</string>
    </widget>
    <widget class="QMenu" name="MenuHelp">
     <property name="styleSheet">
-     <string notr="true">border-color: rgb(40, 40, 40);</string>
+     <string notr="true"/>
     </property>
     <property name="title">
      <string>Help</string>

@@ -31,21 +31,21 @@ CfgParser::CfgParser()
     parameters = new QMap<QString, QString>();
 }
 
-bool CfgParser::add(QString parameter, QString value)
+bool CfgParser::Add(QString parameter, QString value)
 {
     if(parameters == nullptr || parameters->contains(parameter)) return false;
     parameters->insert(parameter, value);
     return true;
 }
 
-bool CfgParser::change(QString parameter, QString newValue)
+bool CfgParser::Change(QString parameter, QString newValue)
 {
     if(parameters == nullptr || !parameters->contains(parameter)) return false;
     (*parameters)[parameter] = newValue;
     return true;
 }
 
-QString CfgParser::getParameter(QString parameter)
+QString CfgParser::GetParameter(QString parameter)
 {
     if(parameters == nullptr || !parameters->contains(parameter)) return NULL;
     return (*parameters)[parameter];

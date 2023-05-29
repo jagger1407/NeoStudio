@@ -46,7 +46,6 @@
    <property name="font">
     <font>
      <pointsize>12</pointsize>
-     <weight>50</weight>
      <bold>false</bold>
     </font>
    </property>
@@ -73,7 +72,7 @@
     <enum>Qt::RichText</enum>
    </property>
   </widget>
-  <widget class="QGraphicsView" name="graphicsView">
+  <widget class="QGraphicsView" name="graphicsView_AboutImage">
    <property name="enabled">
     <bool>false</bool>
    </property>

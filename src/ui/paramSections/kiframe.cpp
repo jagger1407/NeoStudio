@@ -118,41 +118,7 @@ void KiFrame::ResetUiMode()
     QList<QLabel*> labels = this->findChildren<QLabel*>();
 
     // Change the StyleSheet of Window + each Element
-    if(options->GetUiMode() == Options::LIGHT)
-    {
-        this->setStyleSheet("background:white; color: black");
-
-        for(QSpinBox* spinBox : spinBoxes)
-        {
-            spinBox->setStyleSheet("");
-        }
-        for(QDoubleSpinBox* dblSpinBox : dblSpinBoxes)
-        {
-            dblSpinBox->setStyleSheet("");
-        }
-        for(QComboBox* comboBox : comboBoxes)
-        {
-            comboBox->setStyleSheet("");
-        }
-    }
-    else if(options->GetUiMode() == Options::DARK)
-    {
-        this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
-
-        for(QSpinBox* spinBox : spinBoxes)
-        {
-            spinBox->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
-        }
-        for(QDoubleSpinBox* dblSpinBox : dblSpinBoxes)
-        {
-            dblSpinBox->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
-        }
-        for(QComboBox* comboBox : comboBoxes)
-        {
-            comboBox->setStyleSheet("background-color:rgb(65,69,75); color:white;border: 2 solid grey;");
-        }
-    }
-
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
     // Change the StyleSheet for the tooltips as well, can't leave them out now, can we?
     for(QLabel* lbl : labels)
     {

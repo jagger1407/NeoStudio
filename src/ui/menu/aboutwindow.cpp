@@ -5,18 +5,13 @@ AboutWindow::AboutWindow(Options* options)
 {
     ui->setupUi(this);
 
-    ui->graphicsView->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
-	ui->graphicsView->setVerticalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
+    ui->graphicsView_AboutImage->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
+	ui->graphicsView_AboutImage->setVerticalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
     QGraphicsScene* scene = new QGraphicsScene();
-    scene->setSceneRect(ui->graphicsView->rect());
-    scene->addPixmap(QPixmap("./assets/AboutImage.png").scaled(ui->graphicsView->width(), ui->graphicsView->height(), Qt::KeepAspectRatio));
-    ui->graphicsView->setScene(scene);
-    if(options->GetUiMode() == Options::LIGHT)
-    {
-        setStyleSheet("background:white; color: black");
-    }
-    else if(options->GetUiMode() == Options::DARK)
-    {
-        setStyleSheet("background:rgb(50, 54, 60) ; color: white");
-    }
+    scene->setSceneRect(ui->graphicsView_AboutImage->rect());
+    scene->addPixmap(QPixmap("./assets/AboutImage.png").scaled(ui->graphicsView_AboutImage->width(),
+                                                               ui->graphicsView_AboutImage->height(),
+                                                               Qt::KeepAspectRatio));
+    ui->graphicsView_AboutImage->setScene(scene);
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
 }

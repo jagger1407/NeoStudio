@@ -26,6 +26,7 @@ public:
 private:
     QScopedPointer<Ui::OptionDialog> ui;
     Options* options = nullptr;
+    bool initializing = false;
 private slots:
     void DebugEnableCheckState_Changed(int NewState);
     void LoggingMode_IndexChanged(int NewIndex);
@@ -33,6 +34,7 @@ private slots:
     void UiModeBox_IndexChanged(int NewIndex);
     void SaveBtn_Clicked();
     void CancelBtn_Clicked();
+    void ReloadUIsBtn_Clicked();
 };
 
 #endif // OPTIONDIALOG_H

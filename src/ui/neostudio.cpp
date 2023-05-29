@@ -408,22 +408,8 @@ void NeoStudio::ImportDat()
 
 void NeoStudio::ResetUiMode()
 {
-    if(options->GetUiMode() == Options::LIGHT)
-    {
-        this->setStyleSheet("background:white; color: black");
-        ui->MenuBar->setStyleSheet("background:white");
-        ui->GeneralScrollArea->setStyleSheet("color:black");
-        ui->MeleeScrollArea->setStyleSheet("color:black");
-        ui->KiBlastScrollArea->setStyleSheet("color:black");
-        ui->MovementScrollArea->setStyleSheet("color:black");
-        ui->FileLbl->setStyleSheet("color:black");
-        ui->GeneralTab->setStyleSheet("color:black;background:white;");
-        ui->MeleeTab->setStyleSheet("color:black;background:white;");
-        ui->KiBlastTab->setStyleSheet("color:black;background:white;");
-        ui->MovementTab->setStyleSheet("color:black;background:white;");
-    }
-    else if(options->GetUiMode() == Options::DARK)
-    {
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
+    /*
         this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
         ui->MenuBar->setStyleSheet("background-color:rgb(75, 81, 90)");
         ui->GeneralScrollArea->setStyleSheet("color:white");
@@ -435,5 +421,5 @@ void NeoStudio::ResetUiMode()
         ui->MeleeTab->setStyleSheet("color:black;background:rgb(50,54,60);");
         ui->KiBlastTab->setStyleSheet("color:black;background:rgb(50,54,60);");
         ui->MovementTab->setStyleSheet("color:black;background:rgb(50,54,60);");
-    }
+        */
 }

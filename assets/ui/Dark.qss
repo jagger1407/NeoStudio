@@ -1,0 +1,86 @@
+QMainWindow, QDialog, QMessageBox, QFrame {
+    background-color: rgb(50, 54, 60);
+    color: white;
+}
+
+QSpinBox, QDoubleSpinBox {
+    background-color: rgb(65,69,75);
+    color: white;
+    border: 2px solid grey;
+	border-radius: 3px;
+}
+
+QComboBox {
+    background-color: rgb(65,69,75);
+    color: white;
+    border: 2px solid grey;
+	border-radius: 2px;
+}
+
+QTabWidget {
+	background-color: rgb(50, 54, 65);
+	color: white;
+}
+
+QTabBar {
+	background-color: rgb(50, 50, 60);
+	color: white;
+}
+
+QTabBar::tab:selected {
+	background-color: rgb(60, 60, 70);
+	color: white;
+}
+
+QMenuBar {
+	background-color: rgb(60, 60, 70);
+	color: white;
+}
+
+QMenuBar::item:selected {
+    background-color: rgb(100, 100, 100);
+}
+
+QMenu {
+	background-color: rgb(50, 50, 50);
+	color:black;
+	border: 1px solid grey
+}
+
+QMenu::item {
+	background-color: rgb(50, 50, 50);
+	color:white;
+}
+
+QMenu::item:selected {
+	background-color: rgb(114, 205, 255);
+	color:black;
+}
+
+QGraphicsView#graphicsView_AboutImage {
+	background: transparent;
+}
+
+QScrollArea {
+background-color: rgb(50, 54, 60);
+	color: black;
+}
+
+QLabel {
+	background-color: rgb(50, 54, 60);
+	color: white;
+}
+
+QPushButton {
+	background-color: rgb(65,69,75);
+	color: white;
+	border: 2px solid grey;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color:rgb(75,79,85);
+	color:white;
+	border: 2px solid rgb(30, 30, 40);
+	border-radius: 10px;
+}

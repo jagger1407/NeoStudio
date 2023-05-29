@@ -24,7 +24,7 @@ public:
     /**Prints message to log file. Should not be used, use Debug::Log instead.*/
     static void LogFilePrint(const QString Message, LogLevel Severity);
     /**Show message as error box to the user.*/
-    static void ShowError(const QString Message);
+    static void ShowError(const QString Message, Options* options);
 };
 
 #endif // DEBUG_H

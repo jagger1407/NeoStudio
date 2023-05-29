@@ -17,18 +17,23 @@ QComboBox {
 	border-radius: 2px;
 }
 
-QTabWidget {
-	background-color: rgb(50, 54, 65);
-	color: white;
+QGroupBox {
+        background-color: rgb(50, 54, 60);
+        color: white;
 }
 
-QTabBar {
+QTabWidget::pane {
+        background-color: rgb(50, 54, 60);
+        color: white;
+}
+
+QTabBar::tab {
 	background-color: rgb(50, 50, 60);
 	color: white;
 }
 
 QTabBar::tab:selected {
-	background-color: rgb(60, 60, 70);
+        background-color: rgb(70, 70, 80);
 	color: white;
 }
 
@@ -62,8 +67,28 @@ QGraphicsView#graphicsView_AboutImage {
 }
 
 QScrollArea {
-background-color: rgb(50, 54, 60);
-	color: black;
+        background-color: rgb(50, 54, 60);
+        color: white;
+}
+
+QWidget#scrollAreaWidgetContents {
+        background-color: rgb(50, 54, 60);
+        color: white;
+}
+
+QWidget#scrollAreaWidgetContents_2 {
+        background-color: rgb(50, 54, 60);
+        color: white;
+}
+
+QWidget#scrollAreaWidgetContents_3 {
+        background-color: rgb(50, 54, 60);
+        color: white;
+}
+
+QWidget#scrollAreaWidgetContents_4 {
+        background-color: rgb(50, 54, 60);
+        color: white;
 }
 
 QLabel {
@@ -83,4 +108,23 @@ QPushButton:hover {
 	color:white;
 	border: 2px solid rgb(30, 30, 40);
 	border-radius: 10px;
+}
+
+QCheckBox {
+        background-color: rgb(50, 54, 60);
+        color: white;
+}
+
+QCheckBox::indicator {
+        background-color: white;
+        border: 2px solid grey;
+        border-radius: 2px
+        margin: 2px;
+}
+
+QCheckBox::indicator:checked {
+        background-color: black;
+        border: 2px solid grey;
+        border-radius: 2px
+        margin: 2px;
 }

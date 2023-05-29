@@ -18,5 +18,6 @@
 #include <QGroupBox>
 #include <QCheckBox>
 #include <QDateTime>
+#include <QMap>
 
 #endif

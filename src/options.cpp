@@ -2,9 +2,12 @@
 
 Options::Options()
 {
-    if(!FileParse::DoesFileExist(CONFIG_PATH)) LoadDefaults(true);
+    if(!FileParse::DoesFileExist(CONFIG_PATH))
+        LoadDefaults(true);
     else LoadConfig();
 }
+
+#if 1 // unused
 Options::Options(LogMode logMode,TooltipColor tooltipColor, UiMode uiMode)
 {
     this->logMode = logMode;
@@ -12,67 +15,59 @@ Options::Options(LogMode logMode,TooltipColor tooltipColor, UiMode uiMode)
     this->uiMode = uiMode;
     advancedOptions = false;
 }
+#endif
 
 void Options::LoadDefaults(bool saveFile)
 {
+    cfg = new CfgParser();
+
     logMode = DEFAULT_LOGMODE;
     tooltipColor = DEFAULT_TOOLTIPCOLOR;
     uiMode = DEFAULT_UIMODE;
     advancedOptions = DEFAULT_ADVANCED_OPTIONS;
 
-    if(saveFile) SaveConfig();
+    cfg->add(OptionStr[LOGMODE], LogmodeStr[DEFAULT_LOGMODE]);
+    cfg->add(OptionStr[TOOLTIPCOLOR], TooltipStr[DEFAULT_TOOLTIPCOLOR]);
+    cfg->add(OptionStr[UI_MODE], UimodeStr[DEFAULT_UIMODE]);
+    cfg->add(OptionStr[ADVANCED_OPTIONS], QString::number(DEFAULT_ADVANCED_OPTIONS));
+
+    if(saveFile) cfg->WriteConfig(CONFIG_PATH);
 }
 
 bool Options::LoadConfig()
 {
     if(!FileParse::DoesFileExist(CONFIG_PATH)) return false;
+    cfg = new CfgParser(CONFIG_PATH);
 
-    QStringList fileText = FileParse::ReadLines(CONFIG_PATH);
-    for(QString line : fileText)
-    {
-        QStringList split = line.split(" = ");
-        if(split[1].back() == '\n') split[1].truncate(split[1].size()-1);
-        int option;
-        QString value = "";
-        for(int i=0;i<OPTION_COUNT;i++) if(split[0] == OptionStr[i])
-        {
-            value = split[1];
-            option = i;
-            break;
-        }
-        if(value == "") continue;
+    QString option = cfg->getParameter(OptionStr[LOGMODE]);
+    for(int i=0;i<LOGMODE_COUNT;i++)
+        if(option == LogmodeStr[i]) logMode = (LogMode)i;
 
-        switch(option)
-        {
-            case LOGMODE:
-                for(int i=0; i<LOGMODE_COUNT;i++) if(value == LogmodeStr[i]) this->logMode = (LogMode)i;
-                break;
-            case TOOLTIPCOLOR:
-                for(int i=0; i<TOOLTIPCOLOR_COUNT;i++) if(value == TooltipStr[i]) this->tooltipColor = (TooltipColor)i;
-                break;
-            case UI_MODE:
-                for(int i=0; i<UIMODE_COUNT;i++) if(value == UimodeStr[i]) this->uiMode = (UiMode)i;
-                break;
-            case ADVANCED_OPTIONS:
-                this->advancedOptions = value.toInt();
-        }
-    }
+    option = cfg->getParameter(OptionStr[TOOLTIPCOLOR]);
+    for(int i=0;i<TOOLTIPCOLOR_COUNT;i++)
+        if(option == TooltipStr[i]) tooltipColor = (TooltipColor)i;
+
+    option = cfg->getParameter(OptionStr[UI_MODE]);
+    for(int i=0;i<UIMODE_COUNT;i++)
+        if(option == UimodeStr[i]) uiMode = (UiMode)i;
+
+    option = cfg->getParameter(OptionStr[ADVANCED_OPTIONS]);
+    advancedOptions = option.toUInt();
+
     return true;
 }
 
 
 void Options::SaveConfig()
 {
-    if(!FileParse::DoesFileExist(CONFIG_PATH)) QFile::remove(CONFIG_PATH);
+    if(cfg == nullptr) return;
 
-    QByteArray optionText;
+    cfg->change(OptionStr[LOGMODE], LogmodeStr[logMode]);
+    cfg->change(OptionStr[TOOLTIPCOLOR], TooltipStr[tooltipColor]);
+    cfg->change(OptionStr[UI_MODE], UimodeStr[uiMode]);
+    cfg->change(OptionStr[ADVANCED_OPTIONS], QString::number(advancedOptions));
 
-    optionText += (OptionStr[LOGMODE] + " = " + LogmodeStr[logMode] + "\n").toUtf8();
-    optionText += (OptionStr[TOOLTIPCOLOR] + " = " + TooltipStr[tooltipColor] + "\n").toUtf8();
-    optionText += (OptionStr[UI_MODE] + " = " + UimodeStr[uiMode] + "\n").toUtf8();
-    optionText += (OptionStr[ADVANCED_OPTIONS] + " = " + ('0' + advancedOptions)).toUtf8();
-
-    FileParse::WriteFile(CONFIG_PATH, &optionText);
+    cfg->WriteConfig(CONFIG_PATH);
 }
 
 Options::TooltipColor Options::GetTooltipColor()

@@ -58,30 +58,30 @@ QGroupBox {
 }
 
 QPushButton {
-	background-color: rgb(200, 200, 200);
+        background-color: white;
 	color: black;
 	border: 2px solid rgb(210, 210, 210);
 	border-radius: 5px;
 }
 
 QPushButton:hover {
-	background-color: rgb(200, 200, 200);
+        background-color: rgb(220, 220, 220);
 	color: black;
 	border: 2px solid black;
 	border-radius: 3px;
 }
 
 QComboBox {
-	background-color: rgb(200, 200, 200);
+        background-color: white;
 	color: black;
 	border: 2px solid rgb(210, 210, 210);
 	border-radius: 1px;
 }
 
 QSpinBox, QDoubleSpinBox {
-	background-color: rgb(200, 200, 200);
+        background-color: white;
 	color: black;
-	border: 2px solid grey;
+        border: 2px solid rgb(210, 210, 210);
 	border-radius: 2px;
 }
 

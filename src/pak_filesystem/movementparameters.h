@@ -69,7 +69,7 @@ public:
      * Gets the parameter type of this parameter object.
      */
     ParameterType GetParameterType()
-    { return MOVEMENT; };
+    { return PARAM_TYPE_MOVEMENT; };
     QByteArray GetFileData();
     void SetFileData(QByteArray NewData);
     Options* options = nullptr;

@@ -59,7 +59,7 @@ public:
      * Gets the parameter type of this parameter object.
      */
     ParameterType GetParameterType()
-    { return KI_BLAST; };
+    { return PARAM_TYPE_KI_BLAST; };
     QByteArray GetFileData();
     void SetFileData(QByteArray NewData);
     Options* options = nullptr;

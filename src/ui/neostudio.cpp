@@ -15,7 +15,7 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
 
     ui->setupUi(this);
     this->setWindowTitle(VERSION_STRING);
-    ui->ParameterTabs->setCurrentIndex(GENERAL);
+    ui->ParameterTabs->setCurrentIndex(PARAM_TYPE_GENERAL);
     ResetUiMode();
 
     QGraphicsScene* scene = new QGraphicsScene();
@@ -78,10 +78,10 @@ void NeoStudio::SaveFile()
     }
     if(file.toLower().endsWith(".pak"))
     {
-        pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
-        pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
-        pak->UpdateParamData(KI_BLAST, kiWindow->kp->GetFileData());
-        pak->UpdateParamData(MOVEMENT, moveWindow->mp->GetFileData());
+        pak->UpdateParamData(PARAM_TYPE_GENERAL, generalWindow->gp->GetFileData());
+        pak->UpdateParamData(PARAM_TYPE_MELEE, meleeWindow->mp->GetFileData());
+        pak->UpdateParamData(PARAM_TYPE_KI_BLAST, kiWindow->kp->GetFileData());
+        pak->UpdateParamData(PARAM_TYPE_MOVEMENT, moveWindow->mp->GetFileData());
         pak->SavePak(file);
     }
     else if(file.toLower().endsWith(".dat"))
@@ -89,16 +89,16 @@ void NeoStudio::SaveFile()
         QByteArray* datPtr;
         switch(datIndex)
         {
-            case GENERAL:
+            case PARAM_TYPE_GENERAL:
                 datPtr = new QByteArray(generalWindow->gp->GetFileData());
                 break;
-            case MELEE:
+            case PARAM_TYPE_MELEE:
                 datPtr = new QByteArray(meleeWindow->mp->GetFileData());
                 break;
-            case KI_BLAST:
+            case PARAM_TYPE_KI_BLAST:
                 datPtr = new QByteArray(kiWindow->kp->GetFileData());
                 break;
-            case MOVEMENT:
+            case PARAM_TYPE_MOVEMENT:
                 datPtr = new QByteArray(moveWindow->mp->GetFileData());
                 break;
             default:
@@ -131,10 +131,10 @@ void NeoStudio::SaveFileAs()
 
     if(newFile.toLower().endsWith(".pak"))
     {
-        pak->UpdateParamData(GENERAL, generalWindow->gp->GetFileData());
-        pak->UpdateParamData(MELEE, meleeWindow->mp->GetFileData());
-        pak->UpdateParamData(KI_BLAST, kiWindow->kp->GetFileData());
-        pak->UpdateParamData(MOVEMENT, moveWindow->mp->GetFileData());
+        pak->UpdateParamData(PARAM_TYPE_GENERAL, generalWindow->gp->GetFileData());
+        pak->UpdateParamData(PARAM_TYPE_MELEE, meleeWindow->mp->GetFileData());
+        pak->UpdateParamData(PARAM_TYPE_KI_BLAST, kiWindow->kp->GetFileData());
+        pak->UpdateParamData(PARAM_TYPE_KI_BLAST, moveWindow->mp->GetFileData());
         pak->SavePak(newFile);
     }
     else if(newFile.toLower().endsWith(".dat"))
@@ -142,16 +142,16 @@ void NeoStudio::SaveFileAs()
         QByteArray* datPtr;
         switch(datIndex)
         {
-            case GENERAL:
+            case PARAM_TYPE_GENERAL:
                 datPtr = new QByteArray(generalWindow->gp->GetFileData());
                 break;
-            case MELEE:
+            case PARAM_TYPE_MELEE:
                 datPtr = new QByteArray(meleeWindow->mp->GetFileData());
                 break;
-            case KI_BLAST:
+            case PARAM_TYPE_KI_BLAST:
                 datPtr = new QByteArray(kiWindow->kp->GetFileData());
                 break;
-            case MOVEMENT:
+            case PARAM_TYPE_MOVEMENT:
                 datPtr = new QByteArray(moveWindow->mp->GetFileData());
                 break;
             default:
@@ -213,17 +213,17 @@ void NeoStudio::InitPakFile()
     if(kiWindow != nullptr) delete kiWindow;
     if(moveWindow != nullptr) delete moveWindow;
 
-    generalWindow = new GeneralFrame(pak->GetParamData(GENERAL), options, this);
-    meleeWindow = new MeleeFrame(pak->GetParamData(MELEE), options, this);
-    kiWindow = new KiFrame(pak->GetParamData(KI_BLAST), options, this);
-    moveWindow = new MovementFrame(pak->GetParamData(MOVEMENT), options, this);
+    generalWindow = new GeneralFrame(pak->GetParamData(PARAM_TYPE_GENERAL), options, this);
+    meleeWindow = new MeleeFrame(pak->GetParamData(PARAM_TYPE_MELEE), options, this);
+    kiWindow = new KiFrame(pak->GetParamData(PARAM_TYPE_KI_BLAST), options, this);
+    moveWindow = new MovementFrame(pak->GetParamData(PARAM_TYPE_KI_BLAST), options, this);
 
     ui->GeneralScrollArea->setWidget(generalWindow);
     ui->MeleeScrollArea->setWidget(meleeWindow);
     ui->KiBlastScrollArea->setWidget(kiWindow);
     ui->MovementScrollArea->setWidget(moveWindow);
 
-    ui->ParameterTabs->setCurrentIndex(GENERAL);
+    ui->ParameterTabs->setCurrentIndex(PARAM_TYPE_GENERAL);
 }
 
 void NeoStudio::InitDatFile()
@@ -249,19 +249,19 @@ void NeoStudio::InitDatFile()
 
     switch(datIndex)
     {
-        case GENERAL:
+        case PARAM_TYPE_GENERAL:
             generalWindow = new GeneralFrame(FileParse::ReadWholeFile(file), options);
             ui->GeneralScrollArea->setWidget(generalWindow);
             break;
-        case MELEE:
+        case PARAM_TYPE_MELEE:
             meleeWindow = new MeleeFrame(FileParse::ReadWholeFile(file), options);
             ui->MeleeScrollArea->setWidget(meleeWindow);
             break;
-        case KI_BLAST:
+        case PARAM_TYPE_KI_BLAST:
             kiWindow = new KiFrame(FileParse::ReadWholeFile(file), options);
             ui->KiBlastScrollArea->setWidget(kiWindow);
             break;
-        case MOVEMENT:
+        case PARAM_TYPE_MOVEMENT:
             moveWindow = new MovementFrame(FileParse::ReadWholeFile(file), options);
             ui->MovementScrollArea->setWidget(moveWindow);
             break;
@@ -303,7 +303,7 @@ void NeoStudio::ExportDat()
     QByteArray* paramData;
     switch(type)
     {
-        case GENERAL:
+        case PARAM_TYPE_GENERAL:
             if(pakData->compare(generalWindow->gp->GetFileData()))
             {
                 if(DatSelectionDialog::SelectDat(options))
@@ -314,7 +314,7 @@ void NeoStudio::ExportDat()
             else
                 paramData = pakData;
             break;
-        case MELEE:
+        case PARAM_TYPE_MELEE:
             if(pakData->compare(meleeWindow->mp->GetFileData()))
             {
                 if(DatSelectionDialog::SelectDat(options))
@@ -325,7 +325,7 @@ void NeoStudio::ExportDat()
             else
                 paramData = pakData;
             break;
-        case KI_BLAST:
+        case PARAM_TYPE_KI_BLAST:
             if(pakData->compare(kiWindow->kp->GetFileData()))
             {
                 if(DatSelectionDialog::SelectDat(options))
@@ -336,7 +336,7 @@ void NeoStudio::ExportDat()
             else
                 paramData = pakData;
             break;
-        case MOVEMENT:
+        case PARAM_TYPE_MOVEMENT:
             if(pakData->compare(moveWindow->mp->GetFileData()))
             {
                 if(DatSelectionDialog::SelectDat(options))
@@ -380,23 +380,23 @@ void NeoStudio::ImportDat()
     datPath = datPath.split("/")[datPath.split("/").count()-1];
     int datIndex = datPath.split("_")[0].toInt();
 
-    switch(++datIndex - GENERAL_OFFSET)
+    switch(++datIndex - PARAM_OFFSET_GENERAL)
     {
-        case GENERAL:
+        case PARAM_TYPE_GENERAL:
             generalWindow->gp->SetFileData(datData);
             generalWindow->InitializeUIElements();
             break;
-        case MELEE:
+        case PARAM_TYPE_MELEE:
             meleeWindow->mp->SetFileData(datData);
             meleeWindow->ui->AttackSelectionBox->setCurrentIndex(0);
             meleeWindow->InitializeUIElements();
             break;
-        case KI_BLAST:
+        case PARAM_TYPE_KI_BLAST:
             kiWindow->kp->SetFileData(datData);
             kiWindow->ui->KiBlastSelectionBox->setCurrentIndex(0);
             kiWindow->InitializeUIElements();
             break;
-        case MOVEMENT:
+        case PARAM_TYPE_MOVEMENT:
             moveWindow->mp->SetFileData(datData);
             moveWindow->InitializeUIElements();
             break;

@@ -80,7 +80,7 @@ public:
      * Gets the parameter type of this parameter object.
      */
     ParameterType GetParameterType()
-    { return MELEE; };
+    { return PARAM_TYPE_MELEE; };
     QByteArray GetFileData();
     void SetFileData(QByteArray NewData);
     Options* options = nullptr;

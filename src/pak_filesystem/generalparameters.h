@@ -76,7 +76,7 @@ public:
      * Gets the parameter type of this parameter object.
      */
     ParameterType GetParameterType()
-    { return GENERAL; };
+    { return PARAM_TYPE_GENERAL; };
     Options* options = nullptr;
 private:
     const char* constData = nullptr;

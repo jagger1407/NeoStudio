@@ -30,7 +30,7 @@ public:
     /**Destructor. Idk how to use this, it was automatically generated.*/
     ~NeoStudio() override;
 private:
-    QString filenameDat[NEXT] = {
+    QString filenameDat[PARAM_TYPE_NEXT] = {
         "/017_character_param.dat",
         "/018_character_melee_param.dat",
         "/019_character_ki_blast_param.dat",

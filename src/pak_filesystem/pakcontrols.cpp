@@ -21,28 +21,28 @@ PakControls::PakControls(QString FilePath, Options* options) : options(options)
     // This is the offset for each known parameter type.
     // Offset in this context means how far inside the .pak each parameter is stored.
     // Note: NEXT is only used to calculate the data size of the movement parameters.
-    paramOffset[GENERAL] = *( start_of_pak  + GENERAL_OFFSET);    // General Parameter Offset Value
-    paramOffset[MELEE] = *( start_of_pak  + MELEE_OFFSET);        // Melee Parameters Offset Value
-    paramOffset[KI_BLAST] = *( start_of_pak  + KI_BLAST_OFFSET);  // Ki Blast Parameters Offset Value
-    paramOffset[MOVEMENT] = *( start_of_pak  + MOVEMENT_OFFSET);  // Movement Parameters Offset Value
-    paramOffset[NEXT] = *( start_of_pak + NEXT_OFFSET);           // Special Dialogue Data Offset Value
+    paramOffset[PARAM_TYPE_GENERAL] = *( start_of_pak  + PARAM_OFFSET_GENERAL);    // General Parameter Offset Value
+    paramOffset[PARAM_TYPE_MELEE] = *( start_of_pak  + PARAM_OFFSET_MELEE);        // Melee Parameters Offset Value
+    paramOffset[PARAM_TYPE_KI_BLAST] = *( start_of_pak  + PARAM_OFFSET_KI_BLAST);  // Ki Blast Parameters Offset Value
+    paramOffset[PARAM_TYPE_MOVEMENT] = *( start_of_pak  + PARAM_OFFSET_MOVEMENT);  // Movement Parameters Offset Value
+    paramOffset[PARAM_TYPE_NEXT] = *( start_of_pak + PARAM_OFFSET_NEXT);           // Special Dialogue Data Offset Value
 
     // This is the size of each parameter data section.
     // Another way to look at these would be the file size of each parameter file.
-    paramSize[GENERAL] = paramOffset[MELEE] - paramOffset[GENERAL];         // General Parameters data size
-    paramSize[MELEE] = paramOffset[KI_BLAST] - paramOffset[MELEE];          // Melee Parameters data size
-    paramSize[KI_BLAST] = paramOffset[MOVEMENT] - paramOffset[KI_BLAST];    // Ki Blast Parameters Data Size
-    paramSize[MOVEMENT] = paramOffset[NEXT] - paramOffset[MOVEMENT];        // Movement Parameters Data Size
+    paramSize[PARAM_TYPE_GENERAL] = paramOffset[PARAM_TYPE_MELEE] - paramOffset[PARAM_TYPE_GENERAL];         // General Parameters data size
+    paramSize[PARAM_TYPE_MELEE] = paramOffset[PARAM_TYPE_KI_BLAST] - paramOffset[PARAM_TYPE_MELEE];          // Melee Parameters data size
+    paramSize[PARAM_TYPE_KI_BLAST] = paramOffset[PARAM_TYPE_KI_BLAST] - paramOffset[PARAM_TYPE_MOVEMENT];    // Ki Blast Parameters Data Size
+    paramSize[PARAM_TYPE_MOVEMENT] = paramOffset[PARAM_TYPE_NEXT] - paramOffset[PARAM_TYPE_KI_BLAST];        // Movement Parameters Data Size
 
     // This is the actual data of the .pak, split into different parts.
     // These are the rest of the pak file. Only used for saving, as this data is unknown.
-    LeftPak = QByteArray(pakData.left(paramOffset[GENERAL]));
-    RightPak = QByteArray(pakData.right(pakData.size() - paramOffset[NEXT]));
+    LeftPak = QByteArray(pakData.left(paramOffset[PARAM_TYPE_GENERAL]));
+    RightPak = QByteArray(pakData.right(pakData.size() - paramOffset[PARAM_TYPE_NEXT]));
     // These are the QByteArrays of the known Parameters
-    paramData[GENERAL] = QByteArray(pakData.mid(paramOffset[GENERAL], paramSize[GENERAL]));
-    paramData[MELEE] = QByteArray(pakData.mid(paramOffset[MELEE], paramSize[MELEE]));
-    paramData[KI_BLAST] = QByteArray(pakData.mid(paramOffset[KI_BLAST], paramSize[KI_BLAST]));
-    paramData[MOVEMENT] = QByteArray(pakData.mid(paramOffset[MOVEMENT], paramSize[MOVEMENT]));
+    paramData[PARAM_TYPE_GENERAL] = QByteArray(pakData.mid(paramOffset[PARAM_TYPE_GENERAL], paramSize[PARAM_TYPE_GENERAL]));
+    paramData[PARAM_TYPE_MELEE] = QByteArray(pakData.mid(paramOffset[PARAM_TYPE_MELEE], paramSize[PARAM_TYPE_MELEE]));
+    paramData[PARAM_TYPE_KI_BLAST] = QByteArray(pakData.mid(paramOffset[PARAM_TYPE_KI_BLAST], paramSize[PARAM_TYPE_KI_BLAST]));
+    paramData[PARAM_TYPE_MOVEMENT] = QByteArray(pakData.mid(paramOffset[PARAM_TYPE_MOVEMENT], paramSize[PARAM_TYPE_MOVEMENT]));
 
     failed = false;
     Debug::Log("PakControls object constructed.", Debug::INFO, options);
@@ -51,10 +51,10 @@ QByteArray PakControls::GetPakData()
 {
     Debug::Log("GetPakData called.", Debug::INFO, options);
     QByteArray output(LeftPak);
-    output.append(paramData[GENERAL]);
-    output.append(paramData[MELEE]);
-    output.append(paramData[KI_BLAST]);
-    output.append(paramData[MOVEMENT]);
+    output.append(paramData[PARAM_TYPE_GENERAL]);
+    output.append(paramData[PARAM_TYPE_MELEE]);
+    output.append(paramData[PARAM_TYPE_KI_BLAST]);
+    output.append(paramData[PARAM_TYPE_MOVEMENT]);
     output.append(RightPak);
     return output;
 }

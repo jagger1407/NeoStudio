@@ -14,7 +14,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:rgb(50, 54, 60); color: white</string>
+   <string notr="true"/>
   </property>
   <widget class="QGroupBox" name="StatGroupBox">
    <property name="geometry">
@@ -68,7 +68,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -93,7 +93,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -142,7 +142,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -192,10 +192,10 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>-1</number>
+    <number>0</number>
    </property>
    <item>
     <property name="text">
@@ -312,7 +312,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -361,7 +361,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -408,7 +408,7 @@ The higher the number, the more they home in on the opponent.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -479,7 +479,7 @@ The higher the number, the longer the Ki Blast stays on screen, thus, the farthe
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -525,7 +525,7 @@ The higher the number, the longer the Ki Blast stays on screen, thus, the farthe
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -741,7 +741,7 @@ The higher the number, the longer the Ki Blast stays on screen, thus, the farthe
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -812,7 +812,7 @@ The higher the number, the longer the trail of the Ki Blast.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -834,7 +834,7 @@ The higher the number, the longer the trail of the Ki Blast.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
      <number>5</number>
@@ -948,7 +948,7 @@ The higher the number, the longer the trail of the Ki Blast.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -973,7 +973,7 @@ The higher the number, the longer the trail of the Ki Blast.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
      <number>4</number>
@@ -1089,7 +1089,7 @@ It is currently unknown what this parameter does.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1111,7 +1111,7 @@ It is currently unknown what this parameter does.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1161,7 +1161,7 @@ It is currently unknown what this parameter does.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1211,7 +1211,7 @@ It is currently unknown what this parameter does.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1261,7 +1261,7 @@ What these influence is currently unknown.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1311,7 +1311,7 @@ What these influence is currently unknown.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1361,7 +1361,7 @@ It is currently unknown what this parameter does.</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>

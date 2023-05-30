@@ -14,7 +14,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:rgb(50, 54, 60); color: white</string>
+   <string notr="true"/>
   </property>
   <widget class="QComboBox" name="AttackSelectionBox">
    <property name="geometry">
@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+    <string notr="true"/>
    </property>
    <property name="currentIndex">
     <number>0</number>
@@ -635,7 +635,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -681,7 +681,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -727,7 +727,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -773,7 +773,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -819,7 +819,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -862,7 +862,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -909,7 +909,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -1040,7 +1040,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -1191,7 +1191,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <item>
      <property name="text">
@@ -1258,7 +1258,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -1307,7 +1307,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75); color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -1652,7 +1652,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1674,7 +1674,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1720,7 +1720,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1766,7 +1766,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1812,7 +1812,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1882,7 +1882,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1904,7 +1904,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1974,7 +1974,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1996,7 +1996,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2018,7 +2018,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2088,7 +2088,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2134,7 +2134,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2180,7 +2180,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2482,7 +2482,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2528,7 +2528,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2550,7 +2550,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2572,7 +2572,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2594,7 +2594,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2616,7 +2616,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2638,7 +2638,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2660,7 +2660,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2682,7 +2682,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2704,7 +2704,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2726,7 +2726,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2804,7 +2804,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>

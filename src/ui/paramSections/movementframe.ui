@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>900</width>
-    <height>1127</height>
+    <height>1132</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:rgb(50, 54, 60); color: white</string>
+   <string notr="true"/>
   </property>
   <widget class="QGroupBox" name="DashingGroup">
    <property name="geometry">
@@ -92,7 +92,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -117,7 +117,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -190,7 +190,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -215,7 +215,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -240,7 +240,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -289,7 +289,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -381,7 +381,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -430,7 +430,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -479,7 +479,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -547,7 +547,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -593,7 +593,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -639,7 +639,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -685,7 +685,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -731,7 +731,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -777,7 +777,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -823,7 +823,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -869,7 +869,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -915,7 +915,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -961,7 +961,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1007,7 +1007,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1053,7 +1053,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1094,7 +1094,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1143,7 +1143,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1216,7 +1216,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1265,7 +1265,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1333,7 +1333,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1358,7 +1358,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1407,7 +1407,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1475,7 +1475,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1548,7 +1548,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1597,7 +1597,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1622,7 +1622,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1671,7 +1671,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1720,7 +1720,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1769,7 +1769,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1842,7 +1842,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1910,7 +1910,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -1959,7 +1959,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2008,7 +2008,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2057,7 +2057,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
@@ -2106,7 +2106,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(65,69,75);color:white;border: 1 solid grey;</string>
+     <string notr="true"/>
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>

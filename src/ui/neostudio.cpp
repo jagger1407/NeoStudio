@@ -1,8 +1,9 @@
 #include "neostudio.h"
 #include "ui_neostudio.h"
 
+#include "src/ui/menu/characterselectiondialog.h"
 
-#define VERSION_STRING "Neo Studio v1.0.2"
+#define VERSION_STRING "Neo Studio v1.0.3"
 
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
@@ -32,6 +33,7 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
         else if(file.endsWith(".dat"))
             InitDatFile();
     }
+
     Debug::Log("NeoStudio constructed.", Debug::INFO, options);
 }
 
@@ -193,11 +195,9 @@ void NeoStudio::OpenOptions()
     Debug::Log("Option Dialog opened.", Debug::INFO, options);
     OptionDialog* optionWindow = new OptionDialog(options);
     optionWindow->exec();
+
     ResetUiMode();
-    if(generalWindow != nullptr) generalWindow->ResetUiMode();
-    if(meleeWindow != nullptr) meleeWindow->ResetUiMode();
-    if(kiWindow != nullptr) kiWindow->ResetUiMode();
-    if(moveWindow != nullptr) moveWindow->ResetUiMode();
+
     delete optionWindow;
 }
 
@@ -409,17 +409,13 @@ void NeoStudio::ImportDat()
 void NeoStudio::ResetUiMode()
 {
     this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
-    /*
-        this->setStyleSheet("background:rgb(50, 54, 60) ; color: white");
-        ui->MenuBar->setStyleSheet("background-color:rgb(75, 81, 90)");
-        ui->GeneralScrollArea->setStyleSheet("color:white");
-        ui->MeleeScrollArea->setStyleSheet("color:white");
-        ui->KiBlastScrollArea->setStyleSheet("color:white");
-        ui->MovementScrollArea->setStyleSheet("color:white");
-        ui->FileLbl->setStyleSheet("color:white");
-        ui->GeneralTab->setStyleSheet("color:black;background:rgb(50,54,60);");
-        ui->MeleeTab->setStyleSheet("color:black;background:rgb(50,54,60);");
-        ui->KiBlastTab->setStyleSheet("color:black;background:rgb(50,54,60);");
-        ui->MovementTab->setStyleSheet("color:black;background:rgb(50,54,60);");
-        */
+
+    if(generalWindow != nullptr)
+        generalWindow->ResetUiMode();
+    if(meleeWindow != nullptr)
+        meleeWindow->ResetUiMode();
+    if(kiWindow != nullptr)
+        kiWindow->ResetUiMode();
+    if(moveWindow != nullptr)
+        moveWindow->ResetUiMode();
 }

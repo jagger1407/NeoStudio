@@ -35,6 +35,7 @@ KiFrame::KiFrame(QByteArray Data, Options* options, QWidget* parent) : QFrame(pa
     for(QWidget* el : elements) el->setEnabled(false);
     for(QLabel* lbl : labels) lbl->setEnabled(true);
     ui->KiBlastSelectionBox->setEnabled(true);
+    ui->KiBlastSelectionBox->setCurrentIndex(-1);
 
     Debug::Log("New KiFrame constructed.", Debug::INFO, options);
 }

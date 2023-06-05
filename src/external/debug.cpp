@@ -40,7 +40,11 @@ void Debug::ShowError(const QString Message, Options* options)
     ErrorWindow.setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
     ErrorWindow.setWindowTitle("Error!");
     ErrorWindow.setText(Message);
+    QPushButton* okBtn = new QPushButton("OK");
+    okBtn->setMinimumSize(QSize(50, 25));
+    ErrorWindow.addButton(okBtn, QMessageBox::AcceptRole);
     ErrorWindow.exec();
+    delete okBtn;
 }
 void Debug::LogFilePrint(const QString Message, LogLevel Severity)
 {

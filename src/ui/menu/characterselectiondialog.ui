@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CharacterSelectionDialog</class>
+ <widget class="QDialog" name="CharacterSelectionDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>523</width>
+    <height>873</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CharacterSelectionDialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLineEdit" name="FilterBox">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="placeholderText">
+      <string>Search Character...</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QListWidget" name="CharacterList">
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>CharacterList</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>CharacterSelectionDialog</receiver>
+   <slot>CharacterSelected(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>255</x>
+     <y>452</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>418</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FilterBox</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>CharacterSelectionDialog</receiver>
+   <slot>FilterChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>254</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>418</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>CharacterSelected(QListWidgetItem*)</slot>
+  <slot>FilterChanged(QString)</slot>
+ </slots>
+</ui>

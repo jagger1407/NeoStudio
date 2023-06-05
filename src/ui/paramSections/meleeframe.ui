@@ -31,6 +31,9 @@
    <property name="currentIndex">
     <number>0</number>
    </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum>
+   </property>
    <item>
     <property name="text">
      <string>Strike 1 (Primary Combo Set)</string>
@@ -637,6 +640,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -682,6 +688,9 @@
     </property>
     <property name="styleSheet">
      <string notr="true"/>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -729,6 +738,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -774,6 +786,9 @@
     </property>
     <property name="styleSheet">
      <string notr="true"/>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1193,6 +1208,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum>
+    </property>
     <item>
      <property name="text">
       <string>Regular Guard</string>
@@ -1266,6 +1284,9 @@
     <property name="maxVisibleItems">
      <number>6</number>
     </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum>
+    </property>
     <item>
      <property name="text">
       <string>Counter acts like Guard</string>
@@ -1314,6 +1335,9 @@
     </property>
     <property name="maxVisibleItems">
      <number>39</number>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum>
     </property>
     <item>
      <property name="text">
@@ -1636,7 +1660,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x14.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x14-0x17</string>
+     <string>? (0x14)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1654,6 +1678,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -1662,6 +1689,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QSpinBox" name="UnknownSpinBox_2">
@@ -1676,6 +1706,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -1684,6 +1717,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QLabel" name="UnknownLbl_2">
@@ -1704,7 +1740,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x18.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x18-0x1B</string>
+     <string>? (0x18)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1722,6 +1758,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -1730,6 +1769,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QLabel" name="UnknownLbl_3">
@@ -1750,7 +1792,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x1C.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x1C-0x1F</string>
+     <string>? (0x1C)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1768,6 +1810,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -1776,6 +1821,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QLabel" name="UnknownLbl_4">
@@ -1796,7 +1844,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x21.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x21</string>
+     <string>? (0x21)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1814,6 +1862,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -1822,6 +1873,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QLabel" name="UnknownLbl_5">
@@ -1842,7 +1896,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x22.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x22</string>
+     <string>? (0x22)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1866,7 +1920,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x23.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x23</string>
+     <string>? (0x23)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1884,6 +1938,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -1892,6 +1949,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QSpinBox" name="UnknownSpinBox_7">
@@ -1906,6 +1966,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -1914,6 +1977,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QLabel" name="UnknownLbl_7">
@@ -1934,7 +2000,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x24.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x24</string>
+     <string>? (0x24)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1958,7 +2024,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x27.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x27</string>
+     <string>? (0x27)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1976,6 +2042,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -1984,6 +2053,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QSpinBox" name="UnknownSpinBox_9">
@@ -1998,6 +2070,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -2006,6 +2081,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QSpinBox" name="UnknownSpinBox_10">
@@ -2020,6 +2098,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -2028,6 +2109,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QLabel" name="UnknownLbl_9">
@@ -2048,7 +2132,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x25.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x25</string>
+     <string>? (0x25)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2072,7 +2156,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x26.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x26</string>
+     <string>? (0x26)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2090,6 +2174,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -2098,6 +2185,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QLabel" name="UnknownLbl_11">
@@ -2118,7 +2208,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x2A.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x2A</string>
+     <string>? (0x2A)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2136,6 +2226,9 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -2144,6 +2237,9 @@
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QLabel" name="UnknownLbl_12">
@@ -2164,7 +2260,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x2B.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x2B</string>
+     <string>? (0x2B)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2218,7 +2314,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x38-0x3B</string>
+     <string>? (0x38)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2250,7 +2346,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x3C-0x3F</string>
+     <string>? (0x3C)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2282,7 +2378,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x40-0x43</string>
+     <string>? (0x40)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2314,7 +2410,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x44-0x47</string>
+     <string>? (0x44)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2338,7 +2434,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x48.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x48-0x4B</string>
+     <string>? (0x48)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2370,7 +2466,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x4C-0x4F</string>
+     <string>? (0x4C)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2394,7 +2490,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x50.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x50-0x53</string>
+     <string>? (0x50)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2418,7 +2514,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x54.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x54-0x57</string>
+     <string>? (0x54)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2442,7 +2538,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x58.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x58-0x5B</string>
+     <string>? (0x58)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2466,7 +2562,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x5C.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x5C-0x5F</string>
+     <string>? (0x5C)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2484,6 +2580,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -2492,6 +2591,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QLabel" name="UnknownLbl_23">
@@ -2512,7 +2614,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x63.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x63</string>
+     <string>? (0x63)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2728,6 +2830,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
     <property name="minimum">
      <number>0</number>
     </property>
@@ -2736,6 +2841,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
     </property>
    </widget>
    <widget class="QLabel" name="UnknownLbl_24">
@@ -2756,7 +2864,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x00.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x00</string>
+     <string>? (0x00)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2788,7 +2896,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>0x30-0x33</string>
+     <string>? (0x30)</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

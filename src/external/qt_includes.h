@@ -19,5 +19,6 @@
 #include <QCheckBox>
 #include <QDateTime>
 #include <QMap>
+#include <QListWidgetItem>
 
 #endif

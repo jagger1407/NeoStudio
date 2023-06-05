@@ -31,8 +31,8 @@ PakControls::PakControls(QString FilePath, Options* options) : options(options)
     // Another way to look at these would be the file size of each parameter file.
     paramSize[PARAM_TYPE_GENERAL] = paramOffset[PARAM_TYPE_MELEE] - paramOffset[PARAM_TYPE_GENERAL];         // General Parameters data size
     paramSize[PARAM_TYPE_MELEE] = paramOffset[PARAM_TYPE_KI_BLAST] - paramOffset[PARAM_TYPE_MELEE];          // Melee Parameters data size
-    paramSize[PARAM_TYPE_KI_BLAST] = paramOffset[PARAM_TYPE_KI_BLAST] - paramOffset[PARAM_TYPE_MOVEMENT];    // Ki Blast Parameters Data Size
-    paramSize[PARAM_TYPE_MOVEMENT] = paramOffset[PARAM_TYPE_NEXT] - paramOffset[PARAM_TYPE_KI_BLAST];        // Movement Parameters Data Size
+    paramSize[PARAM_TYPE_KI_BLAST] = paramOffset[PARAM_TYPE_MOVEMENT] - paramOffset[PARAM_TYPE_KI_BLAST];    // Ki Blast Parameters Data Size
+    paramSize[PARAM_TYPE_MOVEMENT] = paramOffset[PARAM_TYPE_NEXT] - paramOffset[PARAM_TYPE_MOVEMENT];        // Movement Parameters Data Size
 
     // This is the actual data of the .pak, split into different parts.
     // These are the rest of the pak file. Only used for saving, as this data is unknown.

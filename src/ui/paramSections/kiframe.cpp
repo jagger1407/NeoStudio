@@ -30,12 +30,17 @@ KiFrame::KiFrame(QByteArray Data, Options* options, QWidget* parent) : QFrame(pa
     kp->parameter[KiParameters::Footer].UiElement = ui->FooterBox;
     #endif
 
+    /* This was originally meant to lock the ComboBox until the user has selected an attack
+     * However, for some dumb reason, Qt locks the entire ComboBox when no item is selected
+     * I genuinely have no idea why that is, and I can't find any info about this online, wtf
     QList<QWidget*> elements = this->findChildren<QWidget*>();
     QList<QLabel*> labels = this->findChildren<QLabel*>();
     for(QWidget* el : elements) el->setEnabled(false);
     for(QLabel* lbl : labels) lbl->setEnabled(true);
     ui->KiBlastSelectionBox->setEnabled(true);
     ui->KiBlastSelectionBox->setCurrentIndex(-1);
+    */
+    IsInitializing = false;
 
     Debug::Log("New KiFrame constructed.", Debug::INFO, options);
 }
@@ -78,7 +83,7 @@ void KiFrame::InitializeUIElements()
 }
 void KiFrame::CurrentBlast_IndexChanged(int NewIndex)
 {
-    if(kp == nullptr) return;
+    if(IsInitializing || kp == nullptr) return;
     Debug::Log("CurrentBlast_IndexChanged slot triggered.", Debug::INFO, options);
     kp->setCurrentBlast(NewIndex);
     InitializeUIElements();

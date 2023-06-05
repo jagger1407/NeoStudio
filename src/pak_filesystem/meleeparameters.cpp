@@ -36,7 +36,16 @@ MeleeParameters::MeleeParameters(QByteArray ParameterData, Options* options) : o
     parameter[Knockback].offset = 0x2C;
     parameter[Unk30].offset = 0x30;
     parameter[Reach].offset = 0x34;
-    parameter[Unk38].offset = 0x28;
+    parameter[Unk38].offset = 0x38;
+    parameter[Unk3C].offset = 0x3C;
+    parameter[Unk40].offset = 0x40;
+    parameter[Unk44].offset = 0x44;
+    parameter[Unk48].offset = 0x48;
+    parameter[Unk4C].offset = 0x4C;
+    parameter[Unk50].offset = 0x50;
+    parameter[Unk54].offset = 0x54;
+    parameter[Unk58].offset = 0x58;
+    parameter[Unk5C].offset = 0x5C;
     parameter[EffectGuard].offset = 0x60;
     parameter[EffectCounter].offset = 0x61;
     parameter[GuardType].offset = 0x62;

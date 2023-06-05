@@ -49,12 +49,17 @@ MeleeFrame::MeleeFrame(QByteArray Data, Options* options, QWidget* parent) : QFr
     mp->parameter[MeleeParameters::Unk63].UiElement = ui->UnknownSpinBox_13;
     #endif
 
+    /* This was originally meant to lock the ComboBox until the user has selected an attack
+     * However, for some dumb reason, Qt locks the entire ComboBox when no item is selected
+     * I genuinely have no idea why that is, and I can't find any info about this online, wtf
     QList<QWidget*> elements = this->findChildren<QWidget*>();
     QList<QLabel*> labels = this->findChildren<QLabel*>();
     for(QWidget* el : elements) el->setEnabled(false);
     for(QLabel* lbl : labels) lbl->setEnabled(true);
     ui->AttackSelectionBox->setEnabled(true);
     ui->AttackSelectionBox->setCurrentIndex(-1);
+    */
+    IsInitializing = false;
 
     Debug::Log("New MeleeFrame constructed.", Debug::INFO, options);
 }
@@ -124,7 +129,7 @@ void MeleeFrame::QDoubleSpinBox_Changed(double NewValue)
 }
 void MeleeFrame::CurrentAttack_IndexChanged(int NewIndex)
 {
-    if(mp == nullptr) return;
+    if(IsInitializing || mp == nullptr) return;
     Debug::Log("CurrentAttack_IndexChanged slot triggered.", Debug::INFO, options);
     mp->setCurrentAttack(NewIndex);
     InitializeUIElements();

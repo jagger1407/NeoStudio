@@ -5,6 +5,7 @@
 #include "src/options.h"
 #include "src/external/qt_includes.h"
 #include "src/external/debug.h"
+#include "src/ui/menu/characterselectiondialog.h"
 #include "src/pak_filesystem/generalparameters.h"
 #include "src/pak_filesystem/pakcontrols.h"
 
@@ -70,6 +71,7 @@ private slots:
     void Flag_Changed(int NewValue);
     /**This slot gets triggered everytime a Button is clicked.*/
     void Button_Clicked();
+    void Character_Selected();
     /**This slot gets triggered everytime the selection of a QComboBox changes.*/
     void ComboBox_IndexChanged(int NewValue);
 };

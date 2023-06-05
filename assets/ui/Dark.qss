@@ -10,7 +10,50 @@ QSpinBox, QDoubleSpinBox {
 	border-radius: 3px;
 }
 
+QSpinBox::up-button, QDoubleSpinBox::up-button {
+
+    color: white;
+    border-bottom: 2px solid grey;
+    border-left: 2px solid grey;
+	height: 12px;
+	background: url(./assets/ui/Dark_Plus.png) no-repeat center;
+	background-color: rgb(85,89,95);
+}
+
+QSpinBox::up-button:pressed, QDoubleSpinBox::up-button:pressed {
+    background-color: rgb(35,39,45);
+    color: white;
+    border: 2px solid white;
+	height: 12px;
+	background: url(./assets/ui/Dark_Plus.png) no-repeat center;
+}
+
+QSpinBox::down-button, QSpinBox::down-button {
+
+    color: white;
+    border-top: 2px solid grey;
+    border-left: 2px solid grey;
+	height: 12px;
+	background: url(./assets/ui/Dark_Minus.png) no-repeat center;
+	background-color: rgb(85,89,95);
+}
+
+QSpinBox::down-button:pressed, QSpinBox::down-button:pressed {
+    background-color: rgb(35,39,45);
+    color: white;
+    border: 2px solid white;
+	height: 12px;
+	background: url(./assets/ui/Dark_Minus.png) no-repeat center;
+}
+
 QComboBox {
+    background-color: rgb(65,69,75);
+    color: white;
+    border: 2px solid grey;
+	border-radius: 2px;
+}
+
+QLineEdit {
     background-color: rgb(65,69,75);
     color: white;
     border: 2px solid grey;
@@ -20,11 +63,7 @@ QComboBox {
 QGroupBox {
         background-color: rgb(50, 54, 60);
         color: white;
-}
 
-QTabWidget::pane {
-        background-color: rgb(50, 54, 60);
-        color: white;
 }
 
 QTabBar::tab {
@@ -49,7 +88,7 @@ QMenuBar::item:selected {
 QMenu {
 	background-color: rgb(50, 50, 50);
 	color:black;
-	border: 1px solid grey
+	border: 1px solid grey;
 }
 
 QMenu::item {
@@ -128,3 +167,4 @@ QCheckBox::indicator:checked {
         border-radius: 2px
         margin: 2px;
 }
+

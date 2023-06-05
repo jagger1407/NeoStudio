@@ -48,6 +48,7 @@ set(neostudio_SRC
   src/ui/menu/aboutwindow.h
   src/ui/menu/optiondialog.h
   src/ui/menu/datselectiondialog.h
+  src/ui/menu/characterselectiondialog.h
   src/ui/paramSections/generalframe.h
   src/ui/paramSections/meleeframe.h
   src/ui/paramSections/kiframe.h
@@ -68,6 +69,7 @@ set(neostudio_SRC
   src/ui/menu/aboutwindow.cpp
   src/ui/menu/optiondialog.cpp
   src/ui/menu/datselectiondialog.cpp
+  src/ui/menu/characterselectiondialog.cpp
   src/ui/paramSections/generalframe.cpp
   src/ui/paramSections/meleeframe.cpp
   src/ui/paramSections/kiframe.cpp
@@ -82,6 +84,7 @@ set(neostudio_SRC
   src/ui/menu/aboutwindow.ui
   src/ui/menu/optiondialog.ui
   src/ui/menu/datselectiondialog.ui
+  src/ui/menu/characterselectiondialog.ui
 )
 
 # Tell CMake to create the executable

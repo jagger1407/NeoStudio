@@ -97,6 +97,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -121,6 +124,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -195,6 +201,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -220,6 +229,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -244,6 +256,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -293,6 +308,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -386,6 +404,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -435,6 +456,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -483,6 +507,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -552,6 +579,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -597,6 +627,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -644,6 +677,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -689,6 +725,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -736,6 +775,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -781,6 +823,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -828,6 +873,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -873,6 +921,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -920,6 +971,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -965,6 +1019,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -1012,6 +1069,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -1058,6 +1118,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -1098,6 +1161,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -1147,6 +1213,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -1221,6 +1290,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -1269,6 +1341,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -1480,6 +1555,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -1553,6 +1631,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -1602,6 +1683,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -1626,6 +1710,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -1676,6 +1763,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -1725,6 +1815,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -1773,6 +1866,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -1847,6 +1943,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -1915,6 +2014,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -1963,6 +2065,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
@@ -2013,6 +2118,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -2062,6 +2170,9 @@
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
     </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>
     </property>
@@ -2110,6 +2221,9 @@
     </property>
     <property name="buttonSymbols">
      <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
     </property>
     <property name="minimum">
      <double>-340282346638528859811704183484516925440.000000000000000</double>

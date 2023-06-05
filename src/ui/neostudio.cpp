@@ -3,7 +3,7 @@
 
 #include "src/ui/menu/characterselectiondialog.h"
 
-#define VERSION_STRING "Neo Studio v1.0.3"
+#define VERSION_STRING "Neo Studio v1.1"
 
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
@@ -19,7 +19,7 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     ResetUiMode();
 
     QGraphicsScene* scene = new QGraphicsScene();
-    // Drip Code
+
     this->setWindowIcon(QIcon("./assets/icon.png"));
 
     if(argc == 2)
@@ -44,7 +44,7 @@ void NeoStudio::OpenFile()
     Debug::Log("OpenFile slot triggered.", Debug::INFO, options);
 
     QString filePath = QFileDialog::getOpenFileName(this,
-                                        "Open File", "/home", "Character Files (*.pak);;Parameter Files (*.dat)");
+                                        "Open File", "", "Character Files (*.pak);;Parameter Files (*.dat)");
     if(filePath.isEmpty())
     {
         Debug::Log("OpenFile: No file selected.", Debug::WARNING, options);
@@ -120,9 +120,9 @@ void NeoStudio::SaveFileAs()
 
     QString newFile;
     if(file.toLower().endsWith(".pak"))
-        newFile = QFileDialog::getSaveFileName(this, "Save File", "/home", "Character Files (*.pak)");
+        newFile = QFileDialog::getSaveFileName(this, "Save File", "", "Character Files (*.pak)");
     else if(file.toLower().endsWith(".dat"))
-        newFile = QFileDialog::getSaveFileName(this, "Save File", "/home", "Parameter Files (*.dat)");
+        newFile = QFileDialog::getSaveFileName(this, "Save File", "", "Parameter Files (*.dat)");
     if(newFile == NULL)
     {
         Debug::Log("SaveFileAs: No file selected.", Debug::WARNING, options);
@@ -134,7 +134,7 @@ void NeoStudio::SaveFileAs()
         pak->UpdateParamData(PARAM_TYPE_GENERAL, generalWindow->gp->GetFileData());
         pak->UpdateParamData(PARAM_TYPE_MELEE, meleeWindow->mp->GetFileData());
         pak->UpdateParamData(PARAM_TYPE_KI_BLAST, kiWindow->kp->GetFileData());
-        pak->UpdateParamData(PARAM_TYPE_KI_BLAST, moveWindow->mp->GetFileData());
+        pak->UpdateParamData(PARAM_TYPE_MOVEMENT, moveWindow->mp->GetFileData());
         pak->SavePak(newFile);
     }
     else if(newFile.toLower().endsWith(".dat"))
@@ -216,7 +216,7 @@ void NeoStudio::InitPakFile()
     generalWindow = new GeneralFrame(pak->GetParamData(PARAM_TYPE_GENERAL), options, this);
     meleeWindow = new MeleeFrame(pak->GetParamData(PARAM_TYPE_MELEE), options, this);
     kiWindow = new KiFrame(pak->GetParamData(PARAM_TYPE_KI_BLAST), options, this);
-    moveWindow = new MovementFrame(pak->GetParamData(PARAM_TYPE_KI_BLAST), options, this);
+    moveWindow = new MovementFrame(pak->GetParamData(PARAM_TYPE_MOVEMENT), options, this);
 
     ui->GeneralScrollArea->setWidget(generalWindow);
     ui->MeleeScrollArea->setWidget(meleeWindow);

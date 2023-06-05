@@ -57,6 +57,11 @@ QGroupBox {
 	color: black;
 }
 
+QLineEdit {
+	background-color: white;
+	color: black;
+}
+
 QPushButton {
         background-color: white;
 	color: black;
@@ -72,17 +77,53 @@ QPushButton:hover {
 }
 
 QComboBox {
-        background-color: white;
+	background-color: white;
 	color: black;
 	border: 2px solid rgb(210, 210, 210);
 	border-radius: 1px;
 }
 
 QSpinBox, QDoubleSpinBox {
-        background-color: white;
+	background-color: white;
 	color: black;
-        border: 2px solid rgb(210, 210, 210);
+	border: 2px solid rgb(210, 210, 210);
 	border-radius: 2px;
+}
+
+QSpinBox::up-button, QDoubleSpinBox::up-button {
+    color: black;
+    border: 2px solid rgb(210, 210, 210);
+	border-radius: 2px;
+	height: 11px;
+	background: url(./assets/ui/Light_Plus.png) no-repeat center;
+	background-color: rgb(220,220,220);
+}
+
+QSpinBox::up-button:pressed, QDoubleSpinBox::up-button:pressed {
+    color: white;
+    border: 2px solid black;
+	border-radius: 2px;
+	height: 11px;
+	background: url(./assets/ui/Light_Plus.png) no-repeat center;
+	background-color: rgb(100,100,100);
+}
+
+QSpinBox::down-button, QDoubleSpinBox::down-button {
+    color: black;
+    border: 2px solid rgb(210, 210, 210);
+	border-radius: 2px;
+	height: 11px;
+	background: url(./assets/ui/Light_Minus.png) no-repeat center;
+	background-color: rgb(220,220,220);
+}
+
+QSpinBox::down-button:pressed, QDoubleSpinBox::down-button:pressed {
+    color: white;
+    border: 2px solid black;
+	border-radius: 2px;
+	height: 11px;
+	background: url(./assets/ui/Light_Minus.png) no-repeat center;
+	background-color: rgb(100,100,100);
 }
 
 QComboBox:down-arrow {

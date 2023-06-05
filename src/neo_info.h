@@ -25,7 +25,7 @@ typedef enum
 /**Maximum gravity one can input before jumping becomes impossible.*/
 #define MAX_GRAVITY 1
 /**The total amount of characters in Tenkaichi 2. (excluding Wii chars)*/
-#define ROSTER_SIZE 130
+#define ROSTER_SIZE 136
 /**The value of the first byte of each Pak file. Used for validity checks.*/
 #define PAK_FIRST_BYTE 0xFA
 /**The size of the data chunk for each melee attack*/

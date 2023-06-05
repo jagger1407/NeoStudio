@@ -1,11 +1,11 @@
-Base Goku
-Goku SS
-Goku SS2
-Goku SS3
+Goku
+Goku|Super Saiyan
+Goku|Super Saiyan 2
+Goku|Super Saiyan 3
 Kid Gohan
 Teen Gohan
-Teen Gohan SS
-Teen Gohan SS2
+Teen Gohan|Super Saiyan
+Teen Gohan|Super Saiyan 2
 Piccolo
 Krillin
 Yamcha
@@ -15,96 +15,96 @@ Raditz
 Saibaman
 Nappa
 Vegeta
-Vegeta SS
+Vegeta|Super Saiyan
 Super Vegeta
 Zarbon
-Zarbon Transformed
+Zarbon|Post-Transformation
 Dodoria
 Ginyu
 Recoome
 Burter
 Jeice
 Guldo
-Freeza 1st Form
-Freeza 2nd Form
-Freeza 3rd Form
-Freeza Final Form
-Freeza Full Power
-Mecha Freeza
-Future Trunks
-Future Trunks SS
+Frieza|1st Form
+Frieza|2nd Form
+Frieza|3rd Form
+Frieza|Final Form
+Frieza|Full Power
+Mecha Frieza
+Trunks (Sword)
+Future (Sword)|Super Saiyan
 Super Trunks
-Android 16
-Android 17
-Android 18
-Android 19
+Android #16
+Android #17
+Android #18
+Android #19
 Dr. Gero
-Imperfect Cell
-Semi-Perfect Cell
-Perfect Form Cell
-Perfect Cell
+Cell|1st Form
+Cell|2nd Form
+Cell|Perfect Form
+Cell|Perfect
 Cell Jr.
-Mr. Satan
-Adult Gohan
-Adult Gohan SS
-Adult Gohan SS2
+Hercule
+Gohan
+Gohan|Super Saiyan
+Gohan|Super Saiyan 2
 Great Saiyaman
 Ultimate Gohan
 Goten
-Goten SS
+Goten|Super Saiyan
 Kid Trunks
-Kid Trunks SS
+Kid Trunks|Super Saiyan
 Gotenks
-Gotenks SS
-Gotenks SS3
+Gotenks|Super Saiyan
+Gotenks|Super Saiyan 3
 Videl
 Dabura
-Majin Boo
-Evil Boo
-Super Boo
-Kid Boo
+Majin Buu
+Majin Buu (Pure Evil)
+Super Buu
+Kid Buu
 Vegito
 Super Vegito
-Vegeta 2nd Form SS2
+Vegeta 2nd Form|Super Saiyan 2
 Super Gogeta
 Great Ape
 Great Ape Vegeta
-Broly LSS
-Bojack 100%
-Cooler Final Form
-Super Janemba
-Goku SS4
-Vegeta SS4
-Gogeta SS4
+Broly|Legendary Super Saiyan
+Bojack|Full Power
+Cooler|Final Form
+Janemba|Final Form
+Goku|Super Saiyan 4
+Vegeta (second form)|Super Saiyan 4
+Gogeta|Super Saiyan 4
 Bardock
 Vegeta (Scouter)
-Majin Vegeta
+Vegeta (second form)|Majin
 Armored Trunks
-Armored Trunks SS
+Armored Trunks|Super Saiyan
 Super Android 17
-Baby Vegeta 3rd Form
+Super Baby 2
 Kid Goku
-Super Buu (Gotenks Absorbed)
-Super Buu (Gohan Absorbed)
+Super Buu|Gotenks Absorbed
+Super Buu|Gohan Absorbed
 Master Roshi
 Tao Pai Pai
 Garlic Jr.
-Garlic Jr. Transformed
+Super Garlic Jr.
 Pan
 Cooler
 Metal Cooler
-Master Roshi (MAX Power)
-Lord Slug
-Lord Slug (Giant)
+Master Roshi|Max Power
+Slug
+Slug|Giant
 Arale!
 Zangya
 Salza
 Broly
-Broly SS
+Broly|Super Saiyan
 Bojack
 Janemba
-Baby Vegeta 2nd Form
-Great Ape Baby Vegeta
+Super Baby 1
+Great Ape Baby
 Great Ape Raditz
 Great Ape Nappa
 Great Ape Bardock
@@ -115,9 +115,9 @@ Yajirobe
 Uub
 Majuub
 Syn Shenron
-Omega Shenron
+Super Yi-Shin-Long
 Android 13
-Android 13 (Fusion)
+Android 13|Fusion
 Turles
 Great Ape Turles
 Supreme Kai
@@ -125,6 +125,12 @@ Kibitoshin
 Hirudegarn
 Tapion
 Grandpa Gohan
-Vegeta 2nd Form
-Vegeta 2nd Form SS
+Vegeta (second form)
+Vegeta (second form)|Super Saiyan
 Baby Vegeta
+Pilaf Machine
+Pilaf Machine|Fused
+Demon King Piccolo
+Cyborg Tao
+Appule
+Frieza Soldier

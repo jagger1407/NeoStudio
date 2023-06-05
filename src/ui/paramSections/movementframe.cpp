@@ -70,8 +70,6 @@ void MovementFrame::InitializeUIElements()
         lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
     }
 
-    QList<QWidget*> elements = this->findChildren<QWidget*>();
-
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();
     for(QSpinBox* sBox : spinBoxes)

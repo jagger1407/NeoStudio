@@ -54,6 +54,7 @@ MeleeFrame::MeleeFrame(QByteArray Data, Options* options, QWidget* parent) : QFr
     for(QWidget* el : elements) el->setEnabled(false);
     for(QLabel* lbl : labels) lbl->setEnabled(true);
     ui->AttackSelectionBox->setEnabled(true);
+    ui->AttackSelectionBox->setCurrentIndex(-1);
 
     Debug::Log("New MeleeFrame constructed.", Debug::INFO, options);
 }

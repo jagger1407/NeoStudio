@@ -59,18 +59,12 @@ public:
     bool LoadConfig();
     void SaveConfig();
 
-    LogMode GetLogMode();
-    void SetLogMode(LogMode newMode);
-
     QString GetStyledTooltip(QString tooltip);
-    TooltipColor GetTooltipColor();
-    void SetTooltipColor(TooltipColor newColor);
 
-    QString GetUiMode();
-    void SetUiMode(QString newMode);
-
-    bool GetAdvancedOptions();
-    void SetAdvancedOptions(bool value);
+    LogMode logMode;
+    TooltipColor tooltipColor;
+    QString uiMode;
+    bool advancedOptions;
 
 private:
     QString tooltipStyles[4] =
@@ -82,11 +76,6 @@ private:
     };
 
     CfgParser* cfg;
-
-    LogMode logMode;
-    TooltipColor tooltipColor;
-    QString uiMode;
-    bool advancedOptions;
 };
 
 #endif // OPTIONS_H

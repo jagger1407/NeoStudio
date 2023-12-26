@@ -34,10 +34,10 @@ set(neostudio_SRC
   src/neo_info.h
   src/neo_info.h
   src/options.h
+  src/bitmanipulation.h
   src/external/fileparse.h
   src/external/cfgparser.h
   src/external/debug.h
-  src/external/bitmanipulation.h
   src/pak_filesystem/parameterfile.h
   src/pak_filesystem/generalparameters.h
   src/pak_filesystem/meleeparameters.h
@@ -53,7 +53,7 @@ set(neostudio_SRC
   src/ui/paramSections/meleeframe.h
   src/ui/paramSections/kiframe.h
   src/ui/paramSections/movementframe.h
-  
+
   # ::source files::
   src/main.cpp
   src/options.cpp
@@ -95,3 +95,8 @@ target_link_libraries(neostudio Qt5::Widgets)
 
 # Install the executable
 install(TARGETS neostudio DESTINATION bin)
+
+# Copy the assets folder to the build directory
+add_custom_command(TARGET neostudio POST_BUILD
+                   COMMAND ${CMAKE_COMMAND} -E copy_directory
+                       ${CMAKE_SOURCE_DIR}/assets/ $<TARGET_FILE_DIR:neostudio>/assets/)

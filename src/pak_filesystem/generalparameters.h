@@ -2,7 +2,6 @@
 #define GENERALPARAMETERS_H
 
 #include "parameterfile.h"
-#include "src/external/bitmanipulation.h"
 #include "src/external/debug.h"
 
 /**

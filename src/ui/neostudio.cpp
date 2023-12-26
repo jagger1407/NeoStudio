@@ -18,8 +18,6 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     ui->ParameterTabs->setCurrentIndex(PARAM_TYPE_GENERAL);
     ResetUiMode();
 
-    QGraphicsScene* scene = new QGraphicsScene();
-
     this->setWindowIcon(QIcon("./assets/icon.png"));
 
     if(argc == 2)
@@ -408,7 +406,7 @@ void NeoStudio::ImportDat()
 
 void NeoStudio::ResetUiMode()
 {
-    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->uiMode + ".qss"));
 
     if(generalWindow != nullptr)
         generalWindow->ResetUiMode();

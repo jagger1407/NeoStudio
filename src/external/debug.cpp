@@ -2,7 +2,7 @@
 
 void Debug::Log(const QString Message, LogLevel Severity, Options* options)
 {
-    switch(options->GetLogMode())
+    switch(options->logMode)
     {
         case Options::RELEASE:
             if(Severity == INFO) return;
@@ -37,7 +37,7 @@ void Debug::ConsolePrint(const QString Message, LogLevel Severity)
 void Debug::ShowError(const QString Message, Options* options)
 {
     QMessageBox ErrorWindow;
-    ErrorWindow.setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
+    ErrorWindow.setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->uiMode + ".qss"));
     ErrorWindow.setWindowTitle("Error!");
     ErrorWindow.setText(Message);
     QPushButton* okBtn = new QPushButton("OK");

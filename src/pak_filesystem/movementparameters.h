@@ -2,7 +2,6 @@
 #define MOVEMENTPARAMETERS_H
 
 #include "parameterfile.h"
-#include "src/external/qt_includes.h"
 #include "src/external/debug.h"
 
 /**

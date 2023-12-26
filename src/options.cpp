@@ -68,17 +68,6 @@ void Options::SaveConfig()
     cfg->WriteConfig(CONFIG_PATH);
 }
 
-Options::TooltipColor Options::GetTooltipColor()
-{
-     return tooltipColor;
-}
-
-void Options::SetTooltipColor(Options::TooltipColor newColor)
-{
-    if(newColor == TOOLTIPCOLOR_COUNT) return;
-    this->tooltipColor = newColor;
-}
-
 QString Options::GetStyledTooltip(QString tooltip)
 {
     if(tooltip.isEmpty()) return tooltip;
@@ -94,35 +83,4 @@ QString Options::GetStyledTooltip(QString tooltip)
         }
     }
     return tooltipStyles[this->tooltipColor] + line + "</font>";
-}
-
-Options::LogMode Options::GetLogMode()
-{
-    return logMode;
-}
-
-void Options::SetLogMode(Options::LogMode newMode)
-{
-    if(newMode == LOGMODE_COUNT) return;
-    this->logMode = newMode;
-}
-
-QString Options::GetUiMode()
-{
-    return uiMode;
-}
-
-void Options::SetUiMode(QString newMode)
-{
-    uiMode = newMode;
-}
-
-
-bool Options::GetAdvancedOptions()
-{
-    return advancedOptions;
-}
-void Options::SetAdvancedOptions(bool value)
-{
-    this->advancedOptions = value;
 }

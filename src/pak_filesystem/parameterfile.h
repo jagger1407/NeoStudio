@@ -2,7 +2,7 @@
 #define PARAMETERFILE_H
 
 #include "src/external/qt_includes.h"
-#include "src/external/bitmanipulation.h"
+#include "src/bitmanipulation.h"
 #include "src/neo_info.h"
 
 /**

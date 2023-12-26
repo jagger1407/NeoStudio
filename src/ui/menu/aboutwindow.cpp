@@ -13,5 +13,5 @@ AboutWindow::AboutWindow(Options* options)
                                                                ui->graphicsView_AboutImage->height(),
                                                                Qt::KeepAspectRatio));
     ui->graphicsView_AboutImage->setScene(scene);
-    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->uiMode + ".qss"));
 }

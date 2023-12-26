@@ -202,7 +202,7 @@ void GeneralFrame::Character_Selected()
     if(IsInitializing || gp == nullptr) return;
      Debug::Log("Character_Selected slot triggered.", Debug::INFO, options);
     QPushButton* button = (QPushButton*)sender();
-    CharacterSelectionDialog dialog(options->GetUiMode());
+    CharacterSelectionDialog dialog(options->uiMode);
     dialog.exec();
     if(dialog.aborted()) return;
     gp->SetUByteParameter(button, dialog.getSelectedID());
@@ -340,13 +340,13 @@ void GeneralFrame::ButtonValueGet(QPushButton* Button)
     }
     else if(curBtn == 10)
     {
-        CharacterSelectionDialog d(options->GetUiMode());
+        CharacterSelectionDialog d(options->uiMode);
         Button->setText(d.getItem(btnValue)->text());
         Button->setIcon(d.getItem(btnValue)->icon());
     }
     else if(curBtn == 11)
     {
-        CharacterSelectionDialog d(options->GetUiMode());
+        CharacterSelectionDialog d(options->uiMode);
         Button->setIcon(d.getItem(btnValue)->icon());
     }
 }
@@ -359,7 +359,7 @@ void GeneralFrame::ResetUiMode()
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();
     QList<QComboBox*> comboBoxes = this->findChildren<QComboBox*>();
     // Change the StyleSheet of Window + each Element
-    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->GetUiMode() + ".qss"));
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->uiMode + ".qss"));
     // Change the StyleSheet for the tooltips as well, can't leave them out now, can we?
     QList<QLabel*> labels = this->findChildren<QLabel*>();
     for(QLabel* lbl : labels)

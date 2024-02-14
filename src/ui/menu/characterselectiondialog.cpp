@@ -1,7 +1,7 @@
 #include "characterselectiondialog.h"
 #include "ui_characterselectiondialog.h"
 
-CharacterSelectionDialog::CharacterSelectionDialog(QString uiMode, QWidget* parent)
+CharacterSelectionDialog::CharacterSelectionDialog(QWidget* parent)
     : ui(new Ui::CharacterSelectionDialog)
 {
     ui->setupUi(this);
@@ -9,7 +9,7 @@ CharacterSelectionDialog::CharacterSelectionDialog(QString uiMode, QWidget* pare
     this->setWindowTitle("Choose a Character...");
     this->setWindowIcon(QIcon("./assets/CharacterSelectionIcon.png"));
 
-    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + uiMode + ".qss"));
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + g_Options.uiMode + ".qss"));
 
     charNames = FileParse::ReadLines("./assets/char-list.txt");
     for(int i=0;i<charNames.length();i++)

@@ -24,10 +24,9 @@ public:
     /**
      * @todo write docs
      */
-    MovementFrame(QByteArray Data, Options* options, QWidget* parent = nullptr);
+    MovementFrame(QByteArray Data, QWidget* parent = nullptr);
     /**Pointer used to access UI elements of this window.*/
     Ui_MovementFrame* ui;
-    Options* options = nullptr;
     MovementParameters* mp = nullptr;
     /**Checks the UI mode and sets the Stylesheet accordingly.*/
     void ResetUiMode();

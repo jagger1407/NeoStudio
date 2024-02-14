@@ -1,6 +1,6 @@
 #include "aboutwindow.h"
 
-AboutWindow::AboutWindow(Options* options)
+AboutWindow::AboutWindow()
     : ui(new Ui::AboutWindow)
 {
     ui->setupUi(this);
@@ -13,5 +13,5 @@ AboutWindow::AboutWindow(Options* options)
                                                                ui->graphicsView_AboutImage->height(),
                                                                Qt::KeepAspectRatio));
     ui->graphicsView_AboutImage->setScene(scene);
-    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->uiMode + ".qss"));
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + g_Options.uiMode + ".qss"));
 }

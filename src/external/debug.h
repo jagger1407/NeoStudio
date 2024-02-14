@@ -18,13 +18,13 @@ public:
         ERROR
     } LogLevel;
     /**Generic Logging Function*/
-    static void Log(const QString Message, LogLevel Severity, Options* options);
+    static void Log(const QString Message, LogLevel Severity);
     /**Prints message to console. Should not be used, use Debug::Log instead.*/
     static void ConsolePrint(const QString Message, LogLevel Severity);
     /**Prints message to log file. Should not be used, use Debug::Log instead.*/
     static void LogFilePrint(const QString Message, LogLevel Severity);
     /**Show message as error box to the user.*/
-    static void ShowError(const QString Message, Options* options);
+    static void ShowError(const QString Message);
 };
 
 #endif // DEBUG_H

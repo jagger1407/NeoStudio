@@ -5,6 +5,7 @@
 #include "ui_characterselectiondialog.h"
 #include "src/external/fileparse.h"
 #include "src/neo_info.h"
+#include "src/options.h"
 
 namespace Ui
 {
@@ -22,7 +23,7 @@ public:
     /**
      * Default constructor
      */
-    CharacterSelectionDialog(QString uiMode, QWidget* parent = nullptr);
+    CharacterSelectionDialog(QWidget* parent = nullptr);
     unsigned char getSelectedID();
     QListWidgetItem* getSelectedItem();
     QListWidgetItem* getItem(int index);

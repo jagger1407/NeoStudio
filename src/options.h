@@ -18,10 +18,10 @@ public:
         TOOLTIPCOLOR,
         UI_MODE,
         ADVANCED_OPTIONS,
+
         OPTION_COUNT
     } OptionType;
-    QString OptionStr[4] =
-    {
+    QString OptionStr[OPTION_COUNT] = {
         "LogMode",
         "TooltipColor",
         "UiMode",
@@ -29,14 +29,20 @@ public:
     };
 
     /**The log modes used to determine which log levels get printed.*/
-    typedef enum{
+    typedef enum {
     DEV,
     DEV_NOFILE,
     RELEASE,
     RELEASE_NOFILE,
+
     LOGMODE_COUNT
     } LogMode;
-    QString LogmodeStr[4] = { "Dev", "Dev_Nofile", "Release", "Release_Nofile" };
+    QString LogmodeStr[LOGMODE_COUNT] = {
+        "Dev",
+        "Dev_Nofile",
+        "Release",
+        "Release_Nofile"
+    };
 
     /**A selection of text color choices for tooltips.*/
     typedef enum {
@@ -46,15 +52,19 @@ public:
     RED,
     TOOLTIPCOLOR_COUNT
     } TooltipColor;
-    QString TooltipStr[4] = { "White", "Black", "Blue", "Red" };
+    QString TooltipStr[TOOLTIPCOLOR_COUNT] = {
+        "White",
+        "Black",
+        "Blue",
+        "Red"
+    };
 
 #define DEFAULT_LOGMODE RELEASE_NOFILE
 #define DEFAULT_TOOLTIPCOLOR BLACK
 #define DEFAULT_UIMODE "Dark"
 #define DEFAULT_ADVANCED_OPTIONS false
 
-    Options();
-    Options(LogMode log, TooltipColor tooltipCol, QString uiMode);
+    static void InitOptions();
     void LoadDefaults(bool saveFile = false);
     bool LoadConfig();
     void SaveConfig();
@@ -77,5 +87,8 @@ private:
 
     CfgParser* cfg;
 };
+/** This is a global Object housing the options.
+ */
+extern Options g_Options;
 
 #endif // OPTIONS_H

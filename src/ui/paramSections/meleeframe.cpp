@@ -1,11 +1,11 @@
 #include "meleeframe.h"
 
-MeleeFrame::MeleeFrame(QByteArray Data, Options* options, QWidget* parent) : QFrame(parent), options(options)
+MeleeFrame::MeleeFrame(QByteArray Data, QWidget* parent) : QFrame(parent)
 {
     ui = new Ui_MeleeFrame();
     ui->setupUi(this);
 
-    mp = new MeleeParameters(Data, options);
+    mp = new MeleeParameters(Data);
 
     #if 1 // Passing the pointers to the UI elements to mp
     mp->parameter[MeleeParameters::Header].UiElement = ui->UnknownSpinBox_14;
@@ -61,12 +61,12 @@ MeleeFrame::MeleeFrame(QByteArray Data, Options* options, QWidget* parent) : QFr
     */
     IsInitializing = false;
 
-    Debug::Log("New MeleeFrame constructed.", Debug::INFO, options);
+    Debug::Log("New MeleeFrame constructed.", Debug::INFO);
 }
 
 void MeleeFrame::InitializeUIElements()
 {
-    Debug::Log("InitializeUIElements called.", Debug::INFO, options);
+    Debug::Log("InitializeUIElements called.", Debug::INFO);
 
     IsInitializing = true;
 
@@ -74,7 +74,7 @@ void MeleeFrame::InitializeUIElements()
     for(QLabel* lbl : labels)
     {
         if(lbl->toolTip().isEmpty()) continue;
-        lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
+        lbl->setToolTip(g_Options.GetStyledTooltip(lbl->toolTip()));
     }
 
     QList<QWidget*> elements = this->findChildren<QWidget*>();
@@ -109,7 +109,7 @@ void MeleeFrame::InitializeUIElements()
 void MeleeFrame::QSpinBox_Changed(int NewValue)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO, options);
+    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO);
     QSpinBox* box = (QSpinBox*)sender();
     if((unsigned int)box->maximum() < 256)
     {
@@ -123,35 +123,35 @@ void MeleeFrame::QSpinBox_Changed(int NewValue)
 void MeleeFrame::QDoubleSpinBox_Changed(double NewValue)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO, options);
+    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO);
     QDoubleSpinBox* box = (QDoubleSpinBox*)sender();
     mp->SetFloatParameter(box, NewValue);
 }
 void MeleeFrame::CurrentAttack_IndexChanged(int NewIndex)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("CurrentAttack_IndexChanged slot triggered.", Debug::INFO, options);
+    Debug::Log("CurrentAttack_IndexChanged slot triggered.", Debug::INFO);
     mp->setCurrentAttack(NewIndex);
     InitializeUIElements();
 }
 void MeleeFrame::ComboBox_IndexChanged(int NewIndex)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("ComboBox_IndexChanged slot triggered.", Debug::INFO, options);
+    Debug::Log("ComboBox_IndexChanged slot triggered.", Debug::INFO);
     QComboBox* box = (QComboBox*)sender();
     mp->SetUByteParameter(box, NewIndex);
 }
 void MeleeFrame::CheckBox_StateChanged(int NewState)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("CheckBox_StateChanged slot triggered.", Debug::INFO, options);
+    Debug::Log("CheckBox_StateChanged slot triggered.", Debug::INFO);
     QCheckBox* flag = (QCheckBox*)sender();
     mp->SetFlagParameter(flag, NewState);
 }
 
 void MeleeFrame::ResetUiMode()
 {
-    Debug::Log("ResetUiMode called.", Debug::INFO, options);
+    Debug::Log("ResetUiMode called.", Debug::INFO);
 
     // Getting all the UI Elements and categorizing them by type
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
@@ -161,16 +161,16 @@ void MeleeFrame::ResetUiMode()
     QList<QCheckBox*> flagBoxes = this->findChildren<QCheckBox*>();
 
     // Change the StyleSheet of Window + each Element
-    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->uiMode + ".qss"));
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + g_Options.uiMode + ".qss"));
     // Change the StyleSheet for the tooltips as well, can't leave them out now, can we?
     for(QLabel* lbl : labels)
     {
         if(lbl->toolTip().isEmpty()) continue;
-        lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
+        lbl->setToolTip(g_Options.GetStyledTooltip(lbl->toolTip()));
     }
     for(QCheckBox* flag : flagBoxes)
     {
         if(flag->toolTip().isEmpty()) continue;
-        flag->setToolTip(options->GetStyledTooltip(flag->toolTip()));
+        flag->setToolTip(g_Options.GetStyledTooltip(flag->toolTip()));
     }
 }

@@ -58,7 +58,7 @@ public:
 
     Param_Offset parameter[MovementParameterCount];
 
-    MovementParameters(QByteArray ParameterData, Options* options);
+    MovementParameters(QByteArray ParameterData);
 
     int GetIntParameter(QSpinBox* Object);
     float GetFloatParameter(QDoubleSpinBox* Object);
@@ -71,7 +71,6 @@ public:
     { return PARAM_TYPE_MOVEMENT; };
     QByteArray GetFileData();
     void SetFileData(QByteArray NewData);
-    Options* options = nullptr;
 private:
     const char* rawData = nullptr;
 };

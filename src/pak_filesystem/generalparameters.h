@@ -45,7 +45,7 @@ public:
         BaseKiRegen,
         CounterKi,
         Unk_0x80,
-        Unk_0x84,
+        PowerGuardKiCost,
         Unk_0x88,
         BlastGaugeSpeed,
         BlueKiChargeSpeed,
@@ -75,7 +75,7 @@ public:
     /**
      * Constructs new General Parameter Object.
      */
-    GeneralParameters(QByteArray ParameterData, Options* options);
+    GeneralParameters(QByteArray ParameterData);
     /**Gets the single Byte parameter value of the parameter corresponding to the Object.*/
     unsigned char GetUByteParameter(QSpinBox* Object);
     unsigned char GetUByteParameter(QComboBox* Object);
@@ -100,7 +100,6 @@ public:
      */
     ParameterType GetParameterType()
     { return PARAM_TYPE_GENERAL; };
-    Options* options = nullptr;
 private:
     const char* constData = nullptr;
 };

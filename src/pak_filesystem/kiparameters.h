@@ -37,7 +37,7 @@ public:
 
     Param_Offset parameter[KiParameterCount];
 
-    KiParameters(QByteArray ParameterData, Options* options);
+    KiParameters(QByteArray ParameterData);
     /**Gets the single Byte parameter value of the parameter corresponding to the Object.*/
     unsigned char GetUByteParameter(QSpinBox* Object);
     /**Gets the single Byte parameter value of the parameter corresponding to the Object.*/
@@ -61,7 +61,6 @@ public:
     { return PARAM_TYPE_KI_BLAST; };
     QByteArray GetFileData();
     void SetFileData(QByteArray NewData);
-    Options* options = nullptr;
 private:
     const char* rawData = nullptr;
     unsigned short blastOffset;

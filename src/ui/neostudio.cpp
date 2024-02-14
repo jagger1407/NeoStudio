@@ -3,15 +3,14 @@
 
 #include "src/ui/menu/characterselectiondialog.h"
 
-#define VERSION_STRING "Neo Studio v1.1"
-
+#define VERSION_STRING "Neo Studio v1.1.1"
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QMainWindow(parent), ui(new Ui::NeoStudio)
 {
     if(argc > 2) return;
 
-    options = new Options();
+    Options::InitOptions();
 
     ui->setupUi(this);
     this->setWindowTitle(VERSION_STRING);
@@ -32,20 +31,20 @@ NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
             InitDatFile();
     }
 
-    Debug::Log("NeoStudio constructed.", Debug::INFO, options);
+    Debug::Log("NeoStudio constructed.", Debug::INFO);
 }
 
 NeoStudio::~NeoStudio() = default;
 
 void NeoStudio::OpenFile()
 {
-    Debug::Log("OpenFile slot triggered.", Debug::INFO, options);
+    Debug::Log("OpenFile slot triggered.", Debug::INFO);
 
     QString filePath = QFileDialog::getOpenFileName(this,
                                         "Open File", "", "Character Files (*.pak);;Parameter Files (*.dat)");
     if(filePath.isEmpty())
     {
-        Debug::Log("OpenFile: No file selected.", Debug::WARNING, options);
+        Debug::Log("OpenFile: No file selected.", Debug::WARNING);
         return;
     }
     file = filePath;
@@ -68,10 +67,10 @@ void NeoStudio::OpenFile()
 
 void NeoStudio::SaveFile()
 {
-    Debug::Log("SaveFile slot triggered.", Debug::INFO, options);
+    Debug::Log("SaveFile slot triggered.", Debug::INFO);
     if(file == NULL)
     {
-        Debug::Log("SaveFile: No file open.", Debug::ERROR, options);
+        Debug::Log("SaveFile: No file open.", Debug::ERROR);
         return;
     }
     if(file.toLower().endsWith(".pak"))
@@ -100,7 +99,7 @@ void NeoStudio::SaveFile()
                 datPtr = new QByteArray(moveWindow->mp->GetFileData());
                 break;
             default:
-                Debug::Log("Invalid .dat file.", Debug::ERROR, options);
+                Debug::Log("Invalid .dat file.", Debug::ERROR);
                 return;
         }
         FileParse::WriteFile(file, datPtr);
@@ -109,10 +108,10 @@ void NeoStudio::SaveFile()
 
 void NeoStudio::SaveFileAs()
 {
-    Debug::Log("SaveFileAs slot triggered.", Debug::INFO, options);
+    Debug::Log("SaveFileAs slot triggered.", Debug::INFO);
     if(file == NULL)
     {
-        Debug::Log("SaveFileAs: No file open.", Debug::ERROR, options);
+        Debug::Log("SaveFileAs: No file open.", Debug::ERROR);
         return;
     }
 
@@ -123,7 +122,7 @@ void NeoStudio::SaveFileAs()
         newFile = QFileDialog::getSaveFileName(this, "Save File", "", "Parameter Files (*.dat)");
     if(newFile == NULL)
     {
-        Debug::Log("SaveFileAs: No file selected.", Debug::WARNING, options);
+        Debug::Log("SaveFileAs: No file selected.", Debug::WARNING);
         return;
     }
 
@@ -153,7 +152,7 @@ void NeoStudio::SaveFileAs()
                 datPtr = new QByteArray(moveWindow->mp->GetFileData());
                 break;
             default:
-                Debug::Log("Invalid .dat file.", Debug::ERROR, options);
+                Debug::Log("Invalid .dat file.", Debug::ERROR);
                 return;
         }
         FileParse::WriteFile(newFile, datPtr);
@@ -165,10 +164,10 @@ void NeoStudio::CloseFile()
 {
     if(file == NULL)
     {
-        Debug::Log("CloseFile: No file open.", Debug::ERROR, options);
+        Debug::Log("CloseFile: No file open.", Debug::ERROR);
         return;
     }
-    Debug::Log("CloseFile slot triggered.", Debug::INFO, options);
+    Debug::Log("CloseFile slot triggered.", Debug::INFO);
     if(generalWindow != nullptr)
         generalWindow->close();
     if(meleeWindow != nullptr)
@@ -185,13 +184,13 @@ void NeoStudio::CloseFile()
 
 void NeoStudio::OpenAbout()
 {
-    Debug::Log("About page opened.", Debug::INFO, options);
-    AboutWindow(options).exec();
+    Debug::Log("About page opened.", Debug::INFO);
+    AboutWindow().exec();
 }
 void NeoStudio::OpenOptions()
 {
-    Debug::Log("Option Dialog opened.", Debug::INFO, options);
-    OptionDialog* optionWindow = new OptionDialog(options);
+    Debug::Log("Option Dialog opened.", Debug::INFO);
+    OptionDialog* optionWindow = new OptionDialog();
     optionWindow->exec();
 
     ResetUiMode();
@@ -202,8 +201,8 @@ void NeoStudio::OpenOptions()
 
 void NeoStudio::InitPakFile()
 {
-    Debug::Log("InitPakFile called.", Debug::INFO, options);
-    pak = new PakControls(file, options);
+    Debug::Log("InitPakFile called.", Debug::INFO);
+    pak = new PakControls(file);
     if(pak->HasFailed()) return;
 
     if(generalWindow != nullptr) delete generalWindow;
@@ -211,10 +210,10 @@ void NeoStudio::InitPakFile()
     if(kiWindow != nullptr) delete kiWindow;
     if(moveWindow != nullptr) delete moveWindow;
 
-    generalWindow = new GeneralFrame(pak->GetParamData(PARAM_TYPE_GENERAL), options, this);
-    meleeWindow = new MeleeFrame(pak->GetParamData(PARAM_TYPE_MELEE), options, this);
-    kiWindow = new KiFrame(pak->GetParamData(PARAM_TYPE_KI_BLAST), options, this);
-    moveWindow = new MovementFrame(pak->GetParamData(PARAM_TYPE_MOVEMENT), options, this);
+    generalWindow = new GeneralFrame(pak->GetParamData(PARAM_TYPE_GENERAL), this);
+    meleeWindow = new MeleeFrame(pak->GetParamData(PARAM_TYPE_MELEE), this);
+    kiWindow = new KiFrame(pak->GetParamData(PARAM_TYPE_KI_BLAST), this);
+    moveWindow = new MovementFrame(pak->GetParamData(PARAM_TYPE_MOVEMENT), this);
 
     ui->GeneralScrollArea->setWidget(generalWindow);
     ui->MeleeScrollArea->setWidget(meleeWindow);
@@ -226,13 +225,13 @@ void NeoStudio::InitPakFile()
 
 void NeoStudio::InitDatFile()
 {
-    Debug::Log("InitDatFile called.", Debug::INFO, options);
+    Debug::Log("InitDatFile called.", Debug::INFO);
 
     datIndex = (ParameterType)(file.split('/')[(file.split('/').length()-1)].split("_")[0].toInt() - 17);
 
     if(datIndex == PARAM_TYPE_INVALID)
     {
-        Debug::Log("Invalid .dat file.", Debug::ERROR, options);
+        Debug::Log("Invalid .dat file.", Debug::ERROR);
         return;
     }
 
@@ -248,23 +247,23 @@ void NeoStudio::InitDatFile()
     switch(datIndex)
     {
         case PARAM_TYPE_GENERAL:
-            generalWindow = new GeneralFrame(FileParse::ReadWholeFile(file), options);
+            generalWindow = new GeneralFrame(FileParse::ReadWholeFile(file));
             ui->GeneralScrollArea->setWidget(generalWindow);
             break;
         case PARAM_TYPE_MELEE:
-            meleeWindow = new MeleeFrame(FileParse::ReadWholeFile(file), options);
+            meleeWindow = new MeleeFrame(FileParse::ReadWholeFile(file));
             ui->MeleeScrollArea->setWidget(meleeWindow);
             break;
         case PARAM_TYPE_KI_BLAST:
-            kiWindow = new KiFrame(FileParse::ReadWholeFile(file), options);
+            kiWindow = new KiFrame(FileParse::ReadWholeFile(file));
             ui->KiBlastScrollArea->setWidget(kiWindow);
             break;
         case PARAM_TYPE_MOVEMENT:
-            moveWindow = new MovementFrame(FileParse::ReadWholeFile(file), options);
+            moveWindow = new MovementFrame(FileParse::ReadWholeFile(file));
             ui->MovementScrollArea->setWidget(moveWindow);
             break;
         default:
-            Debug::Log("Invalid .dat file.", Debug::ERROR, options);
+            Debug::Log("Invalid .dat file.", Debug::ERROR);
             return;
     }
     ui->ParameterTabs->setCurrentIndex(datIndex);
@@ -272,16 +271,16 @@ void NeoStudio::InitDatFile()
 
 void NeoStudio::ExportDat()
 {
-    Debug::Log("ExportDat called.", Debug::INFO, options);
+    Debug::Log("ExportDat called.", Debug::INFO);
 
     if(file.isEmpty())
     {
-        Debug::Log("No file opened.", Debug::ERROR, options);
+        Debug::Log("No file opened.", Debug::ERROR);
         return;
     }
     if(file.toLower().endsWith(".dat"))
     {
-        Debug::Log("Export isn't supported for .dat files. Use 'Save'/'Save As' instead.", Debug::ERROR, options);
+        Debug::Log("Export isn't supported for .dat files. Use 'Save'/'Save As' instead.", Debug::ERROR);
         return;
     }
 
@@ -291,7 +290,7 @@ void NeoStudio::ExportDat()
 
     if(saveDir.isEmpty())
     {
-        Debug::Log("No directory selected.", Debug::ERROR, options);
+        Debug::Log("No directory selected.", Debug::ERROR);
         return;
     }
 
@@ -304,7 +303,7 @@ void NeoStudio::ExportDat()
         case PARAM_TYPE_GENERAL:
             if(pakData->compare(generalWindow->gp->GetFileData()))
             {
-                if(DatSelectionDialog::SelectDat(options))
+                if(DatSelectionDialog::SelectDat())
                     paramData = new QByteArray(generalWindow->gp->GetFileData());
                 else
                     paramData = pakData;
@@ -315,7 +314,7 @@ void NeoStudio::ExportDat()
         case PARAM_TYPE_MELEE:
             if(pakData->compare(meleeWindow->mp->GetFileData()))
             {
-                if(DatSelectionDialog::SelectDat(options))
+                if(DatSelectionDialog::SelectDat())
                     paramData = new QByteArray(meleeWindow->mp->GetFileData());
                 else
                     paramData = pakData;
@@ -326,7 +325,7 @@ void NeoStudio::ExportDat()
         case PARAM_TYPE_KI_BLAST:
             if(pakData->compare(kiWindow->kp->GetFileData()))
             {
-                if(DatSelectionDialog::SelectDat(options))
+                if(DatSelectionDialog::SelectDat())
                     paramData = new QByteArray(kiWindow->kp->GetFileData());
                 else
                     paramData = pakData;
@@ -337,7 +336,7 @@ void NeoStudio::ExportDat()
         case PARAM_TYPE_MOVEMENT:
             if(pakData->compare(moveWindow->mp->GetFileData()))
             {
-                if(DatSelectionDialog::SelectDat(options))
+                if(DatSelectionDialog::SelectDat())
                     paramData = new QByteArray(moveWindow->mp->GetFileData());
                 else
                     paramData = pakData;
@@ -346,7 +345,7 @@ void NeoStudio::ExportDat()
                 paramData = pakData;
             break;
         default:
-            Debug::Log("This parameter section isn't supported yet.", Debug::ERROR, options);
+            Debug::Log("This parameter section isn't supported yet.", Debug::ERROR);
             return;
     }
     FileParse::WriteFile(saveDir + filenameDat[type], paramData);
@@ -354,23 +353,23 @@ void NeoStudio::ExportDat()
 
 void NeoStudio::ImportDat()
 {
-    Debug::Log("ImportDat called.", Debug::INFO, options);
+    Debug::Log("ImportDat called.", Debug::INFO);
 
     if(file.isEmpty())
     {
-        Debug::Log("No file opened.", Debug::ERROR, options);
+        Debug::Log("No file opened.", Debug::ERROR);
         return;
     }
     else if(!file.toLower().endsWith(".pak"))
     {
-        Debug::Log("Opened file isn't a .pak file.", Debug::ERROR, options);
+        Debug::Log("Opened file isn't a .pak file.", Debug::ERROR);
         return;
     }
 
     QString datPath = QFileDialog::getOpenFileName(this, "Open .dat file", file, "Parameter Files (*.dat)");
     if(datPath.isEmpty())
     {
-        Debug::Log("No path selected.", Debug::ERROR, options);
+        Debug::Log("No path selected.", Debug::ERROR);
         return;
     }
     QByteArray datData = FileParse::ReadWholeFile(datPath);
@@ -399,14 +398,14 @@ void NeoStudio::ImportDat()
             moveWindow->InitializeUIElements();
             break;
         default:
-            Debug::Log("This parameter section isn't supported yet.", Debug::ERROR, options);
+            Debug::Log("This parameter section isn't supported yet.", Debug::ERROR);
     }
 }
 
 
 void NeoStudio::ResetUiMode()
 {
-    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->uiMode + ".qss"));
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + g_Options.uiMode + ".qss"));
 
     if(generalWindow != nullptr)
         generalWindow->ResetUiMode();

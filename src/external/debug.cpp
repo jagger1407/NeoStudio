@@ -1,28 +1,28 @@
 #include "debug.h"
 
-void Debug::Log(const QString Message, LogLevel Severity, Options* options)
+void Debug::Log(const QString Message, LogLevel Severity)
 {
-    switch(options->logMode)
+    switch(g_Options.logMode)
     {
         case Options::RELEASE:
             if(Severity == INFO) return;
             ConsolePrint(Message, Severity);
             LogFilePrint(Message, Severity);
-            if(Severity == ERROR) ShowError(Message, options);
+            if(Severity == ERROR) ShowError(Message);
             break;
         case Options::RELEASE_NOFILE:
             if(Severity == INFO) return;
             ConsolePrint(Message, Severity);
-            if(Severity == ERROR) ShowError(Message, options);
+            if(Severity == ERROR) ShowError(Message);
             break;
         case Options::DEV:
             ConsolePrint(Message, Severity);
             LogFilePrint(Message, Severity);
-            if(Severity == ERROR) ShowError(Message, options);
+            if(Severity == ERROR) ShowError(Message);
             break;
         case Options::DEV_NOFILE:
             ConsolePrint(Message, Severity);
-            if(Severity == ERROR) ShowError(Message, options);
+            if(Severity == ERROR) ShowError(Message);
             break;
         case Options::LOGMODE_COUNT:
         default:
@@ -34,10 +34,10 @@ void Debug::ConsolePrint(const QString Message, LogLevel Severity)
     QString logLevels[3] = { "Info: ", "Warning: ", "ERROR! " };
     qInfo().noquote() << QDateTime::currentDateTime().toString() << " - " + logLevels[Severity] << Message;
 }
-void Debug::ShowError(const QString Message, Options* options)
+void Debug::ShowError(const QString Message)
 {
     QMessageBox ErrorWindow;
-    ErrorWindow.setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->uiMode + ".qss"));
+    ErrorWindow.setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + g_Options.uiMode + ".qss"));
     ErrorWindow.setWindowTitle("Error!");
     ErrorWindow.setText(Message);
     QPushButton* okBtn = new QPushButton("OK");

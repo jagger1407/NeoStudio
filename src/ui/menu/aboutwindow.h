@@ -21,7 +21,7 @@ public:
     /**
      * Default constructor
      */
-    AboutWindow(Options* options);
+    AboutWindow();
 private:
     QScopedPointer<Ui::AboutWindow> ui;
 };

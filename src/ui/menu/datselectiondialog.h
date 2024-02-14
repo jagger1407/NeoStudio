@@ -18,10 +18,9 @@ class DatSelectionDialog : public QDialog
     Q_OBJECT
 public:
     /**false = original, true = edited*/
-    static bool SelectDat(Options* options);
+    static bool SelectDat();
 private:
-    DatSelectionDialog(Options* options, QWidget* parent = nullptr);
-    Options* op = nullptr;
+    DatSelectionDialog(QWidget* parent = nullptr);
     QScopedPointer<Ui::DatSelectionDialog> ui;
 
     bool useEdited = false;

@@ -22,10 +22,9 @@ public:
     /**
      * Default constructor
      */
-    OptionDialog(Options* options);
+    OptionDialog();
 private:
     QScopedPointer<Ui::OptionDialog> ui;
-    Options* options = nullptr;
     bool initializing = false;
 private slots:
     void DebugEnableCheckState_Changed(int NewState);

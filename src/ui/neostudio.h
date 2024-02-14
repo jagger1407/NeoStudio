@@ -51,7 +51,6 @@ private:
     QString file;
     /**PakControls object to act as an interface between this program and the file itself.*/
     PakControls* pak = nullptr;
-    Options* options = nullptr;
     /**Initializes the program using the current Pak filepath.*/
     void InitPakFile();
     /**Initializes one specific section using the current Dat filepath.*/

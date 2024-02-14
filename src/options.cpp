@@ -1,56 +1,48 @@
 #include "options.h"
 
-Options::Options()
+Options g_Options;
+
+void Options::InitOptions()
 {
     if(!FileParse::DoesFileExist(CONFIG_PATH))
-        LoadDefaults(true);
-    else LoadConfig();
+        g_Options.LoadDefaults(true);
+    else g_Options.LoadConfig();
 }
-
-#if 1 // unused
-Options::Options(LogMode logMode,TooltipColor tooltipColor, QString uiMode)
-{
-    this->logMode = logMode;
-    this->tooltipColor = tooltipColor;
-    this->uiMode = uiMode;
-    advancedOptions = false;
-}
-#endif
 
 void Options::LoadDefaults(bool saveFile)
 {
-    cfg = new CfgParser();
+    this->cfg = new CfgParser();
 
-    logMode = DEFAULT_LOGMODE;
-    tooltipColor = DEFAULT_TOOLTIPCOLOR;
-    uiMode = DEFAULT_UIMODE;
-    advancedOptions = DEFAULT_ADVANCED_OPTIONS;
+    this->logMode = DEFAULT_LOGMODE;
+    this->tooltipColor = DEFAULT_TOOLTIPCOLOR;
+    this->uiMode = DEFAULT_UIMODE;
+    this->advancedOptions = DEFAULT_ADVANCED_OPTIONS;
 
-    cfg->Add(OptionStr[LOGMODE], LogmodeStr[DEFAULT_LOGMODE]);
-    cfg->Add(OptionStr[TOOLTIPCOLOR], TooltipStr[DEFAULT_TOOLTIPCOLOR]);
-    cfg->Add(OptionStr[UI_MODE], DEFAULT_UIMODE);
-    cfg->Add(OptionStr[ADVANCED_OPTIONS], QString::number(DEFAULT_ADVANCED_OPTIONS));
+    this->cfg->Add(OptionStr[LOGMODE], LogmodeStr[DEFAULT_LOGMODE]);
+    this->cfg->Add(OptionStr[TOOLTIPCOLOR], TooltipStr[DEFAULT_TOOLTIPCOLOR]);
+    this->cfg->Add(OptionStr[UI_MODE], DEFAULT_UIMODE);
+    this->cfg->Add(OptionStr[ADVANCED_OPTIONS], QString::number(DEFAULT_ADVANCED_OPTIONS));
 
-    if(saveFile) cfg->WriteConfig(CONFIG_PATH);
+    if(saveFile) this->cfg->WriteConfig(CONFIG_PATH);
 }
 
 bool Options::LoadConfig()
 {
     if(!FileParse::DoesFileExist(CONFIG_PATH)) return false;
-    cfg = new CfgParser(CONFIG_PATH);
+    this->cfg = new CfgParser(CONFIG_PATH);
 
-    QString option = cfg->GetParameter(OptionStr[LOGMODE]);
+    QString option = this->cfg->GetParameter(OptionStr[LOGMODE]);
     for(int i=0;i<LOGMODE_COUNT;i++)
-        if(option == LogmodeStr[i]) logMode = (LogMode)i;
+        if(option == LogmodeStr[i]) this->logMode = (LogMode)i;
 
     option = cfg->GetParameter(OptionStr[TOOLTIPCOLOR]);
     for(int i=0;i<TOOLTIPCOLOR_COUNT;i++)
-        if(option == TooltipStr[i]) tooltipColor = (TooltipColor)i;
+        if(option == TooltipStr[i]) this->tooltipColor = (TooltipColor)i;
 
-    uiMode = cfg->GetParameter(OptionStr[UI_MODE]);
+    this->uiMode = cfg->GetParameter(OptionStr[UI_MODE]);
 
     option = cfg->GetParameter(OptionStr[ADVANCED_OPTIONS]);
-    advancedOptions = option.toUInt();
+    this->advancedOptions = option.toUInt();
 
     return true;
 }

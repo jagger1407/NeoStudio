@@ -1,13 +1,13 @@
 #include "datselectiondialog.h"
 
-bool DatSelectionDialog::SelectDat(Options* options)
+bool DatSelectionDialog::SelectDat()
 {
-    DatSelectionDialog window(options);
+    DatSelectionDialog window;
     window.exec();
     return window.useEdited;
 }
 
-DatSelectionDialog::DatSelectionDialog(Options* options, QWidget* parent) : op(options), ui(new Ui::DatSelectionDialog)
+DatSelectionDialog::DatSelectionDialog(QWidget* parent) : ui(new Ui::DatSelectionDialog)
 {
     ui->setupUi(this);
 }

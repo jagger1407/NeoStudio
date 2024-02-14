@@ -1,12 +1,12 @@
 #include "kiparameters.h"
 
-KiParameters::KiParameters(QByteArray ParameterData, Options* options) : options(options)
+KiParameters::KiParameters(QByteArray ParameterData)
 {
     fileData = ParameterData;
     rawData = fileData.data();
     if(fileData == nullptr || rawData == nullptr)
     {
-        Debug::Log("Construction of KiParameter object failed!", Debug::ERROR, options);
+        Debug::Log("Construction of KiParameter object failed!", Debug::ERROR);
         return;
     }
 
@@ -36,76 +36,76 @@ KiParameters::KiParameters(QByteArray ParameterData, Options* options) : options
 
 QByteArray KiParameters::GetFileData()
 {
-    Debug::Log("GetFileData called.", Debug::INFO, options);
+    Debug::Log("GetFileData called.", Debug::INFO);
     return QByteArray(fileData);
 }
 void KiParameters::SetFileData(QByteArray NewData)
 {
-    Debug::Log("SetFileData called.", Debug::INFO, options);
+    Debug::Log("SetFileData called.", Debug::INFO);
     fileData = NewData;
 }
 
 void KiParameters::setCurrentBlast(int BlastID)
 {
-    Debug::Log("setCurrentBlast called.", Debug::INFO, options);
+    Debug::Log("setCurrentBlast called.", Debug::INFO);
     blastOffset = BlastID * KI_BLAST_ATTACK_SIZE;
 }
 
 unsigned char KiParameters::GetUByteParameter(QSpinBox* Object)
 {
-    Debug::Log("GetUByteParameter called.", Debug::INFO, options);
+    Debug::Log("GetUByteParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement) return *(rawData + blastOffset + parameter[i].offset);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return (unsigned char)-1;
 }
 
 unsigned char KiParameters::GetUByteParameter(QComboBox* Object)
 {
-    Debug::Log("GetUByteParameter called.", Debug::INFO, options);
+    Debug::Log("GetUByteParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement) return *(rawData + blastOffset + parameter[i].offset);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return (unsigned char)-1;
 }
 
 
 unsigned short KiParameters::GetUShortParameter(QSpinBox* Object)
 {
-    Debug::Log("GetUShortParameter called.", Debug::INFO, options);
-    Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING, options);
+    Debug::Log("GetUShortParameter called.", Debug::INFO);
+    Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
     return (unsigned short)-1;
 }
 
 int KiParameters::GetIntParameter(QSpinBox* Object)
 {
-    Debug::Log("GetIntParameter called.", Debug::INFO, options);
+    Debug::Log("GetIntParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement) return *(int*)(rawData + blastOffset + parameter[i].offset);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return -1;
 }
 
 float KiParameters::GetFloatParameter(QDoubleSpinBox* Object)
 {
-    Debug::Log("GetFloatParameter called.", Debug::INFO, options);
+    Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement) return *(float*)( rawData + blastOffset + parameter[i].offset);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return (unsigned char)-1;
 }
 
 void KiParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewValue)
 {
-    Debug::Log("SetUByteParameter called.", Debug::INFO, options);
+    Debug::Log("SetUByteParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement)
@@ -114,12 +114,12 @@ void KiParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewValue)
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
 }
 
 void KiParameters::SetUByteParameter(QComboBox* Object, unsigned char NewValue)
 {
-    Debug::Log("SetUByteParameter called.", Debug::INFO, options);
+    Debug::Log("SetUByteParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement)
@@ -128,18 +128,18 @@ void KiParameters::SetUByteParameter(QComboBox* Object, unsigned char NewValue)
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
 }
 
 void KiParameters::SetUShortParameter(QSpinBox* Object, short unsigned int NewValue)
 {
-    Debug::Log("SetUShortParameter called.", Debug::INFO, options);
-    Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING, options);
+    Debug::Log("SetUShortParameter called.", Debug::INFO);
+    Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
 }
 
 void KiParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 {
-    Debug::Log("SetIntParameter called.", Debug::INFO, options);
+    Debug::Log("SetIntParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement)
@@ -148,12 +148,12 @@ void KiParameters::SetIntParameter(QSpinBox* Object, int NewValue)
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
 }
 
 void KiParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
 {
-    Debug::Log("GetFloatParameter called.", Debug::INFO, options);
+    Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement)
@@ -162,5 +162,5 @@ void KiParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
 }

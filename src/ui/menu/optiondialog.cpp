@@ -1,37 +1,35 @@
 #include "optiondialog.h"
 
-OptionDialog::OptionDialog(Options* options)
-    : ui(new Ui::OptionDialog), options(options)
+OptionDialog::OptionDialog()
+    : ui(new Ui::OptionDialog)
 {
     initializing = true;
-    int logMode = this->options->logMode;
-    QString uiMode = this->options->uiMode;
-    int tool = this->options->tooltipColor;
-    bool advanced = this->options->advancedOptions;
+
     ui->setupUi(this);
     ReloadUIsBtn_Clicked();
-    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->uiMode + ".qss"));
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + g_Options.uiMode + ".qss"));
     this->setWindowTitle("Options");
     this->setWindowIcon(QIcon("./assets/cog-wheel.png"));
 
-    ui->LogModeBox->setCurrentIndex(logMode);
-    ui->TooltipBox->setCurrentIndex(tool);
-    ui->UiModeBox->setCurrentText(uiMode);
-    ui->DebugEnableCheckBox->setCheckState((Qt::CheckState)(advanced << 1));
+    ui->LogModeBox->setCurrentIndex(g_Options.logMode);
+    ui->TooltipBox->setCurrentIndex(g_Options.tooltipColor);
+    ui->UiModeBox->setCurrentText(g_Options.uiMode);
+    ui->DebugEnableCheckBox->setCheckState((Qt::CheckState)(g_Options.advancedOptions << 1));
 
-    if(!advanced)
+    if(!g_Options.advancedOptions)
     {
         ui->LogModeBox->setStyleSheet("color:grey");
         ui->LogModeLbl->setStyleSheet("color:grey");
     }
 
     initializing = false;
-    Debug::Log("OptionDialog constructed.", Debug::INFO, this->options);
+    Debug::Log("OptionDialog constructed.", Debug::INFO);
 }
 
 void OptionDialog::DebugEnableCheckState_Changed(int NewState)
 {
-    Debug::Log("DebugEnableCheckState_Changed slot triggered.", Debug::INFO, options);
+    if(initializing) return;
+    Debug::Log("DebugEnableCheckState_Changed slot triggered.", Debug::INFO);
     QString style;
     ui->LogModeLbl->setEnabled((bool)NewState);
     ui->LogModeBox->setEnabled((bool)NewState);
@@ -46,24 +44,26 @@ void OptionDialog::DebugEnableCheckState_Changed(int NewState)
     ui->LogModeBox->setStyleSheet(style);
     ui->LogModeLbl->setStyleSheet(style);
 
-    this->options->advancedOptions = NewState >> 1;
+    g_Options.advancedOptions = NewState >> 1;
 }
 void OptionDialog::LoggingMode_IndexChanged(int NewIndex)
 {
-    Debug::Log("LoggingMode_IndexChanged slot triggered.", Debug::INFO, options);
-    this->options->logMode = (Options::LogMode)NewIndex;
+    if(initializing) return;
+    Debug::Log("LoggingMode_IndexChanged slot triggered.", Debug::INFO);
+    g_Options.logMode = (Options::LogMode)NewIndex;
 }
 void OptionDialog::TooltipColor_IndexChanged(int NewIndex)
 {
-    Debug::Log("TooltipColor_IndexChanged slot triggered.", Debug::INFO, options);
-    this->options->tooltipColor = (Options::TooltipColor)NewIndex;
+    if(initializing) return;
+    Debug::Log("TooltipColor_IndexChanged slot triggered.", Debug::INFO);
+    g_Options.tooltipColor = (Options::TooltipColor)NewIndex;
 }
 void OptionDialog::UiModeBox_IndexChanged(int NewIndex)
 {
     if(initializing) return;
-    Debug::Log("UiModeBox_IndexChanged slot triggered.", Debug::INFO, options);
+    Debug::Log("UiModeBox_IndexChanged slot triggered.", Debug::INFO);
     QString style = ui->UiModeBox->currentText();
-    this->options->uiMode = style;
+    g_Options.uiMode = style;
     this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + style +".qss"));
 }
 void OptionDialog::ReloadUIsBtn_Clicked()
@@ -77,23 +77,25 @@ void OptionDialog::ReloadUIsBtn_Clicked()
         style.replace(".qss", "");
         ui->UiModeBox->addItem(style);
     }
-    ui->UiModeBox->setCurrentText(options->uiMode);
+    ui->UiModeBox->setCurrentText(g_Options.uiMode);
     initializing = false;
 }
 void OptionDialog::SaveBtn_Clicked()
 {
-    Debug::Log("SaveBtn_Clicked slot triggered.", Debug::INFO, options);
+    if(initializing) return;
+    Debug::Log("SaveBtn_Clicked slot triggered.", Debug::INFO);
 
-    this->options->uiMode = ui->UiModeBox->currentText();
-    this->options->tooltipColor = (Options::TooltipColor)ui->TooltipBox->currentIndex();
-    this->options->logMode = (Options::LogMode)ui->LogModeBox->currentIndex();
-    this->options->advancedOptions = (bool)(ui->DebugEnableCheckBox->checkState() >> 1);
+    g_Options.uiMode = ui->UiModeBox->currentText();
+    g_Options.tooltipColor = (Options::TooltipColor)ui->TooltipBox->currentIndex();
+    g_Options.logMode = (Options::LogMode)ui->LogModeBox->currentIndex();
+    g_Options.advancedOptions = (bool)(ui->DebugEnableCheckBox->checkState() >> 1);
 
-    this->options->SaveConfig();
+    g_Options.SaveConfig();
     this->close();
 }
 void OptionDialog::CancelBtn_Clicked()
 {
-    Debug::Log("CancelBtn_Clicked slot triggered.", Debug::INFO, options);
+    if(initializing) return;
+    Debug::Log("CancelBtn_Clicked slot triggered.", Debug::INFO);
     this->close();
 }

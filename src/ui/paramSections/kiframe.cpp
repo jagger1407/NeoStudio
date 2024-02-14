@@ -1,11 +1,11 @@
 #include "kiframe.h"
 
-KiFrame::KiFrame(QByteArray Data, Options* options, QWidget* parent) : QFrame(parent), options(options)
+KiFrame::KiFrame(QByteArray Data, QWidget* parent) : QFrame(parent)
 {
     ui = new Ui_KiFrame();
     ui->setupUi(this);
 
-    kp = new KiParameters(Data, options);
+    kp = new KiParameters(Data);
 
     #if 1 // Passing the pointers to the UI elements to kp
     kp->parameter[KiParameters::Header].UiElement = ui->HeaderBox;
@@ -42,12 +42,12 @@ KiFrame::KiFrame(QByteArray Data, Options* options, QWidget* parent) : QFrame(pa
     */
     IsInitializing = false;
 
-    Debug::Log("New KiFrame constructed.", Debug::INFO, options);
+    Debug::Log("New KiFrame constructed.", Debug::INFO);
 }
 
 void KiFrame::InitializeUIElements()
 {
-    Debug::Log("InitializeUIElements called.", Debug::INFO, options);
+    Debug::Log("InitializeUIElements called.", Debug::INFO);
 
     IsInitializing = true;
 
@@ -55,7 +55,7 @@ void KiFrame::InitializeUIElements()
     for(QLabel* lbl : labels)
     {
         if(lbl->toolTip().isEmpty()) continue;
-        lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
+        lbl->setToolTip(g_Options.GetStyledTooltip(lbl->toolTip()));
     }
 
     QList<QWidget*> elements = this->findChildren<QWidget*>();
@@ -84,14 +84,14 @@ void KiFrame::InitializeUIElements()
 void KiFrame::CurrentBlast_IndexChanged(int NewIndex)
 {
     if(IsInitializing || kp == nullptr) return;
-    Debug::Log("CurrentBlast_IndexChanged slot triggered.", Debug::INFO, options);
+    Debug::Log("CurrentBlast_IndexChanged slot triggered.", Debug::INFO);
     kp->setCurrentBlast(NewIndex);
     InitializeUIElements();
 }
 void KiFrame::QSpinBox_Changed(int NewValue)
 {
     if(IsInitializing || kp == nullptr) return;
-    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO, options);
+    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO);
     QSpinBox* object = (QSpinBox*)sender();
     if(object->maximum() > 255) kp->SetUByteParameter(object, NewValue);
     else kp->SetIntParameter(object, NewValue);
@@ -100,14 +100,14 @@ void KiFrame::QSpinBox_Changed(int NewValue)
 void KiFrame::QDoubleSpinBox_Changed(double NewValue)
 {
     if(IsInitializing || kp == nullptr) return;
-    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO, options);
+    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO);
     kp->SetFloatParameter((QDoubleSpinBox*)sender(), NewValue);
 }
 
 void KiFrame::ComboBox_IndexChanged(int NewIndex)
 {
     if(IsInitializing || kp == nullptr) return;
-    Debug::Log("ComboBox_IndexChanged slot triggered.", Debug::INFO, options);
+    Debug::Log("ComboBox_IndexChanged slot triggered.", Debug::INFO);
     kp->SetUByteParameter((QComboBox*)sender(), NewIndex);
 }
 
@@ -115,7 +115,7 @@ void KiFrame::ComboBox_IndexChanged(int NewIndex)
 
 void KiFrame::ResetUiMode()
 {
-    Debug::Log("ResetUiMode called.", Debug::INFO, options);
+    Debug::Log("ResetUiMode called.", Debug::INFO);
 
     // Getting all the UI Elements and categorizing them by type
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
@@ -124,11 +124,11 @@ void KiFrame::ResetUiMode()
     QList<QLabel*> labels = this->findChildren<QLabel*>();
 
     // Change the StyleSheet of Window + each Element
-    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->uiMode + ".qss"));
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + g_Options.uiMode + ".qss"));
     // Change the StyleSheet for the tooltips as well, can't leave them out now, can we?
     for(QLabel* lbl : labels)
     {
         if(lbl->toolTip().isEmpty()) continue;
-        lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
+        lbl->setToolTip(g_Options.GetStyledTooltip(lbl->toolTip()));
     }
 }

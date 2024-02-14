@@ -1,12 +1,12 @@
 #include "meleeparameters.h"
 
-MeleeParameters::MeleeParameters(QByteArray ParameterData, Options* options) : options(options)
+MeleeParameters::MeleeParameters(QByteArray ParameterData)
 {
     fileData = ParameterData;
     rawData = fileData.data();
     if(fileData == nullptr || rawData == nullptr)
     {
-        Debug::Log("Construction of MeleeParameter object failed!", Debug::ERROR, options);
+        Debug::Log("Construction of MeleeParameter object failed!", Debug::ERROR);
         return;
     }
 
@@ -52,27 +52,27 @@ MeleeParameters::MeleeParameters(QByteArray ParameterData, Options* options) : o
     parameter[Unk63].offset = 0x63;
 #endif
 
-    Debug::Log("New MeleeParameter object constructed.", Debug::INFO, options);
+    Debug::Log("New MeleeParameter object constructed.", Debug::INFO);
 }
 QByteArray MeleeParameters::GetFileData()
 {
-    Debug::Log("GetFileData called.", Debug::INFO, options);
+    Debug::Log("GetFileData called.", Debug::INFO);
     return QByteArray(fileData);
 }
 void MeleeParameters::SetFileData(QByteArray NewData)
 {
-    Debug::Log("SetFileData called.", Debug::INFO, options);
+    Debug::Log("SetFileData called.", Debug::INFO);
     fileData.replace(0, fileData.size(), NewData);
 }
 void MeleeParameters::setCurrentAttack(int AttackID)
 {
-    Debug::Log("setCurrentAttack called.", Debug::INFO, options);
+    Debug::Log("setCurrentAttack called.", Debug::INFO);
     attackOffset = AttackID * MELEE_ATTACK_SIZE;
 }
 
 bool MeleeParameters::GetFlagParameter(QCheckBox* Object)
 {
-    Debug::Log("GetFlagParameter called.", Debug::INFO, options);
+    Debug::Log("GetFlagParameter called.", Debug::INFO);
 
     if(Object == (void*)parameter[SecondaryString].UiElement)
         return BitManipulation::Bit(*(rawData + attackOffset + parameter[SecondaryString].offset), 1);
@@ -84,61 +84,61 @@ bool MeleeParameters::GetFlagParameter(QCheckBox* Object)
         return BitManipulation::Bit(*(rawData + attackOffset + parameter[GuardType].offset), 0);
 
     else
-        Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+        Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
 
     return false;
 }
 unsigned char MeleeParameters::GetUByteParameter(QSpinBox* Object)
 {
-    Debug::Log("GetUByteParameter called.", Debug::INFO, options);
+    Debug::Log("GetUByteParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement) return *(rawData + attackOffset + parameter[i].offset);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return 0;
 }
 unsigned char MeleeParameters::GetUByteParameter(QComboBox* Object)
 {
-    Debug::Log("GetUByteParameter called.", Debug::INFO, options);
+    Debug::Log("GetUByteParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement) return *(rawData + attackOffset + parameter[i].offset);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return 0;
 }
 unsigned short MeleeParameters::GetUShortParameter(QSpinBox* Object)
 {
-    Debug::Log("GetUShortParameter called.", Debug::INFO, options);
+    Debug::Log("GetUShortParameter called.", Debug::INFO);
     // There are no 2-Byte Parameters in this Parameter-section.
-    Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING, options);
+    Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
     return (unsigned short)-1;
 }
 int MeleeParameters::GetIntParameter(QSpinBox* Object)
 {
-    Debug::Log("GetIntParameter called.", Debug::INFO, options);
+    Debug::Log("GetIntParameter called.", Debug::INFO);
 
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement) return *(int*)(rawData + attackOffset + parameter[i].offset);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return 0;
 }
 float MeleeParameters::GetFloatParameter(QDoubleSpinBox* Object)
 {
-    Debug::Log("GetFloatParameter called.", Debug::INFO, options);
+    Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement) return *(float*)(rawData + attackOffset + parameter[i].offset);
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return 0;
 }
 void MeleeParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
 {
-    Debug::Log("SetFlagParameter called.", Debug::INFO, options);
+    Debug::Log("SetFlagParameter called.", Debug::INFO);
     if(Object == (void*)parameter[SecondaryString].UiElement)
         ChangeData(attackOffset + parameter[SecondaryString].offset, 1, NewValue);
 
@@ -149,11 +149,11 @@ void MeleeParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
         ChangeData(attackOffset + parameter[GuardType].offset, 0, NewValue);
 
     else
-        Debug::Log("Object not part of UiElements List.", Debug::ERROR, options);
+        Debug::Log("Object not part of UiElements List.", Debug::ERROR);
 }
 void MeleeParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewValue)
 {
-    Debug::Log("SetUByteParameter called.", Debug::INFO, options);
+    Debug::Log("SetUByteParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement)
@@ -162,11 +162,11 @@ void MeleeParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewValue
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
 }
 void MeleeParameters::SetUByteParameter(QComboBox* Object, unsigned char NewValue)
 {
-    Debug::Log("SetUByteParameter called.", Debug::INFO, options);
+    Debug::Log("SetUByteParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement)
@@ -175,16 +175,16 @@ void MeleeParameters::SetUByteParameter(QComboBox* Object, unsigned char NewValu
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
 }
 void MeleeParameters::SetUShortParameter(QSpinBox* Object, unsigned short NewValue)
 {
-    Debug::Log("SetUShortParameter called.", Debug::INFO, options);
-    Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING, options);
+    Debug::Log("SetUShortParameter called.", Debug::INFO);
+    Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
 }
 void MeleeParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 {
-    Debug::Log("SetIntParameter called.", Debug::INFO, options);
+    Debug::Log("SetIntParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement)
@@ -193,11 +193,11 @@ void MeleeParameters::SetIntParameter(QSpinBox* Object, int NewValue)
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
 }
 void MeleeParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
 {
-    Debug::Log("SetFloatParameter called.", Debug::INFO, options);
+    Debug::Log("SetFloatParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == (void*)parameter[i].UiElement)
@@ -206,5 +206,5 @@ void MeleeParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
             return;
         }
     }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR, options);
+    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
 }

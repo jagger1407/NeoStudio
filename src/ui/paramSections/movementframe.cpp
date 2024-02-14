@@ -1,12 +1,12 @@
 #include "movementframe.h"
 #include "ui_movementframe.h"
 
-MovementFrame::MovementFrame(QByteArray Data, Options* options, QWidget* parent) : QFrame(parent), options(options)
+MovementFrame::MovementFrame(QByteArray Data, QWidget* parent) : QFrame(parent)
 {
     ui = new Ui_MovementFrame();
     ui->setupUi(this);
 
-    mp = new MovementParameters(Data, options);
+    mp = new MovementParameters(Data);
 
     #if 1 // Passing the pointers to the UI elements to kp
     mp->parameter[MovementParameters::RegMovSpeed].UiElement = ui->MovSpeedBox;
@@ -54,12 +54,12 @@ MovementFrame::MovementFrame(QByteArray Data, Options* options, QWidget* parent)
 
     InitializeUIElements();
     ResetUiMode();
-    Debug::Log("New MovementFrame constructed.", Debug::INFO, options);
+    Debug::Log("New MovementFrame constructed.", Debug::INFO);
 }
 
 void MovementFrame::InitializeUIElements()
 {
-    Debug::Log("InitializeUIElements called.", Debug::INFO, options);
+    Debug::Log("InitializeUIElements called.", Debug::INFO);
 
     IsInitializing = true;
 
@@ -67,7 +67,7 @@ void MovementFrame::InitializeUIElements()
     for(QLabel* lbl : labels)
     {
         if(lbl->toolTip().isEmpty()) continue;
-        lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
+        lbl->setToolTip(g_Options.GetStyledTooltip(lbl->toolTip()));
     }
 
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
@@ -86,20 +86,20 @@ void MovementFrame::InitializeUIElements()
 
 void MovementFrame::QSpinBox_Changed(int NewValue)
 {
-    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO, options);
+    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO);
     QSpinBox* box = (QSpinBox*)sender();
     mp->SetIntParameter(box, NewValue);
 }
 void MovementFrame::QDoubleSpinBox_Changed(double NewValue)
 {
-    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO, options);
+    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO);
     QDoubleSpinBox* box = (QDoubleSpinBox*)sender();
     mp->SetFloatParameter(box, NewValue);
 }
 
 void MovementFrame::ResetUiMode()
 {
-    Debug::Log("ResetUiMode called.", Debug::INFO, options);
+    Debug::Log("ResetUiMode called.", Debug::INFO);
 
     // Getting all the UI Elements and categorizing them by type
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
@@ -107,11 +107,11 @@ void MovementFrame::ResetUiMode()
     QList<QLabel*> labels = this->findChildren<QLabel*>();
 
     // Change the StyleSheet of Window + each Element
-    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + options->uiMode + ".qss"));
+    this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + g_Options.uiMode + ".qss"));
     // Change the StyleSheet for the tooltips as well, can't leave them out now, can we?
     for(QLabel* lbl : labels)
     {
         if(lbl->toolTip().isEmpty()) continue;
-        lbl->setToolTip(options->GetStyledTooltip(lbl->toolTip()));
+        lbl->setToolTip(g_Options.GetStyledTooltip(lbl->toolTip()));
     }
 }

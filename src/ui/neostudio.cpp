@@ -280,8 +280,8 @@ void NeoStudio::ExportDat()
     }
     if(file.toLower().endsWith(".dat"))
     {
-        Debug::Log("Export isn't supported for .dat files. Use 'Save'/'Save As' instead.", Debug::ERROR);
-        return;
+        Debug::Log("Export isn't supported for .dat files. Using 'SaveAs' instead.", Debug::WARNING);
+        SaveFileAs();
     }
 
     int type = ui->ParameterTabs->currentIndex();

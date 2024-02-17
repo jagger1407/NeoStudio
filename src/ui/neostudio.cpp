@@ -103,6 +103,11 @@ void NeoStudio::SaveFile()
                 return;
         }
         FileParse::WriteFile(file, datPtr);
+
+        if(FileParse::DoesFileExist(file))
+        {
+            Debug::Log("File '" + file + "' saved successfully.", Debug::INFO);
+        }
     }
 }
 
@@ -157,6 +162,10 @@ void NeoStudio::SaveFileAs()
         }
         FileParse::WriteFile(newFile, datPtr);
         delete datPtr;
+        if(FileParse::DoesFileExist(newFile))
+        {
+            Debug::Log("File '" + newFile + "' saved successfully.", Debug::INFO);
+        }
     }
 }
 
@@ -349,8 +358,20 @@ void NeoStudio::ExportDat()
             delete pakData;
             return;
     }
-    FileParse::WriteFile(saveDir + filenameDat[type], paramData);
+
+    if(!FileParse::DoesFileExist(sectionNameFile))
+    {
+        Debug::Log("Section Name List (" + sectionNameFile + ") doesn't exist.", Debug::ERROR);
+        delete pakData;
+        return;
+    }
+    QStringList sectionNames = FileParse::ReadLines(sectionNameFile);
+    FileParse::WriteFile(saveDir + "/" + sectionNames[type + PARAM_OFFSET_GENERAL - 1], paramData);
     delete pakData;
+    if(FileParse::DoesFileExist(saveDir + "/" + sectionNames[type + PARAM_OFFSET_GENERAL - 1]))
+    {
+        Debug::Log("File '" + sectionNames[type + PARAM_OFFSET_GENERAL - 1] + "' saved successfully.", Debug::INFO);
+    }
 }
 
 void NeoStudio::ImportDat()

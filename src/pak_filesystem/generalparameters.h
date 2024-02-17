@@ -7,7 +7,7 @@
 /**
  * Object for the general parameter section of a .pak file.
  */
-class GeneralParameters :  ParameterFile
+class GeneralParameters : ParameterFile
 {
 public:
     typedef enum
@@ -96,10 +96,9 @@ public:
     QByteArray* GetFileData();
     void SetFileData(QByteArray NewData);
     /**
-     * Gets the parameter type of this parameter object.
+     * The parameter type of this parameter object.
      */
-    ParameterType GetParameterType()
-    { return PARAM_TYPE_GENERAL; };
+    const ParameterType paramType = PARAM_TYPE_GENERAL;
 private:
     const char* constData = nullptr;
 };

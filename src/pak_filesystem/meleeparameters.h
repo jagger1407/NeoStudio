@@ -76,10 +76,9 @@ public:
 
     void setCurrentAttack(int AttackID);
     /**
-     * Gets the parameter type of this parameter object.
+     * The parameter type of this parameter object.
      */
-    ParameterType GetParameterType()
-    { return PARAM_TYPE_MELEE; };
+    const ParameterType paramType = PARAM_TYPE_MELEE;
     QByteArray* GetFileData();
     void SetFileData(QByteArray NewData);
 private:

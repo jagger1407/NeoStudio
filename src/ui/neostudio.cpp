@@ -87,16 +87,16 @@ void NeoStudio::SaveFile()
         switch(datIndex)
         {
             case PARAM_TYPE_GENERAL:
-                datPtr = new QByteArray(generalWindow->gp->GetFileData());
+                datPtr = generalWindow->gp->GetFileData();
                 break;
             case PARAM_TYPE_MELEE:
-                datPtr = new QByteArray(meleeWindow->mp->GetFileData());
+                datPtr = meleeWindow->mp->GetFileData();
                 break;
             case PARAM_TYPE_KI_BLAST:
-                datPtr = new QByteArray(kiWindow->kp->GetFileData());
+                datPtr = kiWindow->kp->GetFileData();
                 break;
             case PARAM_TYPE_MOVEMENT:
-                datPtr = new QByteArray(moveWindow->mp->GetFileData());
+                datPtr = moveWindow->mp->GetFileData();
                 break;
             default:
                 Debug::Log("Invalid .dat file.", Debug::ERROR);
@@ -140,16 +140,16 @@ void NeoStudio::SaveFileAs()
         switch(datIndex)
         {
             case PARAM_TYPE_GENERAL:
-                datPtr = new QByteArray(generalWindow->gp->GetFileData());
+                datPtr = generalWindow->gp->GetFileData();
                 break;
             case PARAM_TYPE_MELEE:
-                datPtr = new QByteArray(meleeWindow->mp->GetFileData());
+                datPtr = meleeWindow->mp->GetFileData();
                 break;
             case PARAM_TYPE_KI_BLAST:
-                datPtr = new QByteArray(kiWindow->kp->GetFileData());
+                datPtr = kiWindow->kp->GetFileData();
                 break;
             case PARAM_TYPE_MOVEMENT:
-                datPtr = new QByteArray(moveWindow->mp->GetFileData());
+                datPtr = moveWindow->mp->GetFileData();
                 break;
             default:
                 Debug::Log("Invalid .dat file.", Debug::ERROR);
@@ -301,10 +301,10 @@ void NeoStudio::ExportDat()
     switch(type)
     {
         case PARAM_TYPE_GENERAL:
-            if(pakData->compare(generalWindow->gp->GetFileData()))
+            if(pakData->compare(*generalWindow->gp->GetFileData()))
             {
                 if(DatSelectionDialog::SelectDat())
-                    paramData = new QByteArray(generalWindow->gp->GetFileData());
+                    paramData = generalWindow->gp->GetFileData();
                 else
                     paramData = pakData;
             }
@@ -312,10 +312,10 @@ void NeoStudio::ExportDat()
                 paramData = pakData;
             break;
         case PARAM_TYPE_MELEE:
-            if(pakData->compare(meleeWindow->mp->GetFileData()))
+            if(pakData->compare(*meleeWindow->mp->GetFileData()))
             {
                 if(DatSelectionDialog::SelectDat())
-                    paramData = new QByteArray(meleeWindow->mp->GetFileData());
+                    paramData = meleeWindow->mp->GetFileData();
                 else
                     paramData = pakData;
             }
@@ -323,10 +323,10 @@ void NeoStudio::ExportDat()
                 paramData = pakData;
             break;
         case PARAM_TYPE_KI_BLAST:
-            if(pakData->compare(kiWindow->kp->GetFileData()))
+            if(pakData->compare(*kiWindow->kp->GetFileData()))
             {
                 if(DatSelectionDialog::SelectDat())
-                    paramData = new QByteArray(kiWindow->kp->GetFileData());
+                    paramData = kiWindow->kp->GetFileData();
                 else
                     paramData = pakData;
             }
@@ -334,10 +334,10 @@ void NeoStudio::ExportDat()
                 paramData = pakData;
             break;
         case PARAM_TYPE_MOVEMENT:
-            if(pakData->compare(moveWindow->mp->GetFileData()))
+            if(pakData->compare(*moveWindow->mp->GetFileData()))
             {
                 if(DatSelectionDialog::SelectDat())
-                    paramData = new QByteArray(moveWindow->mp->GetFileData());
+                    paramData = moveWindow->mp->GetFileData();
                 else
                     paramData = pakData;
             }

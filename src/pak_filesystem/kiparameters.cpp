@@ -34,10 +34,10 @@ KiParameters::KiParameters(QByteArray ParameterData)
     #endif
 }
 
-QByteArray KiParameters::GetFileData()
+QByteArray* KiParameters::GetFileData()
 {
     Debug::Log("GetFileData called.", Debug::INFO);
-    return QByteArray(fileData);
+    return &fileData;
 }
 void KiParameters::SetFileData(QByteArray NewData)
 {

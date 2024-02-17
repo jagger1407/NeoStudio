@@ -59,7 +59,7 @@ public:
      */
     ParameterType GetParameterType()
     { return PARAM_TYPE_KI_BLAST; };
-    QByteArray GetFileData();
+    QByteArray* GetFileData();
     void SetFileData(QByteArray NewData);
 private:
     const char* rawData = nullptr;

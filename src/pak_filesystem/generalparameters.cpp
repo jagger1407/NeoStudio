@@ -105,10 +105,10 @@ GeneralParameters::GeneralParameters(QByteArray ParameterData)
 }
 
 /**Gets file data of this parameter file as a whole QByteArray.*/
-QByteArray GeneralParameters::GetFileData()
+QByteArray* GeneralParameters::GetFileData()
 {
     Debug::Log("GetFileData called.", Debug::INFO);
-    return fileData;
+    return &fileData;
 }
 /**Sets the entire parameter file data array at once to NewData, this should normally not be used.*/
 void GeneralParameters::SetFileData(QByteArray NewData)

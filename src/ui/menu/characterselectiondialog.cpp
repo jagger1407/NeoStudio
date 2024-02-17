@@ -11,11 +11,17 @@ CharacterSelectionDialog::CharacterSelectionDialog(QWidget* parent)
 
     this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + g_Options.uiMode + ".qss"));
 
+    if(!FileParse::DoesFileExist(this->charNamePath))
+    {
+        Debug::Log("Character Name List (" + this->charNamePath + ") doesn't exist.", Debug::ERROR);
+    }
+
     charNames = FileParse::ReadLines(this->charNamePath);
     if(charNames.length() != ROSTER_SIZE)
     {
         Debug::Log("Length of Character Name List (" + this->charNamePath + ") doesn't match up with ROSTER_SIZE.\n" \
         "Name List: " + QString::number(charNames.length()) + "\tRoster Size: " + QString::number(ROSTER_SIZE), Debug::ERROR);
+        return;
     }
     for(int i=0;i<ROSTER_SIZE;i++)
     {

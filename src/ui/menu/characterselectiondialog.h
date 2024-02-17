@@ -32,6 +32,7 @@ public:
 
 private:
 
+    // Will be part of the options soon
     QString charNamePath = "./assets/char-list.txt";
 
     Ui_CharacterSelectionDialog* ui;

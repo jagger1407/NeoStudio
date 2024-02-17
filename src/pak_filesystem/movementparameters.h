@@ -65,10 +65,9 @@ public:
     void SetIntParameter(QSpinBox* Object, int NewValue);
     void SetFloatParameter(QDoubleSpinBox* Object, float NewValue);
     /**
-     * Gets the parameter type of this parameter object.
+     * The parameter type of this parameter object.
      */
-    ParameterType GetParameterType()
-    { return PARAM_TYPE_MOVEMENT; };
+    const ParameterType paramType = PARAM_TYPE_MOVEMENT;
     QByteArray* GetFileData();
     void SetFileData(QByteArray NewData);
 private:

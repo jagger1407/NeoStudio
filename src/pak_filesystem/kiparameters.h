@@ -55,10 +55,9 @@ public:
 
     void setCurrentBlast(int BlastID);
     /**
-     * Gets the parameter type of this parameter object.
+     * The parameter type of this parameter object.
      */
-    ParameterType GetParameterType()
-    { return PARAM_TYPE_KI_BLAST; };
+    const ParameterType paramType = PARAM_TYPE_KI_BLAST;
     QByteArray* GetFileData();
     void SetFileData(QByteArray NewData);
 private:

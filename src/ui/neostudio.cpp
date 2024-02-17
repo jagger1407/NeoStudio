@@ -346,9 +346,11 @@ void NeoStudio::ExportDat()
             break;
         default:
             Debug::Log("This parameter section isn't supported yet.", Debug::ERROR);
+            delete pakData;
             return;
     }
     FileParse::WriteFile(saveDir + filenameDat[type], paramData);
+    delete pakData;
 }
 
 void NeoStudio::ImportDat()

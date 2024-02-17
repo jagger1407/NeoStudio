@@ -11,10 +11,20 @@ CharacterSelectionDialog::CharacterSelectionDialog(QWidget* parent)
 
     this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + g_Options.uiMode + ".qss"));
 
-    charNames = FileParse::ReadLines("./assets/char-list.txt");
-    for(int i=0;i<charNames.length();i++)
+    charNames = FileParse::ReadLines(this->charNamePath);
+    if(charNames.length() != ROSTER_SIZE)
+    {
+        Debug::Log("Length of Character Name List (" + this->charNamePath + ") doesn't match up with ROSTER_SIZE.\n" \
+        "Name List: " + QString::number(charNames.length()) + "\tRoster Size: " + QString::number(ROSTER_SIZE), Debug::ERROR);
+    }
+    for(int i=0;i<ROSTER_SIZE;i++)
+    {
         if(charNames[i].contains('|'))
             charNames[i].replace('|', "\n");
+
+        icons[i] = QIcon("./assets/character_icons/" + QString::number(i) + ".png");
+    }
+
 
     ui->CharacterList->setIconSize(QSize(64, 64));
 
@@ -44,7 +54,7 @@ void CharacterSelectionDialog::populateList(QString filter)
         for(int i=0;i<ROSTER_SIZE;i++)
         {
             QListWidgetItem* item = new QListWidgetItem("ID: " + QString::number(i) + "\n" + charNames[i]);
-            item->setIcon(QIcon("./assets/character_icons/" + QString::number(i) + ".png"));
+            item->setIcon(icons[i]);
             ui->CharacterList->addItem(item);
         }
     }
@@ -55,7 +65,7 @@ void CharacterSelectionDialog::populateList(QString filter)
             if(charNames[i].contains(filter, Qt::CaseInsensitive))
             {
                 QListWidgetItem* item = new QListWidgetItem("ID: " + QString::number(i) + "\n" + charNames[i]);
-                item->setIcon(QIcon("./assets/character_icons/" + QString::number(i) + ".png"));
+                item->setIcon(icons[i]);
                 ui->CharacterList->addItem(item);
             }
         }

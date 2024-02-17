@@ -6,6 +6,7 @@
 #include "src/external/fileparse.h"
 #include "src/neo_info.h"
 #include "src/options.h"
+#include "src/external/debug.h"
 
 namespace Ui
 {
@@ -30,10 +31,14 @@ public:
     bool aborted() { return wasAborted; }
 
 private:
+
+    QString charNamePath = "./assets/char-list.txt";
+
     Ui_CharacterSelectionDialog* ui;
     QStringList charNames;
     unsigned char selectedID = 0xFF;
     bool wasAborted = true;
+    QIcon icons[ROSTER_SIZE];
 
     void populateList(QString filter = NULL);
 

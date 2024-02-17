@@ -22,6 +22,13 @@ typedef enum
     PARAM_TYPE_NEXT
 } ParameterType; // Currently Known Parameters, this enum should be expanded in the future
 
+/**This represents one parameter, represented by a UI Element and an offset within the data section.*/
+typedef struct
+{
+    unsigned short offset;
+    void* UiElement;
+} Param_Offset;
+
 /**Maximum gravity one can input before jumping becomes impossible.*/
 #define MAX_GRAVITY 1
 /**The total amount of characters in Tenkaichi 2. (excluding Wii chars)*/

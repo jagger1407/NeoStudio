@@ -2,9 +2,9 @@
 
 KiParameters::KiParameters(QByteArray ParameterData)
 {
-    fileData = ParameterData;
-    rawData = fileData.data();
-    if(fileData == nullptr || rawData == nullptr)
+    paramData = ParameterData;
+    constData = paramData.constData();
+    if(paramData == nullptr || constData == nullptr)
     {
         Debug::Log("Construction of KiParameter object failed!", Debug::ERROR);
         return;
@@ -32,17 +32,19 @@ KiParameters::KiParameters(QByteArray ParameterData)
     parameter[Trajectory].offset = 0x33;
     parameter[Footer].offset = 0x34;
     #endif
+
+    Debug::Log("KiParameters object successfully constructed.", Debug::INFO);
 }
 
 QByteArray* KiParameters::GetFileData()
 {
     Debug::Log("GetFileData called.", Debug::INFO);
-    return &fileData;
+    return &paramData;
 }
 void KiParameters::SetFileData(QByteArray NewData)
 {
     Debug::Log("SetFileData called.", Debug::INFO);
-    fileData = NewData;
+    paramData = NewData;
 }
 
 void KiParameters::setCurrentBlast(int BlastID)
@@ -51,28 +53,17 @@ void KiParameters::setCurrentBlast(int BlastID)
     blastOffset = BlastID * KI_BLAST_ATTACK_SIZE;
 }
 
-unsigned char KiParameters::GetUByteParameter(QSpinBox* Object)
+unsigned char KiParameters::GetUByteParameter(QObject* Object)
 {
     Debug::Log("GetUByteParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement) return *(rawData + blastOffset + parameter[i].offset);
+        if(Object == parameter[i].UiElement)
+            return *(unsigned char*)(paramData.data() + blastOffset + parameter[i].offset);
     }
     Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return (unsigned char)-1;
 }
-
-unsigned char KiParameters::GetUByteParameter(QComboBox* Object)
-{
-    Debug::Log("GetUByteParameter called.", Debug::INFO);
-    for(int i=0;i<KiParameterCount;i++)
-    {
-        if(Object == (void*)parameter[i].UiElement) return *(rawData + blastOffset + parameter[i].offset);
-    }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
-    return (unsigned char)-1;
-}
-
 
 unsigned short KiParameters::GetUShortParameter(QSpinBox* Object)
 {
@@ -86,7 +77,8 @@ int KiParameters::GetIntParameter(QSpinBox* Object)
     Debug::Log("GetIntParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement) return *(int*)(rawData + blastOffset + parameter[i].offset);
+        if(Object == parameter[i].UiElement)
+            return *(int*)(paramData.data() + blastOffset + parameter[i].offset);
     }
     Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return -1;
@@ -97,34 +89,21 @@ float KiParameters::GetFloatParameter(QDoubleSpinBox* Object)
     Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement) return *(float*)( rawData + blastOffset + parameter[i].offset);
+        if(Object == parameter[i].UiElement)
+            return *(float*)( paramData.data() + blastOffset + parameter[i].offset);
     }
     Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return (unsigned char)-1;
 }
 
-void KiParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewValue)
+void KiParameters::SetUByteParameter(QObject* Object, unsigned char NewValue)
 {
     Debug::Log("SetUByteParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement)
+        if(Object == parameter[i].UiElement)
         {
-            ChangeData(parameter[i].offset + blastOffset, NewValue);
-            return;
-        }
-    }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
-}
-
-void KiParameters::SetUByteParameter(QComboBox* Object, unsigned char NewValue)
-{
-    Debug::Log("SetUByteParameter called.", Debug::INFO);
-    for(int i=0;i<KiParameterCount;i++)
-    {
-        if(Object == (void*)parameter[i].UiElement)
-        {
-            ChangeData(parameter[i].offset + blastOffset, NewValue);
+            *(unsigned char*)(paramData.data() + parameter[i].offset) = NewValue;
             return;
         }
     }
@@ -142,9 +121,9 @@ void KiParameters::SetIntParameter(QSpinBox* Object, int NewValue)
     Debug::Log("SetIntParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement)
+        if(Object == parameter[i].UiElement)
         {
-            ChangeData(parameter[i].offset + blastOffset, NewValue);
+            *(int*)(paramData.data() + parameter[i].offset) = NewValue;
             return;
         }
     }
@@ -156,9 +135,9 @@ void KiParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
     Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement)
+        if(Object == parameter[i].UiElement)
         {
-            ChangeData(parameter[i].offset + blastOffset, NewValue);
+            *(float*)(paramData.data() + parameter[i].offset) = NewValue;
             return;
         }
     }

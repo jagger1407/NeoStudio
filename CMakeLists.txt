@@ -32,23 +32,24 @@ set(neostudio_SRC
 
   # ::header files::
   src/neo_info.h
-  src/neo_info.h
   src/options.h
   src/bitmanipulation.h
   src/external/fileparse.h
   src/external/cfgparser.h
   src/external/debug.h
-  src/pak_filesystem/parameterfile.h
+
+  src/pak_filesystem/pakcontrols.h
   src/pak_filesystem/generalparameters.h
   src/pak_filesystem/meleeparameters.h
   src/pak_filesystem/kiparameters.h
   src/pak_filesystem/movementparameters.h
-  src/pak_filesystem/pakcontrols.h
+
   src/ui/neostudio.h
   src/ui/menu/aboutwindow.h
   src/ui/menu/optiondialog.h
   src/ui/menu/datselectiondialog.h
   src/ui/menu/characterselectiondialog.h
+
   src/ui/paramSections/generalframe.h
   src/ui/paramSections/meleeframe.h
   src/ui/paramSections/kiframe.h
@@ -60,16 +61,19 @@ set(neostudio_SRC
   src/external/fileparse.cpp
   src/external/cfgparser.cpp
   src/external/debug.cpp
+
+  src/pak_filesystem/pakcontrols.cpp
   src/pak_filesystem/generalparameters.cpp
   src/pak_filesystem/meleeparameters.cpp
   src/pak_filesystem/kiparameters.cpp
   src/pak_filesystem/movementparameters.cpp
-  src/pak_filesystem/pakcontrols.cpp
+
   src/ui/neostudio.cpp
   src/ui/menu/aboutwindow.cpp
   src/ui/menu/optiondialog.cpp
   src/ui/menu/datselectiondialog.cpp
   src/ui/menu/characterselectiondialog.cpp
+
   src/ui/paramSections/generalframe.cpp
   src/ui/paramSections/meleeframe.cpp
   src/ui/paramSections/kiframe.cpp

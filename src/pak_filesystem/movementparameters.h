@@ -1,13 +1,13 @@
 #ifndef MOVEMENTPARAMETERS_H
 #define MOVEMENTPARAMETERS_H
 
-#include "parameterfile.h"
+#include "src/neo_info.h"
 #include "src/external/debug.h"
 
 /**
  * @todo write docs
  */
-class MovementParameters :  ParameterFile
+class MovementParameters
 {
 public:
     typedef enum
@@ -71,7 +71,8 @@ public:
     QByteArray* GetFileData();
     void SetFileData(QByteArray NewData);
 private:
-    const char* rawData = nullptr;
+    const char* constData = nullptr;
+    QByteArray paramData;
 };
 
 #endif // MOVEMENTPARAMETERS_H

@@ -1,13 +1,13 @@
 #ifndef KIPARAMETERS_H
 #define KIPARAMETERS_H
 
-#include "parameterfile.h"
+#include "src/neo_info.h"
 #include "src/external/debug.h"
 
 /**
  * Object for the ki parameter section of a .pak file.
  */
-class KiParameters :  ParameterFile
+class KiParameters
 {
 public:
     typedef enum
@@ -39,16 +39,13 @@ public:
 
     KiParameters(QByteArray ParameterData);
     /**Gets the single Byte parameter value of the parameter corresponding to the Object.*/
-    unsigned char GetUByteParameter(QSpinBox* Object);
-    /**Gets the single Byte parameter value of the parameter corresponding to the Object.*/
-    unsigned char GetUByteParameter(QComboBox* Object);
+    unsigned char GetUByteParameter(QObject* Object);
     /**Gets the 2-Byte parameter value of the parameter corresponding to the Object.*/
     unsigned short GetUShortParameter(QSpinBox* Object);
 
     int GetIntParameter(QSpinBox* Object);
     float GetFloatParameter(QDoubleSpinBox* Object);
-    void SetUByteParameter(QSpinBox* Object, unsigned char NewValue);
-    void SetUByteParameter(QComboBox* Object, unsigned char NewValue);
+    void SetUByteParameter(QObject* Object, unsigned char NewValue);
     void SetUShortParameter(QSpinBox* Object, unsigned short NewValue);
     void SetIntParameter(QSpinBox* Object, int NewValue);
     void SetFloatParameter(QDoubleSpinBox* Object, float NewValue);
@@ -61,7 +58,8 @@ public:
     QByteArray* GetFileData();
     void SetFileData(QByteArray NewData);
 private:
-    const char* rawData = nullptr;
+    const char* constData = nullptr;
+    QByteArray paramData;
     unsigned short blastOffset;
 };
 

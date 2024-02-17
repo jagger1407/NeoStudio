@@ -93,7 +93,7 @@ public:
     void SetIntParameter(QSpinBox* Object, int NewValue);
     void SetFloatParameter(QDoubleSpinBox* Object, float NewValue);
     void SetFlagParameter(QCheckBox* Object, bool NewValue);
-    QByteArray GetFileData();
+    QByteArray* GetFileData();
     void SetFileData(QByteArray NewData);
     /**
      * Gets the parameter type of this parameter object.

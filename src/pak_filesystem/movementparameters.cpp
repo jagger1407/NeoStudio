@@ -16,10 +16,10 @@ MovementParameters::MovementParameters(QByteArray ParameterData)
     #endif
 }
 
-QByteArray MovementParameters::GetFileData()
+QByteArray* MovementParameters::GetFileData()
 {
     Debug::Log("GetFileData called.", Debug::INFO);
-    return QByteArray(fileData);
+    return &fileData;
 }
 
 void MovementParameters::SetFileData(QByteArray NewData)

@@ -54,10 +54,10 @@ MeleeParameters::MeleeParameters(QByteArray ParameterData)
 
     Debug::Log("New MeleeParameter object constructed.", Debug::INFO);
 }
-QByteArray MeleeParameters::GetFileData()
+QByteArray* MeleeParameters::GetFileData()
 {
     Debug::Log("GetFileData called.", Debug::INFO);
-    return QByteArray(fileData);
+    return &fileData;
 }
 void MeleeParameters::SetFileData(QByteArray NewData)
 {

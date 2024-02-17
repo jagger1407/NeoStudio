@@ -24,7 +24,7 @@ public:
     /**Returns specific parameter section as a QByteArray.*/
     QByteArray GetParamData(ParameterType ParamType);
     /**Updates specific parameter array with Data.*/
-    void UpdateParamData(ParameterType ParamType, QByteArray Data);
+    void UpdateParamData(ParameterType ParamType, QByteArray* Data);
 private:
     /**QByteArray containing everything that comes before the general parameters.*/
     QByteArray LeftPak;

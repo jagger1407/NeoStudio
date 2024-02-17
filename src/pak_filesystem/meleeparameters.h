@@ -80,7 +80,7 @@ public:
      */
     ParameterType GetParameterType()
     { return PARAM_TYPE_MELEE; };
-    QByteArray GetFileData();
+    QByteArray* GetFileData();
     void SetFileData(QByteArray NewData);
 private:
     const char* rawData = nullptr;

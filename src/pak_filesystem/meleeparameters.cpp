@@ -2,9 +2,9 @@
 
 MeleeParameters::MeleeParameters(QByteArray ParameterData)
 {
-    fileData = ParameterData;
-    rawData = fileData.data();
-    if(fileData == nullptr || rawData == nullptr)
+    paramData = ParameterData;
+    constData = paramData.constData();
+    if(paramData == nullptr || constData == nullptr)
     {
         Debug::Log("Construction of MeleeParameter object failed!", Debug::ERROR);
         return;
@@ -52,17 +52,17 @@ MeleeParameters::MeleeParameters(QByteArray ParameterData)
     parameter[Unk63].offset = 0x63;
 #endif
 
-    Debug::Log("New MeleeParameter object constructed.", Debug::INFO);
+    Debug::Log("MeleeParameters object successfully constructed.", Debug::INFO);
 }
 QByteArray* MeleeParameters::GetFileData()
 {
     Debug::Log("GetFileData called.", Debug::INFO);
-    return &fileData;
+    return &paramData;
 }
 void MeleeParameters::SetFileData(QByteArray NewData)
 {
     Debug::Log("SetFileData called.", Debug::INFO);
-    fileData.replace(0, fileData.size(), NewData);
+    paramData.replace(0, paramData.size(), NewData);
 }
 void MeleeParameters::setCurrentAttack(int AttackID)
 {
@@ -74,36 +74,26 @@ bool MeleeParameters::GetFlagParameter(QCheckBox* Object)
 {
     Debug::Log("GetFlagParameter called.", Debug::INFO);
 
-    if(Object == (void*)parameter[SecondaryString].UiElement)
-        return BitManipulation::Bit(*(rawData + attackOffset + parameter[SecondaryString].offset), 1);
+    if(Object == parameter[SecondaryString].UiElement)
+        return BitManipulation::Bit(*(constData + attackOffset + parameter[SecondaryString].offset), 1);
 
-    else if(Object == (void*)parameter[LockOnLoss].UiElement)
-        return BitManipulation::Bit(*(rawData + attackOffset + parameter[LockOnLoss].offset), 2);
+    else if(Object == parameter[LockOnLoss].UiElement)
+        return BitManipulation::Bit(*(constData + attackOffset + parameter[LockOnLoss].offset), 2);
 
-    else if(Object == (void*)parameter[GuardType].UiElement)
-        return BitManipulation::Bit(*(rawData + attackOffset + parameter[GuardType].offset), 0);
+    else if(Object == parameter[GuardType].UiElement)
+        return BitManipulation::Bit(*(constData + attackOffset + parameter[GuardType].offset), 0);
 
     else
         Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
 
     return false;
 }
-unsigned char MeleeParameters::GetUByteParameter(QSpinBox* Object)
+unsigned char MeleeParameters::GetUByteParameter(QObject* Object)
 {
     Debug::Log("GetUByteParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement) return *(rawData + attackOffset + parameter[i].offset);
-    }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
-    return 0;
-}
-unsigned char MeleeParameters::GetUByteParameter(QComboBox* Object)
-{
-    Debug::Log("GetUByteParameter called.", Debug::INFO);
-    for(int i=0;i<MeleeParameterCount;i++)
-    {
-        if(Object == (void*)parameter[i].UiElement) return *(rawData + attackOffset + parameter[i].offset);
+        if(Object == parameter[i].UiElement) return *(unsigned char*)(constData + attackOffset + parameter[i].offset);
     }
     Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return 0;
@@ -121,7 +111,7 @@ int MeleeParameters::GetIntParameter(QSpinBox* Object)
 
     for(int i=0;i<MeleeParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement) return *(int*)(rawData + attackOffset + parameter[i].offset);
+        if(Object == parameter[i].UiElement) return *(int*)(constData + attackOffset + parameter[i].offset);
     }
     Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return 0;
@@ -131,7 +121,7 @@ float MeleeParameters::GetFloatParameter(QDoubleSpinBox* Object)
     Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement) return *(float*)(rawData + attackOffset + parameter[i].offset);
+        if(Object == parameter[i].UiElement) return *(float*)(constData + attackOffset + parameter[i].offset);
     }
     Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return 0;
@@ -139,39 +129,26 @@ float MeleeParameters::GetFloatParameter(QDoubleSpinBox* Object)
 void MeleeParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
 {
     Debug::Log("SetFlagParameter called.", Debug::INFO);
-    if(Object == (void*)parameter[SecondaryString].UiElement)
-        ChangeData(attackOffset + parameter[SecondaryString].offset, 1, NewValue);
+    if(Object == parameter[SecondaryString].UiElement)
+        BitManipulation::SetBit(paramData.data() + attackOffset + parameter[SecondaryString].offset, 1, NewValue);
 
-    else if(Object == (void*)parameter[LockOnLoss].UiElement)
-        ChangeData(attackOffset + parameter[LockOnLoss].offset, 2, NewValue);
+    else if(Object == parameter[LockOnLoss].UiElement)
+        BitManipulation::SetBit(paramData.data() + attackOffset + parameter[LockOnLoss].offset, 2, NewValue);
 
-    else if(Object == (void*)parameter[GuardType].UiElement)
-        ChangeData(attackOffset + parameter[GuardType].offset, 0, NewValue);
+    else if(Object == parameter[GuardType].UiElement)
+        BitManipulation::SetBit(paramData.data() + attackOffset + parameter[GuardType].offset, 0, NewValue);
 
     else
         Debug::Log("Object not part of UiElements List.", Debug::ERROR);
 }
-void MeleeParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewValue)
+void MeleeParameters::SetUByteParameter(QObject* Object, unsigned char NewValue)
 {
     Debug::Log("SetUByteParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement)
+        if(Object == parameter[i].UiElement)
         {
-            ChangeData(attackOffset + parameter[i].offset, NewValue);
-            return;
-        }
-    }
-    Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
-}
-void MeleeParameters::SetUByteParameter(QComboBox* Object, unsigned char NewValue)
-{
-    Debug::Log("SetUByteParameter called.", Debug::INFO);
-    for(int i=0;i<MeleeParameterCount;i++)
-    {
-        if(Object == (void*)parameter[i].UiElement)
-        {
-            ChangeData(attackOffset + parameter[i].offset, NewValue);
+            *(unsigned char*)(paramData.data() + attackOffset + parameter[i].offset) = NewValue;
             return;
         }
     }
@@ -187,9 +164,9 @@ void MeleeParameters::SetIntParameter(QSpinBox* Object, int NewValue)
     Debug::Log("SetIntParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement)
+        if(Object == parameter[i].UiElement)
         {
-            ChangeData(attackOffset + parameter[i].offset, NewValue);
+            *(int*)(paramData.data() + attackOffset + parameter[i].offset) = NewValue;
             return;
         }
     }
@@ -200,9 +177,9 @@ void MeleeParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
     Debug::Log("SetFloatParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement)
+        if(Object == parameter[i].UiElement)
         {
-            ChangeData(attackOffset + parameter[i].offset, NewValue);
+            *(float*)(paramData.data() + attackOffset + parameter[i].offset) = NewValue;
             return;
         }
     }

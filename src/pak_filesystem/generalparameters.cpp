@@ -2,11 +2,11 @@
 
 GeneralParameters::GeneralParameters(QByteArray ParameterData)
 {
-    fileData = ParameterData;
-    constData = fileData.constData();
-    if(fileData == nullptr || constData == nullptr)
+    paramData = ParameterData;
+    constData = paramData.constData();
+    if(paramData == nullptr || constData == nullptr)
     {
-        Debug::Log("Construction of GeneralParameter object failed! No data passed.", Debug::ERROR);
+        Debug::Log("Construction of GeneralParameters object failed! No data passed.", Debug::ERROR);
         return;
     }
 
@@ -101,20 +101,20 @@ GeneralParameters::GeneralParameters(QByteArray ParameterData)
     }
 #endif
 
-    Debug::Log("New GeneralParameter object constructed.", Debug::INFO);
+    Debug::Log("GeneralParameters object successfully constructed.", Debug::INFO);
 }
 
 /**Gets file data of this parameter file as a whole QByteArray.*/
 QByteArray* GeneralParameters::GetFileData()
 {
     Debug::Log("GetFileData called.", Debug::INFO);
-    return &fileData;
+    return &paramData;
 }
 /**Sets the entire parameter file data array at once to NewData, this should normally not be used.*/
 void GeneralParameters::SetFileData(QByteArray NewData)
 {
     Debug::Log("SetFileData called.", Debug::INFO);
-    fileData = QByteArray(NewData);
+    paramData = QByteArray(NewData);
 }
 
 bool GeneralParameters::GetFlagParameter(QCheckBox* Object)
@@ -123,45 +123,25 @@ bool GeneralParameters::GetFlagParameter(QCheckBox* Object)
     QObject* byte = Object->parent();
     int bit = Object->objectName().split('_').last().toUInt() - 1;
 
-    if((void*)byte == (void*)parameter[FlagGroup].UiElement)
+    if((void*)byte == parameter[FlagGroup].UiElement)
         return BitManipulation::Bit(*(constData + parameter[FlagGroup].offset + (int)(bit / 8)), bit % 8);
-    if((void*)byte == (void*)parameter[FlagGroup + 1].UiElement)
+    if((void*)byte == parameter[FlagGroup + 1].UiElement)
         return BitManipulation::Bit(*(constData + parameter[FlagGroup + 1].offset + (int)(bit / 8)), bit % 8);
-    if((void*)byte == (void*)parameter[FlagGroup + 2].UiElement)
+    if((void*)byte == parameter[FlagGroup + 2].UiElement)
         return BitManipulation::Bit(*(constData + parameter[FlagGroup + 2].offset + (int)(bit / 8)), bit % 8);
-    if((void*)Object == (void*)parameter[GreatApeMode].UiElement)
+    if((void*)Object == parameter[GreatApeMode].UiElement)
         return BitManipulation::Bit(*(constData + parameter[GreatApeMode].offset), 2);
 
     Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING);
     return false;
 }
-unsigned char GeneralParameters::GetUByteParameter(QSpinBox* Object)
+unsigned char GeneralParameters::GetUByteParameter(QObject* Object)
 {
     Debug::Log("GetUByteParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement) return *(constData + parameter[i].offset);
-    }
-    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING);
-    return (unsigned char)-1;
-}
-unsigned char GeneralParameters::GetUByteParameter(QComboBox* Object)
-{
-    Debug::Log("GetUByteParameter called.", Debug::INFO);
-    for(int i=0;i<GeneralParameterCount;i++)
-    {
-        if(Object == (void*)parameter[i].UiElement) return *(constData + parameter[i].offset);
-    }
-    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING);
-    return (unsigned char)-1;
-}
-unsigned char GeneralParameters::GetUByteParameter(QPushButton* Object)
-{
-    Debug::Log("GetUByteParameter called.", Debug::INFO);
-
-    for(int i=0;i<GeneralParameterCount;i++)
-    {
-        if(Object == (void*)parameter[i].UiElement) return *(constData + parameter[i].offset);
+        if(Object == parameter[i].UiElement)
+            return *(constData + parameter[i].offset);
     }
     Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING);
     return (unsigned char)-1;
@@ -178,7 +158,8 @@ int GeneralParameters::GetIntParameter(QSpinBox* Object)
     Debug::Log("GetIntParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement) return *(int*)(constData + parameter[i].offset);
+        if(Object == parameter[i].UiElement)
+            return *(int*)(constData + parameter[i].offset);
     }
 
     Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING);
@@ -189,7 +170,8 @@ float GeneralParameters::GetFloatParameter(QDoubleSpinBox* Object)
     Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement) return *(float*)(constData + parameter[i].offset);
+        if(Object == parameter[i].UiElement)
+            return *(float*)(constData + parameter[i].offset);
     }
     Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING);
     return -1;
@@ -198,62 +180,32 @@ float GeneralParameters::GetFloatParameter(QDoubleSpinBox* Object)
 void GeneralParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
 {
     Debug::Log("SetFlagParameter called.", Debug::INFO);
-    QObject* byte = Object->parent();
+    QObject* group = Object->parent();
 
     int bit = Object->objectName().split('_').last().toUInt() - 1;
 
-    if((void*)byte == (void*)parameter[FlagGroup].UiElement)
-        ChangeData(parameter[FlagGroup].offset + (int)(bit / 8), bit % 8, NewValue);
-
-    else if((void*)byte == (void*)parameter[FlagGroup + 1].UiElement)
-        ChangeData(parameter[FlagGroup + 1].offset + (int)(bit / 8), bit % 8, NewValue);
-
-    else if((void*)byte == (void*)parameter[FlagGroup + 2].UiElement)
-        ChangeData(parameter[FlagGroup + 2].offset + (int)(bit / 8), bit % 8, NewValue);
-
-    else if((void*)Object == (void*)parameter[GreatApeMode].UiElement)
-        ChangeData(parameter[GreatApeMode].offset, 2, NewValue);
+    for(int i=0;i<3;i++)
+    {
+        if((void*)group == parameter[FlagGroup+i].UiElement)
+        {
+            BitManipulation::SetBit(paramData.data() + parameter[FlagGroup+i].offset + (int)(bit / 8), bit % 8, NewValue);
+            return;
+        }
+    }
+    if((void*)Object == parameter[GreatApeMode].UiElement)
+        BitManipulation::SetBit(paramData.data() + parameter[GreatApeMode].offset, 2, NewValue);
 
     else Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING);
 }
 
-void GeneralParameters::SetUByteParameter(QSpinBox* Object, unsigned char NewValue)
+void GeneralParameters::SetUByteParameter(QObject* Object, unsigned char NewValue)
 {
     Debug::Log("SetUByteParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement)
+        if(Object == parameter[i].UiElement)
         {
-            ChangeData(parameter[i].offset, NewValue);
-            return;
-        }
-    }
-    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING);
-}
-void GeneralParameters::SetUByteParameter(QComboBox* Object, unsigned char NewValue)
-{
-    Debug::Log("SetUByteParameter called.", Debug::INFO);
-
-    for(int i=0;i<GeneralParameterCount;i++)
-    {
-        if(Object == (void*)parameter[i].UiElement)
-        {
-            ChangeData(parameter[i].offset, NewValue);
-            return;
-        }
-    }
-
-    Debug::Log("Object " + Object->objectName() + " not part of Parameters.", Debug::WARNING);
-
-}
-void GeneralParameters::SetUByteParameter(QPushButton* Object, unsigned char NewValue)
-{
-    Debug::Log("SetUByteParameter called.", Debug::INFO);
-    for(int i=0;i<GeneralParameterCount;i++)
-    {
-        if(Object == (void*)parameter[i].UiElement)
-        {
-            ChangeData(parameter[i].offset, NewValue);
+            *(unsigned char*)(paramData.data() + parameter[i].offset) = NewValue;
             return;
         }
     }
@@ -270,9 +222,9 @@ void GeneralParameters::SetIntParameter(QSpinBox* Object, int NewValue)
     Debug::Log("SetIntParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement)
+        if(Object == parameter[i].UiElement)
         {
-            ChangeData(parameter[i].offset, NewValue);
+            *(int*)(paramData.data() + parameter[i].offset) = NewValue;
             return;
         }
     }
@@ -284,9 +236,9 @@ void GeneralParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue
     Debug::Log("SetFloatParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
-        if(Object == (void*)parameter[i].UiElement)
+        if(Object == parameter[i].UiElement)
         {
-            ChangeData(parameter[i].offset, NewValue);
+            *(float*)(paramData.data() + parameter[i].offset) = NewValue;
             return;
         }
     }

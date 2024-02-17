@@ -1,13 +1,14 @@
 #ifndef GENERALPARAMETERS_H
 #define GENERALPARAMETERS_H
 
-#include "parameterfile.h"
 #include "src/external/debug.h"
+#include "src/bitmanipulation.h"
+#include "src/neo_info.h"
 
 /**
  * Object for the general parameter section of a .pak file.
  */
-class GeneralParameters : ParameterFile
+class GeneralParameters
 {
 public:
     typedef enum
@@ -76,23 +77,19 @@ public:
      * Constructs new General Parameter Object.
      */
     GeneralParameters(QByteArray ParameterData);
+    bool GetFlagParameter(QCheckBox* Object);
     /**Gets the single Byte parameter value of the parameter corresponding to the Object.*/
-    unsigned char GetUByteParameter(QSpinBox* Object);
-    unsigned char GetUByteParameter(QComboBox* Object);
-    unsigned char GetUByteParameter(QPushButton* Object);
+    unsigned char GetUByteParameter(QObject* Object);
     /**Gets the 2-Byte parameter value of the parameter corresponding to the Object.*/
     unsigned short GetUShortParameter(QSpinBox* Object);
 
     int GetIntParameter(QSpinBox* Object);
     float GetFloatParameter(QDoubleSpinBox* Object);
-    bool GetFlagParameter(QCheckBox* Object);
-    void SetUByteParameter(QSpinBox* Object, unsigned char NewValue);
-    void SetUByteParameter(QComboBox* Object, unsigned char NewValue);
-    void SetUByteParameter(QPushButton* Object, unsigned char NewValue);
+    void SetFlagParameter(QCheckBox* Object, bool NewValue);
+    void SetUByteParameter(QObject* Object, unsigned char NewValue);
     void SetUShortParameter(QSpinBox* Object, unsigned short NewValue);
     void SetIntParameter(QSpinBox* Object, int NewValue);
     void SetFloatParameter(QDoubleSpinBox* Object, float NewValue);
-    void SetFlagParameter(QCheckBox* Object, bool NewValue);
     QByteArray* GetFileData();
     void SetFileData(QByteArray NewData);
     /**
@@ -101,6 +98,7 @@ public:
     const ParameterType paramType = PARAM_TYPE_GENERAL;
 private:
     const char* constData = nullptr;
+    QByteArray paramData;
 };
 
 #endif // GENERALPARAMETERS_H

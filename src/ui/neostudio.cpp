@@ -75,10 +75,10 @@ void NeoStudio::SaveFile()
     }
     if(file.toLower().endsWith(".pak"))
     {
-        pak->UpdateParamData(PARAM_TYPE_GENERAL, generalWindow->gp->GetFileData());
-        pak->UpdateParamData(PARAM_TYPE_MELEE, meleeWindow->mp->GetFileData());
-        pak->UpdateParamData(PARAM_TYPE_KI_BLAST, kiWindow->kp->GetFileData());
-        pak->UpdateParamData(PARAM_TYPE_MOVEMENT, moveWindow->mp->GetFileData());
+        pak->UpdateParamData(PARAM_OFFSET_GENERAL, generalWindow->gp->GetFileData());
+        pak->UpdateParamData(PARAM_OFFSET_MELEE, meleeWindow->mp->GetFileData());
+        pak->UpdateParamData(PARAM_OFFSET_KI_BLAST, kiWindow->kp->GetFileData());
+        pak->UpdateParamData(PARAM_OFFSET_MOVEMENT, moveWindow->mp->GetFileData());
         pak->SavePak(file);
     }
     else if(file.toLower().endsWith(".dat"))
@@ -133,11 +133,15 @@ void NeoStudio::SaveFileAs()
 
     if(newFile.toLower().endsWith(".pak"))
     {
-        pak->UpdateParamData(PARAM_TYPE_GENERAL, generalWindow->gp->GetFileData());
-        pak->UpdateParamData(PARAM_TYPE_MELEE, meleeWindow->mp->GetFileData());
-        pak->UpdateParamData(PARAM_TYPE_KI_BLAST, kiWindow->kp->GetFileData());
-        pak->UpdateParamData(PARAM_TYPE_MOVEMENT, moveWindow->mp->GetFileData());
+        pak->UpdateParamData(PARAM_OFFSET_GENERAL, generalWindow->gp->GetFileData());
+        pak->UpdateParamData(PARAM_OFFSET_MELEE, meleeWindow->mp->GetFileData());
+        pak->UpdateParamData(PARAM_OFFSET_KI_BLAST, kiWindow->kp->GetFileData());
+        pak->UpdateParamData(PARAM_OFFSET_MOVEMENT, moveWindow->mp->GetFileData());
         pak->SavePak(newFile);
+        if(FileParse::DoesFileExist(newFile))
+        {
+            Debug::Log("File '" + newFile + "' saved successfully.", Debug::INFO);
+        }
     }
     else if(newFile.toLower().endsWith(".dat"))
     {
@@ -219,10 +223,10 @@ void NeoStudio::InitPakFile()
     if(kiWindow != nullptr) delete kiWindow;
     if(moveWindow != nullptr) delete moveWindow;
 
-    generalWindow = new GeneralFrame(pak->GetParamData(PARAM_TYPE_GENERAL), this);
-    meleeWindow = new MeleeFrame(pak->GetParamData(PARAM_TYPE_MELEE), this);
-    kiWindow = new KiFrame(pak->GetParamData(PARAM_TYPE_KI_BLAST), this);
-    moveWindow = new MovementFrame(pak->GetParamData(PARAM_TYPE_MOVEMENT), this);
+    generalWindow = new GeneralFrame(pak->GetParamData(PARAM_OFFSET_GENERAL), this);
+    meleeWindow = new MeleeFrame(pak->GetParamData(PARAM_OFFSET_MELEE), this);
+    kiWindow = new KiFrame(pak->GetParamData(PARAM_OFFSET_KI_BLAST), this);
+    moveWindow = new MovementFrame(pak->GetParamData(PARAM_OFFSET_MOVEMENT), this);
 
     ui->GeneralScrollArea->setWidget(generalWindow);
     ui->MeleeScrollArea->setWidget(meleeWindow);
@@ -304,7 +308,7 @@ void NeoStudio::ExportDat()
     }
 
     // For some reason, the switch below will not work without turning it into a variable first.
-    QByteArray* pakData = new QByteArray(pak->GetParamData((ParameterType)type));
+    QByteArray* pakData = new QByteArray(pak->GetParamData(type + PARAM_OFFSET_GENERAL));
 
     QByteArray* paramData;
     switch(type)
@@ -359,18 +363,18 @@ void NeoStudio::ExportDat()
             return;
     }
 
-    if(!FileParse::DoesFileExist(sectionNameFile))
+    if(!FileParse::DoesFileExist(pak->sectionNameFile))
     {
-        Debug::Log("Section Name List (" + sectionNameFile + ") doesn't exist.", Debug::ERROR);
+        Debug::Log("Section Name List (" + pak->sectionNameFile + ") doesn't exist.", Debug::ERROR);
         delete pakData;
         return;
     }
-    QStringList sectionNames = FileParse::ReadLines(sectionNameFile);
-    FileParse::WriteFile(saveDir + "/" + sectionNames[type + PARAM_OFFSET_GENERAL - 1], paramData);
+    QStringList sectionNames = FileParse::ReadLines(pak->sectionNameFile);
+    FileParse::WriteFile(saveDir + "/" + sectionNames[type + PARAM_OFFSET_GENERAL], paramData);
     delete pakData;
-    if(FileParse::DoesFileExist(saveDir + "/" + sectionNames[type + PARAM_OFFSET_GENERAL - 1]))
+    if(FileParse::DoesFileExist(saveDir + "/" + sectionNames[type + PARAM_OFFSET_GENERAL]))
     {
-        Debug::Log("File '" + sectionNames[type + PARAM_OFFSET_GENERAL - 1] + "' saved successfully.", Debug::INFO);
+        Debug::Log("File '" + sectionNames[type + PARAM_OFFSET_GENERAL] + "' saved successfully.", Debug::INFO);
     }
 }
 
@@ -400,7 +404,7 @@ void NeoStudio::ImportDat()
     datPath = datPath.split("/")[datPath.split("/").count()-1];
     int datIndex = datPath.split("_")[0].toInt();
 
-    switch(++datIndex - PARAM_OFFSET_GENERAL)
+    switch(datIndex - PARAM_OFFSET_GENERAL)
     {
         case PARAM_TYPE_GENERAL:
             generalWindow->gp->SetFileData(datData);

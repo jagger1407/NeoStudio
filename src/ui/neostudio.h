@@ -31,9 +31,6 @@ public:
     ~NeoStudio() override;
 private:
 
-    // Will be part of the Options soon
-    const QString sectionNameFile = "./assets/pak-sections.txt";
-
     /**QScopedPointer to access UI Elements.*/
     QScopedPointer<Ui::NeoStudio> ui;
     /**The UI for the General Parameter editing tab.*/

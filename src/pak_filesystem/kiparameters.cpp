@@ -6,7 +6,7 @@ KiParameters::KiParameters(QByteArray ParameterData)
     constData = paramData.constData();
     if(paramData == nullptr || constData == nullptr)
     {
-        Debug::Log("Construction of KiParameter object failed!", Debug::ERROR);
+        Debug::Log("Construction of KiParameter object failed! No data passed.", Debug::ERROR);
         return;
     }
 
@@ -36,26 +36,28 @@ KiParameters::KiParameters(QByteArray ParameterData)
     Debug::Log("KiParameters object successfully constructed.", Debug::INFO);
 }
 
-QByteArray* KiParameters::GetFileData()
+QByteArray* KiParameters::GetParameterData()
 {
-    Debug::Log("GetFileData called.", Debug::INFO);
     return &paramData;
 }
-void KiParameters::SetFileData(QByteArray NewData)
+void KiParameters::SetParameterData(QByteArray NewData)
 {
-    Debug::Log("SetFileData called.", Debug::INFO);
+    if(NewData.size() != paramData.size())
+    {
+        Debug::Log("SetFileData failed - Sizes don't match up.\n" \
+            "Current Size: " + QString::number(paramData.size()) + " Bytes\t- New Size: " + QString::number(NewData.size()) + " Bytes", Debug::ERROR);
+    }
     paramData = NewData;
+    Debug::Log("KiParameters Data set.", Debug::INFO);
 }
 
 void KiParameters::setCurrentBlast(int BlastID)
 {
-    Debug::Log("setCurrentBlast called.", Debug::INFO);
     blastOffset = BlastID * KI_BLAST_ATTACK_SIZE;
 }
 
 unsigned char KiParameters::GetUByteParameter(QObject* Object)
 {
-    Debug::Log("GetUByteParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -67,14 +69,12 @@ unsigned char KiParameters::GetUByteParameter(QObject* Object)
 
 unsigned short KiParameters::GetUShortParameter(QSpinBox* Object)
 {
-    Debug::Log("GetUShortParameter called.", Debug::INFO);
     Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
     return (unsigned short)-1;
 }
 
 int KiParameters::GetIntParameter(QSpinBox* Object)
 {
-    Debug::Log("GetIntParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -86,7 +86,6 @@ int KiParameters::GetIntParameter(QSpinBox* Object)
 
 float KiParameters::GetFloatParameter(QDoubleSpinBox* Object)
 {
-    Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -98,7 +97,6 @@ float KiParameters::GetFloatParameter(QDoubleSpinBox* Object)
 
 void KiParameters::SetUByteParameter(QObject* Object, unsigned char NewValue)
 {
-    Debug::Log("SetUByteParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -112,13 +110,11 @@ void KiParameters::SetUByteParameter(QObject* Object, unsigned char NewValue)
 
 void KiParameters::SetUShortParameter(QSpinBox* Object, short unsigned int NewValue)
 {
-    Debug::Log("SetUShortParameter called.", Debug::INFO);
     Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
 }
 
 void KiParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 {
-    Debug::Log("SetIntParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -132,7 +128,6 @@ void KiParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 
 void KiParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
 {
-    Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<KiParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)

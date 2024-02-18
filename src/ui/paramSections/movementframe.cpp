@@ -54,13 +54,11 @@ MovementFrame::MovementFrame(QByteArray Data, QWidget* parent) : QFrame(parent)
 
     InitializeUIElements();
     ResetUiMode();
-    Debug::Log("New MovementFrame constructed.", Debug::INFO);
+    Debug::Log("MovementFrame successfully constructed.", Debug::INFO);
 }
 
 void MovementFrame::InitializeUIElements()
 {
-    Debug::Log("InitializeUIElements called.", Debug::INFO);
-
     IsInitializing = true;
 
     QList<QLabel*> labels = this->findChildren<QLabel*>();
@@ -86,21 +84,17 @@ void MovementFrame::InitializeUIElements()
 
 void MovementFrame::QSpinBox_Changed(int NewValue)
 {
-    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO);
     QSpinBox* box = (QSpinBox*)sender();
     mp->SetIntParameter(box, NewValue);
 }
 void MovementFrame::QDoubleSpinBox_Changed(double NewValue)
 {
-    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO);
     QDoubleSpinBox* box = (QDoubleSpinBox*)sender();
     mp->SetFloatParameter(box, NewValue);
 }
 
 void MovementFrame::ResetUiMode()
 {
-    Debug::Log("ResetUiMode called.", Debug::INFO);
-
     // Getting all the UI Elements and categorizing them by type
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();

@@ -61,13 +61,11 @@ MeleeFrame::MeleeFrame(QByteArray Data, QWidget* parent) : QFrame(parent)
     */
     IsInitializing = false;
 
-    Debug::Log("New MeleeFrame constructed.", Debug::INFO);
+    Debug::Log("MeleeFrame successfully constructed.", Debug::INFO);
 }
 
 void MeleeFrame::InitializeUIElements()
 {
-    Debug::Log("InitializeUIElements called.", Debug::INFO);
-
     IsInitializing = true;
 
     QList<QLabel*> labels = this->findChildren<QLabel*>();
@@ -109,7 +107,7 @@ void MeleeFrame::InitializeUIElements()
 void MeleeFrame::QSpinBox_Changed(int NewValue)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO);
+
     QSpinBox* box = (QSpinBox*)sender();
     if((unsigned int)box->maximum() < 256)
     {
@@ -123,36 +121,35 @@ void MeleeFrame::QSpinBox_Changed(int NewValue)
 void MeleeFrame::QDoubleSpinBox_Changed(double NewValue)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO);
+
     QDoubleSpinBox* box = (QDoubleSpinBox*)sender();
     mp->SetFloatParameter(box, NewValue);
 }
 void MeleeFrame::CurrentAttack_IndexChanged(int NewIndex)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("CurrentAttack_IndexChanged slot triggered.", Debug::INFO);
+
     mp->setCurrentAttack(NewIndex);
     InitializeUIElements();
+    Debug::Log(ui->AttackSelectionBox->currentText() + " (0x" + QString::number(NewIndex, 16) + ") Selected.", Debug::INFO);
 }
 void MeleeFrame::ComboBox_IndexChanged(int NewIndex)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("ComboBox_IndexChanged slot triggered.", Debug::INFO);
+
     QComboBox* box = (QComboBox*)sender();
     mp->SetUByteParameter(box, NewIndex);
 }
 void MeleeFrame::CheckBox_StateChanged(int NewState)
 {
     if(IsInitializing || mp == nullptr) return;
-    Debug::Log("CheckBox_StateChanged slot triggered.", Debug::INFO);
+
     QCheckBox* flag = (QCheckBox*)sender();
     mp->SetFlagParameter(flag, NewState);
 }
 
 void MeleeFrame::ResetUiMode()
 {
-    Debug::Log("ResetUiMode called.", Debug::INFO);
-
     // Getting all the UI Elements and categorizing them by type
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();

@@ -34,7 +34,7 @@ QByteArray PakControls::GetParamData(int sectionID)
     int sectionSize = offsets[sectionID + 1] - offsets[sectionID];
     if(sectionSize <= 0)
     {
-        Debug::Log("Section is empty (Section Size: " + QString::number(sectionSize) + "), returning empty QByteArray.", Debug::WARNING);
+        Debug::Log("Section is invalid (Section Size: " + QString::number(sectionSize) + "), returning empty QByteArray.", Debug::WARNING);
         return QByteArray();
     }
     return pakData.mid(offsets[sectionID], sectionSize);
@@ -50,13 +50,12 @@ void PakControls::UpdateParamData(int sectionID, QByteArray* newData)
 
 void PakControls::SavePak(QString Path)
 {
-    Debug::Log("SavePak called.", Debug::INFO);
-
     FileParse::WriteFile(Path, &pakData);
+    if(FileParse::DoesFileExist(Path))
+        Debug::Log("File '" + Path + "' saved successfully.", Debug::INFO);
 }
 bool PakControls::HasFailed()
 {
-    Debug::Log("HasFailed called.", Debug::INFO);
     return failed;
 }
 

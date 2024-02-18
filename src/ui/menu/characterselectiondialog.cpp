@@ -35,6 +35,7 @@ CharacterSelectionDialog::CharacterSelectionDialog(QWidget* parent)
     ui->CharacterList->setIconSize(QSize(64, 64));
 
     populateList();
+    Debug::Log("CharacterSelectionDialog constructed.", Debug::INFO);
 }
 
 unsigned char CharacterSelectionDialog::getSelectedID()

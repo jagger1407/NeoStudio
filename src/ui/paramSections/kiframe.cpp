@@ -42,13 +42,11 @@ KiFrame::KiFrame(QByteArray Data, QWidget* parent) : QFrame(parent)
     */
     IsInitializing = false;
 
-    Debug::Log("New KiFrame constructed.", Debug::INFO);
+    Debug::Log("KiFrame successfully constructed.", Debug::INFO);
 }
 
 void KiFrame::InitializeUIElements()
 {
-    Debug::Log("InitializeUIElements called.", Debug::INFO);
-
     IsInitializing = true;
 
     QList<QLabel*> labels = this->findChildren<QLabel*>();
@@ -84,14 +82,15 @@ void KiFrame::InitializeUIElements()
 void KiFrame::CurrentBlast_IndexChanged(int NewIndex)
 {
     if(IsInitializing || kp == nullptr) return;
-    Debug::Log("CurrentBlast_IndexChanged slot triggered.", Debug::INFO);
+
     kp->setCurrentBlast(NewIndex);
     InitializeUIElements();
+    Debug::Log(ui->KiBlastSelectionBox->currentText() + " (0x" + QString::number(NewIndex, 16) + ") Selected.", Debug::INFO);
 }
 void KiFrame::QSpinBox_Changed(int NewValue)
 {
     if(IsInitializing || kp == nullptr) return;
-    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO);
+
     QSpinBox* object = (QSpinBox*)sender();
     if(object->maximum() > 255) kp->SetUByteParameter(object, NewValue);
     else kp->SetIntParameter(object, NewValue);
@@ -100,14 +99,14 @@ void KiFrame::QSpinBox_Changed(int NewValue)
 void KiFrame::QDoubleSpinBox_Changed(double NewValue)
 {
     if(IsInitializing || kp == nullptr) return;
-    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO);
+
     kp->SetFloatParameter((QDoubleSpinBox*)sender(), NewValue);
 }
 
 void KiFrame::ComboBox_IndexChanged(int NewIndex)
 {
     if(IsInitializing || kp == nullptr) return;
-    Debug::Log("ComboBox_IndexChanged slot triggered.", Debug::INFO);
+
     kp->SetUByteParameter((QComboBox*)sender(), NewIndex);
 }
 
@@ -115,8 +114,6 @@ void KiFrame::ComboBox_IndexChanged(int NewIndex)
 
 void KiFrame::ResetUiMode()
 {
-    Debug::Log("ResetUiMode called.", Debug::INFO);
-
     // Getting all the UI Elements and categorizing them by type
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();

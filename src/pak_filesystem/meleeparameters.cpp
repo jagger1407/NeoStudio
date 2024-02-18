@@ -6,7 +6,7 @@ MeleeParameters::MeleeParameters(QByteArray ParameterData)
     constData = paramData.constData();
     if(paramData == nullptr || constData == nullptr)
     {
-        Debug::Log("Construction of MeleeParameter object failed!", Debug::ERROR);
+        Debug::Log("Construction of MeleeParameter object failed! No data passed.", Debug::ERROR);
         return;
     }
 
@@ -54,26 +54,27 @@ MeleeParameters::MeleeParameters(QByteArray ParameterData)
 
     Debug::Log("MeleeParameters object successfully constructed.", Debug::INFO);
 }
-QByteArray* MeleeParameters::GetFileData()
+QByteArray* MeleeParameters::GetParameterData()
 {
-    Debug::Log("GetFileData called.", Debug::INFO);
     return &paramData;
 }
-void MeleeParameters::SetFileData(QByteArray NewData)
+void MeleeParameters::SetParameterData(QByteArray NewData)
 {
-    Debug::Log("SetFileData called.", Debug::INFO);
-    paramData.replace(0, paramData.size(), NewData);
+    if(NewData.size() != paramData.size())
+    {
+        Debug::Log("SetFileData failed - Sizes don't match up.\n" \
+            "Current Size: " + QString::number(paramData.size()) + " Bytes\t- New Size: " + QString::number(NewData.size()) + " Bytes", Debug::ERROR);
+    }
+    paramData = NewData;
+    Debug::Log("MeleeParameters Data set.", Debug::INFO);
 }
 void MeleeParameters::setCurrentAttack(int AttackID)
 {
-    Debug::Log("setCurrentAttack called.", Debug::INFO);
     attackOffset = AttackID * MELEE_ATTACK_SIZE;
 }
 
 bool MeleeParameters::GetFlagParameter(QCheckBox* Object)
 {
-    Debug::Log("GetFlagParameter called.", Debug::INFO);
-
     if(Object == parameter[SecondaryString].UiElement)
         return BitManipulation::Bit(*(constData + attackOffset + parameter[SecondaryString].offset), 1);
 
@@ -90,7 +91,6 @@ bool MeleeParameters::GetFlagParameter(QCheckBox* Object)
 }
 unsigned char MeleeParameters::GetUByteParameter(QObject* Object)
 {
-    Debug::Log("GetUByteParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == parameter[i].UiElement) return *(unsigned char*)(constData + attackOffset + parameter[i].offset);
@@ -100,15 +100,12 @@ unsigned char MeleeParameters::GetUByteParameter(QObject* Object)
 }
 unsigned short MeleeParameters::GetUShortParameter(QSpinBox* Object)
 {
-    Debug::Log("GetUShortParameter called.", Debug::INFO);
     // There are no 2-Byte Parameters in this Parameter-section.
     Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
     return (unsigned short)-1;
 }
 int MeleeParameters::GetIntParameter(QSpinBox* Object)
 {
-    Debug::Log("GetIntParameter called.", Debug::INFO);
-
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == parameter[i].UiElement) return *(int*)(constData + attackOffset + parameter[i].offset);
@@ -118,7 +115,6 @@ int MeleeParameters::GetIntParameter(QSpinBox* Object)
 }
 float MeleeParameters::GetFloatParameter(QDoubleSpinBox* Object)
 {
-    Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == parameter[i].UiElement) return *(float*)(constData + attackOffset + parameter[i].offset);
@@ -128,7 +124,6 @@ float MeleeParameters::GetFloatParameter(QDoubleSpinBox* Object)
 }
 void MeleeParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
 {
-    Debug::Log("SetFlagParameter called.", Debug::INFO);
     if(Object == parameter[SecondaryString].UiElement)
         BitManipulation::SetBit(paramData.data() + attackOffset + parameter[SecondaryString].offset, 1, NewValue);
 
@@ -143,7 +138,6 @@ void MeleeParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
 }
 void MeleeParameters::SetUByteParameter(QObject* Object, unsigned char NewValue)
 {
-    Debug::Log("SetUByteParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -156,12 +150,10 @@ void MeleeParameters::SetUByteParameter(QObject* Object, unsigned char NewValue)
 }
 void MeleeParameters::SetUShortParameter(QSpinBox* Object, unsigned short NewValue)
 {
-    Debug::Log("SetUShortParameter called.", Debug::INFO);
     Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
 }
 void MeleeParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 {
-    Debug::Log("SetIntParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -174,7 +166,6 @@ void MeleeParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 }
 void MeleeParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
 {
-    Debug::Log("SetFloatParameter called.", Debug::INFO);
     for(int i=0;i<MeleeParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)

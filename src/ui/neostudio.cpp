@@ -3,7 +3,7 @@
 
 #include "src/ui/menu/characterselectiondialog.h"
 
-#define VERSION_STRING "Neo Studio v1.1.3"
+#define VERSION_STRING "Neo Studio v1.1.4"
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QMainWindow(parent), ui(new Ui::NeoStudio)
@@ -38,8 +38,6 @@ NeoStudio::~NeoStudio() = default;
 
 void NeoStudio::OpenFile()
 {
-    Debug::Log("OpenFile slot triggered.", Debug::INFO);
-
     QString filePath = QFileDialog::getOpenFileName(this,
                                         "Open File", "", "Character Files (*.pak);;Parameter Files (*.dat)");
     if(filePath.isEmpty())
@@ -63,11 +61,11 @@ void NeoStudio::OpenFile()
     {
         InitDatFile();
     }
+    Debug::Log(file + " sucessfully opened.", Debug::INFO);
 }
 
 void NeoStudio::SaveFile()
 {
-    Debug::Log("SaveFile slot triggered.", Debug::INFO);
     if(file == NULL)
     {
         Debug::Log("SaveFile: No file open.", Debug::ERROR);
@@ -75,10 +73,10 @@ void NeoStudio::SaveFile()
     }
     if(file.toLower().endsWith(".pak"))
     {
-        pak->UpdateParamData(PARAM_OFFSET_GENERAL, generalWindow->gp->GetFileData());
-        pak->UpdateParamData(PARAM_OFFSET_MELEE, meleeWindow->mp->GetFileData());
-        pak->UpdateParamData(PARAM_OFFSET_KI_BLAST, kiWindow->kp->GetFileData());
-        pak->UpdateParamData(PARAM_OFFSET_MOVEMENT, moveWindow->mp->GetFileData());
+        pak->UpdateParamData(PARAM_OFFSET_GENERAL, generalWindow->gp->GetParameterData());
+        pak->UpdateParamData(PARAM_OFFSET_MELEE, meleeWindow->mp->GetParameterData());
+        pak->UpdateParamData(PARAM_OFFSET_KI_BLAST, kiWindow->kp->GetParameterData());
+        pak->UpdateParamData(PARAM_OFFSET_MOVEMENT, moveWindow->mp->GetParameterData());
         pak->SavePak(file);
     }
     else if(file.toLower().endsWith(".dat"))
@@ -87,16 +85,16 @@ void NeoStudio::SaveFile()
         switch(datIndex)
         {
             case PARAM_TYPE_GENERAL:
-                datPtr = generalWindow->gp->GetFileData();
+                datPtr = generalWindow->gp->GetParameterData();
                 break;
             case PARAM_TYPE_MELEE:
-                datPtr = meleeWindow->mp->GetFileData();
+                datPtr = meleeWindow->mp->GetParameterData();
                 break;
             case PARAM_TYPE_KI_BLAST:
-                datPtr = kiWindow->kp->GetFileData();
+                datPtr = kiWindow->kp->GetParameterData();
                 break;
             case PARAM_TYPE_MOVEMENT:
-                datPtr = moveWindow->mp->GetFileData();
+                datPtr = moveWindow->mp->GetParameterData();
                 break;
             default:
                 Debug::Log("Invalid .dat file.", Debug::ERROR);
@@ -113,7 +111,6 @@ void NeoStudio::SaveFile()
 
 void NeoStudio::SaveFileAs()
 {
-    Debug::Log("SaveFileAs slot triggered.", Debug::INFO);
     if(file == NULL)
     {
         Debug::Log("SaveFileAs: No file open.", Debug::ERROR);
@@ -133,10 +130,10 @@ void NeoStudio::SaveFileAs()
 
     if(newFile.toLower().endsWith(".pak"))
     {
-        pak->UpdateParamData(PARAM_OFFSET_GENERAL, generalWindow->gp->GetFileData());
-        pak->UpdateParamData(PARAM_OFFSET_MELEE, meleeWindow->mp->GetFileData());
-        pak->UpdateParamData(PARAM_OFFSET_KI_BLAST, kiWindow->kp->GetFileData());
-        pak->UpdateParamData(PARAM_OFFSET_MOVEMENT, moveWindow->mp->GetFileData());
+        pak->UpdateParamData(PARAM_OFFSET_GENERAL, generalWindow->gp->GetParameterData());
+        pak->UpdateParamData(PARAM_OFFSET_MELEE, meleeWindow->mp->GetParameterData());
+        pak->UpdateParamData(PARAM_OFFSET_KI_BLAST, kiWindow->kp->GetParameterData());
+        pak->UpdateParamData(PARAM_OFFSET_MOVEMENT, moveWindow->mp->GetParameterData());
         pak->SavePak(newFile);
         if(FileParse::DoesFileExist(newFile))
         {
@@ -149,16 +146,16 @@ void NeoStudio::SaveFileAs()
         switch(datIndex)
         {
             case PARAM_TYPE_GENERAL:
-                datPtr = generalWindow->gp->GetFileData();
+                datPtr = generalWindow->gp->GetParameterData();
                 break;
             case PARAM_TYPE_MELEE:
-                datPtr = meleeWindow->mp->GetFileData();
+                datPtr = meleeWindow->mp->GetParameterData();
                 break;
             case PARAM_TYPE_KI_BLAST:
-                datPtr = kiWindow->kp->GetFileData();
+                datPtr = kiWindow->kp->GetParameterData();
                 break;
             case PARAM_TYPE_MOVEMENT:
-                datPtr = moveWindow->mp->GetFileData();
+                datPtr = moveWindow->mp->GetParameterData();
                 break;
             default:
                 Debug::Log("Invalid .dat file.", Debug::ERROR);
@@ -180,7 +177,6 @@ void NeoStudio::CloseFile()
         Debug::Log("CloseFile: No file open.", Debug::ERROR);
         return;
     }
-    Debug::Log("CloseFile slot triggered.", Debug::INFO);
     if(generalWindow != nullptr)
         generalWindow->close();
     if(meleeWindow != nullptr)
@@ -193,6 +189,7 @@ void NeoStudio::CloseFile()
     ui->FileLbl->setText("Open A Character File...");
 
     for(int i=0;i<ui->ParameterTabs->count();i++) ui->ParameterTabs->setTabEnabled(i, true);
+    Debug::Log("File closed.", Debug::INFO);
 }
 
 void NeoStudio::OpenAbout()
@@ -214,9 +211,12 @@ void NeoStudio::OpenOptions()
 
 void NeoStudio::InitPakFile()
 {
-    Debug::Log("InitPakFile called.", Debug::INFO);
     pak = new PakControls(file);
-    if(pak->HasFailed()) return;
+    if(pak->HasFailed())
+    {
+        Debug::Log(".pak file couldn't be opened. Initiation canceled.", Debug::WARNING);
+        return;
+    }
 
     if(generalWindow != nullptr) delete generalWindow;
     if(meleeWindow != nullptr) delete meleeWindow;
@@ -238,13 +238,12 @@ void NeoStudio::InitPakFile()
 
 void NeoStudio::InitDatFile()
 {
-    Debug::Log("InitDatFile called.", Debug::INFO);
-
     datIndex = (ParameterType)(file.split('/')[(file.split('/').length()-1)].split("_")[0].toInt() - 17);
 
-    if(datIndex == PARAM_TYPE_INVALID)
+    if(datIndex <= PARAM_TYPE_INVALID || datIndex >= PARAM_TYPE_NEXT)
     {
         Debug::Log("Invalid .dat file.", Debug::ERROR);
+        Debug::Log("datIndex = " + QString::number((int)datIndex), Debug::INFO);
         return;
     }
 
@@ -276,7 +275,7 @@ void NeoStudio::InitDatFile()
             ui->MovementScrollArea->setWidget(moveWindow);
             break;
         default:
-            Debug::Log("Invalid .dat file.", Debug::ERROR);
+            Debug::Log("No Frame available for this Parameter Type.", Debug::ERROR);
             return;
     }
     ui->ParameterTabs->setCurrentIndex(datIndex);
@@ -284,7 +283,6 @@ void NeoStudio::InitDatFile()
 
 void NeoStudio::ExportDat()
 {
-    Debug::Log("ExportDat called.", Debug::INFO);
 
     if(file.isEmpty())
     {
@@ -314,10 +312,10 @@ void NeoStudio::ExportDat()
     switch(type)
     {
         case PARAM_TYPE_GENERAL:
-            if(pakData->compare(*generalWindow->gp->GetFileData()))
+            if(pakData->compare(*generalWindow->gp->GetParameterData()))
             {
                 if(DatSelectionDialog::SelectDat())
-                    paramData = generalWindow->gp->GetFileData();
+                    paramData = generalWindow->gp->GetParameterData();
                 else
                     paramData = pakData;
             }
@@ -325,10 +323,10 @@ void NeoStudio::ExportDat()
                 paramData = pakData;
             break;
         case PARAM_TYPE_MELEE:
-            if(pakData->compare(*meleeWindow->mp->GetFileData()))
+            if(pakData->compare(*meleeWindow->mp->GetParameterData()))
             {
                 if(DatSelectionDialog::SelectDat())
-                    paramData = meleeWindow->mp->GetFileData();
+                    paramData = meleeWindow->mp->GetParameterData();
                 else
                     paramData = pakData;
             }
@@ -336,10 +334,10 @@ void NeoStudio::ExportDat()
                 paramData = pakData;
             break;
         case PARAM_TYPE_KI_BLAST:
-            if(pakData->compare(*kiWindow->kp->GetFileData()))
+            if(pakData->compare(*kiWindow->kp->GetParameterData()))
             {
                 if(DatSelectionDialog::SelectDat())
-                    paramData = kiWindow->kp->GetFileData();
+                    paramData = kiWindow->kp->GetParameterData();
                 else
                     paramData = pakData;
             }
@@ -347,10 +345,10 @@ void NeoStudio::ExportDat()
                 paramData = pakData;
             break;
         case PARAM_TYPE_MOVEMENT:
-            if(pakData->compare(*moveWindow->mp->GetFileData()))
+            if(pakData->compare(*moveWindow->mp->GetParameterData()))
             {
                 if(DatSelectionDialog::SelectDat())
-                    paramData = moveWindow->mp->GetFileData();
+                    paramData = moveWindow->mp->GetParameterData();
                 else
                     paramData = pakData;
             }
@@ -380,11 +378,10 @@ void NeoStudio::ExportDat()
 
 void NeoStudio::ImportDat()
 {
-    Debug::Log("ImportDat called.", Debug::INFO);
 
     if(file.isEmpty())
     {
-        Debug::Log("No file opened.", Debug::ERROR);
+        Debug::Log("No file opened. Only use this option to import parameter sections into .pak files.", Debug::ERROR);
         return;
     }
     else if(!file.toLower().endsWith(".pak"))
@@ -396,7 +393,7 @@ void NeoStudio::ImportDat()
     QString datPath = QFileDialog::getOpenFileName(this, "Open .dat file", file, "Parameter Files (*.dat)");
     if(datPath.isEmpty())
     {
-        Debug::Log("No path selected.", Debug::ERROR);
+        Debug::Log("No path selected.", Debug::WARNING);
         return;
     }
     QByteArray datData = FileParse::ReadWholeFile(datPath);
@@ -407,25 +404,26 @@ void NeoStudio::ImportDat()
     switch(datIndex - PARAM_OFFSET_GENERAL)
     {
         case PARAM_TYPE_GENERAL:
-            generalWindow->gp->SetFileData(datData);
+            generalWindow->gp->SetParameterData(datData);
             generalWindow->InitializeUIElements();
             break;
         case PARAM_TYPE_MELEE:
-            meleeWindow->mp->SetFileData(datData);
+            meleeWindow->mp->SetParameterData(datData);
             meleeWindow->ui->AttackSelectionBox->setCurrentIndex(0);
             meleeWindow->InitializeUIElements();
             break;
         case PARAM_TYPE_KI_BLAST:
-            kiWindow->kp->SetFileData(datData);
+            kiWindow->kp->SetParameterData(datData);
             kiWindow->ui->KiBlastSelectionBox->setCurrentIndex(0);
             kiWindow->InitializeUIElements();
             break;
         case PARAM_TYPE_MOVEMENT:
-            moveWindow->mp->SetFileData(datData);
+            moveWindow->mp->SetParameterData(datData);
             moveWindow->InitializeUIElements();
             break;
         default:
             Debug::Log("This parameter section isn't supported yet.", Debug::ERROR);
+            Debug::Log("datIndex = " + QString::number(datIndex), Debug::INFO);
     }
 }
 

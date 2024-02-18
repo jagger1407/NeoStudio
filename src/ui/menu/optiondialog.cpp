@@ -29,7 +29,6 @@ OptionDialog::OptionDialog()
 void OptionDialog::DebugEnableCheckState_Changed(int NewState)
 {
     if(initializing) return;
-    Debug::Log("DebugEnableCheckState_Changed slot triggered.", Debug::INFO);
     QString style;
     ui->LogModeLbl->setEnabled((bool)NewState);
     ui->LogModeBox->setEnabled((bool)NewState);
@@ -49,19 +48,16 @@ void OptionDialog::DebugEnableCheckState_Changed(int NewState)
 void OptionDialog::LoggingMode_IndexChanged(int NewIndex)
 {
     if(initializing) return;
-    Debug::Log("LoggingMode_IndexChanged slot triggered.", Debug::INFO);
     g_Options.logMode = (Options::LogMode)NewIndex;
 }
 void OptionDialog::TooltipColor_IndexChanged(int NewIndex)
 {
     if(initializing) return;
-    Debug::Log("TooltipColor_IndexChanged slot triggered.", Debug::INFO);
     g_Options.tooltipColor = (Options::TooltipColor)NewIndex;
 }
 void OptionDialog::UiModeBox_IndexChanged(int NewIndex)
 {
     if(initializing) return;
-    Debug::Log("UiModeBox_IndexChanged slot triggered.", Debug::INFO);
     QString style = ui->UiModeBox->currentText();
     g_Options.uiMode = style;
     this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + style +".qss"));
@@ -83,7 +79,6 @@ void OptionDialog::ReloadUIsBtn_Clicked()
 void OptionDialog::SaveBtn_Clicked()
 {
     if(initializing) return;
-    Debug::Log("SaveBtn_Clicked slot triggered.", Debug::INFO);
 
     g_Options.uiMode = ui->UiModeBox->currentText();
     g_Options.tooltipColor = (Options::TooltipColor)ui->TooltipBox->currentIndex();
@@ -91,11 +86,12 @@ void OptionDialog::SaveBtn_Clicked()
     g_Options.advancedOptions = (bool)(ui->DebugEnableCheckBox->checkState() >> 1);
 
     g_Options.SaveConfig();
+    Debug::Log("Config Saved.", Debug::INFO);
     this->close();
 }
 void OptionDialog::CancelBtn_Clicked()
 {
     if(initializing) return;
-    Debug::Log("CancelBtn_Clicked slot triggered.", Debug::INFO);
+    Debug::Log("OptionDialog canceled.", Debug::INFO);
     this->close();
 }

@@ -55,7 +55,7 @@ private:
     int counter[3] = { 0, 0, 0 };
     int fusion[3] = { 0, 0, 0 };
 
-    Options* options = nullptr;
+    CharacterSelectionDialog charSelect;
     /**Checks to see if the UI is initializing, used to supress slots while initializing.*/
     bool IsInitializing = false;
     /**Method to Change the parameter value when clicking a button, created to keep the slots clean.*/

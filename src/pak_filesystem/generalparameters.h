@@ -90,8 +90,8 @@ public:
     void SetUShortParameter(QSpinBox* Object, unsigned short NewValue);
     void SetIntParameter(QSpinBox* Object, int NewValue);
     void SetFloatParameter(QDoubleSpinBox* Object, float NewValue);
-    QByteArray* GetFileData();
-    void SetFileData(QByteArray NewData);
+    QByteArray* GetParameterData();
+    void SetParameterData(QByteArray NewData);
     /**
      * The parameter type of this parameter object.
      */

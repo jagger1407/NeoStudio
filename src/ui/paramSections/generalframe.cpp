@@ -125,11 +125,10 @@ GeneralFrame::GeneralFrame(QByteArray Data, QWidget* parent) : QFrame(parent)
 
     InitializeUIElements();
     ResetUiMode();
-    Debug::Log("New GeneralFrame constructed.", Debug::INFO);
+    Debug::Log("GeneralFrame successfully constructed.", Debug::INFO);
 }
 void GeneralFrame::InitializeUIElements()
 {
-    Debug::Log("InitializeUIElements called.", Debug::INFO);
     IsInitializing = true;
 
     QList<QLabel*> labels = this->findChildren<QLabel*>();
@@ -175,7 +174,7 @@ void GeneralFrame::InitializeUIElements()
 void GeneralFrame::QSpinBox_Changed(int NewValue)
 {
     if(IsInitializing || gp == nullptr) return;
-    Debug::Log("QSpinBox_Changed slot triggered.", Debug::INFO);
+
     QSpinBox* spinBox = (QSpinBox*)sender();
     if(spinBox->maximum() > 255)
         gp->SetIntParameter(spinBox, NewValue);
@@ -185,14 +184,14 @@ void GeneralFrame::QSpinBox_Changed(int NewValue)
 void GeneralFrame::QDoubleSpinBox_Changed(double NewValue)
 {
     if(IsInitializing || gp == nullptr) return;
-    Debug::Log("QDoubleSpinBox_Changed slot triggered.", Debug::INFO);
+
     QDoubleSpinBox* dblSpinBox = (QDoubleSpinBox*)sender();
     gp->SetFloatParameter(dblSpinBox, (float)NewValue);
 }
 void GeneralFrame::Button_Clicked()
 {
     if(IsInitializing || gp == nullptr) return;
-    Debug::Log("Button_Clicked slot triggered.", Debug::INFO);
+
     QPushButton* button = (QPushButton*)sender();
     ButtonChange(button);
 }
@@ -200,7 +199,7 @@ void GeneralFrame::Button_Clicked()
 void GeneralFrame::Character_Selected()
 {
     if(IsInitializing || gp == nullptr) return;
-     Debug::Log("Character_Selected slot triggered.", Debug::INFO);
+
     QPushButton* button = (QPushButton*)sender();
     CharacterSelectionDialog dialog;
     dialog.exec();
@@ -216,13 +215,13 @@ void GeneralFrame::Character_Selected()
 void GeneralFrame::ComboBox_IndexChanged(int NewValue)
 {
     if(IsInitializing || gp == nullptr) return;
-    Debug::Log("ComboBox_IndexChanged slot triggered.", Debug::INFO);
+
     gp->SetUByteParameter((QComboBox*)sender(), NewValue);
 }
 void GeneralFrame::Flag_Changed(int NewValue)
 {
     if(IsInitializing || gp == nullptr) return;
-    Debug::Log("Flag_Changed slot triggered.", Debug::INFO);
+
     gp->SetFlagParameter((QCheckBox*)sender(), NewValue);
 }
 void GeneralFrame::ButtonChange(QPushButton* Button)
@@ -340,21 +339,17 @@ void GeneralFrame::ButtonValueGet(QPushButton* Button)
     }
     else if(curBtn == 10)
     {
-        CharacterSelectionDialog d;
-        Button->setText(d.getItem(btnValue)->text());
-        Button->setIcon(d.getItem(btnValue)->icon());
+        Button->setText(charSelect.getItem(btnValue)->text());
+        Button->setIcon(charSelect.getItem(btnValue)->icon());
     }
     else if(curBtn == 11)
     {
-        CharacterSelectionDialog d;
-        Button->setIcon(d.getItem(btnValue)->icon());
+        Button->setIcon(charSelect.getItem(btnValue)->icon());
     }
 }
 
 void GeneralFrame::ResetUiMode()
 {
-    Debug::Log("ResetUiMode called.", Debug::INFO);
-
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();
     QList<QComboBox*> comboBoxes = this->findChildren<QComboBox*>();

@@ -105,21 +105,24 @@ GeneralParameters::GeneralParameters(QByteArray ParameterData)
 }
 
 /**Gets file data of this parameter file as a whole QByteArray.*/
-QByteArray* GeneralParameters::GetFileData()
+QByteArray* GeneralParameters::GetParameterData()
 {
-    Debug::Log("GetFileData called.", Debug::INFO);
     return &paramData;
 }
 /**Sets the entire parameter file data array at once to NewData, this should normally not be used.*/
-void GeneralParameters::SetFileData(QByteArray NewData)
+void GeneralParameters::SetParameterData(QByteArray NewData)
 {
-    Debug::Log("SetFileData called.", Debug::INFO);
-    paramData = QByteArray(NewData);
+    if(NewData.size() != paramData.size())
+    {
+        Debug::Log("SetFileData failed - Sizes don't match up.\n" \
+            "Current Size: " + QString::number(paramData.size()) + " Bytes\t- New Size: " + QString::number(NewData.size()) + " Bytes", Debug::ERROR);
+    }
+    paramData = NewData;
+    Debug::Log("GeneralParameters Data set.", Debug::INFO);
 }
 
 bool GeneralParameters::GetFlagParameter(QCheckBox* Object)
 {
-    Debug::Log("GetFlagParameter called.", Debug::INFO);
     QObject* byte = Object->parent();
     int bit = Object->objectName().split('_').last().toUInt() - 1;
 
@@ -137,7 +140,6 @@ bool GeneralParameters::GetFlagParameter(QCheckBox* Object)
 }
 unsigned char GeneralParameters::GetUByteParameter(QObject* Object)
 {
-    Debug::Log("GetUByteParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -148,14 +150,12 @@ unsigned char GeneralParameters::GetUByteParameter(QObject* Object)
 }
 unsigned short GeneralParameters::GetUShortParameter(QSpinBox* Object)
 {
-    Debug::Log("GetUShortParameter called.", Debug::INFO);
     // There are no 2-Byte Parameters in this Parameter-section.
     Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
     return (unsigned short)-1;
 }
 int GeneralParameters::GetIntParameter(QSpinBox* Object)
 {
-    Debug::Log("GetIntParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -167,7 +167,6 @@ int GeneralParameters::GetIntParameter(QSpinBox* Object)
 }
 float GeneralParameters::GetFloatParameter(QDoubleSpinBox* Object)
 {
-    Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -179,7 +178,6 @@ float GeneralParameters::GetFloatParameter(QDoubleSpinBox* Object)
 
 void GeneralParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
 {
-    Debug::Log("SetFlagParameter called.", Debug::INFO);
     QObject* group = Object->parent();
 
     int bit = Object->objectName().split('_').last().toUInt() - 1;
@@ -200,7 +198,6 @@ void GeneralParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
 
 void GeneralParameters::SetUByteParameter(QObject* Object, unsigned char NewValue)
 {
-    Debug::Log("SetUByteParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -213,13 +210,11 @@ void GeneralParameters::SetUByteParameter(QObject* Object, unsigned char NewValu
 }
 void GeneralParameters::SetUShortParameter(QSpinBox* Object, unsigned short NewValue)
 {
-    Debug::Log("SetUShortParameter called.", Debug::INFO);
     // There are no 2-Byte Parameters in this Parameter-section.
     Debug::Log("This Parameter type does not have any 2-Byte variables, this method shouldn't have been called.", Debug::WARNING);
 }
 void GeneralParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 {
-    Debug::Log("SetIntParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)
@@ -233,7 +228,6 @@ void GeneralParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 }
 void GeneralParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
 {
-    Debug::Log("SetFloatParameter called.", Debug::INFO);
     for(int i=0;i<GeneralParameterCount;i++)
     {
         if(Object == parameter[i].UiElement)

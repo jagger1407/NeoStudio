@@ -6,7 +6,7 @@ MovementParameters::MovementParameters(QByteArray ParameterData)
     constData = paramData.data();
     if(paramData == nullptr || constData == nullptr)
     {
-        Debug::Log("Construction of KiParameter object failed!", Debug::ERROR);
+        Debug::Log("Construction of KiParameter object failed! No data passed.", Debug::ERROR);
         return;
     }
 
@@ -18,21 +18,24 @@ MovementParameters::MovementParameters(QByteArray ParameterData)
     Debug::Log("MovementParameters Object successfully constructed.", Debug::INFO);
 }
 
-QByteArray* MovementParameters::GetFileData()
+QByteArray* MovementParameters::GetParameterData()
 {
-    Debug::Log("GetFileData called.", Debug::INFO);
     return &paramData;
 }
 
-void MovementParameters::SetFileData(QByteArray NewData)
+void MovementParameters::SetParameterData(QByteArray NewData)
 {
-    Debug::Log("SetFileData called.", Debug::INFO);
+    if(NewData.size() != paramData.size())
+    {
+        Debug::Log("SetFileData failed - Sizes don't match up.\n" \
+            "Current Size: " + QString::number(paramData.size()) + " Bytes\t- New Size: " + QString::number(NewData.size()) + " Bytes", Debug::ERROR);
+    }
     paramData = NewData;
+    Debug::Log("MovementParameters Data set.", Debug::INFO);
 }
 
 int MovementParameters::GetIntParameter(QSpinBox* Object)
 {
-    Debug::Log("GetIntParameter called.", Debug::INFO);
     for(int i=DDC_Consumption;i<=DAscDDesc_Consumption;i++)
         if(Object == parameter[i].UiElement)
             return *(int*)(constData + parameter[i].offset);
@@ -41,7 +44,6 @@ int MovementParameters::GetIntParameter(QSpinBox* Object)
 
 float MovementParameters::GetFloatParameter(QDoubleSpinBox* Object)
 {
-    Debug::Log("GetFloatParameter called.", Debug::INFO);
     for(int i=0;i<MovementParameterCount;i++)
         if(Object == parameter[i].UiElement)
             return *(float*)(constData + parameter[i].offset);
@@ -51,7 +53,6 @@ float MovementParameters::GetFloatParameter(QDoubleSpinBox* Object)
 
 void MovementParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 {
-    Debug::Log("GetIntParameter called.", Debug::INFO);
     for(int i=DDC_Consumption;i<=DAscDDesc_Consumption;i++)
         if(Object == parameter[i].UiElement)
             *(int*)(paramData.data() + parameter[i].offset) = NewValue;
@@ -59,7 +60,6 @@ void MovementParameters::SetIntParameter(QSpinBox* Object, int NewValue)
 
 void MovementParameters::SetFloatParameter(QDoubleSpinBox* Object, float NewValue)
 {
-    Debug::Log("SetFloatParameter called.", Debug::INFO);
     for(int i=0;i<MovementParameterCount;i++)
         if(Object == parameter[i].UiElement)
             *(float*)(paramData.data() + parameter[i].offset) = NewValue;

@@ -77,8 +77,8 @@ public:
      * The parameter type of this parameter object.
      */
     const ParameterType paramType = PARAM_TYPE_MELEE;
-    QByteArray* GetFileData();
-    void SetFileData(QByteArray NewData);
+    QByteArray* GetParameterData();
+    void SetParameterData(QByteArray NewData);
 private:
     const char* constData = nullptr;
     QByteArray paramData;

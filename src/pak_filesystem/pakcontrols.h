@@ -31,6 +31,9 @@ private:
     unsigned int offsets[PAK_SUB_COUNT + 1];
     QByteArray pakData;
 
+    /**Used for testing only.*/
+    void printSections();
+
     /**bool to check if the construction of the PakControls object failed.*/
     bool failed = true;
 };

@@ -5,13 +5,13 @@ void Debug::Log(const QString Message, LogLevel Severity)
     switch(g_Options.logMode)
     {
         case Options::RELEASE:
-            if(Severity == INFO) return;
+            if(Severity <= INFO) return;
             ConsolePrint(Message, Severity);
             LogFilePrint(Message, Severity);
             if(Severity == ERROR) ShowError(Message);
             break;
         case Options::RELEASE_NOFILE:
-            if(Severity == INFO) return;
+            if(Severity <= INFO) return;
             ConsolePrint(Message, Severity);
             if(Severity == ERROR) ShowError(Message);
             break;
@@ -31,8 +31,11 @@ void Debug::Log(const QString Message, LogLevel Severity)
 }
 void Debug::ConsolePrint(const QString Message, LogLevel Severity)
 {
-    QString logLevels[3] = { "Info: ", "Warning: ", "ERROR! " };
-    qInfo().noquote() << QDateTime::currentDateTime().toString() << " - " + logLevels[Severity] << Message;
+    QString logLevels[LOGLEVEL_SIZE] = { "", "Info: ", "Warning: ", "ERROR! " };
+    if(Severity < INFO)
+        qInfo().noquote() << Message;
+    else
+        qInfo().noquote() << QDateTime::currentDateTime().toString() << " - " + logLevels[Severity] << Message;
 }
 void Debug::ShowError(const QString Message)
 {

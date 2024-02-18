@@ -4,7 +4,7 @@
 /**Offset to get the pointer to the real offset in the file.*/
 typedef enum
 {
-    PARAM_OFFSET_GENERAL = 18,
+    PARAM_OFFSET_GENERAL = 17,
     PARAM_OFFSET_MELEE,
     PARAM_OFFSET_KI_BLAST,
     PARAM_OFFSET_MOVEMENT,
@@ -22,7 +22,7 @@ typedef enum
     PARAM_TYPE_NEXT
 } ParameterType; // Currently Known Parameters, this enum should be expanded in the future
 
-/**This represents one parameter, represented by a UI Element and an offset within the data section.*/
+/**This represents one parameter, consisting of a UI Element and an offset within the data section.*/
 typedef struct
 {
     unsigned short offset;
@@ -33,8 +33,13 @@ typedef struct
 #define MAX_GRAVITY 1
 /**The total amount of characters in Tenkaichi 2. (excluding Wii chars)*/
 #define ROSTER_SIZE 136
-/**The value of the first byte of each Pak file. Used for validity checks.*/
-#define PAK_FIRST_BYTE 0xFA
+/**
+ * The first Byte, or rather 4-Bytes, are used to tell
+ * the program how many sub-sections the .pak has.
+ * Since a character .pak should always consist of 250 files,
+ * That count can be used to check for validity.
+ */
+#define PAK_SUB_COUNT 0xFA
 /**The size of the data chunk for each melee attack*/
 #define MELEE_ATTACK_SIZE 0x64
 /**The size of the data chunk for each ki blast*/

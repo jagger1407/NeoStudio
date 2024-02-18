@@ -20,7 +20,7 @@ PakControls::PakControls(QString FilePath)
 
     int* offsetPtr = ((int*)pakData.constData()) + 1;
 
-    for(int i=0;i<PAK_SUB_COUNT;i++)
+    for(int i=0;i<PAK_SUB_COUNT + 1;i++)
     {
         offsets[i] = *offsetPtr++;
     }
@@ -58,4 +58,15 @@ bool PakControls::HasFailed()
 {
     Debug::Log("HasFailed called.", Debug::INFO);
     return failed;
+}
+
+void PakControls::printSections()
+{
+    Debug::ConsolePrint("PAK TEST:\n------------------------------------", Debug::DEBUG);
+    QStringList sectionNames = FileParse::ReadLines(sectionNameFile);
+    for(int i=0;i<PAK_SUB_COUNT;i++)
+    {
+        Debug::ConsolePrint(sectionNames[i] + " - Size: " + QString::number(offsets[i+1] - offsets[i]), Debug::DEBUG);
+    }
+    Debug::ConsolePrint("-----------------------------------------------", Debug::DEBUG);
 }

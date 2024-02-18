@@ -13,9 +13,12 @@ class Debug
 public:
     /**Each log level used.*/
     typedef enum{
+        DEBUG,
         INFO,
         WARNING,
-        ERROR
+        ERROR,
+
+        LOGLEVEL_SIZE
     } LogLevel;
     /**Generic Logging Function*/
     static void Log(const QString Message, LogLevel Severity);

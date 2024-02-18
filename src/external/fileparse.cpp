@@ -41,12 +41,19 @@ QByteArray FileParse::ReadWholeFile(QString FilePath)
 }
 void FileParse::WriteFile(QString FilePath, QByteArray* Data)
 {
-    QFile newFile(FilePath);
     // Check FilePath if it even has a value
     if(FilePath == "")
     {
         return;
     }
+    // Apparently, now with Windows 11,
+    // Windows likes to add newlines after a filename???
+    if(FilePath.endsWith("\r\n"))
+    {
+        FilePath.truncate(FilePath.length() - 2);
+    }
+    QFile newFile(FilePath);
+
     // Don't wanna corrupt the existing file, after all
     if(newFile.exists()) newFile.remove();
 

@@ -51,7 +51,7 @@ void Debug::ShowError(const QString Message)
 }
 void Debug::LogFilePrint(const QString Message, LogLevel Severity)
 {
-    QString logLevels[3] = { "Info: ", "Warning: ", "ERROR! " };
+    QString logLevels[LOGLEVEL_SIZE] = { "", "Info: ", "Warning: ", "ERROR! " };
     QFile logFile("./NeoStudio.log");
     logFile.open(QIODevice::Append);
     logFile.write(QDateTime::currentDateTime().toString().toUtf8() +

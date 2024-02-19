@@ -39,6 +39,7 @@ private slots:
     void QDoubleSpinBox_Changed(double NewValue);
     void ComboBox_IndexChanged(int NewIndex);
     void CurrentBlast_IndexChanged(int NewIndex);
+    void CheckBox_StateChanged(int NewState);
 };
 
 #endif // KIFRAME_H

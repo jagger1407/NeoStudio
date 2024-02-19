@@ -3,7 +3,7 @@
 
 #include "src/ui/menu/characterselectiondialog.h"
 
-#define VERSION_STRING "Neo Studio v1.1.4"
+#define VERSION_STRING "Neo Studio v1.2.0"
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QMainWindow(parent), ui(new Ui::NeoStudio)

@@ -11,9 +11,7 @@ MeleeParameters::MeleeParameters(QByteArray ParameterData)
     }
 
 #if 1 // Defining all known parameter offsets
-    parameter[Header].offset = 0x00;
-    parameter[SecondaryString].offset = 0x01;
-    parameter[LockOnLoss].offset = 0x01;
+    parameter[AttackFlags].offset = 0x00;
     parameter[Damage].offset = 0x04;
     parameter[DamageGuarding].offset = 0x08;
     parameter[KiLoss].offset = 0x0C;
@@ -46,6 +44,9 @@ MeleeParameters::MeleeParameters(QByteArray ParameterData)
     parameter[Unk54].offset = 0x54;
     parameter[Unk58].offset = 0x58;
     parameter[Unk5C].offset = 0x5C;
+    parameter[Unk5D].offset = 0x5D;
+    parameter[Unk5E].offset = 0x5E;
+    parameter[Unk5F].offset = 0x5F;
     parameter[EffectGuard].offset = 0x60;
     parameter[EffectCounter].offset = 0x61;
     parameter[GuardType].offset = 0x62;
@@ -75,19 +76,12 @@ void MeleeParameters::setCurrentAttack(int AttackID)
 
 bool MeleeParameters::GetFlagParameter(QCheckBox* Object)
 {
-    if(Object == parameter[SecondaryString].UiElement)
-        return BitManipulation::Bit(*(constData + attackOffset + parameter[SecondaryString].offset), 1);
-
-    else if(Object == parameter[LockOnLoss].UiElement)
-        return BitManipulation::Bit(*(constData + attackOffset + parameter[LockOnLoss].offset), 2);
-
-    else if(Object == parameter[GuardType].UiElement)
-        return BitManipulation::Bit(*(constData + attackOffset + parameter[GuardType].offset), 0);
-
-    else
-        Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
-
-    return false;
+    if(Object == parameter[GuardType].UiElement)
+    {
+        return BitManipulation::Bit(constData[attackOffset + parameter[GuardType].offset], 0);
+    }
+    int bit = Object->objectName().split("_")[1].toInt();
+    return BitManipulation::Bit(constData[attackOffset + (int)(bit / 8)], bit % 8);
 }
 unsigned char MeleeParameters::GetUByteParameter(QObject* Object)
 {
@@ -124,17 +118,14 @@ float MeleeParameters::GetFloatParameter(QDoubleSpinBox* Object)
 }
 void MeleeParameters::SetFlagParameter(QCheckBox* Object, bool NewValue)
 {
-    if(Object == parameter[SecondaryString].UiElement)
-        BitManipulation::SetBit(paramData.data() + attackOffset + parameter[SecondaryString].offset, 1, NewValue);
-
-    else if(Object == parameter[LockOnLoss].UiElement)
-        BitManipulation::SetBit(paramData.data() + attackOffset + parameter[LockOnLoss].offset, 2, NewValue);
-
-    else if(Object == parameter[GuardType].UiElement)
+    if(Object == parameter[GuardType].UiElement)
+    {
         BitManipulation::SetBit(paramData.data() + attackOffset + parameter[GuardType].offset, 0, NewValue);
+        return;
+    }
+    int bit = Object->objectName().split("_")[1].toInt();
+    BitManipulation::SetBit(paramData.data() + attackOffset + (int)(bit / 8), bit % 8, NewValue);
 
-    else
-        Debug::Log("Object not part of UiElements List.", Debug::ERROR);
 }
 void MeleeParameters::SetUByteParameter(QObject* Object, unsigned char NewValue)
 {

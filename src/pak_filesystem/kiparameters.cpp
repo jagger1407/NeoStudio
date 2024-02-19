@@ -56,6 +56,12 @@ void KiParameters::setCurrentBlast(int BlastID)
     blastOffset = BlastID * KI_BLAST_ATTACK_SIZE;
 }
 
+bool KiParameters::GetFlagParameter(QCheckBox* Object)
+{
+    int bit = Object->objectName().split("_")[1].toInt();
+    return BitManipulation::Bit(constData[blastOffset + (int)(bit / 8)], bit % 8);
+}
+
 unsigned char KiParameters::GetUByteParameter(QObject* Object)
 {
     for(int i=0;i<KiParameterCount;i++)
@@ -93,6 +99,12 @@ float KiParameters::GetFloatParameter(QDoubleSpinBox* Object)
     }
     Debug::Log("Object " + Object->objectName() + " not part of UiElements List.", Debug::ERROR);
     return (unsigned char)-1;
+}
+
+void KiParameters::SetFlagParameter(QCheckBox* Object, int NewState)
+{
+    int bit = Object->objectName().split("_")[1].toInt();
+    return BitManipulation::SetBit(paramData.data() + blastOffset + (int)(bit / 8), bit % 8, NewState);
 }
 
 void KiParameters::SetUByteParameter(QObject* Object, unsigned char NewValue)

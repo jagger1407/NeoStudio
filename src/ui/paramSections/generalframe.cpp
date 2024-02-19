@@ -87,7 +87,7 @@ GeneralFrame::GeneralFrame(QByteArray Data, QWidget* parent) : QFrame(parent)
     gp->parameter[GeneralParameters::BaseKiRegen].UiElement = ui->BaseKiRegenBox;
     gp->parameter[GeneralParameters::CounterKi].UiElement = ui->CounterKiBox;
     gp->parameter[GeneralParameters::Unk_0x80].UiElement = ui->SpinBox_Unk_0x80;
-    gp->parameter[GeneralParameters::PowerGuardKiCost].UiElement = ui->SpinBox_Unk_0x84;
+    gp->parameter[GeneralParameters::PowerGuardKiCost].UiElement = ui->PowerGuardKiBox;
     gp->parameter[GeneralParameters::Unk_0x88].UiElement = ui->SpinBox_Unk_0x88;
     gp->parameter[GeneralParameters::BlastGaugeSpeed].UiElement = ui->BlastGaugeBox;
     gp->parameter[GeneralParameters::BlueKiChargeSpeed].UiElement = ui->BlueKiChargeBox;

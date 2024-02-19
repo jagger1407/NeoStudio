@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>922</width>
-    <height>620</height>
+    <width>1145</width>
+    <height>1300</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <widget class="QComboBox" name="AttackSelectionBox">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>70</y>
+     <x>410</x>
+     <y>60</y>
      <width>321</width>
      <height>31</height>
     </rect>
@@ -568,8 +568,8 @@
   <widget class="QLabel" name="AttackSelectionLbl">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>40</y>
+     <x>410</x>
+     <y>30</y>
      <width>321</width>
      <height>21</height>
     </rect>
@@ -594,8 +594,8 @@
     <rect>
      <x>10</x>
      <y>120</y>
-     <width>531</width>
-     <height>191</height>
+     <width>391</width>
+     <height>321</height>
     </rect>
    </property>
    <property name="title">
@@ -607,9 +607,9 @@
    <widget class="QLabel" name="DamageLbl">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>30</y>
-      <width>81</width>
+      <x>40</x>
+      <y>50</y>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -631,9 +631,9 @@
    <widget class="QSpinBox" name="DamageBox">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>60</y>
-      <width>81</width>
+      <x>40</x>
+      <y>80</y>
+      <width>101</width>
       <height>32</height>
      </rect>
     </property>
@@ -656,9 +656,9 @@
    <widget class="QLabel" name="DamageGuardLbl">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>100</y>
-      <width>151</width>
+      <x>200</x>
+      <y>50</y>
+      <width>161</width>
       <height>31</height>
      </rect>
     </property>
@@ -680,9 +680,9 @@
    <widget class="QSpinBox" name="DamageBox_2">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>130</y>
-      <width>81</width>
+      <x>230</x>
+      <y>80</y>
+      <width>101</width>
       <height>32</height>
      </rect>
     </property>
@@ -705,9 +705,9 @@
    <widget class="QLabel" name="KiGainLbl">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>30</y>
-      <width>81</width>
+      <x>30</x>
+      <y>140</y>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
@@ -720,7 +720,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The amount of Ki you gain if the attack breaks guard.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>Ki Gain</string>
+     <string>User Ki Gain</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -729,9 +729,9 @@
    <widget class="QSpinBox" name="KiGainBox">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>60</y>
-      <width>81</width>
+      <x>40</x>
+      <y>170</y>
+      <width>101</width>
       <height>32</height>
      </rect>
     </property>
@@ -754,9 +754,9 @@
    <widget class="QLabel" name="KiLossLbl">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>100</y>
-      <width>81</width>
+      <x>210</x>
+      <y>140</y>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>
@@ -769,7 +769,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The amount of Ki lost by the opponent if the attack breaks guard.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>Ki Loss</string>
+     <string>Opponent Ki Loss</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -778,9 +778,9 @@
    <widget class="QSpinBox" name="KiLossBox">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>130</y>
-      <width>81</width>
+      <x>230</x>
+      <y>170</y>
+      <width>101</width>
       <height>32</height>
      </rect>
     </property>
@@ -803,9 +803,9 @@
    <widget class="QLabel" name="KnockbackLbl">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>30</y>
-      <width>81</width>
+      <x>230</x>
+      <y>230</y>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -827,8 +827,8 @@
    <widget class="QDoubleSpinBox" name="KnockbackBox">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>60</y>
+      <x>230</x>
+      <y>260</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -846,9 +846,9 @@
    <widget class="QLabel" name="ReachLbl">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>100</y>
-      <width>81</width>
+      <x>40</x>
+      <y>230</y>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -870,8 +870,8 @@
    <widget class="QDoubleSpinBox" name="ReachBox">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>130</y>
+      <x>40</x>
+      <y>260</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -902,10 +902,10 @@
   <widget class="QGroupBox" name="DesignGroupBox">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>320</y>
-     <width>241</width>
-     <height>281</height>
+     <x>840</x>
+     <y>120</y>
+     <width>281</width>
+     <height>321</height>
     </rect>
    </property>
    <property name="title">
@@ -917,7 +917,7 @@
    <widget class="QComboBox" name="VFX_Box">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>60</x>
       <y>100</y>
       <width>161</width>
       <height>32</height>
@@ -1024,7 +1024,7 @@
    <widget class="QLabel" name="VFX_Lbl">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>60</x>
       <y>60</y>
       <width>161</width>
       <height>31</height>
@@ -1048,8 +1048,8 @@
    <widget class="QComboBox" name="SFX_Box">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>200</y>
+      <x>40</x>
+      <y>230</y>
       <width>201</width>
       <height>32</height>
      </rect>
@@ -1135,8 +1135,8 @@
    <widget class="QLabel" name="SFX_Lbl">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>160</y>
+      <x>60</x>
+      <y>190</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -1160,10 +1160,10 @@
   <widget class="QGroupBox" name="GameplayEffectGroupBox">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>320</y>
-     <width>281</width>
-     <height>281</height>
+     <x>410</x>
+     <y>120</y>
+     <width>421</width>
+     <height>321</height>
     </rect>
    </property>
    <property name="title">
@@ -1175,9 +1175,9 @@
    <widget class="QLabel" name="EOG_Lbl">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>30</y>
-      <width>161</width>
+      <x>20</x>
+      <y>70</y>
+      <width>181</width>
       <height>31</height>
      </rect>
     </property>
@@ -1199,9 +1199,9 @@
    <widget class="QComboBox" name="EOG_Box">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>60</y>
-      <width>121</width>
+      <x>20</x>
+      <y>100</y>
+      <width>181</width>
       <height>31</height>
      </rect>
     </property>
@@ -1245,8 +1245,8 @@
    <widget class="QLabel" name="EOC_Lbl">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>90</y>
+      <x>230</x>
+      <y>70</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -1269,8 +1269,8 @@
    <widget class="QComboBox" name="EOC_Box">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>120</y>
+      <x>220</x>
+      <y>100</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -1321,8 +1321,8 @@
    <widget class="QComboBox" name="HitstunBox">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>180</y>
+      <x>80</x>
+      <y>190</y>
       <width>261</width>
       <height>31</height>
      </rect>
@@ -1548,9 +1548,9 @@
    <widget class="QLabel" name="HitstunLbl">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>150</y>
-      <width>161</width>
+      <x>120</x>
+      <y>160</y>
+      <width>181</width>
       <height>31</height>
      </rect>
     </property>
@@ -1572,8 +1572,8 @@
    <widget class="QCheckBox" name="GuardBehaviourFlag">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>220</y>
+      <x>150</x>
+      <y>260</y>
       <width>131</width>
       <height>24</height>
      </rect>
@@ -1582,39 +1582,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This decides whether, upon the opponent guarding the hit, they will have a regular blocking animation or a longer, heavier hit animation, most notably used by the attacks of Great Apes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>Regular Guard</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="LockOnLossFlag">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>220</y>
-      <width>131</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This flag decides if the attack makes the opponent lose Lock-On.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="text">
-     <string>Lock-On Loss</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="SecStringFlag">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>250</y>
-      <width>181</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This flag decides if you enter the secondary combo string after this attack hits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="text">
-     <string>Enter Secondary String</string>
+     <string>Long Recovery</string>
     </property>
    </widget>
    <zorder>HitstunLbl</zorder>
@@ -1624,16 +1592,14 @@
    <zorder>EOC_Box</zorder>
    <zorder>HitstunBox</zorder>
    <zorder>GuardBehaviourFlag</zorder>
-   <zorder>LockOnLossFlag</zorder>
-   <zorder>SecStringFlag</zorder>
   </widget>
   <widget class="QGroupBox" name="UnknownGroupBox">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>120</y>
-     <width>361</width>
-     <height>481</height>
+     <x>40</x>
+     <y>790</y>
+     <width>1051</width>
+     <height>491</height>
     </rect>
    </property>
    <property name="title">
@@ -1645,9 +1611,9 @@
    <widget class="QLabel" name="UnknownLbl_1">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>30</y>
-      <width>81</width>
+      <x>620</x>
+      <y>80</y>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -1657,7 +1623,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x14.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x14.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x14)</string>
@@ -1666,12 +1632,12 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_1">
+   <widget class="QSpinBox" name="UnknownSpinBox_14">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>60</y>
-      <width>81</width>
+      <x>620</x>
+      <y>110</y>
+      <width>101</width>
       <height>32</height>
      </rect>
     </property>
@@ -1682,7 +1648,7 @@
      <enum>QAbstractSpinBox::PlusMinus</enum>
     </property>
     <property name="minimum">
-     <number>0</number>
+     <number>-2147483647</number>
     </property>
     <property name="maximum">
      <number>2147483647</number>
@@ -1694,12 +1660,12 @@
      <number>16</number>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_2">
+   <widget class="QSpinBox" name="UnknownSpinBox_18">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>60</y>
-      <width>81</width>
+      <x>740</x>
+      <y>110</y>
+      <width>101</width>
       <height>32</height>
      </rect>
     </property>
@@ -1710,7 +1676,7 @@
      <enum>QAbstractSpinBox::PlusMinus</enum>
     </property>
     <property name="minimum">
-     <number>0</number>
+     <number>-2147483647</number>
     </property>
     <property name="maximum">
      <number>2147483647</number>
@@ -1725,9 +1691,9 @@
    <widget class="QLabel" name="UnknownLbl_2">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>30</y>
-      <width>81</width>
+      <x>740</x>
+      <y>80</y>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -1737,7 +1703,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x18.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x18.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x18)</string>
@@ -1746,12 +1712,12 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_3">
+   <widget class="QSpinBox" name="UnknownSpinBox_1C">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>60</y>
-      <width>81</width>
+      <x>860</x>
+      <y>110</y>
+      <width>101</width>
       <height>32</height>
      </rect>
     </property>
@@ -1762,10 +1728,13 @@
      <enum>QAbstractSpinBox::PlusMinus</enum>
     </property>
     <property name="minimum">
-     <number>0</number>
+     <number>-2147483647</number>
     </property>
     <property name="maximum">
      <number>2147483647</number>
+    </property>
+    <property name="singleStep">
+     <number>1</number>
     </property>
     <property name="value">
      <number>0</number>
@@ -1777,9 +1746,9 @@
    <widget class="QLabel" name="UnknownLbl_3">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>30</y>
-      <width>81</width>
+      <x>860</x>
+      <y>80</y>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -1789,7 +1758,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x1C.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x1C.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x1C)</string>
@@ -1798,12 +1767,12 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_4">
+   <widget class="QSpinBox" name="UnknownSpinBox_21">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>120</y>
-      <width>61</width>
+      <x>100</x>
+      <y>110</y>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
@@ -1829,8 +1798,8 @@
    <widget class="QLabel" name="UnknownLbl_4">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>90</y>
+      <x>100</x>
+      <y>80</y>
       <width>61</width>
       <height>31</height>
      </rect>
@@ -1841,7 +1810,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x21.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x21.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x21)</string>
@@ -1850,12 +1819,12 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_5">
+   <widget class="QSpinBox" name="UnknownSpinBox_22">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>120</y>
-      <width>61</width>
+      <x>220</x>
+      <y>110</y>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
@@ -1881,9 +1850,9 @@
    <widget class="QLabel" name="UnknownLbl_5">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>90</y>
-      <width>61</width>
+      <x>220</x>
+      <y>80</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -1893,7 +1862,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x22.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x22.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x22)</string>
@@ -1905,9 +1874,9 @@
    <widget class="QLabel" name="UnknownLbl_6">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>90</y>
-      <width>61</width>
+      <x>340</x>
+      <y>80</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -1917,7 +1886,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x23.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x23.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x23)</string>
@@ -1926,12 +1895,12 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_6">
+   <widget class="QSpinBox" name="UnknownSpinBox_23">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>120</y>
-      <width>61</width>
+      <x>340</x>
+      <y>110</y>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
@@ -1954,12 +1923,12 @@
      <number>16</number>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_7">
+   <widget class="QSpinBox" name="UnknownSpinBox_24">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>120</y>
-      <width>61</width>
+      <x>100</x>
+      <y>180</y>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
@@ -1985,9 +1954,9 @@
    <widget class="QLabel" name="UnknownLbl_7">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>90</y>
-      <width>61</width>
+      <x>100</x>
+      <y>150</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -1997,7 +1966,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x24.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x24.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x24)</string>
@@ -2009,9 +1978,9 @@
    <widget class="QLabel" name="UnknownLbl_8">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>150</y>
-      <width>61</width>
+      <x>100</x>
+      <y>220</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -2021,7 +1990,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x27.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x27.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x27)</string>
@@ -2030,12 +1999,12 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_8">
+   <widget class="QSpinBox" name="UnknownSpinBox_25">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>120</y>
-      <width>61</width>
+      <x>220</x>
+      <y>180</y>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
@@ -2058,12 +2027,12 @@
      <number>16</number>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_9">
+   <widget class="QSpinBox" name="UnknownSpinBox_26">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>340</x>
       <y>180</y>
-      <width>61</width>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
@@ -2086,12 +2055,12 @@
      <number>16</number>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_10">
+   <widget class="QSpinBox" name="UnknownSpinBox_27">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>180</y>
-      <width>61</width>
+      <x>100</x>
+      <y>250</y>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
@@ -2117,9 +2086,9 @@
    <widget class="QLabel" name="UnknownLbl_9">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>90</y>
-      <width>61</width>
+      <x>220</x>
+      <y>150</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -2129,7 +2098,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x25.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x25.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x25)</string>
@@ -2141,9 +2110,9 @@
    <widget class="QLabel" name="UnknownLbl_10">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>340</x>
       <y>150</y>
-      <width>61</width>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -2153,7 +2122,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x26.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x26.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x26)</string>
@@ -2162,12 +2131,12 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_11">
+   <widget class="QSpinBox" name="UnknownSpinBox_2A">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>180</y>
-      <width>61</width>
+      <x>220</x>
+      <y>250</y>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
@@ -2193,9 +2162,9 @@
    <widget class="QLabel" name="UnknownLbl_11">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>150</y>
-      <width>61</width>
+      <x>220</x>
+      <y>220</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -2205,7 +2174,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x2A.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x2A.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x2A)</string>
@@ -2214,12 +2183,12 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_12">
+   <widget class="QSpinBox" name="UnknownSpinBox_2B">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>180</y>
-      <width>61</width>
+      <x>340</x>
+      <y>250</y>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
@@ -2245,9 +2214,9 @@
    <widget class="QLabel" name="UnknownLbl_12">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>150</y>
-      <width>61</width>
+      <x>340</x>
+      <y>220</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -2257,7 +2226,7 @@
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x2B.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x2B.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x2B)</string>
@@ -2266,11 +2235,11 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="UnknownFloatBox_1">
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_38">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>240</y>
+      <x>740</x>
+      <y>220</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2291,8 +2260,8 @@
    <widget class="QLabel" name="UnknownLbl_13">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>210</y>
+      <x>740</x>
+      <y>190</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2310,8 +2279,7 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x38.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x38.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x38)</string>
@@ -2323,8 +2291,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QLabel" name="UnknownLbl_14">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>210</y>
+      <x>860</x>
+      <y>190</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2342,8 +2310,7 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x3C.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x3C.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x3C)</string>
@@ -2355,8 +2322,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QLabel" name="UnknownLbl_15">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>270</y>
+      <x>620</x>
+      <y>260</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2374,8 +2341,7 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x40.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x40.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x40)</string>
@@ -2387,8 +2353,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QLabel" name="UnknownLbl_16">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>270</y>
+      <x>740</x>
+      <y>260</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2406,8 +2372,7 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x44.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x44.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x44)</string>
@@ -2419,8 +2384,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QLabel" name="UnknownLbl_17">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>270</y>
+      <x>860</x>
+      <y>260</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2431,7 +2396,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x48.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x48.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x48)</string>
@@ -2443,7 +2408,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QLabel" name="UnknownLbl_18">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>620</x>
       <y>330</y>
       <width>101</width>
       <height>31</height>
@@ -2462,8 +2427,7 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x4C.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x4C.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x4C)</string>
@@ -2475,7 +2439,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QLabel" name="UnknownLbl_19">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>740</x>
       <y>330</y>
       <width>101</width>
       <height>31</height>
@@ -2487,7 +2451,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x50.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x50.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x50)</string>
@@ -2499,7 +2463,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QLabel" name="UnknownLbl_20">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>860</x>
       <y>330</y>
       <width>101</width>
       <height>31</height>
@@ -2511,7 +2475,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x54.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x54.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x54)</string>
@@ -2523,8 +2487,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QLabel" name="UnknownLbl_21">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>390</y>
+      <x>740</x>
+      <y>400</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2535,7 +2499,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x58.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x58.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x58)</string>
@@ -2544,36 +2508,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="UnknownLbl_22">
+   <widget class="QSpinBox" name="UnknownSpinBox_63">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>390</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown Floating-Point parameter with the offset 0x5C.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="text">
-     <string>? (0x5C)</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_13">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>420</y>
-      <width>61</width>
+      <x>280</x>
+      <y>400</y>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
@@ -2599,9 +2539,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QLabel" name="UnknownLbl_23">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>390</y>
-      <width>61</width>
+      <x>280</x>
+      <y>370</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -2611,7 +2551,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </font>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x63.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x63.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>? (0x63)</string>
@@ -2620,11 +2560,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="UnknownFloatBox_2">
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_3C">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>240</y>
+      <x>860</x>
+      <y>220</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2642,11 +2582,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <double>1000000.000000000000000</double>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="UnknownFloatBox_3">
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_40">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>300</y>
+      <x>620</x>
+      <y>290</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2664,11 +2604,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <double>1000000.000000000000000</double>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="UnknownFloatBox_4">
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_44">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>300</y>
+      <x>740</x>
+      <y>290</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2686,11 +2626,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <double>1000000.000000000000000</double>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="UnknownFloatBox_5">
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_48">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>300</y>
+      <x>860</x>
+      <y>290</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2708,10 +2648,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <double>1000000.000000000000000</double>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="UnknownFloatBox_6">
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_4C">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>620</x>
       <y>360</y>
       <width>101</width>
       <height>31</height>
@@ -2730,10 +2670,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <double>1000000.000000000000000</double>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="UnknownFloatBox_7">
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_50">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>740</x>
       <y>360</y>
       <width>101</width>
       <height>31</height>
@@ -2752,10 +2692,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <double>1000000.000000000000000</double>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="UnknownFloatBox_8">
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_54">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>860</x>
       <y>360</y>
       <width>101</width>
       <height>31</height>
@@ -2774,11 +2714,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <double>1000000.000000000000000</double>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="UnknownFloatBox_9">
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_58">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>420</y>
+      <x>740</x>
+      <y>430</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2796,11 +2736,42 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <double>1000000.000000000000000</double>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="UnknownFloatBox_10">
+   <widget class="QLabel" name="UnknownLbl_25">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>420</y>
+      <x>620</x>
+      <y>190</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x30.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x30)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="UnknownFloatBox_30">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>220</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -2818,12 +2789,60 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <double>1000000.000000000000000</double>
     </property>
    </widget>
-   <widget class="QSpinBox" name="UnknownSpinBox_14">
+   <widget class="QLabel" name="UnknownLbl_24">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>61</width>
+      <x>630</x>
+      <y>50</y>
+      <width>321</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x14.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;4-Byte&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_26">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>50</y>
+      <width>311</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x14.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;1-Byte&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_5E">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>320</y>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
@@ -2846,88 +2865,225 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <number>16</number>
     </property>
    </widget>
-   <widget class="QLabel" name="UnknownLbl_24">
+   <widget class="QSpinBox" name="UnknownSpinBox_5C">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>61</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x00.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="text">
-     <string>? (0x00)</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="UnknownLbl_25">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>210</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="toolTip">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An unknown Floating-Point parameter with the offset 0x30.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="text">
-     <string>? (0x30)</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="UnknownFloatBox_11">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>240</y>
-      <width>101</width>
-      <height>31</height>
+      <x>100</x>
+      <y>320</y>
+      <width>71</width>
+      <height>32</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::PlusMinus</enum>
     </property>
-    <property name="decimals">
-     <number>3</number>
+    <property name="minimum">
+     <number>0</number>
     </property>
     <property name="maximum">
-     <double>1000000.000000000000000</double>
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_22">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>290</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x5E.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x5E)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_27">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>290</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x5D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x5D)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_28">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>290</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x5C.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x5C)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_5D">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>320</y>
+      <width>71</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="UnknownSpinBox_5F">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>400</y>
+      <width>71</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="displayIntegerBase">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_29">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>370</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 1-Byte parameter with the offset 0x5F.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>? (0x5F)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UnknownLbl_30">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>160</y>
+      <width>331</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;An unknown 4-Byte parameter with the offset 0x14.&lt;/p&gt;&lt;p&gt;If you tinker with this, and have figured out what this parameter does, please DM me jagger1407#0389 so I can promptly add it to this tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Float&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>40</y>
+      <width>16</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
     </property>
    </widget>
    <zorder>UnknownLbl_25</zorder>
-   <zorder>UnknownLbl_24</zorder>
    <zorder>UnknownLbl_23</zorder>
-   <zorder>UnknownLbl_22</zorder>
    <zorder>UnknownLbl_19</zorder>
    <zorder>UnknownLbl_20</zorder>
    <zorder>UnknownLbl_21</zorder>
@@ -2948,32 +3104,639 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <zorder>UnknownLbl_10</zorder>
    <zorder>UnknownLbl_2</zorder>
    <zorder>UnknownLbl_1</zorder>
-   <zorder>UnknownSpinBox_1</zorder>
-   <zorder>UnknownSpinBox_2</zorder>
-   <zorder>UnknownLbl_3</zorder>
-   <zorder>UnknownSpinBox_3</zorder>
-   <zorder>UnknownSpinBox_5</zorder>
-   <zorder>UnknownSpinBox_6</zorder>
-   <zorder>UnknownSpinBox_7</zorder>
-   <zorder>UnknownSpinBox_9</zorder>
-   <zorder>UnknownSpinBox_8</zorder>
-   <zorder>UnknownSpinBox_10</zorder>
-   <zorder>UnknownSpinBox_4</zorder>
-   <zorder>UnknownSpinBox_11</zorder>
-   <zorder>UnknownSpinBox_12</zorder>
-   <zorder>UnknownFloatBox_1</zorder>
-   <zorder>UnknownSpinBox_13</zorder>
-   <zorder>UnknownFloatBox_2</zorder>
-   <zorder>UnknownFloatBox_3</zorder>
-   <zorder>UnknownFloatBox_4</zorder>
-   <zorder>UnknownFloatBox_5</zorder>
-   <zorder>UnknownFloatBox_6</zorder>
-   <zorder>UnknownFloatBox_7</zorder>
-   <zorder>UnknownFloatBox_8</zorder>
-   <zorder>UnknownFloatBox_9</zorder>
-   <zorder>UnknownFloatBox_10</zorder>
    <zorder>UnknownSpinBox_14</zorder>
-   <zorder>UnknownFloatBox_11</zorder>
+   <zorder>UnknownSpinBox_18</zorder>
+   <zorder>UnknownLbl_3</zorder>
+   <zorder>UnknownSpinBox_1C</zorder>
+   <zorder>UnknownSpinBox_22</zorder>
+   <zorder>UnknownSpinBox_23</zorder>
+   <zorder>UnknownSpinBox_24</zorder>
+   <zorder>UnknownSpinBox_26</zorder>
+   <zorder>UnknownSpinBox_25</zorder>
+   <zorder>UnknownSpinBox_27</zorder>
+   <zorder>UnknownSpinBox_21</zorder>
+   <zorder>UnknownSpinBox_2A</zorder>
+   <zorder>UnknownSpinBox_2B</zorder>
+   <zorder>UnknownFloatBox_38</zorder>
+   <zorder>UnknownSpinBox_63</zorder>
+   <zorder>UnknownFloatBox_3C</zorder>
+   <zorder>UnknownFloatBox_40</zorder>
+   <zorder>UnknownFloatBox_44</zorder>
+   <zorder>UnknownFloatBox_48</zorder>
+   <zorder>UnknownFloatBox_4C</zorder>
+   <zorder>UnknownFloatBox_50</zorder>
+   <zorder>UnknownFloatBox_54</zorder>
+   <zorder>UnknownFloatBox_58</zorder>
+   <zorder>UnknownFloatBox_30</zorder>
+   <zorder>UnknownLbl_24</zorder>
+   <zorder>UnknownLbl_26</zorder>
+   <zorder>UnknownSpinBox_5E</zorder>
+   <zorder>UnknownSpinBox_5C</zorder>
+   <zorder>UnknownLbl_22</zorder>
+   <zorder>UnknownLbl_27</zorder>
+   <zorder>UnknownLbl_28</zorder>
+   <zorder>UnknownSpinBox_5D</zorder>
+   <zorder>UnknownSpinBox_5F</zorder>
+   <zorder>UnknownLbl_29</zorder>
+   <zorder>UnknownLbl_30</zorder>
+   <zorder>line</zorder>
+  </widget>
+  <widget class="QGroupBox" name="AttackFlagGroup">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>460</y>
+     <width>1051</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Attack Flags</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QCheckBox" name="Flag_0">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>50</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Flag.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_7">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>262</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>110</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_5">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>200</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>140</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_6">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>230</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>170</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_1">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>80</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Checks if you can absorb Ki Blasts and Ki-Based Blast 2s/Ultimates.</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_8">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>50</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_9">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>80</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this flag is set, the attack will make you enter the secondary melee string.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Enter Secondary String</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_10">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>110</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this flag is set, this attack will make the opponent lock-off of you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Lock-On Loss</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_11">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>140</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>Checks if you can break objects by touching them.</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_12">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>170</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>Checks if you can fly (0 = Flying, 1 = Non-Flying).</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_13">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>200</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_14">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>230</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_15">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>260</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>Checks if you make a metallic noise when you land.</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_16">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>50</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_17">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>80</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_21">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>200</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_22">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>230</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_18">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>110</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_19">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>140</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_20">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>170</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_23">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>260</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_24">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>50</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_25">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>80</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_26">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>110</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_27">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>140</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_28">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>170</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_29">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>200</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_30">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>230</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_31">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>260</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
@@ -3017,8 +3780,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>120</x>
-     <y>265</y>
+     <x>300</x>
+     <y>205</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3033,8 +3796,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <slot>ComboBox_IndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>400</x>
-     <y>455</y>
+     <x>760</x>
+     <y>235</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3049,8 +3812,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <slot>ComboBox_IndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>400</x>
-     <y>395</y>
+     <x>530</x>
+     <y>235</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3065,8 +3828,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <slot>CheckBox_StateChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>430</x>
-     <y>571</y>
+     <x>730</x>
+     <y>403</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3081,8 +3844,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <slot>ComboBox_IndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>400</x>
-     <y>525</y>
+     <x>660</x>
+     <y>335</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3097,8 +3860,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>270</x>
-     <y>195</y>
+     <x>110</x>
+     <y>295</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3113,8 +3876,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>270</x>
-     <y>265</y>
+     <x>300</x>
+     <y>295</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3129,8 +3892,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>420</x>
-     <y>195</y>
+     <x>310</x>
+     <y>385</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3145,8 +3908,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>420</x>
-     <y>265</y>
+     <x>120</x>
+     <y>385</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3155,14 +3918,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>UnknownFloatBox_1</sender>
+   <sender>UnknownFloatBox_38</sender>
    <signal>valueChanged(double)</signal>
    <receiver>MeleeFrame</receiver>
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>610</x>
-     <y>375</y>
+     <x>780</x>
+     <y>1025</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3171,14 +3934,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>UnknownFloatBox_10</sender>
+   <sender>UnknownFloatBox_3C</sender>
    <signal>valueChanged(double)</signal>
    <receiver>MeleeFrame</receiver>
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>650</x>
-     <y>555</y>
+     <x>900</x>
+     <y>1025</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3187,14 +3950,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>UnknownFloatBox_2</sender>
+   <sender>UnknownFloatBox_44</sender>
    <signal>valueChanged(double)</signal>
    <receiver>MeleeFrame</receiver>
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>720</x>
-     <y>375</y>
+     <x>780</x>
+     <y>1095</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3203,174 +3966,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>UnknownFloatBox_4</sender>
+   <sender>UnknownFloatBox_40</sender>
    <signal>valueChanged(double)</signal>
    <receiver>MeleeFrame</receiver>
    <slot>QDoubleSpinBox_Changed(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>610</x>
-     <y>435</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownFloatBox_3</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QDoubleSpinBox_Changed(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>830</x>
-     <y>375</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownFloatBox_7</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QDoubleSpinBox_Changed(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>610</x>
-     <y>495</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownFloatBox_5</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QDoubleSpinBox_Changed(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>720</x>
-     <y>435</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownFloatBox_6</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QDoubleSpinBox_Changed(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>830</x>
-     <y>435</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownFloatBox_8</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QDoubleSpinBox_Changed(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>720</x>
-     <y>495</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownFloatBox_9</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QDoubleSpinBox_Changed(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>830</x>
-     <y>495</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownSpinBox_1</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>610</x>
-     <y>195</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownSpinBox_2</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>720</x>
-     <y>195</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownSpinBox_10</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>870</x>
-     <y>255</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownSpinBox_11</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>760</x>
-     <y>315</y>
+     <y>1080</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3379,14 +3982,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>UnknownSpinBox_12</sender>
-   <signal>valueChanged(int)</signal>
+   <sender>UnknownFloatBox_50</sender>
+   <signal>valueChanged(double)</signal>
    <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>830</x>
-     <y>315</y>
+     <x>780</x>
+     <y>1165</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3395,14 +3998,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>UnknownSpinBox_13</sender>
-   <signal>valueChanged(int)</signal>
+   <sender>UnknownFloatBox_48</sender>
+   <signal>valueChanged(double)</signal>
    <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>800</x>
-     <y>555</y>
+     <x>900</x>
+     <y>1095</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3411,14 +4014,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>UnknownSpinBox_3</sender>
-   <signal>valueChanged(int)</signal>
+   <sender>UnknownFloatBox_4C</sender>
+   <signal>valueChanged(double)</signal>
    <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>830</x>
-     <y>195</y>
+     <x>760</x>
+     <y>1150</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3427,14 +4030,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>UnknownSpinBox_5</sender>
-   <signal>valueChanged(int)</signal>
+   <sender>UnknownFloatBox_54</sender>
+   <signal>valueChanged(double)</signal>
    <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>660</x>
-     <y>255</y>
+     <x>900</x>
+     <y>1165</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3443,110 +4046,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>UnknownSpinBox_6</sender>
-   <signal>valueChanged(int)</signal>
+   <sender>UnknownFloatBox_58</sender>
+   <signal>valueChanged(double)</signal>
    <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>730</x>
-     <y>255</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownSpinBox_8</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>620</x>
-     <y>315</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownSpinBox_9</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>690</x>
-     <y>315</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownSpinBox_7</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>800</x>
-     <y>255</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>UnknownSpinBox_4</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>590</x>
-     <y>255</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>SFX_Box</sender>
-   <signal>currentIndexChanged(int)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>ComboBox_IndexChanged(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>130</x>
-     <y>535</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>VFX_Box</sender>
-   <signal>currentIndexChanged(int)</signal>
-   <receiver>MeleeFrame</receiver>
-   <slot>ComboBox_IndexChanged(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>130</x>
-     <y>435</y>
+     <x>880</x>
+     <y>1220</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3561,8 +4068,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>590</x>
-     <y>195</y>
+     <x>660</x>
+     <y>915</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3571,14 +4078,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>LockOnLossFlag</sender>
-   <signal>stateChanged(int)</signal>
+   <sender>UnknownSpinBox_18</sender>
+   <signal>valueChanged(int)</signal>
    <receiver>MeleeFrame</receiver>
-   <slot>CheckBox_StateChanged(int)</slot>
+   <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>465</x>
-     <y>551</y>
+     <x>780</x>
+     <y>915</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -3587,18 +4094,802 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </hints>
   </connection>
   <connection>
-   <sender>SecStringFlag</sender>
+   <sender>UnknownSpinBox_27</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>1040</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_2A</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>290</x>
+     <y>1055</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_2B</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>1055</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_63</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>320</x>
+     <y>1205</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_1C</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>920</x>
+     <y>915</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_22</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>290</x>
+     <y>915</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_23</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>915</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_25</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>1001</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_26</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>450</x>
+     <y>985</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_24</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>985</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_21</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>915</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SFX_Box</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>ComboBox_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1000</x>
+     <y>365</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>VFX_Box</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>ComboBox_IndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1000</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>460</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_5C</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>1128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>1107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_5D</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>274</x>
+     <y>1130</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>24</x>
+     <y>1148</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_5F</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>245</x>
+     <y>1205</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>22</x>
+     <y>1189</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownFloatBox_30</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QDoubleSpinBox_Changed(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>700</x>
+     <y>1022</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1133</x>
+     <y>993</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_0</sender>
    <signal>stateChanged(int)</signal>
    <receiver>MeleeFrame</receiver>
    <slot>CheckBox_StateChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>395</x>
-     <y>581</y>
+     <x>89</x>
+     <y>528</y>
     </hint>
     <hint type="destinationlabel">
-     <x>460</x>
-     <y>323</y>
+     <x>19</x>
+     <y>508</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_1</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>561</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>15</x>
+     <y>542</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_2</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>588</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>15</x>
+     <y>580</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_3</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>126</x>
+     <y>614</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>17</x>
+     <y>629</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_4</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>647</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>12</x>
+     <y>656</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_5</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>679</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>12</x>
+     <y>689</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_6</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>708</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>26</x>
+     <y>715</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_7</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>82</x>
+     <y>746</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>31</x>
+     <y>752</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_8</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>333</x>
+     <y>530</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>332</x>
+     <y>452</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_9</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>351</x>
+     <y>552</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>453</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_10</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>576</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>360</x>
+     <y>458</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_11</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>384</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_12</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>328</x>
+     <y>645</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>331</x>
+     <y>781</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_13</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>670</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>777</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_14</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>396</x>
+     <y>704</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>782</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_15</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>342</x>
+     <y>742</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>95</x>
+     <y>779</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_24</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1042</x>
+     <y>519</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1116</x>
+     <y>508</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_25</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1001</x>
+     <y>554</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1134</x>
+     <y>553</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_26</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>939</x>
+     <y>589</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1117</x>
+     <y>585</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_27</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>966</x>
+     <y>609</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1123</x>
+     <y>620</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_28</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>954</x>
+     <y>639</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1097</x>
+     <y>647</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_29</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>966</x>
+     <y>675</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1125</x>
+     <y>663</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_30</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>977</x>
+     <y>710</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1111</x>
+     <y>694</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_31</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>960</x>
+     <y>729</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1121</x>
+     <y>728</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_16</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>641</x>
+     <y>524</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>592</x>
+     <y>450</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_17</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>658</x>
+     <y>556</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>595</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_18</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>676</x>
+     <y>583</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>617</x>
+     <y>457</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_19</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>693</x>
+     <y>614</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>650</x>
+     <y>452</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_20</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>713</x>
+     <y>646</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>676</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_21</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>734</x>
+     <y>665</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>684</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_22</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>763</x>
+     <y>701</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>750</x>
+     <y>782</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_23</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>780</x>
+     <y>735</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>774</x>
+     <y>781</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UnknownSpinBox_5E</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MeleeFrame</receiver>
+   <slot>QSpinBox_Changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>439</x>
+     <y>1119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>1288</y>
     </hint>
    </hints>
   </connection>

@@ -8,7 +8,7 @@ KiFrame::KiFrame(QByteArray Data, QWidget* parent) : QFrame(parent)
     kp = new KiParameters(Data);
 
     #if 1 // Passing the pointers to the UI elements to kp
-    kp->parameter[KiParameters::Header].UiElement = ui->HeaderBox;
+    kp->parameter[KiParameters::Header].UiElement = ui->KiBlastFlagGroup;
     kp->parameter[KiParameters::Damage].UiElement = ui->DamageBox;
     kp->parameter[KiParameters::DamageGuarding].UiElement = ui->DamageGuardBox;
     kp->parameter[KiParameters::KiCost].UiElement = ui->KiCostBox;
@@ -49,12 +49,12 @@ void KiFrame::InitializeUIElements()
         lbl->setToolTip(g_Options.GetStyledTooltip(lbl->toolTip()));
     }
 
-    QList<QWidget*> elements = this->findChildren<QWidget*>();
-    for(QWidget* el : elements) el->setEnabled(true);
+    for(Param_Offset p : kp->parameter) ((QWidget*)p.UiElement)->setEnabled(true);
 
     QList<QSpinBox*> spinBoxes = this->findChildren<QSpinBox*>();
     QList<QDoubleSpinBox*> dblSpinBoxes = this->findChildren<QDoubleSpinBox*>();
     QList<QComboBox*> comboBoxes = this->findChildren<QComboBox*>();
+    QList<QCheckBox*> flagBoxes = this->findChildren<QCheckBox*>();
     for(QSpinBox* sBox : spinBoxes)
     {
         if((unsigned int)sBox->maximum() < 256) sBox->setValue(kp->GetUByteParameter(sBox));
@@ -68,6 +68,10 @@ void KiFrame::InitializeUIElements()
     {
         if(cbBox == ui->KiBlastSelectionBox) continue;
         cbBox->setCurrentIndex(kp->GetUByteParameter(cbBox));
+    }
+    for(QCheckBox* flag : flagBoxes)
+    {
+        flag->setCheckState((Qt::CheckState)(kp->GetFlagParameter(flag) << 1));
     }
 
     IsInitializing = false;
@@ -102,6 +106,14 @@ void KiFrame::ComboBox_IndexChanged(int NewIndex)
 
     kp->SetUByteParameter((QComboBox*)sender(), NewIndex);
 }
+void KiFrame::CheckBox_StateChanged(int NewState)
+{
+    if(IsInitializing || kp == nullptr) return;
+
+    QCheckBox* flag = (QCheckBox*)sender();
+    kp->SetFlagParameter(flag, NewState);
+}
+
 
 
 

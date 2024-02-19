@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>922</width>
-    <height>545</height>
+    <width>1145</width>
+    <height>1000</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
     <rect>
      <x>10</x>
      <y>120</y>
-     <width>181</width>
+     <width>311</width>
      <height>251</height>
     </rect>
    </property>
@@ -37,10 +37,10 @@
    <widget class="QLabel" name="DamageLbl">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>30</y>
+      <x>20</x>
+      <y>60</y>
       <width>101</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -61,9 +61,9 @@
    <widget class="QSpinBox" name="DamageBox">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>60</y>
-      <width>81</width>
+      <x>20</x>
+      <y>90</y>
+      <width>101</width>
       <height>32</height>
      </rect>
     </property>
@@ -86,9 +86,9 @@
    <widget class="QSpinBox" name="DamageGuardBox">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>130</y>
-      <width>81</width>
+      <x>170</x>
+      <y>90</y>
+      <width>101</width>
       <height>32</height>
      </rect>
     </property>
@@ -111,10 +111,10 @@
    <widget class="QLabel" name="DamageGuardLbl">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>100</y>
-      <width>151</width>
-      <height>21</height>
+      <x>150</x>
+      <y>60</y>
+      <width>141</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -135,9 +135,9 @@
    <widget class="QSpinBox" name="KiCostBox">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>200</y>
-      <width>81</width>
+      <x>100</x>
+      <y>180</y>
+      <width>101</width>
       <height>32</height>
      </rect>
     </property>
@@ -160,10 +160,10 @@
    <widget class="QLabel" name="KiCostLbl">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>170</y>
-      <width>81</width>
-      <height>21</height>
+      <x>100</x>
+      <y>150</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -185,8 +185,8 @@
   <widget class="QComboBox" name="KiBlastSelectionBox">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>70</y>
+     <x>420</x>
+     <y>60</y>
      <width>321</width>
      <height>31</height>
     </rect>
@@ -271,10 +271,10 @@
   <widget class="QLabel" name="KiBlastSelectionLabel">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>40</y>
+     <x>420</x>
+     <y>30</y>
      <width>321</width>
-     <height>20</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="toolTip">
@@ -290,9 +290,9 @@
   <widget class="QGroupBox" name="PropGroupBox">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>340</x>
      <y>120</y>
-     <width>711</width>
+     <width>771</width>
      <height>251</height>
     </rect>
    </property>
@@ -305,7 +305,7 @@
    <widget class="QDoubleSpinBox" name="SpeedBox">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>50</x>
       <y>90</y>
       <width>101</width>
       <height>32</height>
@@ -333,10 +333,10 @@
    <widget class="QLabel" name="SpeedLbl">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>50</x>
       <y>60</y>
       <width>101</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -357,7 +357,7 @@
    <widget class="QDoubleSpinBox" name="SpreadBox">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>190</x>
       <y>90</y>
       <width>101</width>
       <height>32</height>
@@ -382,10 +382,10 @@
    <widget class="QLabel" name="SpreadLbl">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>190</x>
       <y>60</y>
       <width>101</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -407,7 +407,7 @@ The higher the number, the more they home in on the opponent.</string>
    <widget class="QDoubleSpinBox" name="RangeBox">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>330</x>
       <y>90</y>
       <width>101</width>
       <height>32</height>
@@ -432,10 +432,10 @@ The higher the number, the more they home in on the opponent.</string>
    <widget class="QLabel" name="RangeLbl">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>330</x>
       <y>60</y>
       <width>101</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -457,10 +457,10 @@ The higher the number, the longer the Ki Blast stays on screen, thus, the farthe
    <widget class="QLabel" name="KnockbackLbl">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>470</x>
       <y>60</y>
       <width>101</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -481,7 +481,7 @@ The higher the number, the longer the Ki Blast stays on screen, thus, the farthe
    <widget class="QDoubleSpinBox" name="KnockbackBox">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>470</x>
       <y>90</y>
       <width>101</width>
       <height>32</height>
@@ -746,7 +746,7 @@ The higher the number, the longer the Ki Blast stays on screen, thus, the farthe
    <widget class="QDoubleSpinBox" name="SizeBox">
     <property name="geometry">
      <rect>
-      <x>580</x>
+      <x>610</x>
       <y>90</y>
       <width>101</width>
       <height>32</height>
@@ -771,10 +771,10 @@ The higher the number, the longer the Ki Blast stays on screen, thus, the farthe
    <widget class="QLabel" name="SizeLbl">
     <property name="geometry">
      <rect>
-      <x>580</x>
+      <x>610</x>
       <y>60</y>
       <width>101</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -792,60 +792,10 @@ The higher the number, the longer the Ki Blast stays on screen, thus, the farthe
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="TrailLbl">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>150</y>
-      <width>101</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="toolTip">
-     <string>This decides how long the trail for each Ki Blasts will be.  
-The higher the number, the longer the trail of the Ki Blast.</string>
-    </property>
-    <property name="text">
-     <string>Trail</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="TrailBox">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>180</y>
-      <width>101</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
-    </property>
-    <property name="decimals">
-     <number>3</number>
-    </property>
-    <property name="minimum">
-     <double>-340282346638528859811704183484516925440.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>340282346638528859811704183484516925440.000000000000000</double>
-    </property>
-   </widget>
    <widget class="QComboBox" name="ColorBox">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>410</x>
       <y>180</y>
       <width>121</width>
       <height>31</height>
@@ -911,7 +861,7 @@ The higher the number, the longer the trail of the Ki Blast.</string>
    <widget class="QLabel" name="ColorLbl">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>410</x>
       <y>150</y>
       <width>111</width>
       <height>21</height>
@@ -932,59 +882,10 @@ The higher the number, the longer the trail of the Ki Blast.</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="AmountLbl">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>150</y>
-      <width>61</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The amount of Ki Blast one can shoot conseuctively.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="text">
-     <string>Amount</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="AmountBox">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>180</y>
-      <width>61</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
-    </property>
-    <property name="minimum">
-     <number>0</number>
-    </property>
-    <property name="maximum">
-     <number>255</number>
-    </property>
-    <property name="value">
-     <number>0</number>
-    </property>
-   </widget>
    <widget class="QComboBox" name="TrajectoryBox">
     <property name="geometry">
      <rect>
-      <x>568</x>
+      <x>258</x>
       <y>180</y>
       <width>131</width>
       <height>31</height>
@@ -1035,7 +936,7 @@ The higher the number, the longer the trail of the Ki Blast.</string>
    <widget class="QLabel" name="TrajectoryLbl">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>250</x>
       <y>150</y>
       <width>141</width>
       <height>21</height>
@@ -1056,14 +957,113 @@ The higher the number, the longer the trail of the Ki Blast.</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QLabel" name="AmountLbl">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>150</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The amount of Ki Blast one can shoot conseuctively.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Amount</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="AmountBox">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>180</y>
+      <width>81</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::PlusMinus</enum>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>255</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TrailLbl">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>150</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>This decides how long the trail for each Ki Blasts will be.  
+The higher the number, the longer the trail of the Ki Blast.</string>
+    </property>
+    <property name="text">
+     <string>Trail</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="TrailBox">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>180</y>
+      <width>101</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="buttonSymbols">
+     <enum>QAbstractSpinBox::NoButtons</enum>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="minimum">
+     <double>-340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>340282346638528859811704183484516925440.000000000000000</double>
+    </property>
+   </widget>
   </widget>
   <widget class="QGroupBox" name="UnknownGroupBox">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>380</y>
-     <width>901</width>
-     <height>151</height>
+     <x>260</x>
+     <y>720</y>
+     <width>561</width>
+     <height>241</height>
     </rect>
    </property>
    <property name="title">
@@ -1075,10 +1075,10 @@ The higher the number, the longer the trail of the Ki Blast.</string>
    <widget class="QLabel" name="Unk20Lbl">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>50</y>
-      <width>101</width>
-      <height>21</height>
+      <x>370</x>
+      <y>70</y>
+      <width>111</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1100,9 +1100,9 @@ It is currently unknown what this parameter does.</string>
    <widget class="QDoubleSpinBox" name="Unk20Box">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>80</y>
-      <width>101</width>
+      <x>370</x>
+      <y>100</y>
+      <width>111</width>
       <height>32</height>
      </rect>
     </property>
@@ -1125,9 +1125,9 @@ It is currently unknown what this parameter does.</string>
    <widget class="QSpinBox" name="Unk26Box">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>80</y>
-      <width>61</width>
+      <x>160</x>
+      <y>100</y>
+      <width>81</width>
       <height>32</height>
      </rect>
     </property>
@@ -1153,10 +1153,10 @@ It is currently unknown what this parameter does.</string>
    <widget class="QLabel" name="Unk26Lbl">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>50</y>
-      <width>61</width>
-      <height>21</height>
+      <x>160</x>
+      <y>70</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1178,10 +1178,10 @@ It is currently unknown what this parameter does.</string>
    <widget class="QSpinBox" name="Unk27Box">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>80</y>
-      <width>61</width>
-      <height>32</height>
+      <x>30</x>
+      <y>181</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1206,10 +1206,10 @@ It is currently unknown what this parameter does.</string>
    <widget class="QLabel" name="Unk27Lbl">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>50</y>
-      <width>61</width>
-      <height>21</height>
+      <x>30</x>
+      <y>150</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1228,64 +1228,11 @@ It is currently unknown what this parameter does.</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSpinBox" name="HeaderBox">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>80</y>
-      <width>111</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
-    </property>
-    <property name="minimum">
-     <number>0</number>
-    </property>
-    <property name="maximum">
-     <number>2147483647</number>
-    </property>
-    <property name="value">
-     <number>0</number>
-    </property>
-    <property name="displayIntegerBase">
-     <number>16</number>
-    </property>
-   </widget>
-   <widget class="QLabel" name="HeaderLbl">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>50</y>
-      <width>111</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="toolTip">
-     <string>4 Bytes at the beginning of each parameter section. 
-What these influence is currently unknown.</string>
-    </property>
-    <property name="text">
-     <string>Header? (0x00)</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QSpinBox" name="FooterBox">
     <property name="geometry">
      <rect>
-      <x>730</x>
-      <y>80</y>
+      <x>370</x>
+      <y>180</y>
       <width>111</width>
       <height>32</height>
      </rect>
@@ -1312,10 +1259,10 @@ What these influence is currently unknown.</string>
    <widget class="QLabel" name="FooterLbl">
     <property name="geometry">
      <rect>
-      <x>730</x>
-      <y>50</y>
+      <x>370</x>
+      <y>150</y>
       <width>111</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1337,9 +1284,9 @@ What these influence is currently unknown.</string>
    <widget class="QSpinBox" name="Unk30Box">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>80</y>
-      <width>61</width>
+      <x>160</x>
+      <y>180</y>
+      <width>81</width>
       <height>32</height>
      </rect>
     </property>
@@ -1365,10 +1312,10 @@ What these influence is currently unknown.</string>
    <widget class="QLabel" name="Unk30Lbl">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>50</y>
-      <width>61</width>
-      <height>21</height>
+      <x>160</x>
+      <y>150</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1390,9 +1337,9 @@ It is currently unknown what this parameter does.</string>
    <widget class="QSpinBox" name="Unk25Box">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>80</y>
-      <width>61</width>
+      <x>30</x>
+      <y>100</y>
+      <width>81</width>
       <height>32</height>
      </rect>
     </property>
@@ -1418,10 +1365,10 @@ It is currently unknown what this parameter does.</string>
    <widget class="QLabel" name="Unk25Lbl">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>50</y>
-      <width>61</width>
-      <height>21</height>
+      <x>30</x>
+      <y>70</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1440,6 +1387,666 @@ It is currently unknown what this parameter does.</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QLabel" name="Unk25Lbl_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>A 1-Byte parameter located at offset 0x25. 
+It is currently unknown what this parameter does.</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;1-Byte&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Unk25Lbl_3">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>40</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>A 1-Byte parameter located at offset 0x25. 
+It is currently unknown what this parameter does.</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;4-Byte&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>40</y>
+      <width>16</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="KiBlastFlagGroup">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>390</y>
+     <width>1071</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Ki Blast Flags</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QCheckBox" name="Flag_0">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>50</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Flag.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_7">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>262</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>110</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_5">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>200</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>140</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_6">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>230</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>170</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_1">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>80</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Checks if you can absorb Ki Blasts and Ki-Based Blast 2s/Ultimates.</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_8">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>50</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_9">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>80</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_10">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>110</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_11">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>140</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>Checks if you can break objects by touching them.</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_12">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>170</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>Checks if you can fly (0 = Flying, 1 = Non-Flying).</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_13">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>200</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_14">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>230</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_15">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>260</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>Checks if you make a metallic noise when you land.</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_16">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>50</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_17">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>80</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_21">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>200</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_22">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>230</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_18">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>110</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_19">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>140</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_20">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>170</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_23">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>260</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_24">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>50</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_25">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>80</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_26">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>110</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_27">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>140</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_28">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>170</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_29">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>200</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_30">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>230</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Flag_31">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>260</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
@@ -1451,7 +2058,7 @@ It is currently unknown what this parameter does.</string>
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>720</x>
+     <x>920</x>
      <y>315</y>
     </hint>
     <hint type="destinationlabel">
@@ -1467,7 +2074,7 @@ It is currently unknown what this parameter does.</string>
    <slot>ComboBox_IndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>629</x>
+     <x>819</x>
      <y>315</y>
     </hint>
     <hint type="destinationlabel">
@@ -1483,8 +2090,8 @@ It is currently unknown what this parameter does.</string>
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>90</x>
-     <y>195</y>
+     <x>60</x>
+     <y>215</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -1499,8 +2106,8 @@ It is currently unknown what this parameter does.</string>
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>90</x>
-     <y>265</y>
+     <x>210</x>
+     <y>215</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -1515,24 +2122,8 @@ It is currently unknown what this parameter does.</string>
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>745</x>
-     <y>475</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>272</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>HeaderBox</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>KiFrame</receiver>
-   <slot>QSpinBox_Changed(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>135</x>
-     <y>475</y>
+     <x>605</x>
+     <y>915</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -1563,8 +2154,8 @@ It is currently unknown what this parameter does.</string>
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>90</x>
-     <y>335</y>
+     <x>140</x>
+     <y>315</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -1579,7 +2170,7 @@ It is currently unknown what this parameter does.</string>
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>680</x>
+     <x>850</x>
      <y>225</y>
     </hint>
     <hint type="destinationlabel">
@@ -1595,7 +2186,7 @@ It is currently unknown what this parameter does.</string>
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>540</x>
+     <x>710</x>
      <y>225</y>
     </hint>
     <hint type="destinationlabel">
@@ -1611,7 +2202,7 @@ It is currently unknown what this parameter does.</string>
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>820</x>
+     <x>990</x>
      <y>225</y>
     </hint>
     <hint type="destinationlabel">
@@ -1627,7 +2218,7 @@ It is currently unknown what this parameter does.</string>
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>270</x>
+     <x>430</x>
      <y>225</y>
     </hint>
     <hint type="destinationlabel">
@@ -1643,7 +2234,7 @@ It is currently unknown what this parameter does.</string>
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>400</x>
+     <x>570</x>
      <y>225</y>
     </hint>
     <hint type="destinationlabel">
@@ -1659,7 +2250,7 @@ It is currently unknown what this parameter does.</string>
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>520</x>
+     <x>1060</x>
      <y>315</y>
     </hint>
     <hint type="destinationlabel">
@@ -1675,8 +2266,8 @@ It is currently unknown what this parameter does.</string>
    <slot>QDoubleSpinBox_Changed(double)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>310</x>
-     <y>475</y>
+     <x>670</x>
+     <y>835</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -1691,7 +2282,7 @@ It is currently unknown what this parameter does.</string>
    <slot>ComboBox_IndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>833</x>
+     <x>663</x>
      <y>315</y>
     </hint>
     <hint type="destinationlabel">
@@ -1707,8 +2298,8 @@ It is currently unknown what this parameter does.</string>
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>460</x>
-     <y>475</y>
+     <x>440</x>
+     <y>835</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -1723,8 +2314,8 @@ It is currently unknown what this parameter does.</string>
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>590</x>
-     <y>475</y>
+     <x>350</x>
+     <y>916</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -1739,7 +2330,7 @@ It is currently unknown what this parameter does.</string>
    <slot>ComboBox_IndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>325</x>
+     <x>465</x>
      <y>315</y>
     </hint>
     <hint type="destinationlabel">
@@ -1755,8 +2346,8 @@ It is currently unknown what this parameter does.</string>
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>670</x>
-     <y>475</y>
+     <x>460</x>
+     <y>915</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
@@ -1771,12 +2362,524 @@ It is currently unknown what this parameter does.</string>
    <slot>QSpinBox_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>400</x>
-     <y>475</y>
+     <x>330</x>
+     <y>835</y>
     </hint>
     <hint type="destinationlabel">
      <x>460</x>
      <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_0</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>71</x>
+     <y>449</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>115</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_1</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>486</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>45</x>
+     <y>382</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_2</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>519</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>57</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_3</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>191</x>
+     <y>552</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_4</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>583</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>13</x>
+     <y>402</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_5</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>134</x>
+     <y>606</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>11</x>
+     <y>434</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_6</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>640</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>12</x>
+     <y>470</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_7</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>68</x>
+     <y>663</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>9</x>
+     <y>505</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_8</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>462</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>541</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_9</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>324</x>
+     <y>486</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>10</x>
+     <y>573</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_10</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>331</x>
+     <y>515</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>605</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_11</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>364</x>
+     <y>553</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>630</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_12</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>380</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>657</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_13</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>593</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>685</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_14</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>385</x>
+     <y>640</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>16</x>
+     <y>700</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_15</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>396</x>
+     <y>669</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>34</x>
+     <y>705</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_16</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>628</x>
+     <y>463</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>484</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_17</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>651</x>
+     <y>491</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>501</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_18</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>672</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_19</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>697</x>
+     <y>543</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>683</x>
+     <y>378</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_20</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>713</x>
+     <y>574</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>713</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_21</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>625</x>
+     <y>603</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>166</x>
+     <y>713</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_22</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>631</x>
+     <y>636</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>405</x>
+     <y>708</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_23</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>648</x>
+     <y>667</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>480</x>
+     <y>702</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_24</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>889</x>
+     <y>465</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>842</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_25</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>916</x>
+     <y>480</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>872</x>
+     <y>376</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_26</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>946</x>
+     <y>520</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>935</x>
+     <y>386</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_27</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>978</x>
+     <y>550</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>956</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_28</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1012</x>
+     <y>577</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>969</x>
+     <y>378</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_29</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>880</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1101</x>
+     <y>397</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_30</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>903</x>
+     <y>634</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1115</x>
+     <y>425</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Flag_31</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>KiFrame</receiver>
+   <slot>CheckBox_StateChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>956</x>
+     <y>670</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1111</x>
+     <y>455</y>
     </hint>
    </hints>
   </connection>
@@ -1786,5 +2889,6 @@ It is currently unknown what this parameter does.</string>
   <slot>QDoubleSpinBox_Changed(double)</slot>
   <slot>ComboBox_IndexChanged(int)</slot>
   <slot>CurrentBlast_IndexChanged(int)</slot>
+  <slot>CheckBox_StateChanged(int)</slot>
  </slots>
 </ui>

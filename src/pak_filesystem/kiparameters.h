@@ -3,6 +3,7 @@
 
 #include "src/neo_info.h"
 #include "src/external/debug.h"
+#include "src/bitmanipulation.h"
 
 /**
  * Object for the ki parameter section of a .pak file.
@@ -43,8 +44,10 @@ public:
     /**Gets the 2-Byte parameter value of the parameter corresponding to the Object.*/
     unsigned short GetUShortParameter(QSpinBox* Object);
 
+    bool GetFlagParameter(QCheckBox* Object);
     int GetIntParameter(QSpinBox* Object);
     float GetFloatParameter(QDoubleSpinBox* Object);
+    void SetFlagParameter(QCheckBox* Object, int NewState);
     void SetUByteParameter(QObject* Object, unsigned char NewValue);
     void SetUShortParameter(QSpinBox* Object, unsigned short NewValue);
     void SetIntParameter(QSpinBox* Object, int NewValue);

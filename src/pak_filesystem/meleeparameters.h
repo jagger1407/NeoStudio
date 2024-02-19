@@ -13,9 +13,7 @@ class MeleeParameters
 public:
     typedef enum
     {
-        Header,
-        SecondaryString,
-        LockOnLoss,
+        AttackFlags,
         Damage,
         DamageGuarding,
         KiLoss,
@@ -48,6 +46,9 @@ public:
         Unk54,
         Unk58,
         Unk5C,
+        Unk5D,
+        Unk5E,
+        Unk5F,
         EffectGuard,
         EffectCounter,
         GuardType,

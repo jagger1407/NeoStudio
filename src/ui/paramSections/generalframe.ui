@@ -6606,7 +6606,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>340</y>
+      <y>330</y>
       <width>211</width>
       <height>31</height>
      </rect>

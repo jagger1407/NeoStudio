@@ -3166,10 +3166,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </rect>
     </property>
     <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Unknown Flag.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If this flag is set, the opponent can teleport this attack.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
-     <string>?</string>
+     <string>Teleportable</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="Flag_7">

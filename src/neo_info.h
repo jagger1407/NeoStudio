@@ -4,12 +4,13 @@
 /**Offset to get the pointer to the real offset in the file.*/
 typedef enum
 {
-    PARAM_OFFSET_GENERAL = 17,
-    PARAM_OFFSET_MELEE,
-    PARAM_OFFSET_KI_BLAST,
-    PARAM_OFFSET_MOVEMENT,
-    PARAM_OFFSET_NEXT
-}ParameterOffset;   // The offsets for the pointers to parameter data in a .pak
+    SECTION_OFFSET_INVALID = -1,
+    SECTION_OFFSET_GENERAL = 17,
+    SECTION_OFFSET_MELEE,
+    SECTION_OFFSET_KI_BLAST,
+    SECTION_OFFSET_MOVEMENT,
+    SECTION_OFFSET_NEXT
+}SectionOffset;   // The offsets for the pointers to parameter data in a .pak
 
 /**Every currently known Parameter Type.*/
 typedef enum

@@ -7,11 +7,8 @@
 #include "menu/aboutwindow.h"
 #include "menu/optiondialog.h"
 #include "menu/datselectiondialog.h"
-// Parameter Tabs
-#include "src/ui/paramSections/generalframe.h"
-#include "src/ui/paramSections/meleeframe.h"
-#include "src/ui/paramSections/kiframe.h"
-#include "src/ui/paramSections/movementframe.h"
+
+#include "src/pak_filesystem/pakcontrols.h"
 
 namespace Ui {
 class NeoStudio;
@@ -26,33 +23,37 @@ class NeoStudio : public QMainWindow
 public:
 
     /**Constructor. Creates the main Neo Studio window.*/
-    explicit NeoStudio(int argc, char* argv[], QWidget* parent = nullptr);
+    explicit NeoStudio(int argc, char* argv[], QWidget* parent = NULL);
     /**Destructor. Idk how to use this, it was automatically generated.*/
     ~NeoStudio() override;
 private:
 
     /**QScopedPointer to access UI Elements.*/
     QScopedPointer<Ui::NeoStudio> ui;
-    /**The UI for the General Parameter editing tab.*/
-    GeneralFrame* generalWindow = nullptr;
-    /**The UI for the Melee Parameter editing tab.*/
-    MeleeFrame* meleeWindow = nullptr;
-    /**The UI for the Ki Blast Parameter editing tab.*/
-    KiFrame* kiWindow = nullptr;
-    /**The UI for the Movement Parameter editing tab.*/
-    MovementFrame* moveWindow = nullptr;
+
     /**The path to the currently open Pak file.*/
     QString file;
     /**PakControls object to act as an interface between this program and the file itself.*/
-    PakControls* pak = nullptr;
+    PakControls* pak = NULL;
     /**Initializes the program using the current Pak filepath.*/
     void InitPakFile();
     /**Initializes one specific section using the current Dat filepath.*/
     void InitDatFile();
     /**Checks the UI mode and sets the Stylesheet accordingly.*/
     void ResetUiMode();
-    /**If .dat file was opened, this shows which parameter type the file is.*/
-    ParameterType datIndex = PARAM_TYPE_INVALID;
+
+    typedef enum {
+        EDITOR_INVALID = -1,
+        EDITOR_PARAMETERS,
+        //EDITOR_SKILL_LIST,
+
+        EDITOR_COUNT
+    } EditorType;
+
+    QFrame** editors = NULL;
+    QByteArray dat;
+    SectionOffset datIndex = SECTION_OFFSET_INVALID;
+
 private slots:
     /**This slot gets triggered once the 'Open File' menu option is clicked.*/
     void OpenFile();
@@ -70,6 +71,7 @@ private slots:
     void ExportDat();
     /**Imports a .dat file as a parameter section within a .pak file.*/
     void ImportDat();
+    void SelectedEditorChanged(int editorId);
 };
 
 #endif // NEOSTUDIO_H

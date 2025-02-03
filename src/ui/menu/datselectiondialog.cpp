@@ -10,6 +10,7 @@ bool DatSelectionDialog::SelectDat()
 DatSelectionDialog::DatSelectionDialog(QWidget* parent) : ui(new Ui::DatSelectionDialog)
 {
     ui->setupUi(this);
+    this->setParent(parent);
 }
 
 void DatSelectionDialog::Edited_Select()

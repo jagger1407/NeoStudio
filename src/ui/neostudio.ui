@@ -180,12 +180,17 @@
   </action>
   <action name="ActionExport">
    <property name="text">
-    <string>&amp;Export as .dat</string>
+    <string>&amp;Export Section</string>
    </property>
   </action>
   <action name="ActionImport">
    <property name="text">
-    <string>&amp;Import .dat</string>
+    <string>&amp;Import Section</string>
+   </property>
+  </action>
+  <action name="ActionPack_pak">
+   <property name="text">
+    <string>&amp;Pack .pak</string>
    </property>
   </action>
  </widget>
@@ -291,7 +296,7 @@
    <sender>ActionExport</sender>
    <signal>triggered()</signal>
    <receiver>NeoStudio</receiver>
-   <slot>ExportDat()</slot>
+   <slot>ExportSection()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -307,7 +312,7 @@
    <sender>ActionImport</sender>
    <signal>triggered()</signal>
    <receiver>NeoStudio</receiver>
-   <slot>ImportDat()</slot>
+   <slot>ImportSection()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -343,8 +348,9 @@
   <slot>SaveFileAs()</slot>
   <slot>CloseFile()</slot>
   <slot>OpenOptions()</slot>
-  <slot>ExportDat()</slot>
-  <slot>ImportDat()</slot>
+  <slot>ExportSection()</slot>
+  <slot>ImportSection()</slot>
   <slot>SelectedEditorChanged(int)</slot>
+  <slot>Pack()</slot>
  </slots>
 </ui>

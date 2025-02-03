@@ -10,10 +10,10 @@ CharParamFrame::CharParamFrame(PakControls* pak)
         Debug::Log("Pak failed to load, CharParamFrame disconnected from pak.", Debug::ERROR);
         return;
     }
+    ui->ParameterTabs->setCurrentIndex(PARAM_TYPE_GENERAL);
 
     generalWindow = new GeneralFrame(pak->GetParamData(SECTION_OFFSET_GENERAL), this);
     ui->GeneralScrollArea->setWidget(generalWindow);
-    ui->ParameterTabs->setCurrentIndex(PARAM_TYPE_GENERAL);
 }
 
 CharParamFrame::CharParamFrame(ParameterType type, QByteArray* dat)

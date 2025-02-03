@@ -24,8 +24,7 @@ public:
 
     void UpdateParamData(int sectionID, QByteArray* newData);
 
-    // Will be part of the Options soon
-    const QString sectionNameFile = "./assets/pak-sections.txt";
+
 private:
 
     unsigned int offsets[PAK_SUB_COUNT + 1];

@@ -42,6 +42,7 @@ private:
     /**Checks the UI mode and sets the Stylesheet accordingly.*/
     void ResetUiMode();
 
+    /**All currently implemented editors for Neo Studio.*/
     typedef enum {
         EDITOR_INVALID = -1,
         EDITOR_PARAMETERS,
@@ -50,8 +51,11 @@ private:
         EDITOR_COUNT
     } EditorType;
 
+    /**QFrame* array that stores all editors.*/
     QFrame** editors = NULL;
+    /**If a singular section was opened, this stores the data.*/
     QByteArray dat;
+    /**If a singular section was opened, this stores the type.*/
     SectionOffset datIndex = SECTION_OFFSET_INVALID;
 
 private slots:
@@ -67,10 +71,11 @@ private slots:
     void OpenAbout();
      /**This slot gets triggered once the 'Options' menu option is clicked.*/
     void OpenOptions();
-    /**Exports the specified parameter type as a .dat file.*/
-    void ExportDat();
-    /**Imports a .dat file as a parameter section within a .pak file.*/
-    void ImportDat();
+    /**Exports the specified section as a standalone file.*/
+    void ExportSection();
+    /**Imports a section of the .pak as a into the .pak file.*/
+    void ImportSection();
+    /**Changes the displayed Editor if the user selects a different one from the list.*/
     void SelectedEditorChanged(int editorId);
 };
 

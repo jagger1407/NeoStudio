@@ -20,7 +20,7 @@ PakControls::PakControls(QString FilePath)
 
     int* offsetPtr = ((int*)pakData.constData()) + 1;
 
-    for(int i=0;i<PAK_SUB_COUNT + 1;i++)
+    for(int i=0;i<=PAK_SUB_COUNT;i++)
     {
         offsets[i] = *offsetPtr++;
     }
@@ -43,6 +43,10 @@ QByteArray PakControls::GetParamData(int sectionID)
 void PakControls::UpdateParamData(int sectionID, QByteArray* newData)
 {
     int sectionSize = offsets[sectionID + 1] - offsets[sectionID];
+    if(sectionSize < newData->length()) {
+        Debug::Log("Size of newData is bigger than the section size inside the Pak. Resizing is not supported as of yet.", Debug::ERROR);
+        return;
+    }
     char* raw = newData->data();
     memcpy(pakData.data() + offsets[sectionID], raw, sectionSize);
 }
@@ -62,7 +66,7 @@ bool PakControls::HasFailed()
 void PakControls::printSections()
 {
     Debug::ConsolePrint("PAK TEST:\n------------------------------------", Debug::DEBUG);
-    QStringList sectionNames = FileParse::ReadLines(sectionNameFile);
+    QStringList sectionNames = FileParse::ReadLines(g_Options.sectionNameFile);
     for(int i=0;i<PAK_SUB_COUNT;i++)
     {
         Debug::ConsolePrint(sectionNames[i] + " - Size: " + QString::number(offsets[i+1] - offsets[i]), Debug::DEBUG);

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>360</width>
-    <height>287</height>
+    <width>380</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>360</width>
-    <height>287</height>
+    <width>380</width>
+    <height>350</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>360</width>
-    <height>287</height>
+    <width>380</width>
+    <height>387</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -37,8 +37,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>180</y>
+     <x>160</x>
+     <y>220</y>
      <width>170</width>
      <height>32</height>
     </rect>
@@ -88,8 +88,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>180</y>
+     <x>10</x>
+     <y>220</y>
      <width>151</width>
      <height>27</height>
     </rect>
@@ -109,14 +109,14 @@
     <string>Logging mode:</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="DebugEnableLbl">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>140</y>
+     <y>180</y>
      <width>211</width>
      <height>27</height>
     </rect>
@@ -130,14 +130,14 @@
     <string>Enable Debug Options</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignHCenter|Qt::AlignTop</set>
+    <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
    </property>
   </widget>
   <widget class="QCheckBox" name="DebugEnableCheckBox">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>140</y>
+     <x>220</x>
+     <y>180</y>
      <width>35</width>
      <height>31</height>
     </rect>
@@ -173,17 +173,22 @@
     <string>Tooltip Color:</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QComboBox" name="TooltipBox">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>170</x>
      <y>90</y>
-     <width>121</width>
+     <width>141</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="autoFillBackground">
     <bool>false</bool>
@@ -218,8 +223,8 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>230</y>
+     <x>50</x>
+     <y>290</y>
      <width>271</width>
      <height>41</height>
     </rect>
@@ -247,10 +252,10 @@
     <item>
      <spacer name="horizontalSpacer">
       <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+       <enum>Qt::Orientation::Horizontal</enum>
       </property>
       <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
+       <enum>QSizePolicy::Policy::Fixed</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>
@@ -302,15 +307,15 @@
     <string>UI Mode:</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QComboBox" name="UiModeBox">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>120</x>
      <y>30</y>
-     <width>121</width>
+     <width>141</width>
      <height>32</height>
     </rect>
    </property>
@@ -326,12 +331,80 @@
     <rect>
      <x>270</x>
      <y>30</y>
-     <width>61</width>
+     <width>101</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Reload</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="TooltipLbl_2">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>140</y>
+     <width>171</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Section Name File:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="SectionFileLine">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>140</y>
+     <width>141</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="OpenFileBtn">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>140</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Open</string>
    </property>
   </widget>
  </widget>
@@ -344,8 +417,8 @@
    <slot>CancelBtn_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>258</x>
-     <y>209</y>
+     <x>319</x>
+     <y>291</y>
     </hint>
     <hint type="destinationlabel">
      <x>179</x>
@@ -360,8 +433,8 @@
    <slot>SaveBtn_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>92</x>
-     <y>209</y>
+     <x>103</x>
+     <y>291</y>
     </hint>
     <hint type="destinationlabel">
      <x>179</x>
@@ -376,8 +449,8 @@
    <slot>DebugEnableCheckState_Changed(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>227</x>
-     <y>105</y>
+     <x>237</x>
+     <y>180</y>
     </hint>
     <hint type="destinationlabel">
      <x>179</x>
@@ -392,8 +465,8 @@
    <slot>LoggingMode_IndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>234</x>
-     <y>145</y>
+     <x>244</x>
+     <y>220</y>
     </hint>
     <hint type="destinationlabel">
      <x>179</x>
@@ -408,8 +481,8 @@
    <slot>TooltipColor_IndexChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>190</x>
-     <y>45</y>
+     <x>230</x>
+     <y>90</y>
     </hint>
     <hint type="destinationlabel">
      <x>179</x>
@@ -449,6 +522,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>OpenFileBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>OptionDialog</receiver>
+   <slot>OpenFileBtn_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>362</x>
+     <y>185</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>DebugEnableCheckState_Changed(int)</slot>
@@ -458,5 +547,7 @@
   <slot>CancelBtn_Clicked()</slot>
   <slot>UiModeBox_IndexChanged(int)</slot>
   <slot>ReloadUIsBtn_Clicked()</slot>
+  <slot>OpenFileBtn_Clicked()</slot>
+  <slot>SectionFileLine_TextChanged(QString)</slot>
  </slots>
 </ui>

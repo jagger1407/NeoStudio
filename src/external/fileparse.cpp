@@ -16,8 +16,8 @@ QStringList FileParse::ReadLines(QString FilePath)
     // Read each line and add it to a QStringList
     QStringList FileText;
     while(!file.atEnd())
-    {
-        FileText << file.readLine();
+    { 
+        FileText << file.readLine().replace("\r", "").replace("\n", "\0");
     }
     file.close();
     return FileText;
@@ -46,12 +46,8 @@ void FileParse::WriteFile(QString FilePath, QByteArray* Data)
     {
         return;
     }
-    // Apparently, now with Windows 11,
-    // Windows likes to add newlines after a filename???
-    if(FilePath.endsWith("\r\n"))
-    {
-        FilePath.truncate(FilePath.length() - 2);
-    }
+
+    FilePath = FilePath.replace("\r", "").replace("\n", "\0");
     QFile newFile(FilePath);
 
     // Don't wanna corrupt the existing file, after all

@@ -4,7 +4,7 @@
 #include "src/ui/menu/characterselectiondialog.h"
 #include "src/ui/editors/charparamframe.h"
 
-#define VERSION_STRING "Neo Studio v1.4.5"
+#define VERSION_STRING "Neo Studio v1.4.6"
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QMainWindow(parent), ui(new Ui::NeoStudio)
@@ -244,9 +244,6 @@ void NeoStudio::ExportDat()
         return;
     }
     QStringList sectionNames = FileParse::ReadLines(pak->sectionNameFile);
-    for(int i=0;i<sectionNames.count();i++) {
-        sectionNames[i] = sectionNames[i].replace("\n", "\0");
-    }
 
     QString saveDir = QFileDialog::getExistingDirectory(this, "Export .dat file to...", file);
     if(saveDir.isEmpty())

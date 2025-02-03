@@ -18,6 +18,7 @@ public:
         TOOLTIPCOLOR,
         UI_MODE,
         ADVANCED_OPTIONS,
+        SECTION_NAME_FILE,
 
         OPTION_COUNT
     } OptionType;
@@ -25,7 +26,8 @@ public:
         "LogMode",
         "TooltipColor",
         "UiMode",
-        "AdvancedOptions"
+        "AdvancedOptions",
+        "SectionNameFile"
     };
 
     /**The log modes used to determine which log levels get printed.*/
@@ -63,6 +65,7 @@ public:
 #define DEFAULT_TOOLTIPCOLOR BLACK
 #define DEFAULT_UIMODE "Dark"
 #define DEFAULT_ADVANCED_OPTIONS false
+#define DEFAULT_SECTION_FILE "./assets/pak-sections.txt"
 
     static void InitOptions();
     void LoadDefaults(bool saveFile = false);
@@ -75,6 +78,7 @@ public:
     TooltipColor tooltipColor;
     QString uiMode;
     bool advancedOptions;
+    QString sectionNameFile = "";
 
 private:
     QString tooltipStyles[4] =

@@ -2,9 +2,10 @@
 #include "ui_neostudio.h"
 
 #include "src/ui/menu/characterselectiondialog.h"
+#include "src/ui/menu/sectionselectiondialog.h"
 #include "src/ui/editors/charparamframe.h"
 
-#define VERSION_STRING "Neo Studio v1.4.6"
+#define VERSION_STRING "Neo Studio v1.5.0"
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QMainWindow(parent), ui(new Ui::NeoStudio)
@@ -206,7 +207,7 @@ void NeoStudio::InitDatFile()
     SelectedEditorChanged(EDITOR_PARAMETERS);
 }
 
-void NeoStudio::ExportDat()
+void NeoStudio::ExportSection()
 {
     if(file.isEmpty())
     {
@@ -217,9 +218,10 @@ void NeoStudio::ExportDat()
     {
         Debug::Log("Export isn't supported for .dat files. Using 'SaveAs' instead.", Debug::WARNING);
         SaveFileAs();
+        return;
     }
 
-    QByteArray* data = NULL;
+
     SectionOffset dataType = SECTION_OFFSET_INVALID;
 
     EditorType curEditor = (EditorType)(ui->EditorList->currentRow());
@@ -227,45 +229,56 @@ void NeoStudio::ExportDat()
         case EDITOR_PARAMETERS: {
             CharParamFrame* pf = (CharParamFrame*)editors[curEditor];
             dataType = (SectionOffset)(pf->GetCurrentParameterType() + 17);
-            data = new QByteArray(*pf->GetCurrentParameterData());
             break;
         }
         default:
+            dataType = (SectionOffset)0;
             break;
     }
-    if(data == NULL) {
-        Debug::Log("No editor open!", Debug::ERROR);
-        return;
-    }
 
-    if(!FileParse::DoesFileExist(pak->sectionNameFile))
+    if(!FileParse::DoesFileExist(g_Options.sectionNameFile))
     {
-        Debug::Log("Section Name List (" + pak->sectionNameFile + ") doesn't exist.", Debug::ERROR);
+        Debug::Log("Section Name List (" + g_Options.sectionNameFile + ") doesn't exist.", Debug::ERROR);
         return;
     }
-    QStringList sectionNames = FileParse::ReadLines(pak->sectionNameFile);
+    QStringList sectionNames = FileParse::ReadLines(g_Options.sectionNameFile);
 
-    QString saveDir = QFileDialog::getExistingDirectory(this, "Export .dat file to...", file);
+    int section = SectionSelectionDialog::SelectExport(dataType);
+    if(section == SectionSelectionDialog::ExportAborted) {
+        Debug::Log("Export Aborted.", Debug::WARNING);
+        return;
+    }
+
+    QString saveDir = QFileDialog::getExistingDirectory(this, "Export file to...", QFileInfo(file).absoluteFilePath());
     if(saveDir.isEmpty())
     {
         Debug::Log("No directory selected.", Debug::ERROR);
         return;
     }
 
-    if(pak->GetParamData(dataType).compare(*data)) {
-        if(!DatSelectionDialog::SelectDat())
-            data = new QByteArray(pak->GetParamData(dataType));
+    if(section == SectionSelectionDialog::ExportAll) {
+        QString pakName = file.split("/")[file.split('/').length()-1];
+        pakName.chop(4);
+        for(int i=0;i<sectionNames.count();i++) {
+            QByteArray d = pak->GetParamData(i);
+            FileParse::WriteFile(saveDir + "/" + sectionNames[i], &d);
+        }
+    }
+    else {
+        QByteArray* data = new QByteArray(pak->GetParamData(section));
+        FileParse::WriteFile(saveDir + "/" + sectionNames[section], data);
+        delete data;
+
+        if(FileParse::DoesFileExist(saveDir + "/" + sectionNames[section]))
+        {
+            Debug::Log("File '" + sectionNames[section] + "' saved successfully.", Debug::INFO);
+        }
     }
 
-    FileParse::WriteFile(saveDir + "/" + sectionNames[dataType], data);
-    delete data;
-    if(FileParse::DoesFileExist(saveDir + "/" + sectionNames[dataType]))
-    {
-        Debug::Log("File '" + sectionNames[dataType] + "' saved successfully.", Debug::INFO);
-    }
+
 }
 
-void NeoStudio::ImportDat()
+void NeoStudio::ImportSection()
 {
 
     if(file.isEmpty())
@@ -279,7 +292,7 @@ void NeoStudio::ImportDat()
         return;
     }
 
-    QString datPath = QFileDialog::getOpenFileName(this, "Open .dat file", file, "Parameter Files (*.dat)");
+    QString datPath = QFileDialog::getOpenFileName(this, "Open Section File", file, "Section File (*.*)");
     if(datPath.isEmpty())
     {
         Debug::Log("No path selected.", Debug::WARNING);
@@ -287,13 +300,23 @@ void NeoStudio::ImportDat()
     }
     QByteArray datData = FileParse::ReadWholeFile(datPath);
 
+    QStringList sections = FileParse::ReadLines(g_Options.sectionNameFile);
+
     datPath = datPath.split("/")[datPath.split("/").count()-1];
-    SectionOffset datType = (SectionOffset)(datPath.split("_")[0].toInt());
+    SectionOffset datType = SECTION_OFFSET_INVALID;
+
+    for(int i=0;i<SECTION_OFFSET_COUNT;i++) {
+        if(datPath == sections[i])
+            datType = (SectionOffset)i;
+    }
 
     if(datType >= SECTION_OFFSET_GENERAL && datType < SECTION_OFFSET_NEXT) {
         CharParamFrame* pf = (CharParamFrame*)editors[EDITOR_PARAMETERS];
-        pf->ImportParameterData((ParameterType)(datType-17), datData);
+        if(pf != NULL) {
+            pf->ImportParameterData((ParameterType)(datType-17), datData);
+        }
     }
+    pak->UpdateParamData(datType, &datData);
 }
 void NeoStudio::SelectedEditorChanged(int editorId)
 {

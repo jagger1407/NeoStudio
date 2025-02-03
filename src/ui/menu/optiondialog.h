@@ -34,6 +34,7 @@ private slots:
     void SaveBtn_Clicked();
     void CancelBtn_Clicked();
     void ReloadUIsBtn_Clicked();
+    void OpenFileBtn_Clicked();
 };
 
 #endif // OPTIONDIALOG_H

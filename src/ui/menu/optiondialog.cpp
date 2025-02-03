@@ -15,6 +15,7 @@ OptionDialog::OptionDialog()
     ui->TooltipBox->setCurrentIndex(g_Options.tooltipColor);
     ui->UiModeBox->setCurrentText(g_Options.uiMode);
     ui->DebugEnableCheckBox->setCheckState((Qt::CheckState)(g_Options.advancedOptions << 1));
+    ui->SectionFileLine->setText(g_Options.sectionNameFile);
 
     if(!g_Options.advancedOptions)
     {
@@ -62,6 +63,7 @@ void OptionDialog::UiModeBox_IndexChanged(int NewIndex)
     g_Options.uiMode = style;
     this->setStyleSheet(FileParse::ReadWholeFile("./assets/ui/" + style +".qss"));
 }
+
 void OptionDialog::ReloadUIsBtn_Clicked()
 {
     initializing = true;
@@ -76,14 +78,25 @@ void OptionDialog::ReloadUIsBtn_Clicked()
     ui->UiModeBox->setCurrentText(g_Options.uiMode);
     initializing = false;
 }
+void OptionDialog::OpenFileBtn_Clicked()
+{
+    QString filePath = QFileDialog::getOpenFileName(this, "Select Section Name File...", "", "Section Name File (*.txt)");
+    ui->SectionFileLine->setText(filePath);
+}
+
 void OptionDialog::SaveBtn_Clicked()
 {
     if(initializing) return;
+    if(!FileParse::DoesFileExist(g_Options.sectionNameFile)) {
+        Debug::Log("Section Name File does not exist. Aborting save...", Debug::ERROR);
+        return;
+    }
 
     g_Options.uiMode = ui->UiModeBox->currentText();
     g_Options.tooltipColor = (Options::TooltipColor)ui->TooltipBox->currentIndex();
     g_Options.logMode = (Options::LogMode)ui->LogModeBox->currentIndex();
     g_Options.advancedOptions = (bool)(ui->DebugEnableCheckBox->checkState() >> 1);
+    g_Options.sectionNameFile = ui->SectionFileLine->text();
 
     g_Options.SaveConfig();
     Debug::Log("Config Saved.", Debug::INFO);

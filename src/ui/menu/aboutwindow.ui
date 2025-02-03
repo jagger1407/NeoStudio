@@ -66,10 +66,10 @@
     <string notr="true"/>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Made by jagger1407.&lt;br/&gt;No Licenses, feel free to steal it, market it &lt;br/&gt;as your own, sue me and create a monopoly&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;But most importantly, play Tenkaichi 2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Made by jagger1407.&lt;br/&gt;All of the research that went into&lt;br/&gt;this Project can be found &lt;a href=&quot;https://github.com/jagger1407/Tenkaichi2Research/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1d99f3;&quot;&gt;here.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Play Tenkaichi 2 pls&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="textFormat">
-    <enum>Qt::RichText</enum>
+    <enum>Qt::TextFormat::RichText</enum>
    </property>
   </widget>
   <widget class="QGraphicsView" name="graphicsView_AboutImage">
@@ -88,10 +88,10 @@
     <string notr="true"/>
    </property>
    <property name="frameShape">
-    <enum>QFrame::NoFrame</enum>
+    <enum>QFrame::Shape::NoFrame</enum>
    </property>
    <property name="frameShadow">
-    <enum>QFrame::Sunken</enum>
+    <enum>QFrame::Shadow::Sunken</enum>
    </property>
    <property name="lineWidth">
     <number>0</number>

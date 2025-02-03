@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>900</height>
+    <width>1486</width>
+    <height>977</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1200</width>
-    <height>900</height>
+    <width>300</width>
+    <height>200</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1200</width>
-    <height>900</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -38,252 +38,83 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <widget class="QTabWidget" name="ParameterTabs">
-    <property name="geometry">
-     <rect>
-      <x>9</x>
-      <y>38</y>
-      <width>1181</width>
-      <height>831</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="currentIndex">
-     <number>1</number>
-    </property>
-    <widget class="QWidget" name="GeneralTab">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <attribute name="title">
-      <string>General</string>
-     </attribute>
-     <widget class="QScrollArea" name="GeneralScrollArea">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1180</width>
-        <height>800</height>
-       </rect>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QListWidget" name="EditorList">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="currentRow">
+       <number>-1</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Character Parameters</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="FileLbl">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
+      <property name="text">
+       <string>Open A Character File...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QScrollArea" name="EditorScrollArea">
       <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOn</enum>
+       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
       </property>
       <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
+       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
       </property>
       <property name="widgetResizable">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <widget class="QWidget" name="scrollAreaWidgetContents">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>910</width>
-         <height>637</height>
+         <width>1208</width>
+         <height>896</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
+       <layout class="QGridLayout" name="gridLayout"/>
       </widget>
      </widget>
-    </widget>
-    <widget class="QWidget" name="MeleeTab">
-     <attribute name="title">
-      <string>Melee</string>
-     </attribute>
-     <widget class="QGraphicsView" name="graphicsView_1">
-      <property name="geometry">
-       <rect>
-        <x>187</x>
-        <y>130</y>
-        <width>571</width>
-        <height>361</height>
-       </rect>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="backgroundBrush">
-       <brush brushstyle="NoBrush">
-        <color alpha="255">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </property>
-      <property name="foregroundBrush">
-       <brush brushstyle="NoBrush">
-        <color alpha="255">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </property>
-     </widget>
-     <widget class="QScrollArea" name="MeleeScrollArea">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1180</width>
-        <height>800</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOn</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="widgetResizable">
-       <bool>false</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents_2">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>910</width>
-         <height>637</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-      </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="KiBlastTab">
-     <attribute name="title">
-      <string>Ki Blasts</string>
-     </attribute>
-     <widget class="QScrollArea" name="KiBlastScrollArea">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1180</width>
-        <height>800</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAsNeeded</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAsNeeded</enum>
-      </property>
-      <property name="widgetResizable">
-       <bool>false</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents_3">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>910</width>
-         <height>637</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-      </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="MovementTab">
-     <attribute name="title">
-      <string>Movement</string>
-     </attribute>
-     <widget class="QScrollArea" name="MovementScrollArea">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1180</width>
-        <height>800</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAsNeeded</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAsNeeded</enum>
-      </property>
-      <property name="widgetResizable">
-       <bool>false</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents_4">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>910</width>
-         <height>637</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-      </widget>
-     </widget>
-    </widget>
-   </widget>
-   <widget class="QLabel" name="FileLbl">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>1181</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Open A Character File...</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="MenuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
-     <height>23</height>
+     <width>1486</width>
+     <height>33</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -294,7 +125,7 @@
      <string notr="true"/>
     </property>
     <property name="title">
-     <string>File</string>
+     <string>Fi&amp;le</string>
     </property>
     <addaction name="ActionOpen"/>
     <addaction name="ActionSave"/>
@@ -319,42 +150,42 @@
   </widget>
   <action name="ActionOpen">
    <property name="text">
-    <string>Open File</string>
+    <string>&amp;Open File</string>
    </property>
   </action>
   <action name="ActionSave">
    <property name="text">
-    <string>Save</string>
+    <string>&amp;Save</string>
    </property>
   </action>
   <action name="ActionAbout">
    <property name="text">
-    <string>About</string>
+    <string>&amp;About</string>
    </property>
   </action>
   <action name="ActionSave_As">
    <property name="text">
-    <string>Save As</string>
+    <string>Sa&amp;ve As</string>
    </property>
   </action>
   <action name="ActionClose">
    <property name="text">
-    <string>Close File</string>
+    <string>&amp;Close File</string>
    </property>
   </action>
   <action name="ActionOptions">
    <property name="text">
-    <string>Options</string>
+    <string>&amp;Options</string>
    </property>
   </action>
   <action name="ActionExport">
    <property name="text">
-    <string>Export as .dat</string>
+    <string>&amp;Export as .dat</string>
    </property>
   </action>
   <action name="ActionImport">
    <property name="text">
-    <string>Import .dat</string>
+    <string>&amp;Import .dat</string>
    </property>
   </action>
  </widget>
@@ -488,6 +319,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>EditorList</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>NeoStudio</receiver>
+   <slot>SelectedEditorChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>489</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>616</x>
+     <y>457</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>OpenFile()</slot>
@@ -498,5 +345,6 @@
   <slot>OpenOptions()</slot>
   <slot>ExportDat()</slot>
   <slot>ImportDat()</slot>
+  <slot>SelectedEditorChanged(int)</slot>
  </slots>
 </ui>

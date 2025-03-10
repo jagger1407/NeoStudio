@@ -143,7 +143,7 @@ void SkillListFrame::addSkillListItem(SkillListItemType type, QChar cid, QString
                 // Star front sprite
                 // (Needs to combine text_0.png and star.png)
                 QGraphicsView* frontSprite = new QGraphicsView();
-                frontSprite->setStyleSheet("background-color: rgb(1, 1, 71);");
+                frontSprite->setStyleSheet("background-color: rgb(1, 1, 71); border: none;");
                 frontSprite->setMaximumHeight(lineHeight);
                 frontSprite->setMaximumWidth(lineHeight * 0.625);
                 frontSprite->setVerticalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAlwaysOff);

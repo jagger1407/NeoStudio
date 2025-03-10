@@ -3,9 +3,11 @@
 
 #include "src/ui/menu/characterselectiondialog.h"
 #include "src/ui/menu/sectionselectiondialog.h"
-#include "src/ui/editors/charparamframe.h"
 
-#define VERSION_STRING "Neo Studio v1.5.0"
+#include "src/ui/editors/charparamframe.h"
+#include "src/ui/editors/skilllistframe.h"
+
+#define VERSION_STRING "Neo Studio v1.6.0"
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QMainWindow(parent), ui(new Ui::NeoStudio)
@@ -45,7 +47,7 @@ NeoStudio::~NeoStudio() = default;
 void NeoStudio::OpenFile()
 {
     QString filePath = QFileDialog::getOpenFileName(this,
-                                        "Open File", "", "Character Files (*.pak);;Parameter Files (*.dat)");
+                                        "Open File", "", "Character Files (*.pak);;Pak Subsection (*.dat)");
     if(filePath.isEmpty())
     {
         Debug::Log("OpenFile: No file selected.", Debug::WARNING);
@@ -83,6 +85,9 @@ void NeoStudio::SaveFile()
         if(editors[EDITOR_PARAMETERS] != NULL) {
             ((CharParamFrame*)editors[EDITOR_PARAMETERS])->UpdatePak();
         }
+        if(editors[EDITOR_SKILL_LIST] != NULL) {
+            ((SkillListFrame*)editors[EDITOR_SKILL_LIST])->UpdatePak();
+        }
         pak->SavePak(file);
     }
     else if(file.toLower().endsWith(".dat"))
@@ -91,10 +96,11 @@ void NeoStudio::SaveFile()
             QByteArray* data = ((CharParamFrame*)editors[EDITOR_PARAMETERS])->GetCurrentParameterData();
             FileParse::WriteFile(file, data);
         }
-    }
-    if(FileParse::DoesFileExist(file))
-    {
-        Debug::Log("File '" + file + "' saved successfully.", Debug::INFO);
+        if(datIndex >= SECTION_OFFSET_SKILL_LIST_DE && datIndex <= SECTION_OFFSET_SKILL_LIST_UK) {
+            QByteArray* data = ((SkillListFrame*)editors[EDITOR_SKILL_LIST])->GetCurrentSkillList();
+            FileParse::WriteFile(file, data);
+            delete data;
+        }
     }
 }
 
@@ -110,7 +116,7 @@ void NeoStudio::SaveFileAs()
     if(file.toLower().endsWith(".pak"))
         newFile = QFileDialog::getSaveFileName(this, "Save File", "", "Character Files (*.pak)");
     else if(file.toLower().endsWith(".dat"))
-        newFile = QFileDialog::getSaveFileName(this, "Save File", "", "Parameter Files (*.dat)");
+        newFile = QFileDialog::getSaveFileName(this, "Save File", "", "Pak Subsection (*.dat)");
     if(newFile == NULL)
     {
         Debug::Log("SaveFileAs: No file selected.", Debug::WARNING);
@@ -122,6 +128,9 @@ void NeoStudio::SaveFileAs()
         if(editors[EDITOR_PARAMETERS] != NULL) {
             ((CharParamFrame*)editors[EDITOR_PARAMETERS])->UpdatePak();
         }
+        if(editors[EDITOR_SKILL_LIST] != NULL) {
+            ((SkillListFrame*)editors[EDITOR_SKILL_LIST])->UpdatePak();
+        }
         pak->SavePak(newFile);
 
     }
@@ -130,6 +139,11 @@ void NeoStudio::SaveFileAs()
         if(datIndex >= SECTION_OFFSET_GENERAL && datIndex < SECTION_OFFSET_NEXT) {
             QByteArray* data = ((CharParamFrame*)editors[EDITOR_PARAMETERS])->GetCurrentParameterData();
             FileParse::WriteFile(newFile, data);
+        }
+        if(datIndex >= SECTION_OFFSET_SKILL_LIST_DE && datIndex <= SECTION_OFFSET_SKILL_LIST_UK) {
+            QByteArray* data = ((SkillListFrame*)editors[EDITOR_SKILL_LIST])->GetCurrentSkillList();
+            FileParse::WriteFile(newFile, data);
+            delete data;
         }
     }
     if(FileParse::DoesFileExist(newFile))
@@ -150,6 +164,10 @@ void NeoStudio::CloseFile()
         ((CharParamFrame*)editors[EDITOR_PARAMETERS])->CloseFile();
         delete editors[EDITOR_PARAMETERS];
         editors[EDITOR_PARAMETERS] = NULL;
+    }
+    if(editors[EDITOR_SKILL_LIST] != NULL) {
+        delete editors[EDITOR_SKILL_LIST];
+        editors[EDITOR_SKILL_LIST] = NULL;
     }
     datIndex = SECTION_OFFSET_INVALID;
 
@@ -195,16 +213,28 @@ void NeoStudio::InitPakFile()
 void NeoStudio::InitDatFile()
 {
     datIndex = (SectionOffset)(file.split('/')[(file.split('/').length()-1)].split("_")[0].toInt());
-    if(datIndex < SECTION_OFFSET_GENERAL || datIndex >= SECTION_OFFSET_NEXT)
-    {
+    if(datIndex < 0 || datIndex >= SECTION_OFFSET_COUNT) {
         Debug::Log("Invalid .dat file.", Debug::ERROR);
         Debug::Log("datIndex = " + QString::number((int)datIndex), Debug::INFO);
         return;
     }
-    dat = FileParse::ReadWholeFile(file);
-
-    ui->EditorList->setCurrentRow(0);
-    SelectedEditorChanged(EDITOR_PARAMETERS);
+    if(datIndex >= SECTION_OFFSET_GENERAL && datIndex <= SECTION_OFFSET_MOVEMENT) {
+        dat = FileParse::ReadWholeFile(file);
+        ui->EditorList->setCurrentRow(0);
+        SelectedEditorChanged(EDITOR_PARAMETERS);
+        return;
+    }
+    if(datIndex >= SECTION_OFFSET_SKILL_LIST_DE && datIndex <= SECTION_OFFSET_SKILL_LIST_UK) {
+        dat = FileParse::ReadWholeFile(file);
+        ui->EditorList->setCurrentRow(1);
+        SelectedEditorChanged(EDITOR_SKILL_LIST);
+        return;
+    }
+    else {
+        Debug::Log("Sorry man, haven't implemented an editor for this .pak subsection yet.", Debug::ERROR);
+        Debug::Log("datIndex = " + QString::number((int)datIndex), Debug::INFO);
+        return;
+    }
 }
 
 void NeoStudio::ExportSection()
@@ -229,8 +259,10 @@ void NeoStudio::ExportSection()
         case EDITOR_PARAMETERS: {
             CharParamFrame* pf = (CharParamFrame*)editors[curEditor];
             dataType = (SectionOffset)(pf->GetCurrentParameterType() + 17);
-            break;
-        }
+        } break;
+        case EDITOR_SKILL_LIST: {
+            dataType = ((SkillListFrame*)(editors[curEditor]))->GetCurrentSection();
+        } break;
         default:
             dataType = (SectionOffset)0;
             break;
@@ -316,6 +348,12 @@ void NeoStudio::ImportSection()
             pf->ImportParameterData((ParameterType)(datType-17), datData);
         }
     }
+    if(datType >= SECTION_OFFSET_SKILL_LIST_DE && datType <= SECTION_OFFSET_SKILL_LIST_UK) {
+        SkillListFrame* sl = (SkillListFrame*)editors[EDITOR_SKILL_LIST];
+        if(sl != NULL) {
+            sl->ImportSkillList(datType, datData);
+        }
+    }
     pak->UpdateParamData(datType, &datData);
 }
 void NeoStudio::SelectedEditorChanged(int editorId)
@@ -324,8 +362,13 @@ void NeoStudio::SelectedEditorChanged(int editorId)
         return;
     }
 
+    // when using setWidget(), the QScrollArea takes ownership and deletes the old widget
+    // we have to first take ownership back so the previous editor Frame isn't deleted.
+    ui->EditorScrollArea->takeWidget();
+
+    ui->EditorScrollArea->setWidget(NULL);
     if(editorId < 0) {
-        ui->EditorScrollArea->setWidget(NULL);
+        return;
     }
 
     if(editors[editorId] == NULL) {
@@ -337,9 +380,16 @@ void NeoStudio::SelectedEditorChanged(int editorId)
                     editors[editorId] = new CharParamFrame((ParameterType)(datIndex - 17), &dat);
                 }
                 break;
+            case EDITOR_SKILL_LIST:
+                if(file.toLower().endsWith(".pak"))
+                    editors[editorId] = new SkillListFrame(pak);
+                else if(file.toLower().endsWith(".dat")) {
+                    editors[editorId] = new SkillListFrame(datIndex, &dat);
+                }
+                break;
         }
     }
-
+    QString test = ((QFrame*)editors[editorId])->objectName();
     ui->EditorScrollArea->setWidget(editors[editorId]);
 }
 
@@ -349,4 +399,6 @@ void NeoStudio::ResetUiMode()
 
     if(editors[EDITOR_PARAMETERS] != NULL)
         ((CharParamFrame*)editors[EDITOR_PARAMETERS])->ResetUiMode();
+    if(editors[EDITOR_SKILL_LIST] != NULL)
+        ((SkillListFrame*)editors[EDITOR_SKILL_LIST])->ResetUiMode();
 }

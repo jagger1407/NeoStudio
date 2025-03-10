@@ -46,6 +46,7 @@ set(neostudio_SRC
 
   src/ui/neostudio.h
   src/ui/editors/charparamframe.h
+  src/ui/editors/skilllistframe.h
   src/ui/menu/aboutwindow.h
   src/ui/menu/optiondialog.h
   src/ui/menu/datselectiondialog.h
@@ -72,6 +73,7 @@ set(neostudio_SRC
 
   src/ui/neostudio.cpp
   src/ui/editors/charparamframe.cpp
+  src/ui/editors/skilllistframe.cpp
   src/ui/menu/aboutwindow.cpp
   src/ui/menu/optiondialog.cpp
   src/ui/menu/datselectiondialog.cpp
@@ -86,6 +88,7 @@ set(neostudio_SRC
   # ::designer files::
   src/ui/neostudio.ui
   src/ui/editors/charparamframe.ui
+  src/ui/editors/skilllistframe.ui
   src/ui/paramSections/generalframe.ui
   src/ui/paramSections/meleeframe.ui
   src/ui/paramSections/kiframe.ui

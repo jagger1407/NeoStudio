@@ -11,8 +11,19 @@ typedef enum
     SECTION_OFFSET_MOVEMENT,
     SECTION_OFFSET_NEXT,
 
+    SECTION_OFFSET_SKILL_LIST_DE = 40,
+    SECTION_OFFSET_SKILL_LIST_FR,
+    SECTION_OFFSET_SKILL_LIST_IT,
+    SECTION_OFFSET_SKILL_LIST_JP,
+    SECTION_OFFSET_SKILL_LIST_KR,
+    SECTION_OFFSET_SKILL_LIST_SP,
+    SECTION_OFFSET_SKILL_LIST_EN,
+    SECTION_OFFSET_SKILL_LIST_UK,
+
     SECTION_OFFSET_COUNT = 250
 }SectionOffset;   // The offsets for the pointers to parameter data in a .pak
+
+#define PAK_SKILL_LIST_COUNT 8
 
 /**Every currently known Parameter Type.*/
 typedef enum

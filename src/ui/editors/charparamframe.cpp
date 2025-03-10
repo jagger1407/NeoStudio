@@ -127,13 +127,13 @@ void CharParamFrame::CloseFile()
 
 void CharParamFrame::UpdatePak()
 {
-    if(ui->GeneralTab->isEnabled())
+    if(generalWindow != NULL)
         pak->UpdateParamData(SECTION_OFFSET_GENERAL, generalWindow->gp->GetParameterData());
-    if(ui->MeleeTab->isEnabled())
+    if(meleeWindow != NULL)
         pak->UpdateParamData(SECTION_OFFSET_MELEE, meleeWindow->mp->GetParameterData());
-    if(ui->KiBlastTab->isEnabled())
+    if(kiWindow != NULL)
         pak->UpdateParamData(SECTION_OFFSET_KI_BLAST, kiWindow->kp->GetParameterData());
-    if(ui->MovementTab->isEnabled())
+    if(moveWindow != NULL)
         pak->UpdateParamData(SECTION_OFFSET_MOVEMENT, moveWindow->mp->GetParameterData());
 }
 

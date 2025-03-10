@@ -39,13 +39,19 @@
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
+    <item row="3" column="0">
      <widget class="QListWidget" name="EditorList">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>false</bold>
+       </font>
       </property>
       <property name="currentRow">
        <number>-1</number>
@@ -62,7 +68,47 @@
       </item>
      </widget>
     </item>
-    <item row="0" column="0" colspan="2">
+    <item row="3" column="1">
+     <widget class="QScrollArea" name="EditorScrollArea">
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1204</width>
+         <height>892</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout"/>
+      </widget>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Editors</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
      <widget class="QLabel" name="FileLbl">
       <property name="maximumSize">
        <size>
@@ -72,7 +118,7 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>14</pointsize>
+        <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -83,32 +129,8 @@
        <string>Open A Character File...</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
+       <set>Qt::AlignCenter</set>
       </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QScrollArea" name="EditorScrollArea">
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>1208</width>
-         <height>896</height>
-        </rect>
-       </property>
-       <layout class="QGridLayout" name="gridLayout"/>
-      </widget>
      </widget>
     </item>
    </layout>
@@ -119,13 +141,23 @@
      <x>0</x>
      <y>0</y>
      <width>1486</width>
-     <height>33</height>
+     <height>27</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
    <widget class="QMenu" name="MenuFile">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
@@ -141,6 +173,11 @@
     <addaction name="ActionImport"/>
    </widget>
    <widget class="QMenu" name="MenuHelp">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>

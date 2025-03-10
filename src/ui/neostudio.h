@@ -46,7 +46,7 @@ private:
     typedef enum {
         EDITOR_INVALID = -1,
         EDITOR_PARAMETERS,
-        //EDITOR_SKILL_LIST,
+        EDITOR_SKILL_LIST,
 
         EDITOR_COUNT
     } EditorType;

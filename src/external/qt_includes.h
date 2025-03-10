@@ -20,5 +20,6 @@
 #include <QDateTime>
 #include <QMap>
 #include <QListWidgetItem>
+#include <QGraphicsView>
 
 #endif

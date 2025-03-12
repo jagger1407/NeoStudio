@@ -30,8 +30,11 @@ SkillListFrame::SkillListFrame(int sectionID, QByteArray* data) : ui(new Ui::Ski
     isInitializing = true;
     ui->setupUi(this);
     ResetUiMode();
+
+    initPixmaps();
+
     int language = sectionID - SECTION_OFFSET_SKILL_LIST_DE;
-    if(language < 0 || language > 8) {
+    if(language < 0 || language > PAK_SKILL_LIST_COUNT) {
         Debug::Log("Language of imported .dat invalid.", Debug::ERROR);
         return;
     }
@@ -40,9 +43,10 @@ SkillListFrame::SkillListFrame(int sectionID, QByteArray* data) : ui(new Ui::Ski
     skillListSizes[language] = dat->length();
     skillListText[language] = QByteArray(skillListSizes[language], 0x00);
     memcpy(skillListText[language].data(), dat->constData(), skillListSizes[language]);
+    prefix[language] = ((ushort*)(dat->constData()))[0];
     lastLang = language;
     isInitializing = false;
-    ui->SkillListEdit->setText(skillListText[language]);
+    ui->SkillListEdit->setText(QString::fromUtf16((ushort*)skillListText[language].constData()));
     ui->SkillListPreview->clear();
     SkillListTextChanged();
 }
@@ -342,8 +346,9 @@ void SkillListFrame::SkillListTextChanged()
             continue;
         }
 
-        if(identifiers.indexOf(line.at(0)) == SKILL_LIST_ITEM_UNKNOWN_PREFIX) {
-            Debug::Log(QString("Line %1 contains an unknown prefix \"%2\".").arg(l).arg(line.left(4)), Debug::WARNING);
+        if(identifiers.indexOf(line.at(0)) == SKILL_LIST_ITEM_UNLOCKABLE) {
+            // This prefix handles entries that need to be unlocked if their
+            // respective character isn't unlocked yet.
             line = line.mid(4);
         }
 

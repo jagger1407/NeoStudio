@@ -272,7 +272,7 @@ void NeoStudio::ExportSection()
             curData = new QByteArray();
             break;
     }
-    QByteArray prevData = pak->GetParamData(dataType);
+
 
     if(!FileParse::DoesFileExist(g_Options.sectionNameFile))
     {
@@ -304,10 +304,11 @@ void NeoStudio::ExportSection()
     }
     else {
         QByteArray* data;
+        QByteArray prevData = pak->GetParamData(section);
         if(section == dataType) {
             DatSelectionDialog::SelectOption useEdited = DatSelectionDialog::DATSELECT_ORIGINAL;
-            int val = memcmp(curData->constData(), prevData.constData(), prevData.size());
-            if(val != 0) {
+
+            if(memcmp(curData->constData(), prevData.constData(), prevData.size()) != 0) {
                 useEdited = DatSelectionDialog::SelectDat();
             }
 

@@ -269,6 +269,7 @@ void NeoStudio::ExportSection()
         } break;
         default:
             dataType = (SectionOffset)0;
+            curData = new QByteArray();
             break;
     }
     QByteArray prevData = pak->GetParamData(dataType);
@@ -417,7 +418,6 @@ void NeoStudio::SelectedEditorChanged(int editorId)
                 break;
         }
     }
-    QString test = ((QFrame*)editors[editorId])->objectName();
     ui->EditorScrollArea->setWidget(editors[editorId]);
 }
 

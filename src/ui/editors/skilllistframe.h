@@ -30,6 +30,7 @@ public:
     SkillListFrame(int sectionID, QByteArray* data);
 
     void UpdatePak();
+    void UpdateSkillList();
     QByteArray* GetCurrentSkillList();
     SectionOffset GetCurrentSection();
     void ImportSkillList(SectionOffset type, QByteArray dat);
@@ -40,8 +41,9 @@ private:
 
     bool isInitializing;
 
-    QString skillListText[PAK_SKILL_LIST_COUNT];
+    QByteArray skillListText[PAK_SKILL_LIST_COUNT];
     int skillListSizes[PAK_SKILL_LIST_COUNT];
+    ushort prefix[PAK_SKILL_LIST_COUNT];
 
     ushort inputSpecials[4] = {
         0xFF08, // (

@@ -1,8 +1,9 @@
 #include "datselectiondialog.h"
 
-bool DatSelectionDialog::SelectDat()
+DatSelectionDialog::SelectOption DatSelectionDialog::SelectDat()
 {
     DatSelectionDialog window;
+    window.setWindowTitle("Pak Subsection was edited");
     window.exec();
     return window.useEdited;
 }
@@ -15,12 +16,12 @@ DatSelectionDialog::DatSelectionDialog(QWidget* parent) : ui(new Ui::DatSelectio
 
 void DatSelectionDialog::Edited_Select()
 {
-    this->useEdited = true;
+    this->useEdited = DATSELECT_EDITED;
     this->close();
 }
 
 void DatSelectionDialog::Original_Select()
 {
-    this->useEdited = false;
+    this->useEdited = DATSELECT_ORIGINAL;
     this->close();
 }

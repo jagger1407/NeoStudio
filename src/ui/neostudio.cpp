@@ -7,7 +7,7 @@
 #include "src/ui/editors/charparamframe.h"
 #include "src/ui/editors/skilllistframe.h"
 
-#define VERSION_STRING "Neo Studio v1.6.0"
+#define VERSION_STRING "Neo Studio v1.6.1"
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QMainWindow(parent), ui(new Ui::NeoStudio)
@@ -253,20 +253,25 @@ void NeoStudio::ExportSection()
 
 
     SectionOffset dataType = SECTION_OFFSET_INVALID;
+    QByteArray* curData;
 
     EditorType curEditor = (EditorType)(ui->EditorList->currentRow());
     switch(curEditor) {
         case EDITOR_PARAMETERS: {
             CharParamFrame* pf = (CharParamFrame*)editors[curEditor];
             dataType = (SectionOffset)(pf->GetCurrentParameterType() + 17);
+            curData = pf->GetCurrentParameterData();
         } break;
         case EDITOR_SKILL_LIST: {
-            dataType = ((SkillListFrame*)(editors[curEditor]))->GetCurrentSection();
+            SkillListFrame* sl = ((SkillListFrame*)(editors[curEditor]));
+            dataType = sl->GetCurrentSection();
+            curData = sl->GetCurrentSkillList();
         } break;
         default:
             dataType = (SectionOffset)0;
             break;
     }
+    QByteArray prevData = pak->GetParamData(dataType);
 
     if(!FileParse::DoesFileExist(g_Options.sectionNameFile))
     {
@@ -297,17 +302,40 @@ void NeoStudio::ExportSection()
         }
     }
     else {
-        QByteArray* data = new QByteArray(pak->GetParamData(section));
+        QByteArray* data;
+        if(section == dataType) {
+            DatSelectionDialog::SelectOption useEdited = DatSelectionDialog::DATSELECT_ORIGINAL;
+            int val = memcmp(curData->constData(), prevData.constData(), prevData.size());
+            if(val != 0) {
+                useEdited = DatSelectionDialog::SelectDat();
+            }
+
+            switch(useEdited) {
+                case DatSelectionDialog::DATSELECT_ABORT:
+                    Debug::Log("Aborted .dat Export.", Debug::WARNING);
+                    delete curData;
+                    return;
+                    break;
+                case DatSelectionDialog::DATSELECT_ORIGINAL:
+                    data = new QByteArray(prevData);
+                    break;
+                case DatSelectionDialog::DATSELECT_EDITED:
+                    data = new QByteArray(*curData);
+                    break;
+            }
+        }
+        else {
+            data = new QByteArray(prevData);
+        }
         FileParse::WriteFile(saveDir + "/" + sectionNames[section], data);
         delete data;
-
-        if(FileParse::DoesFileExist(saveDir + "/" + sectionNames[section]))
-        {
-            Debug::Log("File '" + sectionNames[section] + "' saved successfully.", Debug::INFO);
-        }
+        delete curData;
     }
 
-
+    if(FileParse::DoesFileExist(saveDir + "/" + sectionNames[section]))
+    {
+        Debug::Log("File '" + sectionNames[section] + "' saved successfully.", Debug::INFO);
+    }
 }
 
 void NeoStudio::ImportSection()

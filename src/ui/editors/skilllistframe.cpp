@@ -13,12 +13,14 @@ SkillListFrame::SkillListFrame(PakControls* pak)
     for(int i=0;i<PAK_SKILL_LIST_COUNT;i++) {
         QByteArray data = pak->GetParamData(SECTION_OFFSET_SKILL_LIST_DE + i);
         skillListSizes[i] = data.length();
-        skillListText[i] = QString::fromUtf16((ushort*)(data.data()));
+        skillListText[i] = QByteArray(skillListSizes[i], 0x00);
+        memcpy(skillListText[i].data(), data.constData(), skillListSizes[i]);
+        prefix[i] = ((ushort*)(data.constData()))[0];
     }
 
     int curLang = ui->LanguageBox->currentIndex();
     isInitializing = false;
-    ui->SkillListEdit->setText(skillListText[curLang]);
+    ui->SkillListEdit->setText(QString::fromUtf16((ushort*)skillListText[curLang].data()));
     ui->SkillListPreview->clear();
     SkillListTextChanged();
 }
@@ -35,8 +37,9 @@ SkillListFrame::SkillListFrame(int sectionID, QByteArray* data) : ui(new Ui::Ski
     }
     ui->LanguageBox->setCurrentIndex(language);
     ui->LanguageBox->setEnabled(false);
-    skillListText[language] = QString::fromUtf16((ushort*)(dat->data()));
     skillListSizes[language] = dat->length();
+    skillListText[language] = QByteArray(skillListSizes[language], 0x00);
+    memcpy(skillListText[language].data(), dat->constData(), skillListSizes[language]);
     lastLang = language;
     isInitializing = false;
     ui->SkillListEdit->setText(skillListText[language]);
@@ -377,22 +380,28 @@ void SkillListFrame::ChangeLanguage(int langIdx)
         return;
     }
 
-    QString curText = ui->SkillListEdit->toPlainText();
+    UpdateSkillList();
 
-    if(curText.length() > skillListSizes[lastLang]) {
-        Debug::Log("contents of SkillListEdit bigger than reserved space. Truncating.", Debug::WARNING);
-        curText.truncate(skillListSizes[lastLang]);
-    }
-    skillListText[lastLang] = curText;
-
-    ui->SkillListEdit->setText(skillListText[langIdx]);
+    ui->SkillListEdit->setText(QString::fromUtf16((ushort*)skillListText[langIdx].data()));
     lastLang = langIdx;
 }
 
-void SkillListFrame::UpdatePak()
+void SkillListFrame::UpdateSkillList()
 {
     QString curText = ui->SkillListEdit->toPlainText();
-    skillListText[lastLang] = curText;
+
+    if(curText.length() * 2 > skillListSizes[lastLang]) {
+        Debug::Log("contents of SkillListEdit bigger than reserved space. Truncating.", Debug::WARNING);
+        curText.truncate(skillListSizes[lastLang] / 2);
+    }
+    ((ushort*)skillListText[lastLang].data())[0] = prefix[lastLang];
+    memcpy(skillListText[lastLang].data() + 2, curText.utf16(), skillListSizes[lastLang] - 2);
+}
+
+
+void SkillListFrame::UpdatePak()
+{
+    UpdateSkillList();
 
     for(int i=SECTION_OFFSET_SKILL_LIST_DE;i<SECTION_OFFSET_SKILL_LIST_DE + PAK_SKILL_LIST_COUNT;i++) {
         QString text = skillListText[i-SECTION_OFFSET_SKILL_LIST_DE];
@@ -403,9 +412,13 @@ void SkillListFrame::UpdatePak()
 
 QByteArray * SkillListFrame::GetCurrentSkillList()
 {
-    QString curText = skillListText[ui->LanguageBox->currentIndex()];
-    QByteArray* out = new QByteArray((char*)curText.utf16(), curText.length()*2);
-    if(out->length() > skillListSizes[ui->LanguageBox->currentIndex()]) {
+    int language = ui->LanguageBox->currentIndex();
+    UpdateSkillList();
+    QString curText = QString::fromUtf16((ushort*)skillListText[language].data());
+    QByteArray* out = new QByteArray(skillListSizes[language], 0x00);
+    ((ushort*)out->data())[0] = prefix[language];
+    memcpy(out->data()+2, curText.utf16(), curText.length() * 2);
+    if(curText.length() > skillListSizes[language]) {
         Debug::Log("Current Skill List is bigger than it was before.", Debug::ERROR);
     }
     return out;
@@ -422,7 +435,7 @@ void SkillListFrame::ImportSkillList(SectionOffset type, QByteArray dat)
         Debug::Log("Imported Skill List is greater than allocated space in the pak.\n" \
             "Import Size: " + QString::number(dat.length()) + " Bytes\t- Original Size: " + QString::number(skillListSizes[language]) + " Bytes", Debug::ERROR);
     }
-    skillListText[language] = QString::fromUtf16((ushort*)(dat.data()));
+    skillListText[language] = dat;
     if(ui->LanguageBox->currentIndex() == language) {
         ui->SkillListEdit->setText(skillListText[language]);
     }
@@ -430,7 +443,6 @@ void SkillListFrame::ImportSkillList(SectionOffset type, QByteArray dat)
 
 void SkillListFrame::ButtonPressed()
 {
-    int n = 2;
     QString text = ((QPushButton*)sender())->text();
     ui->SkillListEdit->insertPlainText(text);
 }

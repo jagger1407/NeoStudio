@@ -17,13 +17,21 @@ class DatSelectionDialog : public QDialog
 {
     Q_OBJECT
 public:
-    /**false = original, true = edited*/
-    static bool SelectDat();
+
+    typedef enum {
+        DATSELECT_ABORT,
+        DATSELECT_ORIGINAL,
+        DATSELECT_EDITED
+    } SelectOption;
+
+    /** Opens the Dat Selection Dialog
+     */
+    static SelectOption SelectDat();
 private:
     DatSelectionDialog(QWidget* parent = nullptr);
     QScopedPointer<Ui::DatSelectionDialog> ui;
 
-    bool useEdited = false;
+    SelectOption useEdited = DATSELECT_ABORT;
 private slots:
     void Edited_Select();
     void Original_Select();

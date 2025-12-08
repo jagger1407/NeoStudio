@@ -7,7 +7,7 @@
 #include "src/ui/editors/charparamframe.h"
 #include "src/ui/editors/skilllistframe.h"
 
-#define VERSION_STRING "Neo Studio v1.6.1"
+#define VERSION_STRING "Neo Studio v1.6.2"
 
 NeoStudio::NeoStudio(int argc, char* argv[], QWidget* parent) :
     QMainWindow(parent), ui(new Ui::NeoStudio)

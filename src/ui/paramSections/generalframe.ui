@@ -87,7 +87,7 @@ Note: Techniques marked with '(Short)' consist of only the Step-In animation + t
     <string>Step-In Technique</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="CounterLbl">
@@ -118,7 +118,7 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
     <string>Counters</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QComboBox" name="StepInBox">
@@ -143,7 +143,7 @@ Sway = No Counter Stance will be triggered, instead, the character will lean bac
     <number>7</number>
    </property>
    <property name="sizeAdjustPolicy">
-    <enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum>
+    <enum>QComboBox::SizeAdjustPolicy::AdjustToMinimumContentsLengthWithIcon</enum>
    </property>
    <item>
     <property name="text">
@@ -261,7 +261,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rushing Techniques&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="RushTechLbl_2">
@@ -286,7 +286,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#c13cd5;&quot;&gt;□&lt;/span&gt;&lt;span style=&quot; color:#22a22c;&quot;&gt;△&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QPushButton" name="CounterBtn_2">
@@ -344,7 +344,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
     <string>Fusions</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <property name="flat">
     <bool>false</bool>
@@ -365,7 +365,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -393,7 +393,7 @@ Pretty Self-explanatory. I have no idea why you're reading this.</string>
      <string>Cost:</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="FusionTypeBtn_1">
@@ -438,7 +438,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Type:</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="FusionBtn_1">
@@ -481,7 +481,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Fusion 1</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="FusionPartnerLbl_1">
@@ -505,7 +505,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Cutscene Partner</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="FusionPartnerBtn_1">
@@ -662,7 +662,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Partner Team Characters</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="FusionCostLbl_2">
@@ -687,7 +687,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Cost:</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="FusionCostBox_2">
@@ -703,7 +703,7 @@ Dance: Fusion Dance Cutscene</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -746,7 +746,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Fusion 2</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="FusionTypeLbl_2">
@@ -775,7 +775,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Type:</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="FusionBtn_2">
@@ -818,7 +818,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Cutscene Partner</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="FusionPartnerBtn_2">
@@ -861,7 +861,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Partner Team Characters</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="FusionTeamBtn_2_1">
@@ -1004,7 +1004,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Type:</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="FusionTypeBtn_3">
@@ -1064,7 +1064,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Cost:</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="FusionTeamBtn_3_2">
@@ -1126,7 +1126,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Fusion 3</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="FusionCostBox_3">
@@ -1142,7 +1142,7 @@ Dance: Fusion Dance Cutscene</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -1188,7 +1188,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Partner Team Characters</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="FusionPartnerLbl_3">
@@ -1212,7 +1212,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Cutscene Partner</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="FusionBtn_3">
@@ -1301,7 +1301,7 @@ Dance: Fusion Dance Cutscene</string>
      </rect>
     </property>
     <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+     <enum>Qt::Orientation::Horizontal</enum>
     </property>
    </widget>
    <widget class="Line" name="line_2">
@@ -1314,7 +1314,7 @@ Dance: Fusion Dance Cutscene</string>
      </rect>
     </property>
     <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+     <enum>Qt::Orientation::Horizontal</enum>
     </property>
    </widget>
    <zorder>FusionTypeLbl_3</zorder>
@@ -1384,7 +1384,7 @@ Dance: Fusion Dance Cutscene</string>
     <string>Miscellaneous</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <widget class="QLabel" name="CollisionLbl_1">
     <property name="geometry">
@@ -1407,7 +1407,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Collision (X)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="CollisionLbl_2">
@@ -1431,7 +1431,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Collision (Y)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="CollisionLbl_3">
@@ -1455,7 +1455,7 @@ Dance: Fusion Dance Cutscene</string>
      <string>Collision (Z)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="CollisionSpinBox_1">
@@ -1471,7 +1471,7 @@ Dance: Fusion Dance Cutscene</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -1499,7 +1499,7 @@ Dance: Fusion Dance Cutscene</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="accelerated">
      <bool>false</bool>
@@ -1533,7 +1533,7 @@ Dance: Fusion Dance Cutscene</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -1574,7 +1574,7 @@ Note: Values above 1 make the character unable to jump.</string>
      <string>Gravity</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="GravityBox">
@@ -1590,7 +1590,7 @@ Note: Values above 1 make the character unable to jump.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -1623,10 +1623,10 @@ Note: Values above 1 make the character unable to jump.</string>
      <string>Team Gauge Speed</string>
     </property>
     <property name="textFormat">
-     <enum>Qt::PlainText</enum>
+     <enum>Qt::TextFormat::PlainText</enum>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="TeamGaugeBox">
@@ -1642,7 +1642,7 @@ Note: Values above 1 make the character unable to jump.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -1678,7 +1678,7 @@ Note: Values above 1 make the character unable to jump.</string>
      <string>Blast Stock Amount</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="BlastStockBox">
@@ -1694,7 +1694,7 @@ Note: Values above 1 make the character unable to jump.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1727,7 +1727,7 @@ Note: Values above 1 make the character unable to jump.</string>
      <string>Blast Gauge Speed</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="BlastGaugeBox">
@@ -1743,7 +1743,7 @@ Note: Values above 1 make the character unable to jump.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -1781,7 +1781,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string>Z-Search Type</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QComboBox" name="ZSearchBox">
@@ -1806,7 +1806,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <number>10</number>
     </property>
     <property name="sizeAdjustPolicy">
-     <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+     <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
     </property>
     <item>
      <property name="text">
@@ -1880,7 +1880,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string>Aura Color</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QComboBox" name="AuraColorBox">
@@ -1905,7 +1905,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <number>9</number>
     </property>
     <property name="sizeAdjustPolicy">
-     <enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum>
+     <enum>QComboBox::SizeAdjustPolicy::AdjustToMinimumContentsLengthWithIcon</enum>
     </property>
     <item>
      <property name="text">
@@ -1967,7 +1967,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
     <string>Ki Related Stats</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <property name="flat">
     <bool>false</bool>
@@ -1993,7 +1993,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string>Base Ki Regeneration Speed</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="KiChargeWaterBox">
@@ -2009,7 +2009,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2021,7 +2021,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <number>0</number>
     </property>
     <property name="displayIntegerBase">
-     <number>16</number>
+     <number>10</number>
     </property>
    </widget>
    <widget class="QSpinBox" name="KiBlastBox">
@@ -2037,7 +2037,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2070,7 +2070,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string>Ki Charge Speed</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="KiChargeBox">
@@ -2086,7 +2086,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2119,7 +2119,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string>Ki Blast Amount</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="KiChargeLbl_2">
@@ -2143,7 +2143,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string>Ki Charge Speed (Underwater)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="KiBlastChargedBox">
@@ -2159,7 +2159,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2192,7 +2192,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string>Ki Blast Amount (Charged)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="BaseKiRegenBox">
@@ -2208,7 +2208,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2233,7 +2233,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2267,7 +2267,7 @@ Slow Ki Search = Slower than the default Ki Search, used by characters like Vide
 Ki Consumption</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="BlueKiChargeLbl">
@@ -2294,7 +2294,7 @@ Ki Consumption</string>
      <string>Blue Ki Charge Speed</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="BlueKiChargeBox">
@@ -2310,7 +2310,7 @@ Ki Consumption</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -2341,7 +2341,7 @@ Ki Consumption</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>-2147483647</number>
@@ -2378,7 +2378,7 @@ Ki Consumption</string>
 Ki Consumption</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="MaxPowDurLbl">
@@ -2402,7 +2402,7 @@ Ki Consumption</string>
      <string>MAX Power Duration</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="MaxPowDurBox">
@@ -2418,7 +2418,7 @@ Ki Consumption</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -2444,7 +2444,7 @@ Ki Consumption</string>
     <string>Melee Related Stats</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <widget class="QLabel" name="DragonHomingCntLbl">
     <property name="geometry">
@@ -2467,7 +2467,7 @@ Ki Consumption</string>
      <string>Dragon Homing Amount (MAX Power)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="VanishingAttackBox">
@@ -2483,7 +2483,7 @@ Ki Consumption</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2508,7 +2508,7 @@ Ki Consumption</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -2541,7 +2541,7 @@ Ki Consumption</string>
      <string>Vanishing Attack Amount (MAX Power)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="ChargeBarSpdBox">
@@ -2557,7 +2557,7 @@ Ki Consumption</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -2590,10 +2590,10 @@ Ki Consumption</string>
      <string>Melee Momentum Gain</string>
     </property>
     <property name="textFormat">
-     <enum>Qt::PlainText</enum>
+     <enum>Qt::TextFormat::PlainText</enum>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="DmgMulBox">
@@ -2609,7 +2609,7 @@ Ki Consumption</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -2642,7 +2642,7 @@ Ki Consumption</string>
      <string>Damage Multiplier</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
   </widget>
@@ -2656,13 +2656,13 @@ Ki Consumption</string>
     </rect>
    </property>
    <property name="layoutDirection">
-    <enum>Qt::LeftToRight</enum>
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
    </property>
    <property name="title">
     <string>Flags</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <widget class="QGroupBox" name="FlagGroup_1">
     <property name="geometry">
@@ -2677,7 +2677,7 @@ Ki Consumption</string>
      <string>Flaggroup 1</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
     <widget class="QCheckBox" name="Flag_1_1">
      <property name="geometry">
@@ -3268,7 +3268,7 @@ Ki Consumption</string>
      <string>Flaggroup 2</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
     <widget class="QCheckBox" name="Flag_2_8">
      <property name="geometry">
@@ -3762,7 +3762,7 @@ This just means it checks if you can Step-In after pressing Square 5 times.</str
      <string>Flaggroup 3</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
     <widget class="QCheckBox" name="Flag_3_8">
      <property name="geometry">
@@ -4345,7 +4345,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
     <string>Rush/Step Counter</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -4361,7 +4361,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
     <string>Step-In Counter</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -4377,7 +4377,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
     <string>Cancel Counter</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="RushTechLbl_3">
@@ -4402,7 +4402,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#c13cd5;&quot;&gt;□□&lt;/span&gt;&lt;span style=&quot; color:#22a22c;&quot;&gt;△&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="RushTechLbl_4">
@@ -4427,7 +4427,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#c13cd5;&quot;&gt;□□□&lt;/span&gt;&lt;span style=&quot; color:#22a22c;&quot;&gt;△&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="RushTechLbl_5">
@@ -4452,7 +4452,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#c13cd5;&quot;&gt;□□□□&lt;/span&gt;&lt;span style=&quot; color:#22a22c;&quot;&gt;△&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox">
@@ -4468,7 +4468,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
     <string>Transformations</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <widget class="QLabel" name="TransformLbl_1">
     <property name="geometry">
@@ -4491,7 +4491,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>Transformation 1</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="TransformBtn_1">
@@ -4553,7 +4553,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>Transformation 2</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="TransformBtn_3">
@@ -4596,7 +4596,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>Transformation 3</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="TransformLbl_4">
@@ -4620,7 +4620,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>Detransformation</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="TransformBtn_4">
@@ -4633,7 +4633,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      </rect>
     </property>
     <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
     </property>
     <property name="iconSize">
      <size>
@@ -4674,7 +4674,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -4709,7 +4709,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -4744,7 +4744,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -4779,7 +4779,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="maximum">
      <number>255</number>
@@ -4799,7 +4799,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
     <string>Uncharted Territory</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
    <widget class="QSpinBox" name="SpinBox_Unk_0x8">
     <property name="geometry">
@@ -4814,7 +4814,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -4847,7 +4847,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x08)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="Label_Unk_0x9">
@@ -4871,7 +4871,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x09)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="SpinBox_Unk_0x9">
@@ -4887,7 +4887,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -4912,7 +4912,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -4945,7 +4945,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x28)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="Label_Unk_ZSearch">
@@ -4970,7 +4970,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
 (0x2A-0x2E)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="SpinBox_Unk_0x2F">
@@ -4986,7 +4986,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -5019,7 +5019,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x2F)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="SpinBox_Unk_0x58">
@@ -5035,7 +5035,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>-2147483647</number>
@@ -5071,7 +5071,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x58)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="SpinBox_Unk_0x5C">
@@ -5087,7 +5087,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>-2147483647</number>
@@ -5123,7 +5123,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x5C)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="Label_Unk_0x8_4">
@@ -5147,7 +5147,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x60)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="SpinBox_Unk_0x64">
@@ -5163,7 +5163,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>-2147483647</number>
@@ -5199,7 +5199,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x64)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="SpinBox_Unk_0x68">
@@ -5215,7 +5215,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>-2147483647</number>
@@ -5251,7 +5251,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x68)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="SpinBox_Unk_0x60">
@@ -5267,7 +5267,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>-2147483647</number>
@@ -5295,7 +5295,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>-2147483647</number>
@@ -5331,7 +5331,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x80)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="SpinBox_Unk_0x88">
@@ -5347,7 +5347,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>-2147483647</number>
@@ -5383,7 +5383,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x88)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="DblBox_Unk_0x9C">
@@ -5399,7 +5399,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -5432,7 +5432,7 @@ NOTE: Flags here overwrite the input inside the Aura Color.</string>
      <string>? (0x9C)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="Label_Unk_0x8_11">
@@ -5458,7 +5458,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>? (0xA0)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="DblBox_Unk_0xA0">
@@ -5474,7 +5474,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -5499,7 +5499,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -5534,7 +5534,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>? (0xA4)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="Label_Unk_0x2F_2">
@@ -5558,7 +5558,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>? (0xAA)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="SpinBox_Unk_0xAA">
@@ -5574,7 +5574,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -5607,7 +5607,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>? (0xB0)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="DblBox_Unk_0xB0">
@@ -5623,7 +5623,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::NoButtons</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
     </property>
     <property name="decimals">
      <number>3</number>
@@ -5656,7 +5656,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>? (0xC5)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="Label_Unk_0x8_14">
@@ -5680,7 +5680,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>? (0xBC)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="SpinBox_Unk_0xBC_1">
@@ -5696,7 +5696,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -5732,7 +5732,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>? (0xCF)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="Label_Unk_0x9_2">
@@ -5756,7 +5756,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>? (0xBF)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="Label_Unk_0x28_2">
@@ -5780,7 +5780,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>? (0xC2)</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QSpinBox" name="SpinBox_Unk_0xBC_2">
@@ -5796,7 +5796,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -5824,7 +5824,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -5852,7 +5852,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -5880,7 +5880,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -5908,7 +5908,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -5936,7 +5936,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -5964,7 +5964,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -5992,7 +5992,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -6020,7 +6020,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -6048,7 +6048,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -6076,7 +6076,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -6104,7 +6104,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -6132,7 +6132,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -6160,7 +6160,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string notr="true"/>
     </property>
     <property name="buttonSymbols">
-     <enum>QAbstractSpinBox::PlusMinus</enum>
+     <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
     </property>
     <property name="minimum">
      <number>0</number>
@@ -6197,7 +6197,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <number>10</number>
     </property>
     <property name="sizeAdjustPolicy">
-     <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+     <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
     </property>
     <item>
      <property name="text">
@@ -6272,7 +6272,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <number>10</number>
     </property>
     <property name="sizeAdjustPolicy">
-     <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+     <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
     </property>
     <item>
      <property name="text">
@@ -6347,7 +6347,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <number>10</number>
     </property>
     <property name="sizeAdjustPolicy">
-     <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+     <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
     </property>
     <item>
      <property name="text">
@@ -6422,7 +6422,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <number>10</number>
     </property>
     <property name="sizeAdjustPolicy">
-     <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+     <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
     </property>
     <item>
      <property name="text">
@@ -6497,7 +6497,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <number>10</number>
     </property>
     <property name="sizeAdjustPolicy">
-     <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+     <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
     </property>
     <item>
      <property name="text">
@@ -6573,7 +6573,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;1-Byte&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="Label_Unk_0x9_4">
@@ -6599,7 +6599,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;4-Byte&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="Label_Unk_0x9_5">
@@ -6625,7 +6625,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Float&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="Label_Unk_0x9_6">
@@ -6651,7 +6651,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Padding?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="Line" name="line_3">
@@ -6664,7 +6664,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      </rect>
     </property>
     <property name="orientation">
-     <enum>Qt::Vertical</enum>
+     <enum>Qt::Orientation::Vertical</enum>
     </property>
    </widget>
    <widget class="Line" name="line_4">
@@ -6677,7 +6677,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
      </rect>
     </property>
     <property name="orientation">
-     <enum>Qt::Vertical</enum>
+     <enum>Qt::Orientation::Vertical</enum>
     </property>
    </widget>
   </widget>
@@ -6703,7 +6703,7 @@ If you know what this byte affects, tell me on Discord @jagger1407#0389</string>
     <number>7</number>
    </property>
    <property name="sizeAdjustPolicy">
-    <enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum>
+    <enum>QComboBox::SizeAdjustPolicy::AdjustToMinimumContentsLengthWithIcon</enum>
    </property>
    <item>
     <property name="text">
@@ -6744,7 +6744,7 @@ Note: Techniques marked with '(Short)' consist of only the Step-In animation + t
     <string>Step-In + Up Technique</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="StepInLbl_3">
@@ -6770,7 +6770,7 @@ Note: Techniques marked with '(Short)' consist of only the Step-In animation + t
     <string>Step-In + Down Technique</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QComboBox" name="StepInBox_3">
@@ -6795,7 +6795,7 @@ Note: Techniques marked with '(Short)' consist of only the Step-In animation + t
     <number>7</number>
    </property>
    <property name="sizeAdjustPolicy">
-    <enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum>
+    <enum>QComboBox::SizeAdjustPolicy::AdjustToMinimumContentsLengthWithIcon</enum>
    </property>
    <item>
     <property name="text">

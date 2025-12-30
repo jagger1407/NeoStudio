@@ -100,16 +100,19 @@ set(neostudio_SRC
   src/ui/menu/sectionselectiondialog.ui
 )
 
-if(WIN32)
+if(MSVC)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
-    set_target_properties(neostudio PROPERTIES
-        WIN32_EXECUTABLE TRUE
-    )
 endif()
 
 # Tell CMake to create the executable
 add_executable(neostudio ${neostudio_SRC})
+
+if(WIN32)
+set_target_properties(neostudio PROPERTIES
+    WIN32_EXECUTABLE TRUE
+)
+endif()
 
 # Use the Widgets module from Qt 5.
 target_link_libraries(neostudio Qt5::Widgets)

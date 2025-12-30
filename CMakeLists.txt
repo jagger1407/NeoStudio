@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 project(NeoStudio)
 
 # Find includes in corresponding build directories
@@ -99,6 +99,11 @@ set(neostudio_SRC
   src/ui/menu/characterselectiondialog.ui
   src/ui/menu/sectionselectiondialog.ui
 )
+
+if(WIN32)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
+endif()
 
 # Tell CMake to create the executable
 add_executable(neostudio ${neostudio_SRC})

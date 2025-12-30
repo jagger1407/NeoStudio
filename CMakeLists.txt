@@ -103,6 +103,9 @@ set(neostudio_SRC
 if(WIN32)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
+    set_target_properties(neostudio PROPERTIES
+        WIN32_EXECUTABLE TRUE
+    )
 endif()
 
 # Tell CMake to create the executable

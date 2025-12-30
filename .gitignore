@@ -1,0 +1,11 @@
+# code editor stuff
+.vscode/
+
+*.kdev4
+
+# CMake generated stuff
+CMakeCache.txt
+CMakeFiles/
+
+# build stuff
+build/

@@ -331,7 +331,6 @@ void NeoStudio::ExportSection()
         }
         FileParse::WriteFile(saveDir + "/" + sectionNames[section], data);
         delete data;
-        delete curData;
     }
 
     if(FileParse::DoesFileExist(saveDir + "/" + sectionNames[section]))
